@@ -1,0 +1,117 @@
+{
+  "course": "Communications",
+  "module": "Mindful Mastery",
+  "pages": [
+    {
+      "title": "Introduction",
+      "pageId": "question1",
+      "slides": [
+        {
+          "type": "animation",
+          "backgroundColor": "papaya",
+          "backgroundCover": "full",
+          "textStyle": "xxxl",
+          "content": [
+            {
+              "title": "",
+              "body": "pop",
+              "transitions": [
+                {
+                  "type": "from",
+                  "x": "-500",
+                  "delay": "1"
+                },
+                {
+                  "type": "to",
+                  "x": "-500",
+                  "delay": "4"
+                }
+              ]
+            },
+            {
+              "title": "",
+              "body": "quiz",
+              "transitions": [
+                {
+                  "type": "from",
+                  "x": "1100",
+                  "delay": "2"
+                },
+                {
+                  "type": "to",
+                  "x": "1100",
+                  "delay": "4"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "panel",
+          "backgroundColor": "papaya",
+          "backgroundCover": "full",
+          "activity": "question",
+          "text": "Over the course of an average 30 yr. career, how many times will an officer use their communications skills?",
+          "choices": [
+            {
+              "label": "1,000 TIMES OR LESS",
+              "correct": false,
+              "feedback": {
+                "title": "NOPE",
+                "body": "Not even close. If an officer only talks to three people a day, that will add up to over 200,000 contacts over the course of an average career."
+              }
+            },
+            {
+              "label": "30,000 TIMES OR LESS",
+              "correct": false,
+              "feedback": {
+                "title": "NOPE",
+                "body": "Not even close. If an officer only talks to three people a day, that will add up to over 200,000 contacts over the course of an average career."
+              }
+            },
+            {
+              "label": "100,000 TIMES OR LESS",
+              "correct": false,
+              "feedback": {
+                "title": "NOPE",
+                "body": "Not even close. If an officer only talks to three people a day, that will add up to over 200,000 contacts over the course of an average career."
+              }
+            },
+            {
+              "label": "200,000 TIMES OR LESS",
+              "correct": true,
+              "feedback": {
+                "title": "THAT'S RIGHT",
+                "body": "If an officer only talks to three people a day, that will add up to over 200,000 contacts over the course of an average career."
+              }
+            }
+          ]
+        },
+        {
+          "type": "animation",
+          "backgroundColor": "white",
+          "backgroundCover": "full",
+          "textStyle": "xxxl",
+          "elements": [
+            {
+              "type": "text",
+              "body": "GET THE POINT?",
+              "transitions": [
+                {
+                  "type": "from",
+                  "x": "-800",
+                  "delay": "0.5"
+                },
+                {
+                  "type": "to",
+                  "x": "1100",
+                  "delay": "3"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

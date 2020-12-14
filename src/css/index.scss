@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.player-wrapper {
+  padding-top: 56px;
+  padding-bottom: 40px;
+  @apply h-screen w-full bg-gray-200 px-2;
+}
