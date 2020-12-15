@@ -1,29 +1,43 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { connect } from "react-redux";
 import CoursePage from "./CoursePage";
+import { getCourseRequest } from "../store/actions/course.action";
 
-class Player extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      count: 0
-    };
-  }
+const Player = ({ course, getCourse }) => {
+  const [count, setCount] = useState(0);
 
-    render(){
-      return (
-        <div className="player-wrapper">
-          <h1>
-            {this.props.data.course}: {this.props.data.module}
-          </h1>
-          <p>page number: {this.state.count + 1}</p>
+  useEffect(() => {
+    getCourse();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+  console.log(course);
+  return (
+    <div className="player-wrapper">
+      <h1>
+        {course.course}: {course.module}
+      </h1>
+      <p>page number: {count + 1}</p>
+      {
+        course.pages ? (
           <CoursePage
-            key={this.state.count}
-            page={this.props.data.pages[this.state.count]}
+            key={count}
+            page={course.pages[count]}
           />
-        </div>
-      )
-    }
-
+        ) : null
+      }
+    </div>
+  );
 };
 
-export default Player;
+const mapStateToProps = (state) => {
+  const {
+    course: { course },
+  } = state;
+  return { course };
+};
+
+const mapDispatchToProps = (dispatch) => ({
+  getCourse: () => dispatch(getCourseRequest()),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Player);
