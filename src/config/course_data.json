@@ -1,116 +1,247 @@
 {
-  "course": "Communications",
-  "module": "Mindful Mastery",
-  "pages": [
+  "courseId": "COMM",
+  "chapters": [
     {
+      "id": "01",
       "title": "Introduction",
-      "pageId": "question1",
-      "slides": [
+      "pages": [
         {
-          "type": "animation",
-          "backgroundColor": "papaya",
-          "backgroundCover": "full",
-          "textStyle": "xxxl",
-          "content": [
-            {
-              "title": "",
-              "body": "pop",
-              "transitions": [
-                {
-                  "type": "from",
-                  "x": "-500",
-                  "delay": "1"
-                },
-                {
-                  "type": "to",
-                  "x": "-500",
-                  "delay": "4"
-                }
-              ]
-            },
-            {
-              "title": "",
-              "body": "quiz",
-              "transitions": [
-                {
-                  "type": "from",
-                  "x": "1100",
-                  "delay": "2"
-                },
-                {
-                  "type": "to",
-                  "x": "1100",
-                  "delay": "4"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "type": "panel",
-          "backgroundColor": "papaya",
-          "backgroundCover": "full",
-          "activity": "question",
-          "text": "Over the course of an average 30 yr. career, how many times will an officer use their communications skills?",
-          "choices": [
-            {
-              "label": "1,000 TIMES OR LESS",
-              "correct": false,
-              "feedback": {
-                "title": "NOPE",
-                "body": "Not even close. If an officer only talks to three people a day, that will add up to over 200,000 contacts over the course of an average career."
-              }
-            },
-            {
-              "label": "30,000 TIMES OR LESS",
-              "correct": false,
-              "feedback": {
-                "title": "NOPE",
-                "body": "Not even close. If an officer only talks to three people a day, that will add up to over 200,000 contacts over the course of an average career."
-              }
-            },
-            {
-              "label": "100,000 TIMES OR LESS",
-              "correct": false,
-              "feedback": {
-                "title": "NOPE",
-                "body": "Not even close. If an officer only talks to three people a day, that will add up to over 200,000 contacts over the course of an average career."
-              }
-            },
-            {
-              "label": "200,000 TIMES OR LESS",
-              "correct": true,
-              "feedback": {
-                "title": "THAT'S RIGHT",
-                "body": "If an officer only talks to three people a day, that will add up to over 200,000 contacts over the course of an average career."
-              }
-            }
-          ]
-        },
-        {
-          "type": "animation",
-          "backgroundColor": "white",
-          "backgroundCover": "full",
-          "textStyle": "xxxl",
+          "background": "white",
           "elements": [
             {
-              "type": "text",
-              "body": "GET THE POINT?",
-              "transitions": [
+              "type": "image",
+              "position": "right",
+              "alt": "Alt tag description...",
+              "url": "https://i.picsum.photos/id/726/200/300.jpg?hmac=9WbqvM6W7D0BwVEyvVbC2xL9ulSQpXyoTcL3O89modM",
+              "animations": [
                 {
                   "type": "from",
-                  "x": "-800",
-                  "delay": "0.5"
-                },
+                  "x": 1600,
+                  "delay": 1
+                }
+              ]
+            },
+            {
+              "type": "content",
+              "position": "left",
+              "textAlign": "left",
+              "title": "De-escalation Defined",
+              "content": "\"De-escalation\" as a concept encompasses a lot more than just a subset of communications skills. It's an entire mindset...<br/><br/>However, in this module, we're looking at the practice of de-escalation in a narrower frame. De-escalation in this context can be understood as \"de-intensification\" — a set of skills you can apply when the situation is already or is about to become overheated and potentially explosive.",
+              "animations": [
                 {
-                  "type": "to",
-                  "x": "1100",
-                  "delay": "3"
+                  "type": "from",
+                  "x": -600,
+                  "delay": 2
+                }
+              ]
+            },
+            {
+              "type": "shape",
+              "position": "center",
+              "color": "orange",
+              "shape": "rectangle",
+              "width": "100%",
+              "animations": [
+                {
+                  "type": "from",
+                  "x": 1600,
+                  "delay": 1
                 }
               ]
             }
           ]
         }
+      ]
+    },
+    {
+      "id": "02",
+      "title": "Learn",
+      "pages": [
+        {
+          "background": "blue",
+          "elements": [
+            {
+              "type": "content",
+              "title": "LEARN",
+              "animations": [
+                {
+                  "type": "from",
+                  "x": -500,
+                  "delay": 1
+                }
+              ]
+            },
+            {
+              "type": "shape",
+              "shape": "rectangle",
+              "animations": [
+                {
+                  "type": "from",
+                  "x": 1500,
+                  "delay": 0.5
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "background": "white",
+          "elements": [
+            {
+              "type": "shape",
+              "shape": "square",
+              "background": "yellow",
+              "width": "50%",
+              "position": "left",
+              "animations": [
+                {
+                  "type": "from",
+                  "x": -500,
+                  "delay": 1
+                }
+              ]
+            },
+            {
+              "type": "image",
+              "position": "left",
+              "alt": "Alt tag description...",
+              "url": "https://i.picsum.photos/id/726/200/300.jpg?hmac=9WbqvM6W7D0BwVEyvVbC2xL9ulSQpXyoTcL3O89modM",
+              "animations": [
+                {
+                  "type": "from",
+                  "x": -500,
+                  "delay": 1.5
+                }
+              ]
+            },
+            {
+              "type": "content",
+              "width": "50%",
+              "position": "right",
+              "textAlign": "left",
+              "title": "The Skills",
+              "subtitle": "In this activity, you'll be introduced to the following skills:",
+              "content": "<h3>Defusing & Deflecting</h3><ul><li>Maintaining Your Calm</li><li>Knowing Your Triggers</li><li>Knowing When to Engage and When NOT To</li></ul><h3>Redirecting</h3><ul><li>Interjecting</li><li>Asking a Question</li><li>Restating the Problem</li></ul>",
+              "animations": [
+                {
+                  "type": "from",
+                  "x": -600,
+                  "delay": 2
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "background": "white",
+          "elements": [
+            {
+              "type": "image",
+              "position": "right",
+              "alt": "Alt tag description...",
+              "url": "https://i.picsum.photos/id/726/200/300.jpg?hmac=9WbqvM6W7D0BwVEyvVbC2xL9ulSQpXyoTcL3O89modM",
+              "animations": [
+                {
+                  "type": "from",
+                  "x": 1500,
+                  "delay": 0.5
+                }
+              ]
+            },
+            {
+              "type": "shape",
+              "shape": "rectangle",
+              "background": "pink",
+              "width": "100%",
+              "position": "center",
+              "animations": [
+                {
+                  "type": "from",
+                  "x": 1500,
+                  "delay": 1
+                }
+              ]
+            },
+            {
+              "type": "content",
+              "width": "50%",
+              "position": "right",
+              "textAlign": "left",
+              "title": "Non-Verbals",
+              "subtitle": "You'll also learn about the importance of non-verbal cues that inform <b>Command Presence</b> like:",
+              "content": "<ul><li>Tone</li><li>Facial Expression</li><li>Posture & Proxemics</li><li>Eye Contact</li></ul>",
+              "animations": [
+                {
+                  "type": "from",
+                  "x": -600,
+                  "delay": 2
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "background": "white",
+          "elements": [
+            {
+              "type": "image",
+              "position": "left",
+              "alt": "Alt tag description...",
+              "url": "https://i.picsum.photos/id/726/200/300.jpg?hmac=9WbqvM6W7D0BwVEyvVbC2xL9ulSQpXyoTcL3O89modM",
+              "animations": [
+                {
+                  "type": "from",
+                  "x": -500,
+                  "delay": 0.5
+                }
+              ]
+            },
+            {
+              "type": "shape",
+              "shape": "rectangle",
+              "background": "blue",
+              "width": "100%",
+              "position": "center",
+              "animations": [
+                {
+                  "type": "from",
+                  "x": -500,
+                  "delay": 1
+                }
+              ]
+            },
+            {
+              "type": "content",
+              "width": "50%",
+              "position": "right",
+              "textAlign": "left",
+              "title": "Procedural Justice",
+              "subtitle": "You'll also learn about the importance of non-verbal cues that inform <b>Command Presence</b> like:",
+              "content": "Finally, you'll review the four central tents of Procedural Justice and how they create the foundation for a \"de-escalation mindset\":<ul><li>Voice</li><li>Respect</li><li>Neutrality</li><li>Trustworthiness</li></ul>",
+              "animations": [
+                {
+                  "type": "from",
+                  "x": 1000,
+                  "delay": 2
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "03",
+      "title": "Analyze",
+      "pages": [
+
+      ]
+    },
+    {
+      "id": "04",
+      "title": "Challenge",
+      "pages": [
+
       ]
     }
   ]
