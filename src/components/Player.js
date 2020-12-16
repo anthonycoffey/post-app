@@ -1,30 +1,36 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { connect } from "react-redux";
-import Chapter from "./Chapter";
+import Chapter from "./Chapter/Chapter";
+import Home from "./Home/Home";
 import { getCourseRequest } from "../store/actions/course.action";
 
-const Player = ({ course, getCourse }) => {
-  const [count, setCount] = useState(0);
-
+const Player = ({
+  chapterId,
+  pageId,
+  setChapterId,
+  setPageId,
+  course,
+  getCourse,
+}) => {
   useEffect(() => {
     getCourse();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-console.log({course});
+  console.log("chapterId", chapterId, pageId);
   return (
     <div className="player-wrapper">
-      <h1>
-        {course.courseId}
-      </h1>
-      <p>page number: {count + 1}</p>
-      {
-        course.chapters ? (
-          <Chapter
-            key={count}
-            data={course.chapters[count]}
+      {course.chapters ? (
+        chapterId < 0 ? (
+          <Home
+            chapters={course.chapters}
+            courseTitle={course.courseTitle}
+            courseSubTitle={course.courseSubTitle}
+            setChapterId={setChapterId}
           />
-        ) : null
-      }
+        ) : (
+          <Chapter content={course.chapters[chapterId]} pageId={pageId} />
+        )
+      ) : null}
     </div>
   );
 };

@@ -1,16 +1,64 @@
 {
   "courseId": "COMM",
+  "courseTitle": "Communications:",
+  "courseSubTitle": "DE-ESCALATION",
   "chapters": [
     {
-      "id": "01",
+      "id": 0,
       "title": "Introduction",
       "pages": [
         {
+          "id": 0,
           "background": "white",
+          "type": "default",
           "elements": [
             {
+              "type": "content",
+              "style": {
+                "width": "100%",
+                "padding": "20px",
+                "background": "#e06330"
+              },
+              "title": {
+                "content": "De-escalation Defined",
+                "style": {
+                  "width": "50%",
+                  "fontSize": 30,
+                  "fontStyle": "italic",
+                  "color": "white",
+                  "textAlign": "left",
+                  "paddingBottom": "10px",
+                  "borderBottom": "2px solid white",
+                  "marginBottom": "15px",
+                  "fontWeight": "bold"
+                }
+              },
+              "description": {
+                "content": "\"De-escalation\" as a concept encompasses a lot more than just a subset of communications skills. It's an entire mindset...<br/><br/>However, in this module, we're looking at the practice of de-escalation in a narrower frame. De-escalation in this context can be understood as \"de-intensification\" — a set of skills you can apply when the situation is already or is about to become overheated and potentially explosive.",
+                "style": {
+                  "fontSize": 25,
+                  "color": "white",
+                  "textAlign": "left",
+                  "width": "50%"
+                }
+              },
+              "animations": [
+                {
+                  "type": "from",
+                  "x": -600,
+                  "delay": 2
+                }
+              ]
+            },
+            {
               "type": "image",
-              "position": "right",
+              "style": {
+                "width": 500,
+                "height": 700,
+                "position": "absolute",
+                "left": "60%",
+                "top": "10%"
+              },
               "alt": "Alt tag description...",
               "url": "https://i.picsum.photos/id/726/200/300.jpg?hmac=9WbqvM6W7D0BwVEyvVbC2xL9ulSQpXyoTcL3O89modM",
               "animations": [
@@ -18,20 +66,6 @@
                   "type": "from",
                   "x": 1600,
                   "delay": 1
-                }
-              ]
-            },
-            {
-              "type": "content",
-              "position": "left",
-              "textAlign": "left",
-              "title": "De-escalation Defined",
-              "content": "\"De-escalation\" as a concept encompasses a lot more than just a subset of communications skills. It's an entire mindset...<br/><br/>However, in this module, we're looking at the practice of de-escalation in a narrower frame. De-escalation in this context can be understood as \"de-intensification\" — a set of skills you can apply when the situation is already or is about to become overheated and potentially explosive.",
-              "animations": [
-                {
-                  "type": "from",
-                  "x": -600,
-                  "delay": 2
                 }
               ]
             },
@@ -54,10 +88,11 @@
       ]
     },
     {
-      "id": "02",
+      "id": 1,
       "title": "Learn",
       "pages": [
         {
+          "id": 0,
           "background": "blue",
           "elements": [
             {
@@ -85,6 +120,7 @@
           ]
         },
         {
+          "id": 1,
           "background": "white",
           "elements": [
             {
@@ -133,6 +169,7 @@
           ]
         },
         {
+          "id": 2,
           "background": "white",
           "elements": [
             {
@@ -181,6 +218,7 @@
           ]
         },
         {
+          "id": 3,
           "background": "white",
           "elements": [
             {
@@ -231,17 +269,15 @@
       ]
     },
     {
-      "id": "03",
+      "id": 3,
       "title": "Analyze",
       "pages": [
-
       ]
     },
     {
-      "id": "04",
+      "id": 4,
       "title": "Challenge",
       "pages": [
-
       ]
     }
   ]
