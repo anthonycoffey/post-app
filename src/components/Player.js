@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
-import CoursePage from "./CoursePage";
+import Chapter from "./Chapter";
 import { getCourseRequest } from "../store/actions/course.action";
 
 const Player = ({ course, getCourse }) => {
@@ -10,18 +10,18 @@ const Player = ({ course, getCourse }) => {
     getCourse();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-  console.log(course);
+console.log({course});
   return (
     <div className="player-wrapper">
       <h1>
-        {course.course}: {course.module}
+        {course.courseId}
       </h1>
       <p>page number: {count + 1}</p>
       {
-        course.pages ? (
-          <CoursePage
+        course.chapters ? (
+          <Chapter
             key={count}
-            page={course.pages[count]}
+            data={course.chapters[count]}
           />
         ) : null
       }
