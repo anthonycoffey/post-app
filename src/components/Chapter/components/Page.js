@@ -40,7 +40,7 @@ const Page = ({ elements, style }) => {
               style={element.style}
               key={index}
             >
-              <img src={element.url} alt={element.alt} />
+              <img src={`${process.env.PUBLIC_URL}${element.url}`} alt={element.alt} />
             </div>
           );
         } else if (element.type === "content") {

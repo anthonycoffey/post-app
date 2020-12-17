@@ -2,13 +2,9 @@
   height: 56px;
 
   .back, .next {
-    padding: 10px;
-    font-size: 22px;
-    padding-left: 40px;
-    padding-right: 40px;
-    cursor: pointer;
+    @apply flex bg-black font-bold italic text-white cursor-pointer content-center justify-center p-4;
     transition: all ease 0.3s;
-
+    height: 56px;
     &.hide {
       visibility: hidden;
     }

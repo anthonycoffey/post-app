@@ -6,7 +6,7 @@ const FooterNav = ({ pageIndex, setPageIndex, totalPageCount }) => {
     <div className="footer-nav absolute bottom-0 bg-black w-full">
       <div className="flex justify-between">
         <div
-          className={`back bg-black font-bold italic text-white ${
+          className={`back ${
             pageIndex < 1 ? "hide" : ""
           }`}
           onClick={setPageIndex(pageIndex - 1)}
@@ -14,7 +14,7 @@ const FooterNav = ({ pageIndex, setPageIndex, totalPageCount }) => {
           Back
         </div>
         <div
-          className={`next bg-black font-bold italic text-white ${
+          className={`next ${
             pageIndex < totalPageCount - 1 ? "" : "hide"
           }`}
           onClick={setPageIndex(pageIndex + 1)}
