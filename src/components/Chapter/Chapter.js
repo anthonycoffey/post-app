@@ -4,14 +4,11 @@ import Page from "./components/Page"
 
 import "./Chapter.scss";
 
-const Chapter = ({ content, pageId }) => {
-  const { background, elements, type } = content.pages[pageId];
-  const wrapperStyle = {
-    background: background,
-  };
+const Chapter = ({ content, pageIndex }) => {
+  const { style, elements } = content.pages[pageIndex];
   return (
-    <div className={`chapter-wrapper ${type}`} style={wrapperStyle}>
-      <Page elements={elements}/>
+    <div className="chapter-wrapper default">
+      <Page elements={elements} style={style} />
     </div>
   );
 };

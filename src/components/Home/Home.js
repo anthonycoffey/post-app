@@ -1,17 +1,25 @@
 import React from "react";
 import "./Home.scss";
 
-const Home = ({ chapters, courseTitle, courseSubTitle, setChapterId }) => {
+const Home = ({
+  course,
+  setChapterIndex,
+  setHeaderTitle,
+}) => {
+  const handleNavigation = (index, title) => () => {
+    setChapterIndex(index);
+    setHeaderTitle(title);
+  };
   return (
     <div className="home-wrapper">
-      <div className="course-title">{courseTitle}</div>
-      <div className="course-sub-title">{courseSubTitle}</div>
+      <div className="course-title">{course.courseTitle}</div>
+      <div className="course-sub-title">{course.courseSubTitle}</div>
       <div className="chapters">
-        {chapters.map((chapter, index) => (
+        {course.chapters.map((chapter, index) => (
           <div
             className="chapter"
             key={index}
-            onClick={setChapterId(chapter.id, chapter.title)}
+            onClick={handleNavigation(chapter.id, chapter.title)}
           >
             {chapter.title}
           </div>

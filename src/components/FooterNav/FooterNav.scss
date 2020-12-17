@@ -1,11 +1,17 @@
 .footer-nav {
+  height: 56px;
+
   .back, .next {
     padding: 10px;
-    font-size: 30px;
+    font-size: 22px;
     padding-left: 40px;
     padding-right: 40px;
     cursor: pointer;
     transition: all ease 0.3s;
+
+    &.hide {
+      visibility: hidden;
+    }
 
     &:hover {
       background: #ebc344;

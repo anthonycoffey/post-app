@@ -1,8 +1,9 @@
 import React, { useEffect, createRef } from "react";
 import { TweenLite } from "gsap";
 import renderHTML from "react-render-html";
+import "./Page.scss";
 
-const Page = ({ elements }) => {
+const Page = ({ elements, style }) => {
   let elementRefs = [];
   useEffect(() => {
     playSequence(elements);
@@ -22,14 +23,13 @@ const Page = ({ elements }) => {
     });
   };
   return (
-    <div>
+    <div className="page-wrapper" style={style}>
       {elements.map((element, index) => {
         const elementRef = createRef();
         elementRefs.push(elementRef);
         if (element.type === "shape") {
           return (
-            <div className={element.shape} ref={elementRef}>
-              shape
+            <div className="shape" ref={elementRef} key={index} style={element.style}>
             </div>
           );
         } else if (element.type === "image") {
@@ -45,7 +45,7 @@ const Page = ({ elements }) => {
           );
         } else if (element.type === "content") {
           return (
-            <div ref={elementRef} className="content-wrapper" key={index}>
+            <div ref={elementRef} className="content-wrapper" key={index} style={element.style}>
               {element.title ? (
                 <div className="title" style={element.title.style}>
                   {element.title.content}
