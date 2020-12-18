@@ -3,15 +3,15 @@ import { TweenLite } from "gsap";
 import renderHTML from "react-render-html";
 import "./Page.scss";
 
-const Page = ({ elements, style }) => {
+const Page = ({ elements, style, classNames }) => {
   let elementRefs = [];
   useEffect(() => {
     playSequence(elements);
   });
-  const playSequence = elements => {
+  const playSequence = (elements) => {
     elements.forEach((element, index) => {
-      const {animations} = element;
-      animations.forEach(animation => {
+      const { animations } = element;
+      animations.forEach((animation) => {
         let elementRef = elementRefs[index];
         let { x, y, delay } = animation;
         if (animation.type === "to") {
@@ -23,36 +23,57 @@ const Page = ({ elements, style }) => {
     });
   };
   return (
-    <div className="page-wrapper" style={style}>
+    <div
+      className={`page-wrapper ${classNames || ""}`}
+      style={style}
+    >
       {elements.map((element, index) => {
         const elementRef = createRef();
         elementRefs.push(elementRef);
         if (element.type === "shape") {
           return (
-            <div className="shape" ref={elementRef} key={index} style={element.style}>
-            </div>
+            <div
+              className={`shape ${
+                element.classNames || ''
+              }`}
+              ref={elementRef}
+              key={index}
+              style={element.style}
+            ></div>
           );
         } else if (element.type === "image") {
           return (
             <div
               ref={elementRef}
-              className="image-wrapper"
+              className={`image-wrapper ${
+                element.classNames || ''
+              }`}
               style={element.style}
               key={index}
             >
-              <img src={`${process.env.PUBLIC_URL}${element.url}`} alt={element.alt} />
+              <img
+                src={`${process.env.PUBLIC_URL}${element.url}`}
+                alt={element.alt}
+              />
             </div>
           );
         } else if (element.type === "content") {
           return (
-            <div ref={elementRef} className="content-wrapper" key={index} style={element.style}>
+            <div
+              ref={elementRef}
+              className={`content-wrapper ${
+                element.classNames ? element.classNames : ""
+              }`}
+              key={index}
+              style={element.style}
+            >
               {element.title ? (
-                <div className="title" style={element.title.style}>
+                <div className={`title ${element.title.classNames || ''}`} style={element.title.style}>
                   {element.title.content}
                 </div>
               ) : null}
               {element.description ? (
-                <div className="description" style={element.description.style}>
+                <div className={`description ${element.description.classNames || ''}`} style={element.description.style}>
                   {renderHTML(element.description.content)}
                 </div>
               ) : null}

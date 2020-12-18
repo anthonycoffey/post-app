@@ -9,75 +9,42 @@
       "pages": [
         {
           "id": 0,
-          "background": "white",
+          "classNames": "bg-white",
           "type": "default",
           "elements": [
             {
               "id": "textbox1",
               "type": "content",
+              "classNames": "w-full p-16",
               "style": {
-                "width": "100%",
-                "padding": "20px",
                 "background": "#e06330"
               },
               "title": {
                 "content": "De-escalation Defined",
-                "style": {
-                  "width": "50%",
-                  "fontSize": 30,
-                  "fontStyle": "italic",
-                  "color": "white",
-                  "textAlign": "left",
-                  "paddingBottom": "10px",
-                  "borderBottom": "2px solid white",
-                  "marginBottom": "15px",
-                  "fontWeight": "bold"
-                }
+                "classNames": "w-2/4 text-white text-left italic pb-4 font-bold  mb-4 border-b-4 border-white border-solid text-title"
               },
               "description": {
                 "content": "\"De-escalation\" as a concept encompasses a lot more than just a subset of communications skills. It's an entire mindset...<br/><br/>However, in this module, we're looking at the practice of de-escalation in a narrower frame. De-escalation in this context can be understood as \"de-intensification\" — a set of skills you can apply when the situation is already or is about to become overheated and potentially explosive.",
-                "style": {
-                  "fontSize": 25,
-                  "color": "white",
-                  "textAlign": "left",
-                  "width": "50%"
-                }
+                "classNames": "text-white text-left w-2/4 text-description"
               },
               "animations": [
                 {
                   "type": "from",
                   "x": -500,
-                  "delay": 2
+                  "delay": 1
                 }
               ]
             },
             {
               "id": "image1",
               "type": "image",
+              "classNames": "absolute w-auto h-auto",
               "style": {
-                "width": 779,
-                "height": 900,
-                "position": "absolute",
-                "left": "60%",
-                "top": "10%"
+                "left": "50%",
+                "top": "3%"
               },
               "alt": "Alt tag description...",
               "url": "/assets/people/rick/rick_resting.png",
-              "animations": [
-                {
-                  "type": "from",
-                  "x": 1100,
-                  "delay": 1
-                }
-              ]
-            },
-            {
-              "id": "shape1",
-              "type": "shape",
-              "position": "center",
-              "color": "orange",
-              "shape": "rectangle",
-              "width": "100%",
               "animations": [
                 {
                   "type": "from",
@@ -96,40 +63,34 @@
       "pages": [
         {
           "id": 0,
+          "classNames": "flex items-center justify-center w-full h-full",
           "style": {
-            "display": "flex",
-            "alignItems": "center",
-            "justifyContent": "center",
-            "background": "#60c4d2",
-            "width": "100%",
-            "height": "100%"
+            "background": "#60c4d2"
           },
           "elements": [
             {
               "type": "content",
-              "style": {
-                "width": "100%",
-                "height": "30%"
-              },
+              "classNames": "absolute z-10 w-auto h-auto",
               "title": {
                 "content": "LEARN",
-                "style": {
-                  "fontSize": "50px",
-                  "textAlign": "center",
-                  "fontStyle": "italic",
-                  "fontWeight": "bold",
-                  "background": "white",
-                  "display": "flex",
-                  "alignItems": "center",
-                  "justifyContent": "center",
-                  "width": "100%",
-                  "height": "100%"
-                }
+                "classNames": "text-center italic font-black bg-transparent flex items-center justify-center text-chapterTitle"
               },
               "animations": [
                 {
                   "type": "from",
                   "x": -500,
+                  "delay": 1
+                }
+              ]
+            },
+            {
+              "id": "shape1",
+              "type": "shape",
+              "classNames": "w-full h-1/4 bg-white",
+              "animations": [
+                {
+                  "type": "from",
+                  "x": 1100,
                   "delay": 1
                 }
               ]
@@ -144,7 +105,7 @@
               "style": {
                 "width": "50%",
                 "height": "70%",
-                "background": "yellow"
+                "background": "#ffce32"
               },
               "animations": [
                 {
@@ -156,40 +117,41 @@
             },
             {
               "type": "image",
+              "classNames": "w-auto h-auto absolute",
               "style": {
-                "width": 779,
-                "height": 900,
-                "position": "absolute",
-                "left": "60%",
-                "top": "10%"
+                "left": "-7%",
+                "top": "3%"
               },
-              "position": "left",
               "alt": "Alt tag description...",
               "url": "/assets/people/rick/rick_palms-up-closed.png",
               "animations": [
                 {
                   "type": "from",
                   "x": -500,
-                  "delay": 1.5
+                  "delay": 0.5
                 }
               ]
             },
             {
               "type": "content",
+              "classNames": "p-16",
               "style": {
-                "width": "100%",
-                "height": "500px"
+                "width": "50%",
+                "height": "70%"
               },
-              "position": "right",
-              "textAlign": "left",
-              "title": "The Skills",
-              "subtitle": "In this activity, you'll be introduced to the following skills:",
-              "content": "<h3>Defusing & Deflecting</h3><ul><li>Maintaining Your Calm</li><li>Knowing Your Triggers</li><li>Knowing When to Engage and When NOT To</li></ul><h3>Redirecting</h3><ul><li>Interjecting</li><li>Asking a Question</li><li>Restating the Problem</li></ul>",
+              "title": {
+                "classNames": "text-left italic pb-4 font-bold  mb-4 border-b-4 border-black border-solid text-title",
+                "content": "The Skills"
+              },
+              "description": {
+                "classNames": "text-description text-left",
+                "content": "In this activity, you'll be introduced to the following skills:<br/><h3 className=\"mt-6 font-bold\">Defusing & Deflecting</h3><ul className=\"pl-16 list-disc\"><li>Maintaining Your Calm</li><li>Knowing Your Triggers</li><li>Knowing When to Engage and When NOT To</li></ul><h3 className=\"font-bold\">Redirecting</h3><ul className=\"pl-16 list-disc\"><li>Interjecting</li><li>Asking a Question</li><li>Restating the Problem</li></ul>"
+              },
               "animations": [
                 {
                   "type": "from",
-                  "x": -600,
-                  "delay": 2
+                  "x": 1100,
+                  "delay": 1.5
                 }
               ]
             }
@@ -197,18 +159,29 @@
         },
         {
           "id": 2,
-          "background": "white",
+          "classNames": "bg-white",
           "elements": [
             {
-              "type": "image",
+              "type": "shape",
+              "classNames": "w-full h-4/6",
               "style": {
-                "width": 779,
-                "height": 900,
-                "position": "absolute",
-                "left": "60%",
-                "top": "10%"
+                "background": "#cc8d9b"
               },
-              "position": "right",
+              "animations": [
+                {
+                  "type": "from",
+                  "x": 1100,
+                  "delay": 1
+                }
+              ]
+            },
+            {
+              "type": "image",
+              "classNames": "absolute w-auto h-auto",
+              "style": {
+                "left": "50%",
+                "top": "3%"
+              },
               "alt": "Alt tag description...",
               "url": "/assets/people/rick/rick_palms-up-closed.png",
               "animations": [
@@ -220,32 +193,25 @@
               ]
             },
             {
-              "type": "shape",
-              "shape": "rectangle",
-              "background": "pink",
-              "width": "100%",
-              "position": "center",
-              "animations": [
-                {
-                  "type": "from",
-                  "x": 1500,
-                  "delay": 1
-                }
-              ]
-            },
-            {
               "type": "content",
-              "width": "50%",
-              "position": "right",
-              "textAlign": "left",
-              "title": "Non-Verbals",
-              "subtitle": "You'll also learn about the importance of non-verbal cues that inform <b>Command Presence</b> like:",
-              "content": "<ul><li>Tone</li><li>Facial Expression</li><li>Posture & Proxemics</li><li>Eye Contact</li></ul>",
+              "classNames": "absolute w-2/4 h-auto",
+              "style": {
+                "left": "3%",
+                "top": "25%"
+              },
+              "title": {
+                "classNames": "text-white text-left italic pb-4 font-bold  mb-4 border-b-4 border-white border-solid text-title",
+                "content": "Non-Verbals"
+              },
+              "description": {
+                "classNames": "text-white text-description",
+                "content": "You'll also learn about the importance of non-verbal cues that inform <b>Command Presence</b> like:<br/><ul className=\"mt-6 list-disc pl-8\"><li>Tone</li><li>Facial Expression</li><li>Posture & Proxemics</li><li>Eye Contact</li></ul>"
+              },
               "animations": [
                 {
                   "type": "from",
                   "x": -600,
-                  "delay": 2
+                  "delay": 1
                 }
               ]
             }

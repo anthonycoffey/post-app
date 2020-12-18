@@ -2,10 +2,15 @@ module.exports = {
   purge: [],
   darkMode: false, // or 'media' or 'class'
   theme: {
-    extend: {}
+    extend: {},
+    fontSize: {
+      title: "40px",
+      description: "25px",
+      chapterTitle: "100px",
+    },
   },
   variants: {
-    extend: {}
+    extend: {},
   },
-  plugins: []
+  plugins: [],
 };

@@ -2,9 +2,7 @@ import React, { useState, useEffect } from "react";
 import { connect } from "react-redux";
 import Player from "./components/Player";
 import FooterNav from "./components/FooterNav/FooterNav";
-import Home from "./components/Home/Home";
 import HeaderNav from "./components/HeaderNav/HeaderNav";
-import Chapter from "./components/Chapter/Chapter";
 import { getCourseRequest } from "./store/actions/course.action";
 
 const App = ({ course, getCourse }) => {
@@ -17,11 +15,11 @@ const App = ({ course, getCourse }) => {
     getCourse();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-  const handlechapterIndex = (index) => {
+  const handleChapterIndex = (index) => {
     setChapterIndex(index);
     setPageIndex(0);
   };
-  const handlepageIndex = (index) => () => {
+  const handlePageIndex = (index) => () => {
     if (pageIndex === 0) {
       setPageIndex(0);
     }
@@ -39,14 +37,14 @@ const App = ({ course, getCourse }) => {
       <div className="flex flex-col justify-center">
         <HeaderNav
           headerTitle={headerTitle}
-          setChapterIndex={handlechapterIndex}
+          setChapterIndex={handleChapterIndex}
           setHeaderTitle={setHeaderTitle}
         />
         <Player
           course={initialCourse}
           chapterIndex={chapterIndex}
           pageIndex={pageIndex}
-          setChapterIndex={handlechapterIndex}
+          setChapterIndex={handleChapterIndex}
           setHeaderTitle={setHeaderTitle}
         />
         {
@@ -54,7 +52,7 @@ const App = ({ course, getCourse }) => {
             <FooterNav
               pageIndex={pageIndex}
               totalPageCount={totalPageCount}
-              setPageIndex={handlepageIndex}
+              setPageIndex={handlePageIndex}
             />
           ) : null
         }
