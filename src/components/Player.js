@@ -7,7 +7,6 @@ const Player = ({
   chapterIndex,
   pageIndex,
   setChapterIndex,
-  setPageIndex,
   setHeaderTitle,
 }) => {
   return (

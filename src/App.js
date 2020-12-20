@@ -10,7 +10,7 @@ const App = ({ course, getCourse }) => {
   const [pageIndex, setPageIndex] = useState(0);
   const [headerTitle, setHeaderTitle] = useState("Main Menu");
   let totalPageCount = 0;
-
+  let totalChapterCount = 0;
   useEffect(() => {
     getCourse();
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -19,18 +19,19 @@ const App = ({ course, getCourse }) => {
     setChapterIndex(index);
     setPageIndex(0);
   };
-  const handlePageIndex = (index) => () => {
-    if (pageIndex === 0) {
-      setPageIndex(0);
+  const handlePageIndex = (index) => {
+    if (index === totalPageCount) {
+      handleChapterIndex(chapterIndex + 1);
+    } else {
+      setPageIndex(index);
     }
-    setPageIndex(index);
   };
   const initialCourse = course;
 
   if (initialCourse && chapterIndex > -1) {
     totalPageCount = initialCourse.chapters[chapterIndex].pages.length;
+    totalChapterCount = initialCourse.chapters.length;
   }
-  console.log(totalPageCount);
 
   return (
     <div className="App">
@@ -47,15 +48,16 @@ const App = ({ course, getCourse }) => {
           setChapterIndex={handleChapterIndex}
           setHeaderTitle={setHeaderTitle}
         />
-        {
-          chapterIndex > -1 ? (
-            <FooterNav
-              pageIndex={pageIndex}
-              totalPageCount={totalPageCount}
-              setPageIndex={handlePageIndex}
-            />
-          ) : null
-        }
+        {chapterIndex > -1 ? (
+          <FooterNav
+            pageIndex={pageIndex}
+            chapterIndex={chapterIndex}
+            totalPageCount={totalPageCount}
+            totalChapterCount={totalChapterCount}
+            setPageIndex={handlePageIndex}
+            setChapterIndex={handleChapterIndex}
+          />
+        ) : null}
       </div>
     </div>
   );
