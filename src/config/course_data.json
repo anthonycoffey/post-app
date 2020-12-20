@@ -21,7 +21,7 @@
               },
               "title": {
                 "content": "De-escalation Defined",
-                "classNames": "w-2/4 text-white text-left italic pb-4 font-bold  mb-4 border-b-4 border-white border-solid text-title"
+                "classNames": "w-2/4 text-white text-left italic pb-4 font-bold mb-4 border-b-4 border-white border-solid text-title"
               },
               "description": {
                 "content": "\"De-escalation\" as a concept encompasses a lot more than just a subset of communications skills. It's an entire mindset...<br/><br/>However, in this module, we're looking at the practice of de-escalation in a narrower frame. De-escalation in this context can be understood as \"de-intensification\" — a set of skills you can apply when the situation is already or is about to become overheated and potentially explosive.",
@@ -52,6 +52,11 @@
                   "delay": 1
                 }
               ]
+            },
+            {
+              "id": "chapter1_1_intro",
+              "type": "audio",
+              "url": "/assets/audio/intro1.mp3"
             }
           ]
         }
