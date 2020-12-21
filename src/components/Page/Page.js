@@ -52,7 +52,7 @@ const Page = ({ elements, style, classNames }) => {
               <AudioPlayer
                 autoPlay
                 src={`${process.env.PUBLIC_URL}${element.url}`}
-                onPlay={(e) => console.log("onPlay")}
+                // onPlay={(e) => console.log("onPlay")}
                 // other props here
               />
             </div>

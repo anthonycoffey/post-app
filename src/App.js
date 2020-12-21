@@ -16,11 +16,15 @@ const App = ({ course, getCourse }) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   const handleChapterIndex = (index) => {
-    setChapterIndex(index);
+    if (index === totalChapterCount -1) {
+      setChapterIndex(-1);
+    } else {
+      setChapterIndex(index);
+    }
     setPageIndex(0);
   };
   const handlePageIndex = (index) => {
-    if (index === totalPageCount) {
+    if (index === totalPageCount || totalPageCount === 0) {
       handleChapterIndex(chapterIndex + 1);
     } else {
       setPageIndex(index);

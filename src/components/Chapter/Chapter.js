@@ -4,6 +4,9 @@ import Page from "../Page/Page";
 import "./Chapter.scss";
 
 const Chapter = ({ content, pageIndex }) => {
+  if (content.pages.length < 1) {
+    return null;
+  }
   const { style, elements, classNames } = content.pages[pageIndex];
   return (
     <div className="chapter-wrapper default">
