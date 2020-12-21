@@ -56,7 +56,11 @@
             {
               "id": "chapter1_1_intro",
               "type": "audio",
-              "url": "/assets/audio/intro1.mp3"
+              "url": "/assets/audio/intro1.mp3",
+              "classNames": "absolute transform -translate-x-1/2 bottom-0 left-1/2",
+              "style": {
+                "width": "300px"
+              }
             }
           ]
         }

@@ -1,6 +1,8 @@
 import React, { useEffect, createRef } from "react";
 import { TweenLite } from "gsap";
 import renderHTML from "react-render-html";
+import AudioPlayer from "react-h5-audio-player";
+import "react-h5-audio-player/lib/styles.css";
 
 import "./Page.scss";
 
@@ -12,15 +14,17 @@ const Page = ({ elements, style, classNames }) => {
   const playSequence = () => {
     elements.forEach((element, index) => {
       const { animations } = element;
-      animations.forEach((animation) => {
-        let elementRef = elementRefs[index];
-        let { x, y, delay } = animation;
-        if (animation.type === "to") {
-          TweenLite.to(elementRef.current, delay, { x: x, y: y });
-        } else if (animation.type === "from") {
-          TweenLite.from(elementRef.current, delay, { x: x, y: y });
-        }
-      });
+      if (animations) {
+        animations.forEach((animation) => {
+          let elementRef = elementRefs[index];
+          let { x, y, delay } = animation;
+          if (animation.type === "to") {
+            TweenLite.to(elementRef.current, delay, { x: x, y: y });
+          } else if (animation.type === "from") {
+            TweenLite.from(elementRef.current, delay, { x: x, y: y });
+          }
+        });
+      }
     });
   };
   return (
@@ -36,6 +40,22 @@ const Page = ({ elements, style, classNames }) => {
               style={element.style || {}}
               key={index}
             ></div>
+          );
+        } else if (element.type === "audio") {
+          return (
+            <div
+              className={`audio-panel ${element.classNames || ""}`}
+              key={index}
+              ref={elementRef}
+              style={element.style || {}}
+            >
+              <AudioPlayer
+                autoPlay
+                src={`${process.env.PUBLIC_URL}${element.url}`}
+                onPlay={(e) => console.log("onPlay")}
+                // other props here
+              />
+            </div>
           );
         } else if (element.type === "image") {
           return (
