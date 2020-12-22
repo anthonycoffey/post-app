@@ -1,14 +1,16 @@
 import React from "react";
+import { useDispatch } from "react-redux";
+
 import "./Home.scss";
 
-const Home = ({
-  course,
-  setChapterIndex,
-  setHeaderTitle,
-}) => {
-  const handleNavigation = (index, title) => () => {
-    setChapterIndex(index);
-    setHeaderTitle(title);
+import { setHeaderTitleRequest } from "../../store/actions/status.action";
+import { setChapterIndexRequest } from "../../store/actions/status.action";
+
+const Home = ({ course }) => {
+  const dispatch = useDispatch();
+  const handleNavigation = (index, title) => {
+    dispatch(setChapterIndexRequest(index));
+    dispatch(setHeaderTitleRequest(title));
   };
   return (
     <div className="home-wrapper">
@@ -19,7 +21,7 @@ const Home = ({
           <div
             className="chapter"
             key={index}
-            onClick={handleNavigation(chapter.id, chapter.title)}
+            onClick={() => handleNavigation(chapter.id, chapter.title)}
           >
             {chapter.title}
           </div>

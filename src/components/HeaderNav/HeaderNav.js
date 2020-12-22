@@ -1,11 +1,20 @@
 import React from "react";
+import { useSelector, useDispatch } from "react-redux";
+import {
+  setChapterIndexRequest,
+  setHeaderTitleRequest,
+} from "../../store/actions/status.action";
+
 import "./HeaderNav.scss";
 
-const HeaderNav = ({ headerTitle, setChapterIndex, setHeaderTitle }) => {
+const HeaderNav = () => {
+  const headerTitle = useSelector((state) => state.status.headerTitle);
+  const dispatch = useDispatch();
   const handleNavigation = (index, title) => () => {
-    setChapterIndex(index);
-    setHeaderTitle(title);
+    dispatch(setHeaderTitleRequest(title));
+    dispatch(setChapterIndexRequest(index));
   };
+
   return (
     <div className="header-nav bg-black absolute top-0 w-full px-4">
       <div className="flex py-4 px-2 justify-between">
