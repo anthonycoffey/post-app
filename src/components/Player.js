@@ -8,11 +8,11 @@ const Player = () => {
   const { chapterIndex } = useSelector((state) => state.status);
   return (
     <div className="player-wrapper">
-      {course.chapters ? (
+      {course.content ? (
         chapterIndex < 0 ? (
           <Home course={course} />
         ) : (
-          <Chapter content={course.chapters[chapterIndex]} />
+          <Chapter content={course.content[chapterIndex]} />
         )
       ) : null}
     </div>

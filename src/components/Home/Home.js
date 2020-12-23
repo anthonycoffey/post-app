@@ -17,13 +17,13 @@ const Home = ({ course }) => {
       <div className="course-title">{course.courseTitle}</div>
       <div className="course-sub-title">{course.courseSubTitle}</div>
       <div className="chapters">
-        {course.chapters.map((chapter, index) => (
+        {course.menu.map((item, index) => (
           <div
             className="chapter"
             key={index}
-            onClick={() => handleNavigation(chapter.id, chapter.title)}
+            onClick={() => handleNavigation(index, item.title)}
           >
-            {chapter.title}
+            {item.title}
           </div>
         ))}
       </div>

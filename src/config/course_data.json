@@ -2,10 +2,27 @@
   "courseId": "COMM",
   "courseTitle": "Communications:",
   "courseSubTitle": "DE-ESCALATION",
-  "chapters": [
+  "menu": [
     {
-      "id": 0,
-      "title": "Introduction",
+      "id": "introduction",
+      "title": "Introduction"
+    },
+    {
+      "id": "learn",
+      "title": "Learn"
+    },
+    {
+      "id": "analyze",
+      "title": "Analyze"
+    },
+    {
+      "id": "challenge",
+      "title": "Challenge"
+    }
+  ],
+  "content": [
+    {
+      "id": "introduction",
       "pages": [
         {
           "id": 0,
@@ -67,8 +84,7 @@
       ]
     },
     {
-      "id": 1,
-      "title": "Learn",
+      "id": "introduction",
       "pages": [
         {
           "id": 0,
@@ -278,12 +294,12 @@
       ]
     },
     {
-      "id": 2,
+      "id": "analyze",
       "title": "Analyze",
       "pages": []
     },
     {
-      "id": 3,
+      "id": "challenge",
       "title": "Challenge",
       "pages": []
     }

@@ -14,8 +14,8 @@ const FooterNav = () => {
   let totalChapterCount = 0;
 
   if (course && chapterIndex > -1) {
-    totalPageCount = course.chapters[chapterIndex].pages.length;
-    totalChapterCount = course.chapters.length;
+    totalPageCount = course.content[chapterIndex].pages.length;
+    totalChapterCount = course.content.length;
   }
 
   const handleChapterIndex = (index) => {
