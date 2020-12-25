@@ -1,5 +1,6 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
+import { find, findIndex } from 'lodash';
 import {
   setPageIndexRequest,
   setChapterIndexRequest,
@@ -10,24 +11,25 @@ const FooterNav = () => {
   const dispatch = useDispatch();
   const course = useSelector((state) => state.course.course);
   const { chapterIndex, pageIndex } = useSelector((state) => state.status);
+  const currentChapterIndex = findIndex(course.menu, ['id', chapterIndex]);
   let totalPageCount = 0;
   let totalChapterCount = 0;
 
-  if (course && chapterIndex > -1) {
-    totalPageCount = course.content[chapterIndex].pages.length;
-    totalChapterCount = course.content.length;
+  if (course && chapterIndex !== -1) {
+    totalPageCount = find(course.content, ['id', chapterIndex]).pages.length;
+    totalChapterCount = course.menu.length;
   }
 
   const handleChapterIndex = (index) => {
     if (index <= totalChapterCount - 1) {
-      dispatch(setChapterIndexRequest(index));
+      dispatch(setChapterIndexRequest(course.menu[index].id));
     }
     dispatch(setPageIndexRequest(0));
   };
 
   const handlePageIndex = (index) => {
     if (index === totalPageCount || totalPageCount === 0) {
-      handleChapterIndex(chapterIndex + 1);
+      handleChapterIndex(currentChapterIndex + 1);
     } else {
       dispatch(setPageIndexRequest(index));
     }
@@ -37,14 +39,14 @@ const FooterNav = () => {
     <div className="footer-nav absolute bottom-0 bg-black w-full">
       <div className="flex justify-between">
         <div
-          className={`back ${chapterIndex === 0 && pageIndex < 1 ? "hide" : ""}`}
-          onClick={() => handleChapterIndex(chapterIndex - 1)}
+          className={`back ${currentChapterIndex === 0 && pageIndex < 1 ? "hide" : ""}`}
+          onClick={() => handleChapterIndex(currentChapterIndex - 1)}
         >
           Back
         </div>
         <div
           className={`next ${
-            chapterIndex === totalChapterCount - 1 &&
+            currentChapterIndex === totalChapterCount - 1 &&
             (pageIndex === totalPageCount - 1 || totalPageCount === 0)
               ? "hide"
               : ""

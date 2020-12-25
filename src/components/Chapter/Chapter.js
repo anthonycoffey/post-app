@@ -12,6 +12,9 @@ const Chapter = ({ content }) => {
     return null;
   }
   const { style, elements, classNames } = content.pages[pageIndex];
+
+  if (!elements) return null;
+
   return (
     <div className="chapter-wrapper default">
       <Page

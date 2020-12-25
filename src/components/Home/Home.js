@@ -21,7 +21,7 @@ const Home = ({ course }) => {
           <div
             className="chapter"
             key={index}
-            onClick={() => handleNavigation(index, item.title)}
+            onClick={() => handleNavigation(item.id, item.title)}
           >
             {item.title}
           </div>

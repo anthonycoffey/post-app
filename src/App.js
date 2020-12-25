@@ -32,7 +32,7 @@ const App = () => {
             </div>
           </div>
         )}
-        {chapterIndex > -1 ? <FooterNav /> : null}
+        {chapterIndex !== -1 ? <FooterNav /> : null}
       </div>
     </div>
   );
