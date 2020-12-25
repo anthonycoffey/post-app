@@ -1,16 +1,25 @@
 import React, { useEffect, createRef } from "react";
+import { useSelector, useDispatch } from "react-redux";
 import { TweenLite } from "gsap";
 import renderHTML from "react-render-html";
 import AudioPlayer from "react-h5-audio-player";
 import "react-h5-audio-player/lib/styles.css";
-
+import {setCompletedRequest} from "../../store/actions/status.action";
 import "./Page.scss";
 
+
+
 const Page = ({ elements, style, classNames }) => {
+  const pageIndex = useSelector((state) => state.status.pageIndex);
+  const chapterIndex = useSelector((state) => state.status.chapterIndex);
+  const dispatch = useDispatch();
   let elementRefs = [];
+
   useEffect(() => {
     playSequence();
+    setCompleteStatus(1)
   }, [elements]);
+
   const playSequence = () => {
     elements.forEach((element, index) => {
       const { animations } = element;
@@ -27,6 +36,12 @@ const Page = ({ elements, style, classNames }) => {
       }
     });
   };
+
+  const setCompleteStatus = (status) => {
+
+    dispatch(setCompletedRequest(chapterIndex,pageIndex,status));
+  }
+
   return (
     <div className={`page-wrapper ${classNames || ""}`} style={style}>
       {elements.map((element, index) => {

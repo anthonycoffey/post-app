@@ -1,34 +1,44 @@
 import { STATUS_CODES } from "../../config/data";
-import {
-  TYPE_SET_CHAPTER_INDEX,
-  TYPE_SET_PAGE_INDEX,
-  TYPE_SET_HEADER_TITLE,
-} from "../actions/status.action";
+import * as actions from "../actions/status.action";
+import index from "./index";
 
 const initialState = {
   status: STATUS_CODES.INITIAL,
   chapterIndex: -1,
   pageIndex: 0,
   headerTitle: "Main Menu",
+  completed: {}
 };
 
 export default (state = initialState, action) => {
   switch (action.type) {
     // TYPE_GET_COURSE
-    case TYPE_SET_CHAPTER_INDEX.REQUEST:
+    case actions.TYPE_SET_CHAPTER_INDEX.REQUEST:
       return {
         ...state,
-        chapterIndex: action.payload.chapterIndex,
+        chapterIndex: action.payload.chapterIndex
       };
-    case TYPE_SET_PAGE_INDEX.REQUEST:
+    case actions.TYPE_SET_PAGE_INDEX.REQUEST:
       return {
         ...state,
-        pageIndex: action.payload.pageIndex,
+        pageIndex: action.payload.pageIndex
       };
-    case TYPE_SET_HEADER_TITLE.REQUEST:
+    case actions.TYPE_SET_HEADER_TITLE.REQUEST:
       return {
         ...state,
-        headerTitle: action.payload.headerTitle,
+        headerTitle: action.payload.headerTitle
+      };
+    case actions.TYPE_SET_COMPLETED.REQUEST:
+      const { status, page, chapter } = action.payload;
+      return {
+        ...state,
+        completed: {
+          ...state.completed,
+          [chapter]: {
+            ...state.completed[chapter],
+            [`page_${page+1}`]: status
+          }
+        }
       };
     default:
       return state;
