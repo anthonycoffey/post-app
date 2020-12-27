@@ -1,36 +1,35 @@
-import React, { useEffect, createRef } from "react";
+import React, { useState, useEffect, createRef } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { TweenLite } from "gsap";
 import renderHTML from "react-render-html";
 import AudioPlayer from "react-h5-audio-player";
+import actionHelper from "../../helpers/ActionHelper";
 import "react-h5-audio-player/lib/styles.css";
-import {setCompletedRequest} from "../../store/actions/status.action";
+import { setCompletedRequest } from "../../store/actions/status.action";
 import "./Page.scss";
-
-
 
 const Page = ({ elements, style, classNames }) => {
   const pageIndex = useSelector((state) => state.status.pageIndex);
   const chapterIndex = useSelector((state) => state.status.chapterIndex);
   const dispatch = useDispatch();
-  let elementRefs = [];
+  const [elementsState, setElementsState] = useState([]);
 
   useEffect(() => {
+    setCompleteStatus(1);
+    setElementsState(elements);
     playSequence();
-    setCompleteStatus(1)
   }, [elements]);
 
   const playSequence = () => {
-    elements.forEach((element, index) => {
+    elements.forEach((element) => {
       const { animations } = element;
       if (animations) {
         animations.forEach((animation) => {
-          let elementRef = elementRefs[index];
           let { x, y, delay } = animation;
           if (animation.type === "to") {
-            TweenLite.to(elementRef.current, delay, { x: x, y: y });
+            TweenLite.to(document.getElementById(element.id), delay, { x: x, y: y });
           } else if (animation.type === "from") {
-            TweenLite.from(elementRef.current, delay, { x: x, y: y });
+            TweenLite.from(document.getElementById(element.id), delay, { x: x, y: y });
           }
         });
       }
@@ -38,20 +37,26 @@ const Page = ({ elements, style, classNames }) => {
   };
 
   const setCompleteStatus = (status) => {
+    dispatch(setCompletedRequest(chapterIndex, pageIndex, status));
+  };
 
-    dispatch(setCompletedRequest(chapterIndex,pageIndex,status));
-  }
+  const handleButtonClick = (action) => {
+    if (action.type === "show") {
+      const initialElements = elementsState;
+      setElementsState(
+        actionHelper.showElement(initialElements, action.target)
+      );
+    }
+  };
 
   return (
-    <div className={`page-wrapper ${classNames || ""}`} style={style}>
-      {elements.map((element, index) => {
-        const elementRef = createRef();
-        elementRefs.push(elementRef);
+    <div className={`page-wrapper ${classNames || ""}`} style={style || {}}>
+      {elementsState.map((element, index) => {
         if (element.type === "shape") {
           return (
             <div
+              id={element.id}
               className={`shape ${element.classNames || ""}`}
-              ref={elementRef}
               style={element.style || {}}
               key={index}
             ></div>
@@ -59,9 +64,9 @@ const Page = ({ elements, style, classNames }) => {
         } else if (element.type === "audio") {
           return (
             <div
+              id={element.id}
               className={`audio-panel ${element.classNames || ""}`}
               key={index}
-              ref={elementRef}
               style={element.style || {}}
             >
               <AudioPlayer
@@ -75,7 +80,7 @@ const Page = ({ elements, style, classNames }) => {
         } else if (element.type === "image") {
           return (
             <div
-              ref={elementRef}
+              id={element.id}
               className={`image-wrapper ${element.classNames || ""}`}
               style={element.style || {}}
               key={index}
@@ -89,7 +94,7 @@ const Page = ({ elements, style, classNames }) => {
         } else if (element.type === "content") {
           return (
             <div
-              ref={elementRef}
+              id={element.id}
               className={`content-wrapper ${
                 element.classNames ? element.classNames : ""
               }`}
@@ -114,6 +119,38 @@ const Page = ({ elements, style, classNames }) => {
                   {renderHTML(element.description.content)}
                 </div>
               ) : null}
+            </div>
+          );
+        } else if (element.type === "video") {
+          return (
+            <div
+              id={element.id}
+              className={element.classNames || ""}
+              style={element.style || {}}
+              key={index}
+            />
+          );
+        } else if (element.type === "text-button") {
+          return (
+            <button
+              id={element.id}
+              className={element.classNames || ""}
+              style={element.style || {}}
+              onClick={() => handleButtonClick(element.action)}
+              key={index}
+            >
+              {element.title}
+            </button>
+          );
+        } else if (element.type === "rate") {
+          return (
+            <div
+              id={element.id}
+              className={element.classNames || ""}
+              style={element.style || {}}
+              key={index}
+            >
+              Selection
             </div>
           );
         }

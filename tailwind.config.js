@@ -6,6 +6,10 @@ module.exports = {
       // backgroundImage: theme => ({
       //   'analyze': "url('/assets/background/street_scene_bg.jpg')",
       //  })
+      transitionDuration: {
+        '0': '0ms',
+        '2000': '2000ms',
+       }
     },
     fontSize: {
       title: "40px",

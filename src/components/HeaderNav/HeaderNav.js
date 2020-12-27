@@ -2,6 +2,7 @@ import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import {
   setChapterIndexRequest,
+  setPageIndexRequest,
   setHeaderTitleRequest,
 } from "../../store/actions/status.action";
 
@@ -13,6 +14,7 @@ const HeaderNav = () => {
   const handleNavigation = (index, title) => () => {
     dispatch(setHeaderTitleRequest(title));
     dispatch(setChapterIndexRequest(index));
+    dispatch(setChapterIndexRequest(0));
   };
 
   return (
