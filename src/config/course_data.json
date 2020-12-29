@@ -394,17 +394,29 @@
               "id": "text-button",
               "type": "text-button",
               "classNames": "border-none background-transparent absolute left-1/2 bottom-0 -translate-x-1/2",
-              "action": {
-                "type": "show",
-                "target": "rate-performance"
-              },
+              "actions": [
+                {
+                  "type": "show",
+                  "target": "rate-performance"
+                },
+                {
+                  "type": "show",
+                  "target": "rate-description"
+                }
+              ],
               "title": "skip"
             },
             {
               "id": "rate-performance",
               "type": "rate",
-              "classNames": "opacity-0 invisible transition-property: all; duration-2000 ease-out",
+              "classNames": "mx-16 opacity-0 invisible transition-property: all; duration-2000 ease-out",
               "selections": ["good", "bad", "ok"]
+            },
+            {
+              "id": "rate-description",
+              "type": "text",
+              "classNames": "absolute bottom-8 left-8 italic opacity-0 invisible transition-property: all; duration-2000 ease-out",
+              "content": "Use the arrows to rate the officer's performance. Click Submit when you are ready."
             }
           ]
         }

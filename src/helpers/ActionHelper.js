@@ -5,14 +5,13 @@ class ActionHelper {
     // return find(elements, ['id', target]);
   }
 
-  showElement(elements, targetId) {
+  doActions(elements, actions) {
     const newElements = cloneDeep(elements);
-    const targetElement = this.getElement(newElements, targetId);
-    console.log("-------------", targetElement);
-    const temp = targetElement.classNames.replace('invisible', 'visible').replace('opacity-0', 'opacity-100');
-    console.log('temp', temp);
-    targetElement.classNames = temp;
-    console.log(targetElement.classNames);
+    actions.forEach((action) => {
+      const targetElement = this.getElement(newElements, action.target);
+      const temp = targetElement.classNames.replace('invisible', 'visible').replace('opacity-0', 'opacity-100');
+      targetElement.classNames = temp;
+    });
     return newElements;
   }
 }
