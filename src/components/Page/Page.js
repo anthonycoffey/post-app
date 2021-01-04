@@ -29,8 +29,10 @@ const Page = ({ elements, style, classNames }) => {
   useEffect(() => {
     setCompleteStatus(1);
     setElementsState(elements);
-    playSequence();
   }, [elements]);
+  useEffect(() => {
+    playSequence();
+  }, [elementsState]);
 
   const playSequence = () => {
     elements.forEach((element) => {

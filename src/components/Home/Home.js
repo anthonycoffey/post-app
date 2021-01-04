@@ -27,6 +27,9 @@ const Home = ({ course }) => {
           </div>
         ))}
       </div>
+      <div className="logo-wrapper absolute top-44 right-12">
+        <img src={`${process.env.PUBLIC_URL}/assets/images/post_logo.png`} alt="" />
+      </div>
     </div>
   );
 };
