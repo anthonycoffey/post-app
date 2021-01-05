@@ -25,7 +25,7 @@
       "id": "introduction",
       "pages": [
         {
-          "classNames": "justify-center bg-white",
+          "classNames": "justify-center items-center bg-white",
           "type": "default",
           "elements": [
             {
@@ -134,6 +134,7 @@
           ]
         },
         {
+          "classNames": "items-center",
           "elements": [
             {
               "id": "shape",
@@ -196,7 +197,7 @@
           ]
         },
         {
-          "classNames": "bg-white",
+          "classNames": "items-center bg-white",
           "elements": [
             {
               "id": "shape",
@@ -258,7 +259,7 @@
           ]
         },
         {
-          "classNames": "bg-white",
+          "classNames": "bg-white items-center",
           "elements": [
             {
               "id": "shape",
@@ -319,7 +320,7 @@
           ]
         },
         {
-          "classNames": "justify-start bg-cover",
+          "classNames": "justify-start items-center bg-cover",
           "style": {
             "backgroundImage": "url('/assets/background/broken_tail_light_bg.jpg')"
           },
@@ -371,6 +372,7 @@
       "title": "Analyze",
       "pages": [
         {
+          "classNames": "items-center",
           "style": {
             "background": "#feb1a4"
           },
@@ -406,7 +408,7 @@
           ]
         },
         {
-          "classNames": "justify-start bg-cover",
+          "classNames": "justify-start bg-cover items-center",
           "style": {
             "backgroundImage": "url('/assets/background/street_scene_bg.jpg')"
           },
@@ -414,9 +416,9 @@
             {
               "id": "shape",
               "type": "shape",
-              "classNames": "left-0",
+              "classNames": "absolute left-0",
               "style": {
-                "width": "70%",
+                "width": "65%",
                 "height": "65%",
                 "background": "#bc3f81"
               },
@@ -431,7 +433,10 @@
             {
               "id": "content",
               "type": "content",
-              "classNames": "absolute bg-transparent left-0 w-1/2 p-16",
+              "classNames": "bg-transparent pl-16",
+              "style": {
+                "width": "45%"
+              },
               "title": {
                 "content": "A MUGGING",
                 "classNames": "w-auto text-white text-left italic pb-4 font-bold mb-4 border-b-4 border-white border-solid text-title"
@@ -444,14 +449,14 @@
                 {
                   "type": "from",
                   "x": -1100,
-                  "delay": 1.5
+                  "delay": 1
                 }
               ]
             }
           ]
         },
         {
-          "classNames": "justify-center bg-white",
+          "classNames": "items-center justify-center bg-white",
           "elements": [
             {
               "id": "video",
@@ -485,6 +490,133 @@
               "type": "text",
               "classNames": "absolute bottom-8 left-8 italic opacity-0 invisible transition-property: all; duration-2000 ease-out",
               "content": "Use the arrows to rate the officer's performance. Click Submit when you are ready."
+            }
+          ]
+        },
+        {
+          "classNames": "items-start justify-center flex-col bg-white",
+          "type": "activity",
+          "elements": [
+            {
+              "id": "content",
+              "type": "content",
+              "classNames": "bg-transparent pl-16 mb-8",
+              "style": {
+                "width": "50%"
+              },
+              "title": {
+                "content": "RE-CENTERING",
+                "classNames": "w-auto text-black text-left italic pb-4 font-bold mb-4 border-b-4 border-black border-solid text-title"
+              },
+              "description": {
+                "content": "This is a set of techniques designed to re-focus your mental and emotional energy on something calming and positive.<br/><br/><div className=\"italic\">Click on each skill to learn more.</div>",
+                "classNames": "text-black text-left w-auto text-description"
+              }
+            },
+            {
+              "id": "skills",
+              "type": "skills",
+              "classNames": "w-1/2",
+              "skills": [
+                {
+                  "id": "tactical",
+                  "caption": "tactical breathing",
+                  "classNames": "checkbox flex items-center justify-end tactical italic uppercase bg-black w-full text-white py-3 mb-6 pr-12",
+                  "value": false
+                },
+                {
+                  "id": "deliberate",
+                  "caption": "deliberate repetition",
+                  "classNames": "checkbox flex items-center justify-end deliberate italic uppercase bg-black w-full text-white py-3 mb-6 pr-12",
+                  "value": false
+                },
+                {
+                  "id": "mental",
+                  "caption": "mental imaging",
+                  "classNames": "checkbox flex items-center justify-end mental italic uppercase bg-black w-full text-white py-3 mb-6 pr-12",
+                  "value": false
+                }
+              ],
+              "skillPanels": [
+                {
+                  "id": "tactical",
+                  "type": "content",
+                  "classNames": "hidden absolute top-12 right-0 tactical-panel p-6",
+                  "style": {
+                    "width": "45%",
+                    "height": "80%"
+                  },
+                  "title": {
+                    "content": "tactical breathing",
+                    "classNames": "uppercase w-auto text-white text-left italic pb-4 font-bold mb-4 border-b-4 border-white border-solid text-title"
+                  },
+                  "description": {
+                    "content": "Breathe in slowly while counting to four in your mind. Exhale on the same count of four. Focus on your breath and nothing else.",
+                    "classNames": "text-white text-left w-auto text-description"
+                  },
+                  "animations": [
+                    {
+                      "type": "from",
+                      "x": 1100,
+                      "delay": 0.5
+                    }
+                  ]
+                },
+                {
+                  "id": "deliberate",
+                  "type": "content",
+                  "classNames": "hidden absolute top-12 right-0 deliberate-panel p-6",
+                  "style": {
+                    "width": "45%",
+                    "height": "80%"
+                  },
+                  "title": {
+                    "content": "deliberate repetition",
+                    "classNames": "uppercase w-auto text-white text-left italic pb-4 font-bold mb-4 border-b-4 border-white border-solid text-title"
+                  },
+                  "description": {
+                    "content": "Come up with a simple phrase that reminds you of a core strenth or a personal value, like \"I am a hero to my child.\" Repeat this phrase to yourself slowly and deliberately, until it is the only thought in your head.",
+                    "classNames": "text-white text-left w-auto text-description"
+                  },
+                  "animations": [
+                    {
+                      "type": "from",
+                      "x": 1100,
+                      "delay": 0.5
+                    }
+                  ]
+                },
+                {
+                  "id": "mental",
+                  "type": "content",
+                  "classNames": "hidden absolute top-12 right-0 mental-panel p-6",
+                  "style": {
+                    "width": "45%",
+                    "height": "80%"
+                  },
+                  "title": {
+                    "content": "mental imaging",
+                    "classNames": "uppercase w-auto text-white text-left italic pb-4 font-bold mb-4 border-b-4 border-white border-solid text-title"
+                  },
+                  "description": {
+                    "content": "Conjure an image of a key moment in your past, like your swearing-in ceremony or a moment when someone expressed their gratitude to you. Try to recall every detail of this memory, both emotional and physical.",
+                    "classNames": "text-white text-left w-auto text-description"
+                  },
+                  "animations": [
+                    {
+                      "type": "from",
+                      "x": 1100,
+                      "delay": 0.5
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "continue",
+              "type": "button",
+              "caption": "continue",
+              "classNames": "text-title continue-button uppercase py-4 px-8 text-white italic font-bold bg-black absolute right-0 bottom-16"
             }
           ]
         }

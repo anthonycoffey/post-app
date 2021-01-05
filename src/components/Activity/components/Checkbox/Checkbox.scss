@@ -1,0 +1,114 @@
+.tactical {
+  &:hover {
+    transition: background-color linear 0.5s;
+    background: #e1b15a;
+    cursor: pointer;
+  }
+  &.active {
+    background: #e1b15a;
+  }
+}
+
+.deliberate {
+  &:hover {
+    transition: background-color linear 0.5s;
+    background: #407195;
+    cursor: pointer;
+  }
+  &.active {
+    background: #407195;
+  }
+}
+
+.mental {
+  &:hover {
+    transition: background-color linear 0.5s;
+    background: #cc7f5a;
+    cursor: pointer;
+  }
+  &.active {
+    background: #cc7f5a;
+  }
+}
+
+.tactical-panel {
+  background: #e1b15a;
+}
+
+.deliberate-panel {
+  background: #407195;
+}
+
+.mental-panel {
+  background: #cc7f5a;
+}
+
+.option {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  /* display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  margin-bottom: 31.54px; */
+  cursor: pointer;
+
+  .option-title {
+    text-align: left;
+  }
+
+  input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+
+  .checkmark {
+    position: absolute;
+    top: -16px;
+    left: -6px;
+    height: 34px;
+    width: 34px;
+    background-color: white;
+    border: 1px solid white;
+  }
+
+  .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+
+  input:checked ~ .checkmark:after {
+    display: block;
+  }
+
+  .checkmark:after {
+    left: 7px;
+    top: 2px;
+    width: 15px;
+    height: 26px;
+    border: solid black;
+    border-width: 0 5px 5px 0;
+    transform: rotate(31deg);
+    -webkit-transform: rotate(31deg);
+    -ms-transform: rotate(31deg);
+    transform: rotate(31deg);
+  }
+
+  div {
+    color: #e6e6e6;
+    font-size: 19px;
+    letter-spacing: 0;
+    line-height: 19px;
+    padding-top: 5px;
+    margin-left: 46px;
+  }
+}
