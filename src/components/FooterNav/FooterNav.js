@@ -1,6 +1,6 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { find, findIndex } from 'lodash';
+import { find, findIndex } from "lodash";
 import {
   setPageIndexRequest,
   setChapterIndexRequest,
@@ -10,13 +10,15 @@ import "./FooterNav.scss";
 const FooterNav = () => {
   const dispatch = useDispatch();
   const course = useSelector((state) => state.course.course);
-  const { chapterIndex, pageIndex } = useSelector((state) => state.status);
-  const currentChapterIndex = findIndex(course.menu, ['id', chapterIndex]);
+  const { chapterIndex, pageIndex, initialIndex, isInitial } = useSelector(
+    (state) => state.status
+  );
+  const currentChapterIndex = findIndex(course.menu, ["id", chapterIndex]);
   let totalPageCount = 0;
   let totalChapterCount = 0;
 
   if (course && chapterIndex !== -1) {
-    totalPageCount = find(course.content, ['id', chapterIndex]).pages.length;
+    totalPageCount = find(course.content, ["id", chapterIndex]).pages.length;
     totalChapterCount = course.menu.length;
   }
 
@@ -39,15 +41,27 @@ const FooterNav = () => {
     <div className="footer-nav absolute bottom-0 bg-black w-full">
       <div className="flex justify-between">
         <div
-          className={`back ${currentChapterIndex === 0 && pageIndex < 1 ? "hide" : ""}`}
+          className={`back ${
+            !isInitial
+              ? currentChapterIndex === 0 && pageIndex < 1
+                ? "hide"
+                : ""
+              : initialIndex === 0
+              ? "hide"
+              : ""
+          }`}
           onClick={() => handleChapterIndex(currentChapterIndex - 1)}
         >
           Back
         </div>
         <div
           className={`next ${
-            currentChapterIndex === totalChapterCount - 1 &&
-            (pageIndex === totalPageCount - 1 || totalPageCount === 0)
+            !isInitial
+              ? currentChapterIndex === totalChapterCount - 1 &&
+                (pageIndex === totalPageCount - 1 || totalPageCount === 0)
+                ? "hide"
+                : ""
+              : initialIndex > 3
               ? "hide"
               : ""
           }`}

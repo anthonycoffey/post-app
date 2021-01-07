@@ -20,6 +20,25 @@
       "title": "Challenge"
     }
   ],
+  "initial": [
+    {
+      "classNames": "bg-black flex justify-center items-center",
+      "elements": [
+        {
+          "type": "text",
+          "classNames": "text-white font-bold text-5xl",
+          "title": "Racial",
+          "animations": [
+            {
+              "type": "from",
+              "opacity": 0,
+              "delay": 1
+            }
+          ]
+        }
+      ]
+    }
+  ],
   "content": [
     {
       "id": "introduction",
