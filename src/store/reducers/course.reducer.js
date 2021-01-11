@@ -6,7 +6,7 @@ const initialState = {
   course: {},
 };
 
-export default (state = initialState, action) => {
+const courseReducer = (state = initialState, action) => {
   switch (action.type) {
     // TYPE_GET_COURSE
     case TYPE_GET_COURSE.REQUEST:
@@ -29,3 +29,5 @@ export default (state = initialState, action) => {
       return state;
   }
 };
+
+export default courseReducer;

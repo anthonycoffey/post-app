@@ -10,7 +10,7 @@ import { getCourseRequest } from "./store/actions/course.action";
 const App = () => {
   const [isLoading, setLoadingStatus] = useState(true);
   const dispatch = useDispatch();
-  const { chapterIndex } = useSelector((state) => state.status);
+  const { chapterIndex, isInitial } = useSelector((state) => state.status);
 
   useEffect(() => {
     dispatch(getCourseRequest());
@@ -32,7 +32,7 @@ const App = () => {
             </div>
           </div>
         )}
-        {chapterIndex !== -1 ? <FooterNav /> : null}
+        {chapterIndex !== -1 || isInitial ? <FooterNav /> : null}
       </div>
     </div>
   );

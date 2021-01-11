@@ -72,6 +72,7 @@ const Page = ({ elements, style, classNames }) => {
             return <ConversationRater data={element.data} />;
           }
         }
+        return null;
       })}
     </div>
   );

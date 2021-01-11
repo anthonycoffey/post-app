@@ -1,37 +1,52 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { find, findIndex } from 'lodash';
+import { find, findIndex } from "lodash";
 import {
   setPageIndexRequest,
   setChapterIndexRequest,
+  setInitialIndexRequest
 } from "../../store/actions/status.action";
 import "./FooterNav.scss";
 
 const FooterNav = () => {
   const dispatch = useDispatch();
   const course = useSelector((state) => state.course.course);
-  const { chapterIndex, pageIndex } = useSelector((state) => state.status);
-  const currentChapterIndex = findIndex(course.menu, ['id', chapterIndex]);
+  const { chapterIndex, pageIndex, initialIndex, isInitial } = useSelector(
+    (state) => state.status
+  );
+  const currentChapterIndex = findIndex(course.menu, ["id", chapterIndex]);
   let totalPageCount = 0;
   let totalChapterCount = 0;
 
   if (course && chapterIndex !== -1) {
-    totalPageCount = find(course.content, ['id', chapterIndex]).pages.length;
+    totalPageCount = find(course.content, ["id", chapterIndex]).pages.length;
     totalChapterCount = course.menu.length;
   }
 
   const handleChapterIndex = (index) => {
-    if (index <= totalChapterCount - 1) {
-      dispatch(setChapterIndexRequest(course.menu[index].id));
+    if (isInitial) {
+      if (initialIndex > 0) {
+        dispatch(setInitialIndexRequest(initialIndex - 1));
+      }
+    } else {
+      if (index <= totalChapterCount - 1) {
+        dispatch(setChapterIndexRequest(course.menu[index].id));
+      }
+      dispatch(setPageIndexRequest(0));
     }
-    dispatch(setPageIndexRequest(0));
   };
 
   const handlePageIndex = (index) => {
-    if (index === totalPageCount || totalPageCount === 0) {
-      handleChapterIndex(currentChapterIndex + 1);
+    if (isInitial) {
+      if (initialIndex < 4) {
+        dispatch(setInitialIndexRequest(initialIndex + 1));
+      }
     } else {
-      dispatch(setPageIndexRequest(index));
+      if (index === totalPageCount || totalPageCount === 0) {
+        handleChapterIndex(currentChapterIndex + 1);
+      } else {
+        dispatch(setPageIndexRequest(index));
+      }
     }
   };
 
@@ -39,15 +54,27 @@ const FooterNav = () => {
     <div className="footer-nav absolute bottom-0 bg-black w-full">
       <div className="flex justify-between">
         <div
-          className={`back ${currentChapterIndex === 0 && pageIndex < 1 ? "hide" : ""}`}
+          className={`back ${
+            !isInitial
+              ? currentChapterIndex === 0 && pageIndex < 1
+                ? "hide"
+                : ""
+              : initialIndex === 0
+              ? "hide"
+              : ""
+          }`}
           onClick={() => handleChapterIndex(currentChapterIndex - 1)}
         >
           Back
         </div>
         <div
           className={`next ${
-            currentChapterIndex === totalChapterCount - 1 &&
-            (pageIndex === totalPageCount - 1 || totalPageCount === 0)
+            !isInitial
+              ? currentChapterIndex === totalChapterCount - 1 &&
+                (pageIndex === totalPageCount - 1 || totalPageCount === 0)
+                ? "hide"
+                : ""
+              : initialIndex > 3
               ? "hide"
               : ""
           }`}

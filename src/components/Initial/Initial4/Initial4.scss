@@ -1,0 +1,21 @@
+.initial-4-wrapper {
+  position: relative;
+
+  .background-wrapper {
+    width: calc(100% + 50px);
+    height: 100%;
+    left: -50px;
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .string-wrapper {
+    top: 20%;
+    left: 26%;
+    font-size: 60px;
+    color: white;
+  }
+}

@@ -1,0 +1,16 @@
+.fade-element {
+  transition: opacity 3s linear;
+  transition-delay: 300ms;
+  font-size: 80px;
+}
+
+.identity {
+  color: #ddd9c3;
+}
+.slide-1 {
+  transition: opacity 1s linear;
+}
+
+.slide-2 {
+  transition: opacity 1s linear;
+}

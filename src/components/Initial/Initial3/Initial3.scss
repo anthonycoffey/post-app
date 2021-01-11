@@ -1,0 +1,14 @@
+.initial-3-wrapper {
+  background-image: url('/assets/background/initial-3-background.jpg');
+  background-size: cover;
+  position: relative;
+
+  .people-wrapper {
+    width: 50%;
+    height: 70%;
+
+    img {
+      margin: auto;
+    }
+  }
+}
