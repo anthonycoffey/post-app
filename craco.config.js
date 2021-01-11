@@ -6,5 +6,10 @@ module.exports = {
         require('autoprefixer'),
       ],
     },
+    css: {
+      loaderOptions: {
+        url: false,
+      },
+    },
   },
 };

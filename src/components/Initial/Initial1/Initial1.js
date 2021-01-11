@@ -1,52 +1,80 @@
 import React, { useState, useEffect } from "react";
+import { useSelector } from "react-redux";
 import ReactPlayer from "react-player";
+import { TweenMax } from "gsap";
+
 import "./Initial1.scss";
+const animations = [
+  {
+    id: "racial",
+    type: "from",
+    initialDelay: 1,
+    showingDelay: 2,
+    duration: 3,
+  },
+  {
+    id: "identity",
+    type: "from",
+    initialDelay: 5,
+    showingDelay: 2,
+    duration: 3,
+  },
+  {
+    id: "profiling",
+    type: "from",
+    initialDelay: 9,
+    showingDelay: 2,
+    duration: 3,
+  },
+];
+const maxes = [];
 
 const Initial1 = () => {
   useEffect(() => {
     playSequence();
+    return () => {
+      maxes.forEach((max) => {
+        max.kill();
+      });
+    };
   }, []);
-  const [isPlaying, setIsPlaying] = useState(false);
-  const animations = [
-    {
-      id: "racial",
-      type: "from",
-      delay: 2,
-    },
-    {
-      id: "identity",
-      type: "from",
-      delay: 2,
-    },
-    {
-      id: "profiling",
-      type: "from",
-      delay: 2,
-    },
-  ];
 
-  let animationIndex = 0;
   const playSequence = () => {
-    setTimeout(() => {
-      document.getElementById(animations[animationIndex].id).style.opacity = 1;
-      animationIndex++;
-      if (animationIndex < animations.length) {
-        playSequence();
-      } else {
-        setTimeout(() => {
-          document.getElementById("slide-1").style.opacity = 0;
-          document.getElementById("slide-2").style.visibility = "visible";
-          document.getElementById("slide-2").style.opacity = 1;
-          setIsPlaying(true);
-        }, 3000);
-      }
-    }, 2000);
+    animations.forEach((animation, index) => {
+      const max = new TweenMax.to(
+        document.getElementById(animation.id),
+        animation.duration,
+        {
+          opacity: 1,
+          onComplete: showVideo,
+          onCompleteParams: [index],
+        }
+      ).delay(animation.initialDelay);
+      maxes.push(max);
+      max.eventCallback("onComplete", showVideo, [index]);
+    });
   };
+
+  function showVideo(index) {
+    if (index === 2) {
+      setTimeout(() => {
+        TweenMax.to(document.getElementById("slide-1"), 1, {
+          opacity: 0,
+        });
+        TweenMax.to(document.getElementById("slide-2"), 1, {
+          visibility: "visible",
+        });
+        TweenMax.to(document.getElementById("slide-2"), 1, {
+          opacity: 1,
+        });
+      }, 3000);
+    }
+  }
 
   return (
     <div className="initial-1-wrapper relative w-full h-full">
       <div
-        className="slide-1 bg-black absolute w-full h-full top-0 left-0 right-0 bottom-0 flex flex-col justify-center items-center"
+        className="slide-1 opacity-100 bg-black absolute w-full h-full top-0 left-0 right-0 bottom-0 flex flex-col justify-center items-center"
         id="slide-1"
       >
         <div className="slide-1-top flex justify-center items-center">
@@ -78,8 +106,8 @@ const Initial1 = () => {
           url="http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4"
           width="100%"
           height="100%"
-          playing={isPlaying}
           muted
+          controls
         />
       </div>
     </div>

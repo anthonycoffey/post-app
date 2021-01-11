@@ -4,6 +4,7 @@ import { find, findIndex } from "lodash";
 import {
   setPageIndexRequest,
   setChapterIndexRequest,
+  setInitialIndexRequest
 } from "../../store/actions/status.action";
 import "./FooterNav.scss";
 
@@ -23,17 +24,29 @@ const FooterNav = () => {
   }
 
   const handleChapterIndex = (index) => {
-    if (index <= totalChapterCount - 1) {
-      dispatch(setChapterIndexRequest(course.menu[index].id));
+    if (isInitial) {
+      if (initialIndex > 0) {
+        dispatch(setInitialIndexRequest(initialIndex - 1));
+      }
+    } else {
+      if (index <= totalChapterCount - 1) {
+        dispatch(setChapterIndexRequest(course.menu[index].id));
+      }
+      dispatch(setPageIndexRequest(0));
     }
-    dispatch(setPageIndexRequest(0));
   };
 
   const handlePageIndex = (index) => {
-    if (index === totalPageCount || totalPageCount === 0) {
-      handleChapterIndex(currentChapterIndex + 1);
+    if (isInitial) {
+      if (initialIndex < 4) {
+        dispatch(setInitialIndexRequest(initialIndex + 1));
+      }
     } else {
-      dispatch(setPageIndexRequest(index));
+      if (index === totalPageCount || totalPageCount === 0) {
+        handleChapterIndex(currentChapterIndex + 1);
+      } else {
+        dispatch(setPageIndexRequest(index));
+      }
     }
   };
 

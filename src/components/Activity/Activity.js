@@ -239,6 +239,7 @@ const Activity = ({ elements, classNames, style }) => {
             </button>
           )
         }
+        return null;
       })}
     </div>
   );

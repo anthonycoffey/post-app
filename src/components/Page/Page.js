@@ -199,6 +199,7 @@ const Page = ({ elements, style, classNames }) => {
             </div>
           );
         }
+        return null;
       })}
     </div>
   );

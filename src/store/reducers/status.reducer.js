@@ -11,7 +11,7 @@ const initialState = {
   completed: {},
 };
 
-export default (state = initialState, action) => {
+const statusReducer = (state = initialState, action) => {
   switch (action.type) {
     // TYPE_GET_COURSE
     case actions.TYPE_SET_CHAPTER_INDEX.REQUEST:
@@ -50,3 +50,5 @@ export default (state = initialState, action) => {
       return state;
   }
 };
+
+export default statusReducer;
