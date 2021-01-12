@@ -18,6 +18,7 @@ const Player = () => {
       <Initial initialIndex={initialIndex} />
     );
   }
+
   return (
     <div className="player-wrapper">
       {course.content ? (

@@ -29,6 +29,11 @@ const statusReducer = (state = initialState, action) => {
         ...state,
         initialIndex: action.payload.initialIndex,
       };
+    case actions.TYPE_SET_INITIAL.REQUEST:
+      return {
+        ...state,
+        isInitial: action.payload.isInitial,
+      };
     case actions.TYPE_SET_HEADER_TITLE.REQUEST:
       return {
         ...state,

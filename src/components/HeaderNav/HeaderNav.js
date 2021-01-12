@@ -9,26 +9,31 @@ import {
 import "./HeaderNav.scss";
 
 const HeaderNav = () => {
-  const headerTitle = useSelector((state) => state.status.headerTitle);
   const dispatch = useDispatch();
-  const handleNavigation = (index, title) => () => {
-    dispatch(setHeaderTitleRequest(title));
+  const handleNavigation = (index) => {
     dispatch(setChapterIndexRequest(index));
     dispatch(setPageIndexRequest(0));
   };
 
   return (
-    <div className="header-nav bg-black absolute top-0 w-full px-4">
-      <div className="flex py-4 px-2 justify-between">
-        <div>
-          <span className="font-bold italic text-white">{headerTitle}</span>
+    <div className="header-nav bg-black absolute top-0 w-full flex px-6 justify-between items-center">
+      <div className="flex items-center">
+        <img
+          src={`${process.env.PUBLIC_URL}/assets/images/post_logo.png`}
+          alt=""
+          width="40px"
+          height="40px"
+          className="mr-4"
+        />
+        <div className="font-bold text-white">
+          Racial and Identity Profiling
         </div>
-        <div
-          className="home font-bold italic text-white"
-          onClick={handleNavigation(-1, "Main Menu")}
-        >
-          Menu
-        </div>
+      </div>
+      <div
+        className="home font-bold text-white"
+        onClick={() => handleNavigation(-1)}
+      >
+        Menu
       </div>
     </div>
   );

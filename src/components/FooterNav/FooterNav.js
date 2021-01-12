@@ -4,7 +4,8 @@ import { find, findIndex } from "lodash";
 import {
   setPageIndexRequest,
   setChapterIndexRequest,
-  setInitialIndexRequest
+  setInitialIndexRequest,
+  setInitialRequest,
 } from "../../store/actions/status.action";
 import "./FooterNav.scss";
 
@@ -38,8 +39,12 @@ const FooterNav = () => {
 
   const handlePageIndex = (index) => {
     if (isInitial) {
-      if (initialIndex < 4) {
+      if (initialIndex < 3) {
         dispatch(setInitialIndexRequest(initialIndex + 1));
+      } else {
+        dispatch(setInitialRequest(false));
+        dispatch(setPageIndexRequest(0));
+        dispatch(setChapterIndexRequest(-1));
       }
     } else {
       if (index === totalPageCount || totalPageCount === 0) {
@@ -74,8 +79,6 @@ const FooterNav = () => {
                 (pageIndex === totalPageCount - 1 || totalPageCount === 0)
                 ? "hide"
                 : ""
-              : initialIndex > 3
-              ? "hide"
               : ""
           }`}
           onClick={() => handlePageIndex(pageIndex + 1)}
