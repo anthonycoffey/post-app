@@ -1,9 +1,10 @@
 import React from "react";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import {
   setChapterIndexRequest,
   setPageIndexRequest,
-  setHeaderTitleRequest,
+  setInitialRequest,
+  setInitialIndexRequest,
 } from "../../store/actions/status.action";
 
 import "./HeaderNav.scss";
@@ -13,6 +14,8 @@ const HeaderNav = () => {
   const handleNavigation = (index) => {
     dispatch(setChapterIndexRequest(index));
     dispatch(setPageIndexRequest(0));
+    dispatch(setInitialRequest(false));
+    dispatch(setInitialIndexRequest(0));
   };
 
   return (

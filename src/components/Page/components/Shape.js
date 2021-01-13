@@ -1,11 +1,10 @@
 import React from "react";
-const Shape = ({ data, index }) => {
+const Shape = ({ data }) => {
   return (
     <div
       id={data.id}
       className={`shape ${data.classNames || ""}`}
       style={data.style || {}}
-      key={index}
     />
   );
 };

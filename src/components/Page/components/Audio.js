@@ -1,11 +1,10 @@
 import React from 'react';
 import AudioPlayer from "react-h5-audio-player";
 
-const Audio = ({data, index}) => {
+const Audio = ({data}) => {
   return <div
     id={data.id}
     className={`audio-panel ${data.classNames || ""}`}
-    key={index}
     style={data.style || {}}
   >
     <AudioPlayer

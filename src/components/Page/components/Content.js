@@ -1,13 +1,12 @@
 import React from "react";
 import renderHTML from "react-render-html";
-const Content = ({ data, index }) => {
+const Content = ({ data }) => {
   return (
     <div
       id={data.id}
       className={`content-wrapper ${
         data.classNames ? data.classNames : ""
       }`}
-      key={index}
       style={data.style || {}}
     >
       {data.title ? (

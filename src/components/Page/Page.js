@@ -9,14 +9,16 @@ import Content from "./components/Content";
 import Audio from "./components/Audio";
 import Shape from "./components/Shape";
 import Image from "./components/Image";
-import ConversationRater from "../ConversationRater";
-
+import Text from "./components/Text";
+import List from "./components/List";
+import CustomButton from "./components/CustomButton";
+import ConversationRater from "../../components/ConversationRater/ConversationRater";
+import DragAndDrop from "../../components/DragAndDrop/DragAndDrop";
 const Page = ({ elements, style, classNames }) => {
-  const pageIndex = useSelector(state => state.status.pageIndex);
-  const chapterIndex = useSelector(state => state.status.chapterIndex);
+  const pageIndex = useSelector((state) => state.status.pageIndex);
+  const chapterIndex = useSelector((state) => state.status.chapterIndex);
   const dispatch = useDispatch();
   const [elementsState, setElementsState] = useState([]);
-
   useEffect(() => {
     setCompleteStatus(1);
     setElementsState(elements);
@@ -26,20 +28,20 @@ const Page = ({ elements, style, classNames }) => {
   }, [elementsState]);
 
   const playSequence = () => {
-    elements.forEach(element => {
+    elements.forEach((element) => {
       const { animations } = element;
       if (animations) {
-        animations.forEach(animation => {
+        animations.forEach((animation) => {
           let { x, y, delay } = animation;
           if (animation.type === "to") {
             TweenLite.to(document.getElementById(element.id), delay, {
               x: x,
-              y: y
+              y: y,
             });
           } else if (animation.type === "from") {
             TweenLite.from(document.getElementById(element.id), delay, {
               x: x,
-              y: y
+              y: y,
             });
           }
         });
@@ -47,11 +49,11 @@ const Page = ({ elements, style, classNames }) => {
     });
   };
 
-  const setCompleteStatus = status => {
+  const setCompleteStatus = (status) => {
     dispatch(setCompletedRequest(chapterIndex, pageIndex, status));
   };
 
-  const handleButtonClick = actions => {
+  const handleButtonClick = (actions) => {
     const initialElements = elementsState;
     setElementsState(actionHelper.doActions(initialElements, actions));
   };
@@ -60,17 +62,25 @@ const Page = ({ elements, style, classNames }) => {
     <div className={`page-wrapper ${classNames || ""}`} style={style || {}}>
       {elementsState.map((element, index) => {
         if (element.type === "shape") {
-          return <Shape data={element} index={index} />;
+          return <Shape data={element} key={index} />;
         } else if (element.type === "audio") {
-          return <Audio data={element} index={index} />;
+          return <Audio data={element} key={index} />;
         } else if (element.type === "image") {
-          return <Image data={element} index={index} />;
+          return <Image data={element} key={index} />;
         } else if (element.type === "content") {
-          return <Content data={element} index={index} />;
+          return <Content data={element} key={index} />;
         } else if (element.type === "activity") {
           if (element.activity === "ConversationRater") {
-            return <ConversationRater data={element.data} />;
+            return <ConversationRater data={element.data} key={index} />;
+          } else if (element.activity === 'DragAndDrop') {
+            return <DragAndDrop data={element.data} key={index} />;
           }
+        } else if (element.type === "text") {
+          return <Text data={element} key={index} />;
+        } else if (element.type === "list") {
+          return <List data={element} key={index} />;
+        } else if (element.type === "button") {
+          return <CustomButton data={element} key={index} />;
         }
         return null;
       })}
