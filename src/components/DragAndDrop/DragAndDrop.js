@@ -55,12 +55,14 @@ const DragAndDrop = ({ data }) => {
       firth: [],
       fifth: [],
     };
-    dragItems.forEach((t) => {
+    dragItems.forEach((t, index) => {
       temp[t.category].push(
         <div
           key={t.label}
-          onDragStart={(e) => onDragStart(e, t.label)}
+          onDragStart={(e) => onDragStart(e, t.label, index)}
+          onDragEnd={(e) => onDragEnd(e, t.label, index)}
           draggable
+          id={`choice-${index}`}
           className="draggable"
         >
           {t.label}
@@ -125,8 +127,14 @@ const DragAndDrop = ({ data }) => {
     }, showingDelay * 1000);
   }
 
-  const onDragStart = (ev, id) => {
+  const onDragStart = (ev, id, index) => {
     ev.dataTransfer.setData("id", id);
+    document.getElementById(`choice-${index}`).style.opacity = 0.001;
+  };
+
+  const onDragEnd = (ev, id, index) => {
+    // ev.dataTransfer.setData("id", id);
+    document.getElementById(`choice-${index}`).style.opacity = 1;
   };
 
   const onDragOver = (ev) => {
@@ -154,8 +162,8 @@ const DragAndDrop = ({ data }) => {
   };
 
   const showCommonWords = () => {
-    console.log('hehehe');
-  }
+    console.log("hehehe");
+  };
 
   return (
     <div
@@ -214,7 +222,11 @@ const DragAndDrop = ({ data }) => {
               {final.fifth}
             </div>
           </div>
-          {showDone ? <button className="done-button" onClick={() => showCommonWords()}>Done</button> : null}
+          {showDone ? (
+            <button className="done-button" onClick={() => showCommonWords()}>
+              Done
+            </button>
+          ) : null}
         </div>
         <div className="opacity-0 drag-items" id="drop-items">
           <div
