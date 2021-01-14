@@ -23,6 +23,7 @@ const maxes = [];
 const DragAndDrop = ({ data }) => {
   const { scenario } = data;
   const [dragItems, setDragItems] = useState([]);
+  const [showDone, setShowDone] = useState(false);
   const [final, setFinal] = useState({
     wip: [],
     first: [],
@@ -66,6 +67,17 @@ const DragAndDrop = ({ data }) => {
         </div>
       );
     });
+    if (
+      temp.first.length > 0 &&
+      temp.second.length > 0 &&
+      temp.third.length > 0 &&
+      temp.firth.length > 0 &&
+      temp.fifth.length > 0
+    ) {
+      setShowDone(true);
+    } else {
+      setShowDone(false);
+    }
     setFinal(temp);
   };
 
@@ -95,19 +107,19 @@ const DragAndDrop = ({ data }) => {
         opacity: 0,
       });
       TweenMax.to(document.getElementById(id), duration, {
-        display: 'none',
+        display: "none",
       }).delay(1);
 
-      TweenMax.to(document.getElementById('drop-zones'), duration, {
-        opacity: 1
+      TweenMax.to(document.getElementById("drop-zones"), duration, {
+        opacity: 1,
       }).delay(2);
-      TweenLite.from(document.getElementById('drop-zones'), 3, {
+      TweenLite.from(document.getElementById("drop-zones"), 3, {
         x: -1000,
       });
-      TweenMax.to(document.getElementById('drop-items'), duration, {
-        opacity: 1
+      TweenMax.to(document.getElementById("drop-items"), duration, {
+        opacity: 1,
       }).delay(2);
-      TweenLite.from(document.getElementById('drop-items'), 3, {
+      TweenLite.from(document.getElementById("drop-items"), 3, {
         x: 1100,
       });
     }, showingDelay * 1000);
@@ -141,6 +153,10 @@ const DragAndDrop = ({ data }) => {
     filterFunc();
   };
 
+  const showCommonWords = () => {
+    console.log('hehehe');
+  }
+
   return (
     <div
       className={`drag-and-drop ${scenario.classNames || ""}`}
@@ -158,7 +174,9 @@ const DragAndDrop = ({ data }) => {
       </div>
       <div className="drag-drop-wrapper">
         <div className="opacity-0 drop-zones" id="drop-zones">
-          <div className="drop-zone-title italic text-white mb-6">{scenario.instructions}</div>
+          <div className="drop-zone-title italic text-white mb-6">
+            {scenario.instructions}
+          </div>
           <div className="drop-zone-items">
             <div
               className="droppable"
@@ -196,6 +214,7 @@ const DragAndDrop = ({ data }) => {
               {final.fifth}
             </div>
           </div>
+          {showDone ? <button className="done-button" onClick={() => showCommonWords()}>Done</button> : null}
         </div>
         <div className="opacity-0 drag-items" id="drop-items">
           <div

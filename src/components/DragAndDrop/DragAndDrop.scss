@@ -13,8 +13,23 @@
 }
 
 .drop-zones {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+
   .drop-zone-title {
     font-size: 30px;
+  }
+
+  .done-button {
+    margin-top: 20px;
+    width: 150px;
+    height: 50px;
+    font-size: 30px;
+    background: #eeece1;
+    border-radius: 5px;
+    text-transform: uppercase;
   }
 }
 
