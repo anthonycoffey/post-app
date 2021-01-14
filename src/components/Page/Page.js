@@ -12,8 +12,9 @@ import Image from "./components/Image";
 import Text from "./components/Text";
 import List from "./components/List";
 import CustomButton from "./components/CustomButton";
-import TestDragDrop from "./components/TestDragDrop";
+import DragAndDrop from "../../components/DragAndDrop/DragAndDrop";
 import ConversationRater from "../../components/ConversationRater/ConversationRater";
+
 const Page = ({ elements, style, classNames }) => {
   const pageIndex = useSelector((state) => state.status.pageIndex);
   const chapterIndex = useSelector((state) => state.status.chapterIndex);
@@ -73,8 +74,7 @@ const Page = ({ elements, style, classNames }) => {
           if (element.activity === "ConversationRater") {
             return <ConversationRater data={element.data} key={index} />;
           } else if (element.activity === 'DragAndDrop') {
-            // return <DragAndDrop data={element.data} key={index} />;
-            return <TestDragDrop data={element.data} key={index} />;
+            return <DragAndDrop data={element.data} key={index} />;
           }
         } else if (element.type === "text") {
           return <Text data={element} key={index} />;

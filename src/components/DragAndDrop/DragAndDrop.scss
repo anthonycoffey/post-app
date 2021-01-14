@@ -4,3 +4,42 @@
   position: relative;
   background-position: center;
 }
+
+.drag-drop-wrapper {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-evenly;
+  width: 100%;
+}
+
+.drop-zones {
+  .drop-zone-title {
+    font-size: 30px;
+  }
+}
+
+.droppable {
+  width: 400px;
+  height: 50px;
+  background-color: white;
+  border-left: 1px solid black;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .draggable {
+    color: black;
+  }
+}
+
+.draggable {
+  width: fit-content;
+  height: auto;
+  padding: 5px;
+  color: white;
+  font-weight: bold;
+  font-size: 30px;
+  background: transparent;
+  margin: 5px auto;
+}
