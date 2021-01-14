@@ -198,122 +198,28 @@
       ]
     },
     {
-      "id": "learn",
+      "id": "history",
       "pages": [
         {
-          "classNames": "flex items-center justify-center w-full h-full",
-          "style": {
-            "background": "#60c4d2"
-          },
+          "classNames": "history-wrapper justify-center items-center",
+          "type": "default",
           "elements": [
             {
-              "id": "content",
-              "type": "content",
-              "classNames": "absolute z-10 w-auto h-auto",
-              "title": {
-                "content": "LEARN",
-                "classNames": "text-center italic font-black bg-transparent flex items-center justify-center text-chapterTitle"
+              "id": "text",
+              "type": "text",
+              "classNames": "absolute text-black font-bold",
+              "style": {
+                "left": "18%",
+                "top": "50%",
+                "fontSize": "40px",
+                "width": "max-content"
               },
+              "content": "1. History",
               "animations": [
                 {
                   "type": "from",
                   "x": -500,
-                  "delay": 1
-                }
-              ]
-            },
-            {
-              "id": "shape",
-              "type": "shape",
-              "classNames": "w-full h-1/4 bg-white",
-              "animations": [
-                {
-                  "type": "from",
-                  "x": 1100,
-                  "delay": 1
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "classNames": "items-center",
-          "elements": [
-            {
-              "id": "shape",
-              "type": "shape",
-              "style": {
-                "width": "50%",
-                "height": "70%",
-                "background": "#ffce32"
-              },
-              "animations": [
-                {
-                  "type": "from",
-                  "x": -500,
-                  "delay": 0.7
-                }
-              ]
-            },
-            {
-              "id": "image",
-              "type": "image",
-              "classNames": "w-auto h-auto absolute",
-              "style": {
-                "left": "-7%",
-                "top": "3%"
-              },
-              "alt": "Alt tag description...",
-              "url": "/assets/people/rick/rick_palms-up-closed.png",
-              "animations": [
-                {
-                  "type": "from",
-                  "x": -500,
-                  "delay": 0.5
-                }
-              ]
-            },
-            {
-              "id": "content",
-              "type": "content",
-              "classNames": "p-16",
-              "style": {
-                "width": "50%",
-                "height": "70%"
-              },
-              "title": {
-                "classNames": "text-left italic pb-4 font-bold  mb-4 border-b-4 border-black border-solid text-title",
-                "content": "The Skills"
-              },
-              "description": {
-                "classNames": "text-description text-left",
-                "content": "In this activity, you'll be introduced to the following skills:<br/><h3 className=\"mt-6 font-bold\">Defusing & Deflecting</h3><ul className=\"pl-16 list-disc\"><li>Maintaining Your Calm</li><li>Knowing Your Triggers</li><li>Knowing When to Engage and When NOT To</li></ul><h3 className=\"font-bold\">Redirecting</h3><ul className=\"pl-16 list-disc\"><li>Interjecting</li><li>Asking a Question</li><li>Restating the Problem</li></ul>"
-              },
-              "animations": [
-                {
-                  "type": "from",
-                  "x": 1100,
-                  "delay": 1.5
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "classNames": "items-center bg-white",
-          "elements": [
-            {
-              "id": "shape",
-              "type": "shape",
-              "classNames": "w-full h-4/6",
-              "style": {
-                "background": "#cc8d9b"
-              },
-              "animations": [
-                {
-                  "type": "from",
-                  "x": 1100,
-                  "delay": 1
+                  "delay": 1.4
                 }
               ]
             },
@@ -322,149 +228,52 @@
               "type": "image",
               "classNames": "absolute w-auto h-auto",
               "style": {
-                "left": "50%",
-                "top": "3%"
+                "left": "10%",
+                "top": "10%",
+                "transform": "scale(0.7)"
               },
-              "alt": "Alt tag description...",
-              "url": "/assets/people/rick/rick_resting.png",
+              "alt": "history",
+              "url": "/assets/images/history.png"
+            },
+            {
+              "id": "list",
+              "type": "list",
+              "classNames": "list-items-wrapper absolute w-auto h-auto",
+              "style": {
+                "top": "20%",
+                "right": "20%"
+              },
+              "items": [
+                {
+                  "value": "we-got-here",
+                  "title": "How We Got Here",
+                  "pageIndex": 1
+                },
+                {
+                  "value": "better-future",
+                  "title": "Creating A Better Future",
+                  "pageIndex": 2
+                }
+              ],
               "animations": [
                 {
                   "type": "from",
-                  "x": 1500,
-                  "delay": 0.5
+                  "x": 1100,
+                  "delay": 1.4
                 }
               ]
             },
             {
-              "id": "content",
-              "type": "content",
-              "classNames": "absolute w-2/4 h-auto",
+              "id": "buttton",
+              "type": "button",
+              "classNames": "introduction-back-button absolute",
               "style": {
-                "left": "3%",
-                "top": "25%"
+                "top": "70%",
+                "right": "30%",
+                "fontSize": "40px"
               },
-              "title": {
-                "classNames": "text-white text-left italic pb-4 font-bold  mb-4 border-b-4 border-white border-solid text-title",
-                "content": "Non-Verbals"
-              },
-              "description": {
-                "classNames": "text-white text-description",
-                "content": "You'll also learn about the importance of non-verbal cues that inform <b>Command Presence</b> like:<br/><ul className=\"mt-6 list-disc pl-8\"><li>Tone</li><li>Facial Expression</li><li>Posture & Proxemics</li><li>Eye Contact</li></ul>"
-              },
-              "animations": [
-                {
-                  "type": "from",
-                  "x": -600,
-                  "delay": 1
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "classNames": "bg-white items-center",
-          "elements": [
-            {
-              "id": "shape",
-              "type": "shape",
-              "classNames": "w-full h-4/6",
-              "style": {
-                "background": "#02bee0"
-              },
-              "animations": [
-                {
-                  "type": "from",
-                  "x": -900,
-                  "delay": 0.5
-                }
-              ]
-            },
-            {
-              "id": "image",
-              "type": "image",
-              "classNames": "absolute w-auto h-auto left-0 z-10",
-              "style": {
-                "top": "3%"
-              },
-              "alt": "Alt tag description...",
-              "url": "/assets/people/rick/rick_palms-up-open.png",
-              "animations": [
-                {
-                  "type": "from",
-                  "x": -900,
-                  "delay": 0.5
-                }
-              ]
-            },
-            {
-              "id": "content",
-              "type": "content",
-              "classNames": "absolute w-2/5 h-auto",
-              "style": {
-                "left": "51%",
-                "top": "25%"
-              },
-              "title": {
-                "classNames": "text-white text-left italic pb-4 font-bold  mb-4 border-b-4 border-white border-solid text-title",
-                "content": "Proceduaral Justice"
-              },
-              "description": {
-                "classNames": "text-white text-description",
-                "content": "Finally, you'll review the four central tents of <b>Procedural Justice</b> and how they create the foundation for a \"de-escalation mindset\":<br/><ul className=\"mt-6 list-disc pl-8\"><li>Voice</li><li>Respect</li><li>Neutrality</li><li>Trustworthiness</li></ul>"
-              },
-              "animations": [
-                {
-                  "type": "from",
-                  "x": -900,
-                  "delay": 0.9
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "classNames": "justify-start items-center bg-cover",
-          "style": {
-            "backgroundImage": "url('/assets/background/broken_tail_light_bg.jpg')"
-          },
-          "elements": [
-            {
-              "id": "shape",
-              "type": "shape",
-              "classNames": "left-0",
-              "style": {
-                "width": "55%",
-                "height": "50%",
-                "background": "#e65d01",
-                "boxShadow": "5px 7px 11px 0px rgba(0,0,0,0.42)"
-              },
-              "animations": [
-                {
-                  "type": "from",
-                  "x": -500,
-                  "delay": 0.5
-                }
-              ]
-            },
-            {
-              "id": "content",
-              "type": "content",
-              "classNames": "absolute bg-transparent left-0 w-1/2 p-16",
-              "title": {
-                "content": "A TRAFFIC STOP",
-                "classNames": "w-auto text-white text-left italic pb-4 font-bold mb-4 border-b-4 border-white border-solid text-title"
-              },
-              "description": {
-                "content": "Officer Conner pulls over a pickup truck with a broken tail light. The driver isn't too happy about it.<br/><br/>In this activity, you will get to choose how he responds to each provocation by the driver.",
-                "classNames": "text-white text-left w-auto text-description"
-              },
-              "animations": [
-                {
-                  "type": "from",
-                  "x": -1100,
-                  "delay": 1
-                }
-              ]
+              "title": "Back",
+              "action": "goToMenu"
             }
           ]
         }
