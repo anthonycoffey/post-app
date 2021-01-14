@@ -14,21 +14,30 @@ const Home = ({ course }) => {
   };
   return (
     <div className="home-wrapper">
-      <div className="course-title">{course.courseTitle}</div>
-      <div className="course-sub-title">{course.courseSubTitle}</div>
       <div className="chapters">
         {course.menu.map((item, index) => (
           <div
-            className="chapter"
+            className={`chapter ${item.id}`}
             key={index}
             onClick={() => handleNavigation(item.id, item.title)}
           >
-            {item.title}
+            <div className="chapter-image">
+              <img
+                src={`${process.env.PUBLIC_URL}${item.image}`}
+                alt=""
+                width="100px"
+                height="100px"
+              />
+            </div>
+            {index > 0 ? (
+              <div>
+                {index}. {item.title}
+              </div>
+            ) : (
+              <div>Introduction</div>
+            )}
           </div>
         ))}
-      </div>
-      <div className="logo-wrapper absolute top-44 right-12">
-        <img src={`${process.env.PUBLIC_URL}/assets/images/post_logo.png`} alt="" />
       </div>
     </div>
   );

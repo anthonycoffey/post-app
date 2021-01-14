@@ -5,19 +5,38 @@
   "menu": [
     {
       "id": "introduction",
-      "title": "Introduction"
+      "title": "Introduction",
+      "image": "/assets/images/initial-logo.png"
     },
     {
-      "id": "learn",
-      "title": "Learn"
+      "id": "history",
+      "title": "The History",
+      "image": "/assets/images/history.png"
     },
     {
-      "id": "analyze",
-      "title": "Analyze"
+      "id": "bias",
+      "title": "Our Bias",
+      "image": "/assets/images/bias.png"
     },
     {
-      "id": "challenge",
-      "title": "Challenge"
+      "id": "law",
+      "title": "The Law",
+      "image": "/assets/images/law.png"
+    },
+    {
+      "id": "decisions",
+      "title": "Your Decisions and Actions",
+      "image": "/assets/images/decisions.png"
+    },
+    {
+      "id": "responsibility",
+      "title": "Your Responsibility to Report",
+      "image": "/assets/images/responsibility.png"
+    },
+    {
+      "id": "connecting",
+      "title": "Connecting with the Community",
+      "image": "/assets/images/connecting.png"
     }
   ],
   "content": [

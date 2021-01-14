@@ -16,21 +16,56 @@
 
   .chapters {
     width: 48%;
+    margin: auto;
+
     .chapter {
-      font-size: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      font-size: 30px;
       font-weight: bold;
-      font-style: italic;
-      margin-bottom: 30px;
-      background: #32656d;
       text-align: left;
-      padding-left: 32%;
-      color: white;
+      padding: 10px;
+      color: black;
       cursor: pointer;
       transition: all ease 0.3s;
 
+      &.history {
+        background: #b4af81;
+        .chapter-image {
+          transform: scale(0.8);
+        }
+      }
+
+      &.bias {
+        background: #c0c894;
+      }
+
+      &.law {
+        background: #e4b69e;
+      }
+
+      &.decisions {
+        background: #ccba8c;
+      }
+
+      &.responsibility {
+        background: #baa2a2;
+        .chapter-image {
+          transform: scale(0.8);
+        }
+      }
+
+      &.connecting {
+        background: #b5d3d3;
+      }
+
+      img {
+        margin-right: 20px;
+      }
+
       &:hover {
-        background: #ebc344;
-        color: black;
+        border: 2px solid black;
       }
     }
   }
