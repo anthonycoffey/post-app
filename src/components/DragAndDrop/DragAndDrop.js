@@ -1,19 +1,54 @@
 import React, { useEffect, useState } from "react";
 import { TweenMax, TweenLite } from "gsap";
+import { useSelector, useDispatch } from "react-redux";
+import { find, findIndex } from "lodash";
+import {
+  setPageIndexRequest,
+  setChapterIndexRequest,
+} from "../../store/actions/status.action";
+
 import "./DragAndDrop.scss";
 
 const animations = [
   {
-    id: "title",
+    id: "common-choosen-title",
     type: "from",
-    initialDelay: 1,
+    initialDelay: 0,
     showingDelay: 1,
     duration: 1,
   },
   {
-    id: "iamge",
+    id: "choosen-word-0",
     type: "from",
-    initialDelay: 1,
+    initialDelay: 3,
+    showingDelay: 1,
+    duration: 1,
+  },
+  {
+    id: "choosen-word-1",
+    type: "from",
+    initialDelay: 6,
+    showingDelay: 1,
+    duration: 1,
+  },
+  {
+    id: "choosen-word-2",
+    type: "from",
+    initialDelay: 9,
+    showingDelay: 1,
+    duration: 1,
+  },
+  {
+    id: "choosen-word-3",
+    type: "from",
+    initialDelay: 12,
+    showingDelay: 1,
+    duration: 1,
+  },
+  {
+    id: "choosen-word-4",
+    type: "from",
+    initialDelay: 15,
     showingDelay: 1,
     duration: 1,
   },
@@ -22,6 +57,9 @@ const maxes = [];
 
 const DragAndDrop = ({ data }) => {
   const { scenario } = data;
+  const dispatch = useDispatch();
+  const { chapterIndex, pageIndex } = useSelector((state) => state.status);
+  const course = useSelector((state) => state.course.course);
   const [dragItems, setDragItems] = useState([]);
   const [showDone, setShowDone] = useState(false);
   const [final, setFinal] = useState({
@@ -32,8 +70,9 @@ const DragAndDrop = ({ data }) => {
     firth: [],
     fifth: [],
   });
-
+  console.log('1');
   useEffect(() => {
+    console.log('2');
     setDragItems(scenario.choiceSet.choices);
     playSequence();
     return () => {
@@ -161,8 +200,74 @@ const DragAndDrop = ({ data }) => {
     filterFunc();
   };
 
+  const currentChapterIndex = findIndex(course.menu, ["id", chapterIndex]);
+  let totalPageCount = 0;
+  let totalChapterCount = 0;
+  if (course && chapterIndex !== -1) {
+    totalPageCount = find(course.content, ["id", chapterIndex]).pages.length;
+    totalChapterCount = course.menu.length;
+  }
+
+  const handleChapterIndex = (index) => {
+    if (index <= totalChapterCount - 1) {
+      dispatch(setChapterIndexRequest(course.menu[index].id));
+    }
+    dispatch(setPageIndexRequest(0));
+  };
+
+  const handleContinue = () => {
+    if (pageIndex === totalPageCount - 1) {
+      handleChapterIndex(currentChapterIndex + 1);
+    } else {
+      dispatch(setPageIndexRequest(pageIndex + 1));
+    }
+  };
+
   const showCommonWords = () => {
-    console.log("hehehe");
+    TweenMax.to(document.getElementById("drop-zone-title"), 1, {
+      opacity: 0,
+    });
+    TweenMax.to(document.getElementById("drop-zone-title"), 1, {
+      display: "none",
+    });
+    TweenMax.to(document.getElementById("drop-zone-extra-title"), 1, {
+      display: "block",
+    }).delay(1);
+    TweenMax.to(document.getElementById("drop-zone-extra-title"), 1, {
+      opacity: 1,
+    }).delay(1);
+    TweenMax.to(document.getElementById("drop-items"), 1, {
+      opacity: 0,
+    });
+    TweenMax.to(document.getElementById("drop-items"), 1, {
+      display: "none",
+    });
+    TweenMax.to(document.getElementById("choosen-words"), 1, {
+      display: "flex",
+    }).delay(1);
+    TweenMax.to(document.getElementById("choosen-words"), 1, {
+      opacity: 1,
+    }).delay(1);
+
+    TweenMax.to(document.getElementById("done-button"), 1, {
+      opacity: 0,
+    });
+
+    animations.forEach((animation) => {
+      TweenMax.to(document.getElementById(animation.id), animation.duration, {
+        opacity: 1,
+      }).delay(animation.initialDelay);
+      TweenLite.from(
+        document.getElementById(animation.id),
+        animation.duration,
+        {
+          x: 1100,
+        }
+      ).delay(animation.initialDelay);
+    });
+    TweenMax.to(document.getElementById("continue-button"), 1, {
+      opacity: 1,
+    }).delay(18);
   };
 
   return (
@@ -178,12 +283,25 @@ const DragAndDrop = ({ data }) => {
         {scenario.title.content}
       </div>
       <div id="image" className="block opacity-0">
-        <img src={`${scenario.image}`} alt="" width="300px" height="300px" />
+        <img
+          className={scenario.image.classNames || ""}
+          src={`${scenario.image.url}`}
+          alt=""
+        />
       </div>
       <div className="drag-drop-wrapper">
-        <div className="opacity-0 drop-zones" id="drop-zones">
-          <div className="drop-zone-title italic text-white mb-6">
+        <div className="opacity-0 block drop-zones" id="drop-zones">
+          <div
+            className="opacity-100 drop-zone-title italic text-white mb-6"
+            id="drop-zone-title"
+          >
             {scenario.instructions}
+          </div>
+          <div
+            className="hidden opacity-0 drop-zone-extra-title text-white mb-6"
+            id="drop-zone-extra-title"
+          >
+            YOUR WORDS
           </div>
           <div className="drop-zone-items">
             <div
@@ -223,12 +341,16 @@ const DragAndDrop = ({ data }) => {
             </div>
           </div>
           {showDone ? (
-            <button className="done-button" onClick={() => showCommonWords()}>
+            <button
+              id="done-button"
+              className="opacity-100 done-button"
+              onClick={() => showCommonWords()}
+            >
               Done
             </button>
           ) : null}
         </div>
-        <div className="opacity-0 drag-items" id="drop-items">
+        <div className="opacity-0 block drag-items" id="drop-items">
           <div
             className="wip grid grid-cols-2 gap-4"
             onDragOver={(e) => onDragOver(e)}
@@ -239,6 +361,35 @@ const DragAndDrop = ({ data }) => {
             {final.wip}
           </div>
         </div>
+        <div
+          className="hidden opacity-0 choosen-words flex-col items-center content-center"
+          id="choosen-words"
+        >
+          <div
+            className="opacity-0 common-choosen-title uppercase pb-3 mb-3"
+            id="common-choosen-title"
+          >
+            {scenario.choiceSet.feedback.title}
+          </div>
+          <div className="choosen-words">
+            {scenario.choiceSet.feedback.items.map((item, index) => {
+              return (
+                <div
+                  className={`opacity-0 choosen-word choosen-word-${index}`}
+                  id={`choosen-word-${index}`}
+                  key={index}
+                >
+                  {item.label}
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </div>
+      <div id="continue-button" className="opacity-0 continue">
+        <button className="continue-button" onClick={() => handleContinue()}>
+          Continue
+        </button>
       </div>
     </div>
   );

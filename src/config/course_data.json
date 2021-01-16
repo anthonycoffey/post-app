@@ -139,7 +139,10 @@
                   },
                   "instructions": "Drag 5 words into the spaces.",
                   "label": "Scenario label",
-                  "image": "/assets/images/initial-logo.png",
+                  "image": {
+                    "url": "/assets/images/initial-logo.png",
+                    "classNames": "initial-logo-image"
+                  },
                   "choiceSet": {
                     "id": "choice-set-01",
                     "type": "multiChoice",
@@ -239,6 +242,145 @@
                       },
                       {
                         "id": 13,
+                        "label": "Powerful",
+                        "category": "wip"
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          ]
+        },
+        {
+          "classNames": "introduction-third-page justify-center items-center",
+          "elements": [
+            {
+              "type": "activity",
+              "activity": "DragAndDrop",
+              "data": {
+                "scenario": {
+                  "id": "scenario-01",
+                  "classNames": "w-full h-full scenario-01 flex flex-col items-center justify-start",
+                  "title": {
+                    "classNames": "mb-6 opacity-0 text-white my-6 px-6 pb-3 m-auto",
+                    "style": {
+                      "fontSize": "40px",
+                      "borderBottom": "2px solid white",
+                      "width": "fit-content"
+                    },
+                    "content": "How does the Community view us?"
+                  },
+                  "instructions": "Drag 5 words into the spaces.",
+                  "label": "Scenario label",
+                  "image": {
+                    "url": "/assets/background/community.jpg",
+                    "classNames": "community-image"
+                  },
+                  "choiceSet": {
+                    "id": "choice-set-01",
+                    "type": "multiChoice",
+                    "title": "COMMONLY CHOOSEN WORDS",
+                    "body": "Choice set body",
+                    "feedback": {
+                      "title": "COMMONLY CHOOSEN WORDS",
+                      "items": [
+                        {
+                          "id": 0,
+                          "label": "Biased"
+                        },
+                        {
+                          "id": 1,
+                          "label": "Unfair"
+                        },
+                        {
+                          "id": 2,
+                          "label": "Aggressive"
+                        },
+                        {
+                          "id": 3,
+                          "label": "Overuse Force"
+                        },
+                        {
+                          "id": 4,
+                          "label": "Unwanted"
+                        }
+                      ]
+                    },
+                    "required": true,
+                    "choices": [
+                      {
+                        "id": 0,
+                        "label": "Commanding",
+                        "category": "wip"
+                      },
+                      {
+                        "id": 1,
+                        "label": "Dangerous",
+                        "category": "wip"
+                      },
+                      {
+                        "id": 2,
+                        "label": "Dedicated",
+                        "category": "wip"
+                      },
+                      {
+                        "id": 3,
+                        "label": "Outsider",
+                        "category": "wip"
+                      },
+                      {
+                        "id": 4,
+                        "label": "Enforcer",
+                        "category": "wip"
+                      },
+                      {
+                        "id": 5,
+                        "label": "Not trustworthy",
+                        "category": "wip"
+                      },
+                      {
+                        "id": 6,
+                        "label": "Biased",
+                        "category": "wip"
+                      },
+                      {
+                        "id": 7,
+                        "label": "Protector",
+                        "category": "wip"
+                      },
+                      {
+                        "id": 8,
+                        "label": "Fair",
+                        "category": "wip"
+                      },
+                      {
+                        "id": 9,
+                        "label": "Aggressive",
+                        "category": "wip"
+                      },
+                      {
+                        "id": 10,
+                        "label": "Disrespectful",
+                        "category": "wip"
+                      },
+                      {
+                        "id": 11,
+                        "label": "Overuses Force",
+                        "category": "wip"
+                      },
+                      {
+                        "id": 12,
+                        "label": "Reasonable",
+                        "category": "wip"
+                      },
+                      {
+                        "id": 13,
+                        "label": "Confident",
+                        "category": "wip"
+                      },
+                      {
+                        "id": 14,
                         "label": "Powerful",
                         "category": "wip"
                       }
