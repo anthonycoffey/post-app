@@ -70,9 +70,7 @@ const DragAndDrop = ({ data }) => {
     firth: [],
     fifth: [],
   });
-  console.log('1');
   useEffect(() => {
-    console.log('2');
     setDragItems(scenario.choiceSet.choices);
     playSequence();
     return () => {
@@ -169,6 +167,7 @@ const DragAndDrop = ({ data }) => {
   const onDragStart = (ev, id, index) => {
     ev.dataTransfer.setData("id", id);
     document.getElementById(`choice-${index}`).style.opacity = 0.001;
+    document.getElementById(`choice-${index}`).style.color = 'black';
   };
 
   const onDragEnd = (ev, id, index) => {
@@ -191,6 +190,14 @@ const DragAndDrop = ({ data }) => {
         if (final[cat].length < 1) {
           if (task.label === id) {
             task.category = cat;
+          }
+        } else {
+          if (task.label === id) {
+            task.category = cat;
+          } else {
+            if (task.category === cat) {
+              task.category = 'wip';
+            }
           }
         }
       }

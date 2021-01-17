@@ -176,72 +176,58 @@
                     "required": true,
                     "choices": [
                       {
-                        "id": 0,
                         "label": "Misunderstood",
                         "category": "wip"
                       },
                       {
-                        "id": 1,
                         "label": "Courageous",
                         "category": "wip"
                       },
                       {
-                        "id": 2,
                         "label": "Dedicated",
                         "category": "wip"
                       },
                       {
-                        "id": 3,
                         "label": "Community Member",
                         "category": "wip"
                       },
                       {
-                        "id": 4,
                         "label": "Guardian",
                         "category": "wip"
                       },
                       {
-                        "id": 5,
                         "label": "Trustworthy",
                         "category": "wip"
                       },
                       {
-                        "id": 6,
                         "label": "Unbiased",
                         "category": "wip"
                       },
                       {
-                        "id": 7,
                         "label": "Protector",
                         "category": "wip"
                       },
                       {
-                        "id": 8,
                         "label": "Fair",
                         "category": "wip"
                       },
                       {
-                        "id": 9,
                         "label": "Empathetic",
                         "category": "wip"
                       },
                       {
-                        "id": 10,
                         "label": "Compassionate",
                         "category": "wip"
                       },
                       {
-                        "id": 11,
                         "label": "Partner",
                         "category": "wip"
                       },
                       {
-                        "id": 12,
                         "label": "Confident",
                         "category": "wip"
                       },
                       {
-                        "id": 13,
                         "label": "Powerful",
                         "category": "wip"
                       }
