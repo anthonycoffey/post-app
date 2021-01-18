@@ -14,6 +14,7 @@ import List from "./components/List";
 import CustomButton from "./components/CustomButton";
 import DragAndDrop from "../../components/DragAndDrop/DragAndDrop";
 import ConversationRater from "../../components/ConversationRater/ConversationRater";
+import IntroductionSlide1 from "./Introduction/IntroductionSlide1/IntroductionSlide1";
 
 const Page = ({ elements, style, classNames }) => {
   const pageIndex = useSelector((state) => state.status.pageIndex);
@@ -73,8 +74,20 @@ const Page = ({ elements, style, classNames }) => {
         } else if (element.type === "activity") {
           if (element.activity === "ConversationRater") {
             return <ConversationRater data={element.data} key={index} />;
-          } else if (element.activity === 'DragAndDrop') {
-            return <DragAndDrop data={element.data} key={`${chapterIndex}-${pageIndex}-${index}`} />;
+          } else if (element.activity === "DragAndDrop") {
+            return (
+              <DragAndDrop
+                data={element.data}
+                key={`${chapterIndex}-${pageIndex}-${index}`}
+              />
+            );
+          } else if (element.activity === "introduction-slide1") {
+            return (
+              <IntroductionSlide1
+                data={element.data}
+                key={`${chapterIndex}-${pageIndex}-${index}`}
+              />
+            );
           }
         } else if (element.type === "text") {
           return <Text data={element} key={index} />;

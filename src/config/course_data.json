@@ -376,6 +376,55 @@
               }
             }
           ]
+        },
+        {
+          "classNames": "justify-between items-center",
+          "elements": [
+            {
+              "type": "activity",
+              "activity": "introduction-slide1",
+              "data": {
+                "classNames": "introduction-slide1-page flex w-full h-full justify-between items-center",
+                "items": [
+                  {
+                    "classNames": "left-item p-12 h-full flex flex-col justify-around items-center",
+                    "image": {
+                      "url": "/assets/images/initial-logo.png",
+                      "style": {
+                        "width": "150px",
+                        "height": "150px"
+                      }
+                    },
+                    "title": "<div>how we think of <br/>ourselves</div>",
+                    "answers": [
+                      "Guardian",
+                      "Fair",
+                      "Trustworthy",
+                      "Courageous",
+                      "Respectful"
+                    ]
+                  },
+                  {
+                    "classNames": "right-item h-full p-12 flex flex-col justify-around items-center",
+                    "image": {
+                      "url": "/assets/images/connecting.png",
+                      "style": {
+                        "width": "150px"
+                      }
+                    },
+                    "title": "<div>how some in the<br/>community think of us<div>",
+                    "answers": [
+                      "Biased",
+                      "Unfair",
+                      "Aggressive",
+                      "Overuse Force",
+                      "Unwanted"
+                    ]
+                  }
+                ]
+              }
+            }
+          ]
         }
       ]
     },
