@@ -4,9 +4,9 @@ module.exports = {
   theme: {
     extend: {
       transitionDuration: {
-        '0': '0ms',
-        '2000': '2000ms',
-       }
+        0: "0ms",
+        2000: "2000ms",
+      },
     },
     fontSize: {
       title: "40px",

@@ -15,29 +15,29 @@ const animations = [
   {
     id: "people-normal",
     type: "from",
-    initialDelay: 0,
+    initialDelay: 1,
     showingDelay: 3,
     duration: 1,
   },
   {
     id: "people-no-idea",
     type: "from",
-    initialDelay: 4,
+    initialDelay: 5,
     showingDelay: 3,
     duration: 1,
   },
   {
     id: "people-after-closed",
     type: "from",
-    initialDelay: 8,
+    initialDelay: 9,
     showingDelay: 3,
     duration: 1,
   },
   {
     id: "people-hand-up",
     type: "from",
-    initialDelay: 12,
-    showingDelay: 3,
+    initialDelay: 13,
+    showingDelay: 4,
     duration: 1,
   },
 ];
@@ -61,41 +61,77 @@ const IntroductionSlide1 = ({ data }) => {
     TweenMax.to(document.getElementById("left-item"), 0.5, {
       opacity: 1,
     }).delay(2);
-    TweenLite.from(document.getElementById("left-item"), 1, {
+    TweenLite.from(document.getElementById("left-item"), 1.5, {
       x: -1000,
-    });
+    }).delay(1);
     TweenMax.to(document.getElementById("right-item"), 0.5, {
       opacity: 1,
     }).delay(2);
-    TweenLite.from(document.getElementById("right-item"), 1, {
+    TweenLite.from(document.getElementById("right-item"), 1.5, {
       x: 1100,
-    });
+    }).delay(1);
     // TweenMax.to(document.getElementById("people-normal"), 1, {
     //   opacity: 1,
     // });
 
     animations.forEach((animation, index) => {
-      const max = new TweenMax.to(document.getElementById(animation.id), animation.duration, {
-        opacity: 1,
-        onComplete: showVideo,
-        onCompleteParams: [
-          index,
-          animation.id,
-          animation.duration,
-          animation.showingDelay,
-        ],
-      }).delay(animation.initialDelay);
+      const max = new TweenMax.to(
+        document.getElementById(animation.id),
+        animation.duration,
+        {
+          opacity: 1,
+          onComplete: showVideo,
+          onCompleteParams: [
+            index,
+            animation.id,
+            animation.duration,
+            animation.showingDelay,
+          ],
+        }
+      ).delay(animation.initialDelay);
       maxes.push(max);
     });
   };
 
   function showVideo(index, id, duration, showingDelay) {
-    if (index !== animations.legnth - 1) {
+    if (index < 3) {
       setTimeout(() => {
         TweenMax.to(document.getElementById(id), duration, {
           opacity: 0,
         });
       }, showingDelay * 1000);
+    }
+
+    const leftItems = document.querySelectorAll(".item-answer-left");
+    if (index === 2) {
+      leftItems.forEach((item) => {
+        item.classList.add("custom-yellow");
+      });
+    }
+    if (index === 3) {
+      leftItems.forEach((item) => {
+        item.classList.remove("custom-yellow");
+      });
+
+      const rightItems = document.querySelectorAll(".item-answer-right");
+      rightItems.forEach((item) => {
+        item.classList.add("custom-yellow");
+      });
+    }
+
+    if (index === 3) {
+      TweenMax.to(document.getElementById("left-item"), 0.5, {
+        opacity: 0,
+      }).delay(2);
+      TweenLite.to(document.getElementById("left-item"), 1, {
+        x: -1000,
+      }).delay(1);
+      TweenMax.to(document.getElementById("right-item"), 0.5, {
+        opacity: 0,
+      }).delay(2);
+      TweenLite.to(document.getElementById("right-item"), 1, {
+        x: 1100,
+      }).delay(1);
     }
   }
 
@@ -134,7 +170,11 @@ const IntroductionSlide1 = ({ data }) => {
         <div className="item-answers">
           {items[0].answers.map((answer, index) => {
             return (
-              <div className="item-answer" key={index}>
+              <div
+                className="item-answer item-answer-left"
+                key={index}
+                id="item-answer-left"
+              >
                 {answer}
               </div>
             );
@@ -151,7 +191,7 @@ const IntroductionSlide1 = ({ data }) => {
         <div className="item-answers">
           {items[1].answers.map((answer, index) => {
             return (
-              <div className="item-answer" key={index}>
+              <div className="item-answer item-answer-right" key={index}>
                 {answer}
               </div>
             );
