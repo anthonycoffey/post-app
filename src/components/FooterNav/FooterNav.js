@@ -30,10 +30,19 @@ const FooterNav = () => {
         dispatch(setInitialIndexRequest(initialIndex - 1));
       }
     } else {
+      console.log(index, totalChapterCount);
+      if (index === -1) {
+        dispatch(
+          setChapterIndexRequest(course.menu[currentChapterIndex - 1].id)
+        );
+        dispatch(setPageIndexRequest(0));
+      } else {
+        dispatch(setPageIndexRequest(index));
+      }
+
       if (index <= totalChapterCount - 1) {
         dispatch(setChapterIndexRequest(course.menu[index].id));
       }
-      dispatch(setPageIndexRequest(0));
     }
   };
 
@@ -68,7 +77,7 @@ const FooterNav = () => {
               ? "hide"
               : ""
           }`}
-          onClick={() => handleChapterIndex(currentChapterIndex - 1)}
+          onClick={() => handleChapterIndex(pageIndex - 1)}
         >
           Back
         </div>

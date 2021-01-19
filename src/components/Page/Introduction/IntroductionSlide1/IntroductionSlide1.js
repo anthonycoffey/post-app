@@ -70,9 +70,6 @@ const IntroductionSlide1 = ({ data }) => {
     TweenLite.from(document.getElementById("right-item"), 1.5, {
       x: 1100,
     }).delay(1);
-    // TweenMax.to(document.getElementById("people-normal"), 1, {
-    //   opacity: 1,
-    // });
 
     animations.forEach((animation, index) => {
       const max = new TweenMax.to(
@@ -132,6 +129,10 @@ const IntroductionSlide1 = ({ data }) => {
       TweenLite.to(document.getElementById("right-item"), 1, {
         x: 1100,
       }).delay(1);
+
+      setTimeout(() => {
+        handleContinue();
+      }, 3000);
     }
   }
 

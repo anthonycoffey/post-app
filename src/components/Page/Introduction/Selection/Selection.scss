@@ -1,0 +1,44 @@
+.introduction-selection-page {
+  background-image: url("/assets/background/initial-3-background.jpg");
+  background-size: cover;
+  position: relative;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.introduction-people-wrapper {
+  left: -10%;
+  top: 18%;
+}
+
+.selection-wrapper {
+  height: 90%;
+  width: 60%;
+}
+
+.choice-item {
+  background: #595959;
+  font-size: 25px;
+  cursor: pointer;
+
+  &.clicked {
+    background: #e0dfcb;
+    color: black;
+  }
+}
+
+.selection-instruction {
+  font-size: 25px;
+}
+
+.done-button {
+  width: 150px;
+  height: 50px;
+  font-size: 30px;
+  background: #e0dfcb;
+  border-radius: 5px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
