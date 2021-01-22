@@ -30,7 +30,6 @@ const FooterNav = () => {
         dispatch(setInitialIndexRequest(initialIndex - 1));
       }
     } else {
-      console.log(index, totalChapterCount);
       if (index === -1) {
         dispatch(
           setChapterIndexRequest(course.menu[currentChapterIndex - 1].id)

@@ -278,11 +278,10 @@ const DragAndDrop = ({ data }) => {
   };
 
   const showCommonWords = () => {
-    console.log(audioRef);
     if (scenario.id === 'scenario-01') {
-      audioRef.current.audio.current.src = "/assets/audio/drag-drop-2.mp3";
+      audioRef.current.audio.current.src = "/assets/audio/introduction/drag-drop-2.mp3";
     } else {
-      audioRef.current.audio.current.src = "/assets/audio/drag-drop-4.mp3";
+      audioRef.current.audio.current.src = "/assets/audio/introduction/drag-drop-4.mp3";
     }
 
     TweenMax.to(document.getElementById("drop-zone-title"), 0.5, {

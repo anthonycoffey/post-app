@@ -1,7 +1,7 @@
 import React from "react";
 import AudioPlayer from "react-h5-audio-player";
 
-const Audio = React.forwardRef(({ data }, ref) => {
+const Audio = React.forwardRef(({ data, onEnded }, ref) => {
   return (
     <div
       id={data.id}
@@ -13,6 +13,7 @@ const Audio = React.forwardRef(({ data }, ref) => {
         autoPlay
         autoPlayAfterSrcChange
         src={`${process.env.PUBLIC_URL}${data.url}`}
+        onEnded={onEnded}
         // onPlay={(e) => console.log("onPlay")}
         // other props here
       />

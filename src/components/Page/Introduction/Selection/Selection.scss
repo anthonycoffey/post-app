@@ -47,3 +47,49 @@
   font-weight: bold;
   text-transform: uppercase;
 }
+
+.introduction-slide2-page {
+  background-image: url("/assets/background/gray-background.jpg");
+  background-size: cover;
+  position: relative;
+  background-position: center;
+}
+
+.part-1, .part-2 {
+  width: 100%;
+  height: 100%;
+}
+
+.image-wrapper {
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.part-2-right-item-title {
+  color: white;
+  font-size: 40px;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+  border-bottom: 2px solid white;
+  text-transform: uppercase;
+}
+
+.part-2-right-item-answer {
+  text-align: center;
+  color: white;
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+
+.part-2-person {
+  left: -10%;
+  top: 18%;
+}
+
+.part-2-right-items {
+  top: 10%;
+  right: 5%;
+}

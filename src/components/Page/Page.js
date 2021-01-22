@@ -90,16 +90,9 @@ const Page = ({ elements, style, classNames }) => {
                 key={`${chapterIndex}-${pageIndex}-${index}`}
               />
             );
-          } else if (element.activity === 'selection') {
+          } else if (element.activity === "selection") {
             return (
               <IntroductionSelection
-                data={element.data}
-                key={`${chapterIndex}-${pageIndex}-${index}`}
-              />
-            )
-          } else if (element.activity === 'introduction-slide2') {
-            return (
-              <IntroductionSlide2
                 data={element.data}
                 key={`${chapterIndex}-${pageIndex}-${index}`}
               />

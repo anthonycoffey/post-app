@@ -129,7 +129,7 @@
                   "id": "scenario-01",
                   "audio": {
                     "id": "drag-drop-1",
-                    "url": "/assets/audio/drag-drop-1.mp3",
+                    "url": "/assets/audio/introduction/drag-drop-1.mp3",
                     "classNames": "hidden"
                   },
                   "classNames": "w-full h-full scenario-01 flex flex-col items-center justify-start",
@@ -254,7 +254,7 @@
                   "id": "scenario-02",
                   "audio": {
                     "id": "drag-drop-3",
-                    "url": "/assets/audio/drag-drop-3.mp3",
+                    "url": "/assets/audio/introduction/drag-drop-3.mp3",
                     "classNames": "hidden"
                   },
                   "classNames": "w-full h-full scenario-01 flex flex-col items-center justify-start",
@@ -380,6 +380,11 @@
               "activity": "introduction-slide1",
               "data": {
                 "classNames": "introduction-slide1-page flex w-full h-full justify-between items-center",
+                "audio": {
+                  "id": "slide-1",
+                  "url": "/assets/audio/introduction/slide-1.mp3",
+                  "classNames": "hidden"
+                },
                 "items": [
                   {
                     "classNames": "left-item p-12 h-full flex flex-col justify-around items-center",
@@ -402,7 +407,7 @@
                   {
                     "classNames": "right-item h-full p-12 flex flex-col justify-around items-center",
                     "image": {
-                      "url": "/assets/images/connecting.png",
+                      "url": "/assets/images/community.png",
                       "style": {
                         "width": "150px"
                       }
@@ -430,6 +435,11 @@
               "data": {
                 "scenario": {
                   "id": "introduction-selection",
+                  "audio": {
+                    "id": "select-1",
+                    "url": "/assets/audio/introduction/select-1.mp3",
+                    "classNames": "hidden"
+                  },
                   "classNames": "w-full h-full introduction-selection-page",
                   "title": {
                     "classNames": "mb-3 font-bold text-black my-6 px-6 pb-3 m-auto",
@@ -443,6 +453,176 @@
                   "instruction": {
                     "classNames": "text-black mb-3",
                     "content": "What has influenced the community perspective?"
+                  },
+                  "feedback": {
+                    "classNames": "introduction-slide2-page flex w-full h-full justify-center items-center",
+                    "items": [
+                      {
+                        "classNames": "cant-breathe",
+                        "image": {
+                          "url": "/assets/images/introduction/cant-breathe.png",
+                          "style": {
+                            "width": "500px",
+                            "height": "500px",
+                            "border": "5px solid white",
+                            "transform": "rotateZ(-10deg)",
+                            "left": "10%",
+                            "top": "10%",
+                            "zIndex": "1"
+                          }
+                        }
+                      },
+                      {
+                        "classNames": "had-enough",
+                        "image": {
+                          "url": "/assets/images/introduction/had-enough.png",
+                          "style": {
+                            "width": "550px",
+                            "height": "450px",
+                            "border": "5px solid white",
+                            "left": "35%",
+                            "top": "40%",
+                            "zIndex": "3"
+                          }
+                        }
+                      },
+                      {
+                        "classNames": "killing-us",
+                        "image": {
+                          "url": "/assets/images/introduction/killing-us.png",
+                          "style": {
+                            "width": "500px",
+                            "height": "500px",
+                            "border": "5px solid white",
+                            "transform": "rotateZ(12deg)",
+                            "right": "10%",
+                            "top": "10%",
+                            "zIndex": "2"
+                          }
+                        }
+                      },
+                      {
+                        "classNames": "normal-person",
+                        "image": {
+                          "url": "/assets/people/ric/people-normal.png"
+                        }
+                      },
+                      {
+                        "classNames": "right-item h-full p-12 flex flex-col justify-around items-center",
+                        "image": {
+                          "url": "/assets/images/community.png",
+                          "style": {
+                            "width": "150px",
+                            "margin": "auto"
+                          }
+                        },
+                        "title": "<div>how some in the<br/>community think of us<div>",
+                        "answers_1": [
+                          "Biased",
+                          "Unfair",
+                          "Aggressive",
+                          "Overuse Force",
+                          "Unwanted"
+                        ],
+                        "answers_2": [
+                          "Guardian",
+                          "Fair",
+                          "Trustworthy",
+                          "Courageous",
+                          "Respectful"
+                        ]
+                      },
+                      {
+                        "classNames": "initial-1",
+                        "image": {
+                          "url": "/assets/images/introduction/introduction-initial-1.jpg",
+                          "style": {
+                            "width": "350px",
+                            "height": "220px",
+                            "border": "5px solid white",
+                            "transform": "rotateZ(-10deg)",
+                            "left": "10%",
+                            "top": "8%",
+                            "zIndex": "1"
+                          }
+                        }
+                      },
+                      {
+                        "classNames": "initial-2",
+                        "image": {
+                          "url": "/assets/images/introduction/introduction-initial-2.jpg",
+                          "style": {
+                            "width": "350px",
+                            "height": "220px",
+                            "border": "5px solid white",
+                            "transform": "rotateZ(1deg)",
+                            "left": "12%",
+                            "top": "35%",
+                            "zIndex": "2"
+                          }
+                        }
+                      },
+                      {
+                        "classNames": "initial-3",
+                        "image": {
+                          "url": "/assets/images/introduction/introduction-initial-3.jpg",
+                          "style": {
+                            "width": "350px",
+                            "height": "220px",
+                            "border": "5px solid white",
+                            "transform": "rotateZ(0deg)",
+                            "left": "11%",
+                            "top": "62%",
+                            "zIndex": "3"
+                          }
+                        }
+                      },
+                      {
+                        "classNames": "result-1 opacity-0",
+                        "image": {
+                          "url": "/assets/images/introduction/introduction-result-1.jpg",
+                          "style": {
+                            "width": "350px",
+                            "height": "220px",
+                            "border": "5px solid white",
+                            "transform": "rotateZ(-10deg)",
+                            "left": "10%",
+                            "top": "8%",
+                            "zIndex": "1"
+                          }
+                        }
+                      },
+                      {
+                        "classNames": "result-2 opacity-0",
+                        "image": {
+                          "url": "/assets/images/introduction/introduction-result-2.jpg",
+                          "style": {
+                            "width": "350px",
+                            "height": "220px",
+                            "border": "5px solid white",
+                            "transform": "rotateZ(1deg)",
+                            "left": "12%",
+                            "top": "35%",
+                            "zIndex": "2"
+                          }
+                        }
+                      },
+                      {
+                        "classNames": "result-3 opacity-0",
+                        "image": {
+                          "url": "/assets/images/introduction/introduction-result-3.jpg",
+                          "style": {
+                            "width": "350px",
+                            "height": "220px",
+                            "border": "5px solid white",
+                            "transform": "rotateZ(0deg)",
+                            "left": "11%",
+                            "top": "62%",
+                            "zIndex": "3"
+                          }
+                        }
+                      }
+                    ]
                   },
                   "label": "Scenario label",
                   "choiceSet": {
@@ -466,185 +646,6 @@
                     ]
                   }
                 }
-              }
-            }
-          ]
-        },
-        {
-          "classNames": "justify-between items-center",
-          "elements": [
-            {
-              "type": "activity",
-              "activity": "introduction-slide2",
-              "data": {
-                "classNames": "introduction-slide2-page flex w-full h-full justify-center items-center",
-                "items": [
-                  {
-                    "classNames": "cant-breathe",
-                    "image": {
-                      "url": "/assets/images/introduction/cant-breathe.png",
-                      "style": {
-                        "width": "500px",
-                        "height": "500px",
-                        "border": "5px solid white",
-                        "transform": "rotateZ(-10deg)",
-                        "left": "10%",
-                        "top": "10%",
-                        "zIndex": "1"
-                      }
-                    }
-                  },
-                  {
-                    "classNames": "had-enough",
-                    "image": {
-                      "url": "/assets/images/introduction/had-enough.png",
-                      "style": {
-                        "width": "550px",
-                        "height": "450px",
-                        "border": "5px solid white",
-                        "left": "35%",
-                        "top": "40%",
-                        "zIndex": "3"
-                      }
-                    }
-                  },
-                  {
-                    "classNames": "killing-us",
-                    "image": {
-                      "url": "/assets/images/introduction/killing-us.png",
-                      "style": {
-                        "width": "500px",
-                        "height": "500px",
-                        "border": "5px solid white",
-                        "transform": "rotateZ(12deg)",
-                        "right": "10%",
-                        "top": "10%",
-                        "zIndex": "2"
-                      }
-                    }
-                  },
-                  {
-                    "classNames": "normal-person",
-                    "image": {
-                      "url": "/assets/people/ric/people-normal.png"
-                    }
-                  },
-                  {
-                    "classNames": "right-item h-full p-12 flex flex-col justify-around items-center",
-                    "image": {
-                      "url": "/assets/images/introduction/community.png",
-                      "style": {
-                        "width": "150px",
-                        "margin": "auto"
-                      }
-                    },
-                    "title": "<div>how some in the<br/>community think of us<div>",
-                    "answers_1": [
-                      "Biased",
-                      "Unfair",
-                      "Aggressive",
-                      "Overuse Force",
-                      "Unwanted"
-                    ],
-                    "answers_2": [
-                      "Guardian",
-                      "Fair",
-                      "Trustworthy",
-                      "Courageous",
-                      "Respectful"
-                    ]
-                  },
-                  {
-                    "classNames": "initial-1",
-                    "image": {
-                      "url": "/assets/images/introduction/introduction-initial-1.jpg",
-                      "style": {
-                        "width": "350px",
-                        "height": "220px",
-                        "border": "5px solid white",
-                        "transform": "rotateZ(-10deg)",
-                        "left": "10%",
-                        "top": "8%",
-                        "zIndex": "1"
-                      }
-                    }
-                  },
-                  {
-                    "classNames": "initial-2",
-                    "image": {
-                      "url": "/assets/images/introduction/introduction-initial-2.jpg",
-                      "style": {
-                        "width": "350px",
-                        "height": "220px",
-                        "border": "5px solid white",
-                        "transform": "rotateZ(1deg)",
-                        "left": "12%",
-                        "top": "35%",
-                        "zIndex": "2"
-                      }
-                    }
-                  },
-                  {
-                    "classNames": "initial-3",
-                    "image": {
-                      "url": "/assets/images/introduction/introduction-initial-3.jpg",
-                      "style": {
-                        "width": "350px",
-                        "height": "220px",
-                        "border": "5px solid white",
-                        "transform": "rotateZ(0deg)",
-                        "left": "11%",
-                        "top": "62%",
-                        "zIndex": "3"
-                      }
-                    }
-                  },
-                  {
-                    "classNames": "result-1 opacity-0",
-                    "image": {
-                      "url": "/assets/images/introduction/introduction-result-1.jpg",
-                      "style": {
-                        "width": "350px",
-                        "height": "220px",
-                        "border": "5px solid white",
-                        "transform": "rotateZ(-10deg)",
-                        "left": "10%",
-                        "top": "8%",
-                        "zIndex": "1"
-                      }
-                    }
-                  },
-                  {
-                    "classNames": "result-2 opacity-0",
-                    "image": {
-                      "url": "/assets/images/introduction/introduction-result-2.jpg",
-                      "style": {
-                        "width": "350px",
-                        "height": "220px",
-                        "border": "5px solid white",
-                        "transform": "rotateZ(1deg)",
-                        "left": "12%",
-                        "top": "35%",
-                        "zIndex": "2"
-                      }
-                    }
-                  },
-                  {
-                    "classNames": "result-3 opacity-0",
-                    "image": {
-                      "url": "/assets/images/introduction/introduction-result-3.jpg",
-                      "style": {
-                        "width": "350px",
-                        "height": "220px",
-                        "border": "5px solid white",
-                        "transform": "rotateZ(0deg)",
-                        "left": "11%",
-                        "top": "62%",
-                        "zIndex": "3"
-                      }
-                    }
-                  }
-                ]
               }
             }
           ]

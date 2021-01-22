@@ -3,6 +3,7 @@ import { TweenMax, TweenLite } from "gsap";
 import { useSelector, useDispatch } from "react-redux";
 import { find, findIndex } from "lodash";
 import renderHTML from "react-render-html";
+import Audio from "../../components/Audio";
 
 import {
   setPageIndexRequest,
@@ -16,28 +17,28 @@ const animations = [
     id: "people-normal",
     type: "from",
     initialDelay: 1,
-    showingDelay: 3,
+    showingDelay: 1,
     duration: 1,
   },
   {
     id: "people-no-idea",
     type: "from",
-    initialDelay: 5,
-    showingDelay: 3,
+    initialDelay: 3,
+    showingDelay: 2,
     duration: 1,
   },
   {
     id: "people-after-closed",
     type: "from",
-    initialDelay: 9,
-    showingDelay: 3,
+    initialDelay: 6,
+    showingDelay: 4,
     duration: 1,
   },
   {
     id: "people-hand-up",
     type: "from",
-    initialDelay: 13,
-    showingDelay: 4,
+    initialDelay: 11,
+    showingDelay: 9,
     duration: 1,
   },
 ];
@@ -47,6 +48,7 @@ const maxes = [];
 const IntroductionSlide1 = ({ data }) => {
   const { items } = data;
   const dispatch = useDispatch();
+  const audioRef = React.createRef();
   const { chapterIndex, pageIndex } = useSelector((state) => state.status);
   const course = useSelector((state) => state.course.course);
   useEffect(() => {
@@ -115,25 +117,6 @@ const IntroductionSlide1 = ({ data }) => {
         item.classList.add("custom-yellow");
       });
     }
-
-    if (index === 3) {
-      TweenMax.to(document.getElementById("left-item"), 0.5, {
-        opacity: 0,
-      }).delay(2);
-      TweenLite.to(document.getElementById("left-item"), 1, {
-        x: -1000,
-      }).delay(1);
-      TweenMax.to(document.getElementById("right-item"), 0.5, {
-        opacity: 0,
-      }).delay(2);
-      TweenLite.to(document.getElementById("right-item"), 1, {
-        x: 1100,
-      }).delay(1);
-
-      setTimeout(() => {
-        handleContinue();
-      }, 3000);
-    }
   }
 
   const currentChapterIndex = findIndex(course.menu, ["id", chapterIndex]);
@@ -159,8 +142,27 @@ const IntroductionSlide1 = ({ data }) => {
     }
   };
 
+  const onEnded = () => {
+    TweenMax.to(document.getElementById("left-item"), 0.5, {
+      opacity: 0,
+    }).delay(2);
+    TweenLite.to(document.getElementById("left-item"), 1, {
+      x: -1000,
+    }).delay(1);
+    TweenMax.to(document.getElementById("right-item"), 0.5, {
+      opacity: 0,
+    }).delay(2);
+    TweenLite.to(document.getElementById("right-item"), 1, {
+      x: 1100,
+    }).delay(1);
+    setTimeout(() => {
+      handleContinue();
+    }, 3000)
+  };
+
   return (
     <div className={`${data.classNames || ""}`} style={data.style || {}}>
+      <Audio data={data.audio} ref={audioRef} onEnded={onEnded} />
       <div className={`opacity-0 ${items[0].classNames || ""}`} id="left-item">
         <img
           src={`${items[0].image.url}`}

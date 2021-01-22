@@ -26,7 +26,7 @@ const animations_part1 = [
   },
   {
     id: ".had-enough",
-    initialDelay: 11,
+    initialDelay: 9,
     showingDelay: 3,
     duration: 2,
   },
@@ -35,21 +35,21 @@ const animations_part1 = [
 const animations_part2 = [
   {
     id: ".initial-1",
-    initialDelay: 32,
-    showingDelay: 3,
+    initialDelay: 24,
+    showingDelay: 1,
     duration: 2,
   },
   {
     id: ".initial-2",
-    initialDelay: 37,
+    initialDelay: 26,
     showingDelay: 3,
-    duration: 2,
+    duration: 1,
   },
   {
     id: ".initial-3",
-    initialDelay: 42,
+    initialDelay: 29,
     showingDelay: 3,
-    duration: 2,
+    duration: 1,
   },
 ];
 
@@ -57,31 +57,31 @@ const animations_part2_result = [
   {
     id: ".initial-1",
     type: 'hide',
-    initialDelay: 52,
+    initialDelay: 38,
   },
   {
     id: ".result-1",
-    initialDelay: 52,
+    initialDelay: 38,
     type: 'show',
   },
   {
     id: ".initial-2",
     type: 'hide',
-    initialDelay: 54,
+    initialDelay: 39,
   },
   {
     id: ".result-2",
-    initialDelay: 54,
+    initialDelay: 39,
     type: 'show',
   },
   {
     id: ".initial-3",
     type: 'hide',
-    initialDelay: 56,
+    initialDelay: 40,
   },
   {
     id: ".result-3",
-    initialDelay: 56,
+    initialDelay: 40,
     type: 'show',
   },
 ];
@@ -114,30 +114,30 @@ const IntroductionSlide2 = ({ data }) => {
 
     TweenMax.to(".part-1", 1, {
       opacity: 0,
-    }).delay(20);
+    }).delay(15);
     TweenMax.to(".part-2", 1, {
       opacity: 1,
-    }).delay(22);
+    }).delay(16);
 
     TweenMax.to(".part-2-person", 0.5, {
       opacity: 1,
-    }).delay(22);
+    }).delay(15);
     TweenLite.from(".part-2-person", 1, {
       x: -5500,
-    }).delay(24);
+    }).delay(16);
     TweenMax.to(".part-2-right-items", 0.5, {
       opacity: 1,
-    }).delay(25);
+    }).delay(18);
     TweenLite.from(".part-2-right-items", 1, {
       x: 1100,
-    }).delay(27);
+    }).delay(19);
 
     TweenMax.to(".part-2-person", 0.5, {
       opacity: 0,
-    }).delay(30);
+    }).delay(23);
     TweenLite.to(".part-2-person", 1, {
       x: -5500,
-    }).delay(31);
+    }).delay(24);
 
     animations_part2.forEach((animation, index) => {
       const max = new TweenMax.to(animation.id, animation.duration, {
@@ -146,21 +146,24 @@ const IntroductionSlide2 = ({ data }) => {
       maxes.push(max);
     });
 
-    TweenLite.to(".part-2-right-item-answers-1", 1, {
+    TweenMax.to(".part-2-right-item-answers-1", 0.5, {
+      opacity: 0,
+    }).delay(35);
+    TweenLite.to(".part-2-right-item-answers-1", 0.5, {
       x: 1100,
-    }).delay(48);
+    }).delay(35.5);
     TweenMax.to(".part-2-right-item-answers-1", 0.5, {
       display: "none",
-    }).delay(49);
-    TweenMax.to(".part-2-right-item-answers-2", 0.5, {
+    }).delay(35.5);
+    TweenMax.to(".part-2-right-item-answers-2", 0.1, {
       display: "block",
-    }).delay(50);
+    }).delay(36);
     TweenMax.to(".part-2-right-item-answers-2", 0.5, {
       opacity: 1,
-    }).delay(50);
+    }).delay(36);
     TweenLite.from(".part-2-right-item-answers-2", 1, {
       x: 1100,
-    }).delay(51);
+    }).delay(36);
 
     animations_part2_result.forEach((animation, index) => {
       if (animation.type === 'hide') {

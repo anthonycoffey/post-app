@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { TweenMax, TweenLite } from "gsap";
 import { useSelector, useDispatch } from "react-redux";
 import { find, findIndex } from "lodash";
+import Audio from "../../components/Audio";
 
 import {
   setPageIndexRequest,
@@ -9,6 +10,7 @@ import {
 } from "../../../../store/actions/status.action";
 
 import "./Selection.scss";
+import IntroductionSlide2 from "../IntroductionSlide2/IntroductionSlide2";
 
 const animations = [
   {
@@ -53,10 +55,11 @@ const maxes = [];
 const IntroductionSelection = ({ data }) => {
   const { scenario } = data;
   const dispatch = useDispatch();
+  const audioRef = React.createRef();
   const { chapterIndex, pageIndex } = useSelector((state) => state.status);
   const course = useSelector((state) => state.course.course);
   const [clicked, setClicked] = useState(-1);
-
+  const [isDone, setIsDone] = useState(false);
   useEffect(() => {
     playSequence();
     return () => {
@@ -151,15 +154,13 @@ const IntroductionSelection = ({ data }) => {
     TweenMax.to(".introduction-second-wrapper", 0.5, {
       opacity: 1,
     });
-
+    audioRef.current.audio.current.src = "/assets/audio/introduction/slide-2.mp3";
     setTimeout(() => {
-      if (pageIndex === totalPageCount - 1) {
-        handleChapterIndex(currentChapterIndex + 1);
-      } else {
-        dispatch(setPageIndexRequest(pageIndex + 1));
-      }
-    }, 2000);
+      setIsDone(true);
+    }, 5000);
   };
+
+
 
   const handleChoiceClick = (index) => {
     const item = document.getElementById(`choice-item-${index}`);
@@ -177,63 +178,73 @@ const IntroductionSelection = ({ data }) => {
       className={`${scenario.classNames || ""}`}
       style={scenario.style || {}}
     >
-      <div
-        className="opacity-0 introduction-people-wrapper absolute"
-        id="people-hand-up"
-      >
-        <img
-          src={`${process.env.PUBLIC_URL}/assets/people/rick/people-hand-up.png`}
-          alt=""
-        />
-      </div>
-      <div
-        className="opacity-0 introduction-second-wrapper absolute"
-        id="people-normal"
-      >
-        <img
-          src={`${process.env.PUBLIC_URL}/assets/people/rick/people-normal.png`}
-          alt=""
-        />
-      </div>
-      <div className="opacity-0 selection-wrapper p-12 m-12 flex flex-col items-center justify-start bg-white">
+      <Audio data={scenario.audio} ref={audioRef} />
+      {isDone ? (
+        <IntroductionSlide2 data={scenario.feedback} />
+      ) : (
         <div
-          className={`selection-title ${scenario.title.classNames || ""}`}
-          style={scenario.title.style || {}}
+          className={`${scenario.classNames || ""}`}
+          style={scenario.style || {}}
         >
-          {scenario.title.content}
-        </div>
-        <div
-          className={`selection-instruction ${
-            scenario.instruction.classNames || ""
-          }`}
-          style={scenario.instruction.style || {}}
-        >
-          {scenario.instruction.content}
-        </div>
-        <div className="introduction-selections">
-          {scenario.choiceSet.choices.map((choice, index) => {
-            return (
-              <div
-                className={`opacity-0 choice-item choice-item-${index} text-white p-3 mb-3`}
-                key={index}
-                onClick={() => handleChoiceClick(index)}
-                id={`choice-item-${index}`}
-              >
-                {choice.label}
-              </div>
-            );
-          })}
-        </div>
-        {clicked > -1 ? (
-          <button
-            id="done-button"
-            className="opacity-100 done-button"
-            onClick={() => handleContinue()}
+          <div
+            className="opacity-0 introduction-people-wrapper absolute"
+            id="people-hand-up"
           >
-            Done
-          </button>
-        ) : null}
-      </div>
+            <img
+              src={`${process.env.PUBLIC_URL}/assets/people/rick/people-hand-up.png`}
+              alt=""
+            />
+          </div>
+          <div
+            className="opacity-0 introduction-second-wrapper absolute"
+            id="people-normal"
+          >
+            <img
+              src={`${process.env.PUBLIC_URL}/assets/people/rick/people-normal.png`}
+              alt=""
+            />
+          </div>
+          <div className="opacity-0 selection-wrapper p-12 m-12 flex flex-col items-center justify-start bg-white">
+            <div
+              className={`selection-title ${scenario.title.classNames || ""}`}
+              style={scenario.title.style || {}}
+            >
+              {scenario.title.content}
+            </div>
+            <div
+              className={`selection-instruction ${
+                scenario.instruction.classNames || ""
+              }`}
+              style={scenario.instruction.style || {}}
+            >
+              {scenario.instruction.content}
+            </div>
+            <div className="introduction-selections">
+              {scenario.choiceSet.choices.map((choice, index) => {
+                return (
+                  <div
+                    className={`opacity-0 choice-item choice-item-${index} text-white p-3 mb-3`}
+                    key={index}
+                    onClick={() => handleChoiceClick(index)}
+                    id={`choice-item-${index}`}
+                  >
+                    {choice.label}
+                  </div>
+                );
+              })}
+            </div>
+            {clicked > -1 ? (
+              <button
+                id="done-button"
+                className="opacity-100 done-button"
+                onClick={() => handleContinue()}
+              >
+                Done
+              </button>
+            ) : null}
+          </div>
+        </div>
+      )}
     </div>
   );
 };
