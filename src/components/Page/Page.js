@@ -15,6 +15,7 @@ import CustomButton from "./components/CustomButton";
 import DragAndDrop from "../../components/DragAndDrop/DragAndDrop";
 import ConversationRater from "../../components/ConversationRater/ConversationRater";
 import IntroductionSlide1 from "./Introduction/IntroductionSlide1/IntroductionSlide1";
+import IntroductionSlide2 from "./Introduction/IntroductionSlide2/IntroductionSlide2";
 import IntroductionSelection from "./Introduction/Selection/Selection";
 
 const Page = ({ elements, style, classNames }) => {
@@ -96,6 +97,13 @@ const Page = ({ elements, style, classNames }) => {
                 key={`${chapterIndex}-${pageIndex}-${index}`}
               />
             )
+          } else if (element.activity === 'introduction-slide2') {
+            return (
+              <IntroductionSlide2
+                data={element.data}
+                key={`${chapterIndex}-${pageIndex}-${index}`}
+              />
+            );
           }
         } else if (element.type === "text") {
           return <Text data={element} key={index} />;

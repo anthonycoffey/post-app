@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { TweenMax, TweenLite } from "gsap";
 import { useSelector, useDispatch } from "react-redux";
 import { find, findIndex } from "lodash";

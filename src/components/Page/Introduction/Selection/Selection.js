@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { TweenMax, TweenLite } from "gsap";
 import { useSelector, useDispatch } from "react-redux";
 import { find, findIndex } from "lodash";
-import renderHTML from "react-render-html";
 
 import {
   setPageIndexRequest,
@@ -146,11 +145,20 @@ const IntroductionSelection = ({ data }) => {
   };
 
   const handleContinue = () => {
-    if (pageIndex === totalPageCount - 1) {
-      handleChapterIndex(currentChapterIndex + 1);
-    } else {
-      dispatch(setPageIndexRequest(pageIndex + 1));
-    }
+    TweenMax.to(".introduction-people-wrapper", 0.5, {
+      opacity: 0,
+    });
+    TweenMax.to(".introduction-second-wrapper", 0.5, {
+      opacity: 1,
+    });
+
+    setTimeout(() => {
+      if (pageIndex === totalPageCount - 1) {
+        handleChapterIndex(currentChapterIndex + 1);
+      } else {
+        dispatch(setPageIndexRequest(pageIndex + 1));
+      }
+    }, 2000);
   };
 
   const handleChoiceClick = (index) => {
@@ -175,6 +183,15 @@ const IntroductionSelection = ({ data }) => {
       >
         <img
           src={`${process.env.PUBLIC_URL}/assets/people/rick/people-hand-up.png`}
+          alt=""
+        />
+      </div>
+      <div
+        className="opacity-0 introduction-second-wrapper absolute"
+        id="people-normal"
+      >
+        <img
+          src={`${process.env.PUBLIC_URL}/assets/people/rick/people-normal.png`}
           alt=""
         />
       </div>

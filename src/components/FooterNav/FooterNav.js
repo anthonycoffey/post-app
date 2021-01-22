@@ -40,9 +40,9 @@ const FooterNav = () => {
         dispatch(setPageIndexRequest(index));
       }
 
-      if (index <= totalChapterCount - 1) {
-        dispatch(setChapterIndexRequest(course.menu[index].id));
-      }
+      // if (index <= totalChapterCount - 1) {
+      //   dispatch(setChapterIndexRequest(course.menu[index].id));
+      // }
     }
   };
 

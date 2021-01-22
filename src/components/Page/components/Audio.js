@@ -1,19 +1,23 @@
-import React from 'react';
+import React from "react";
 import AudioPlayer from "react-h5-audio-player";
 
-const Audio = ({data}) => {
-  return <div
-    id={data.id}
-    className={`audio-panel ${data.classNames || ""}`}
-    style={data.style || {}}
-  >
-    <AudioPlayer
-      autoPlay
-      src={`${process.env.PUBLIC_URL}${data.url}`}
-      // onPlay={(e) => console.log("onPlay")}
-      // other props here
-    />
-  </div>
-}
+const Audio = React.forwardRef(({ data }, ref) => {
+  return (
+    <div
+      id={data.id}
+      className={`audio-panel ${data.classNames || ""}`}
+      style={data.style || {}}
+      >
+      <AudioPlayer
+        ref={ref}
+        autoPlay
+        autoPlayAfterSrcChange
+        src={`${process.env.PUBLIC_URL}${data.url}`}
+        // onPlay={(e) => console.log("onPlay")}
+        // other props here
+      />
+    </div>
+  );
+});
 
 export default Audio;

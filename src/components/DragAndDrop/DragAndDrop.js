@@ -6,57 +6,103 @@ import {
   setPageIndexRequest,
   setChapterIndexRequest,
 } from "../../store/actions/status.action";
-
+import Audio from "../Page/components/Audio";
 import "./DragAndDrop.scss";
 
-const animations = [
+const animations_scenario1 = [
   {
     id: "common-choosen-title",
     type: "from",
-    initialDelay: 0,
+    initialDelay: 4,
     showingDelay: 1,
     duration: 1,
   },
   {
     id: "choosen-word-0",
     type: "from",
-    initialDelay: 3,
+    initialDelay: 9,
     showingDelay: 1,
-    duration: 1,
+    duration: 0.5,
   },
   {
     id: "choosen-word-1",
     type: "from",
-    initialDelay: 6,
+    initialDelay: 10,
     showingDelay: 1,
-    duration: 1,
+    duration: 0.5,
   },
   {
     id: "choosen-word-2",
     type: "from",
-    initialDelay: 9,
+    initialDelay: 11,
     showingDelay: 1,
-    duration: 1,
+    duration: 0.5,
   },
   {
     id: "choosen-word-3",
     type: "from",
-    initialDelay: 12,
+    initialDelay: 11.5,
     showingDelay: 1,
-    duration: 1,
+    duration: 0.5,
   },
   {
     id: "choosen-word-4",
     type: "from",
-    initialDelay: 15,
+    initialDelay: 12,
+    showingDelay: 1,
+    duration: 0.5,
+  },
+];
+
+const animations_scenario2 = [
+  {
+    id: "common-choosen-title",
+    type: "from",
+    initialDelay: 11,
     showingDelay: 1,
     duration: 1,
+  },
+  {
+    id: "choosen-word-0",
+    type: "from",
+    initialDelay: 14,
+    showingDelay: 1,
+    duration: 0.5,
+  },
+  {
+    id: "choosen-word-1",
+    type: "from",
+    initialDelay: 14.8,
+    showingDelay: 1,
+    duration: 0.5,
+  },
+  {
+    id: "choosen-word-2",
+    type: "from",
+    initialDelay: 15.5,
+    showingDelay: 1,
+    duration: 0.5,
+  },
+  {
+    id: "choosen-word-3",
+    type: "from",
+    initialDelay: 16.5,
+    showingDelay: 1,
+    duration: 0.5,
+  },
+  {
+    id: "choosen-word-4",
+    type: "from",
+    initialDelay: 17.5,
+    showingDelay: 1,
+    duration: 0.5,
   },
 ];
 const maxes = [];
 
 const DragAndDrop = ({ data }) => {
   const { scenario } = data;
+  const audioRef = React.createRef();
   const dispatch = useDispatch();
   const { chapterIndex, pageIndex } = useSelector((state) => state.status);
   const course = useSelector((state) => state.course.course);
@@ -127,16 +173,17 @@ const DragAndDrop = ({ data }) => {
       {
         opacity: 1,
       }
-    );
+    ).delay(1);
+    const showingDelay = scenario.id === "scenario-01" ? 2 : 5;
     const imageAnimation = new TweenMax.to(
       document.getElementById("image"),
       1,
       {
         opacity: 1,
         onComplete: showDragItems,
-        onCompleteParams: ["image", 1, 3],
+        onCompleteParams: ["image", 1, showingDelay],
       }
-    );
+    ).delay(1);
     maxes.push(titleAnimation, imageAnimation);
   };
 
@@ -167,7 +214,7 @@ const DragAndDrop = ({ data }) => {
   const onDragStart = (ev, id, index) => {
     ev.dataTransfer.setData("id", id);
     document.getElementById(`choice-${index}`).style.opacity = 0.001;
-    document.getElementById(`choice-${index}`).style.color = 'black';
+    document.getElementById(`choice-${index}`).style.color = "black";
   };
 
   const onDragEnd = (ev, id, index) => {
@@ -196,7 +243,7 @@ const DragAndDrop = ({ data }) => {
             task.category = cat;
           } else {
             if (task.category === cat) {
-              task.category = 'wip';
+              task.category = "wip";
             }
           }
         }
@@ -231,34 +278,46 @@ const DragAndDrop = ({ data }) => {
   };
 
   const showCommonWords = () => {
-    TweenMax.to(document.getElementById("drop-zone-title"), 1, {
+    console.log(audioRef);
+    if (scenario.id === 'scenario-01') {
+      audioRef.current.audio.current.src = "/assets/audio/drag-drop-2.mp3";
+    } else {
+      audioRef.current.audio.current.src = "/assets/audio/drag-drop-4.mp3";
+    }
+
+    TweenMax.to(document.getElementById("drop-zone-title"), 0.5, {
       opacity: 0,
     });
-    TweenMax.to(document.getElementById("drop-zone-title"), 1, {
+    TweenMax.to(document.getElementById("drop-zone-title"), 0.5, {
       display: "none",
     });
-    TweenMax.to(document.getElementById("drop-zone-extra-title"), 1, {
+    TweenMax.to(document.getElementById("drop-zone-extra-title"), 0.5, {
       display: "block",
-    }).delay(1);
-    TweenMax.to(document.getElementById("drop-zone-extra-title"), 1, {
+    }).delay(0.5);
+    TweenMax.to(document.getElementById("drop-zone-extra-title"), 0.5, {
       opacity: 1,
-    }).delay(1);
+    }).delay(0.5);
     TweenMax.to(document.getElementById("drop-items"), 1, {
       opacity: 0,
     });
     TweenMax.to(document.getElementById("drop-items"), 1, {
       display: "none",
-    });
+    }).delay(1);
     TweenMax.to(document.getElementById("choosen-words"), 1, {
       display: "flex",
-    }).delay(1);
+    }).delay(2);
     TweenMax.to(document.getElementById("choosen-words"), 1, {
       opacity: 1,
-    }).delay(1);
+    }).delay(4);
 
     TweenMax.to(document.getElementById("done-button"), 1, {
       opacity: 0,
     });
+
+    const animations =
+      scenario.id === "scenario-01"
+        ? animations_scenario1
+        : animations_scenario2;
 
     animations.forEach((animation) => {
       TweenMax.to(document.getElementById(animation.id), animation.duration, {
@@ -274,14 +333,14 @@ const DragAndDrop = ({ data }) => {
     });
     TweenMax.to(document.getElementById("continue-button"), 1, {
       opacity: 1,
-    }).delay(18);
+    }).delay(20);
   };
-
   return (
     <div
       className={`drag-and-drop ${scenario.classNames || ""}`}
       style={scenario.style || {}}
     >
+      <Audio data={scenario.audio} ref={audioRef} />
       <div
         className={scenario.title.classNames || ""}
         style={scenario.title.style || {}}
