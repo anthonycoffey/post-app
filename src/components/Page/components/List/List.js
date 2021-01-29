@@ -1,6 +1,6 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import { setPageIndexRequest } from "../../../store/actions/status.action";
+import { setPageIndexRequest } from "../../../../store/actions/status.action";
 import "./List.scss";
 
 const List = ({ data }) => {

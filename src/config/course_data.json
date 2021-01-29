@@ -50,12 +50,7 @@
             {
               "id": "text",
               "type": "text",
-              "classNames": "absolute text-black font-bold",
-              "style": {
-                "left": "10%",
-                "top": "40%",
-                "fontSize": "40px"
-              },
+              "classNames": "absolute",
               "content": "Introduction",
               "animations": [
                 {
@@ -79,11 +74,7 @@
             {
               "id": "list",
               "type": "list",
-              "classNames": "list-items-wrapper absolute w-auto h-auto",
-              "style": {
-                "top": "10%",
-                "right": "10%"
-              },
+              "classNames": "list-items-wrapper md:top-20 lg:top-32 md:right-16 lg:right-32 absolute w-auto h-auto",
               "items": [
                 {
                   "value": "yourself",
@@ -132,14 +123,9 @@
                     "url": "/assets/audio/introduction/drag-drop-1.mp3",
                     "classNames": "hidden"
                   },
-                  "classNames": "w-full h-full scenario-01 flex flex-col items-center justify-start",
+                  "classNames": "scenario-01",
                   "title": {
-                    "classNames": "mb-6 opacity-0 text-white my-6 px-6 pb-3 m-auto",
-                    "style": {
-                      "fontSize": "40px",
-                      "borderBottom": "2px solid white",
-                      "width": "fit-content"
-                    },
+                    "classNames": "drag-drop-title",
                     "content": "How do you think of yourself as an officer?"
                   },
                   "instructions": "Drag 5 words into the spaces.",
@@ -257,14 +243,9 @@
                     "url": "/assets/audio/introduction/drag-drop-3.mp3",
                     "classNames": "hidden"
                   },
-                  "classNames": "w-full h-full scenario-01 flex flex-col items-center justify-start",
+                  "classNames": "scenario-01",
                   "title": {
-                    "classNames": "mb-6 opacity-0 text-white my-6 px-6 pb-3 m-auto",
-                    "style": {
-                      "fontSize": "40px",
-                      "borderBottom": "2px solid white",
-                      "width": "fit-content"
-                    },
+                    "classNames": "drag-drop-title",
                     "content": "How does the Community view us?"
                   },
                   "instructions": "Drag 5 words into the spaces.",
@@ -276,7 +257,6 @@
                   "choiceSet": {
                     "id": "choice-set-01",
                     "type": "multiChoice",
-                    "title": "COMMONLY CHOOSEN WORDS",
                     "body": "Choice set body",
                     "feedback": {
                       "title": "COMMONLY CHOOSEN WORDS",

@@ -1,10 +1,12 @@
 import React from "react";
 import renderHTML from "react-render-html";
+import "./Text.scss";
+
 const Text = ({ data }) => {
   return (
     <div
       id={data.id}
-      className={`content-wrapper ${data.classNames ? data.classNames : ""}`}
+      className={`text-wrapper ${data.classNames ? data.classNames : ""}`}
       style={data.style || {}}
     >
       <div

@@ -6,7 +6,7 @@ import {
   setPageIndexRequest,
   setChapterIndexRequest,
 } from "../../store/actions/status.action";
-import Audio from "../Page/components/Audio";
+import Audio from "../Page/components/Audio/Audio";
 import "./TextDragAndDrop.scss";
 
 const maxes = [];

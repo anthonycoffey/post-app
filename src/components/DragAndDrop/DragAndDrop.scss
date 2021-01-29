@@ -3,6 +3,14 @@
   background-size: cover;
   position: relative;
   background-position: center;
+
+  @apply w-full h-full flex flex-col items-center justify-start;
+}
+
+.drag-drop-title {
+ @apply mb-6 opacity-0 text-white my-6 px-6 pb-3 m-auto md:text-2xl lg:text-3xl;
+ border-bottom: 2px solid white;
+ width: fit-content;
 }
 
 .initial-logo-image {
@@ -12,6 +20,7 @@
 
 .community-image {
   border: 3px solid white;
+  @apply w-10/12 mx-auto;
 }
 
 .drag-drop-wrapper {
@@ -22,24 +31,25 @@
 }
 
 .drop-zones {
+  @apply md:w-4/12 lg:w-3/12;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
 
   .drop-zone-title {
-    font-size: 20px;
+    @apply md:text-lg lg:text-xl;
   }
 
   .drop-zone-extra-title {
-    font-size: 30px;
+    @apply md:text-2xl lg:text-3xl;
   }
 
   .done-button {
     margin-top: 20px;
     width: 150px;
     height: 50px;
-    font-size: 30px;
+    @apply md:text-lg lg:text-xl;
     background: #eeece1;
     border-radius: 5px;
     text-transform: uppercase;
@@ -47,17 +57,19 @@
 }
 
 .continue-button {
-  margin-top: 20px;
-  width: 200px;
   height: 50px;
-  font-size: 30px;
+  @apply md:w-32 lg:w-64 md:text-xl lg:text-2xl mt-5;
   background: #eeece1;
   border-radius: 5px;
   text-transform: uppercase;
 }
 
+.drop-zone-items {
+  width: 100%;
+}
+
 .droppable {
-  width: 400px;
+  width: 100%;
   height: 50px;
   background-color: white;
   border-left: 1px solid black;
@@ -78,23 +90,23 @@
   color: white;
   cursor: pointer;
   font-weight: bold;
-  font-size: 30px;
+  @apply md:text-lg lg:text-2xl;
+  text-align: center;
   background: transparent;
-  margin: 5px auto;
+  @apply md:my-1 lg:my-1 mx-auto;
 }
 
 .choosen-words {
   .common-choosen-title {
     color: white;
-    font-size: 30px;
+    @apply md:text-lg lg:text-2xl;
     border-bottom: 2px solid white;
   }
 
   .choosen-words {
     .choosen-word {
       color: white;
-      font-size: 30px;
-      margin-bottom: 30px;
+      @apply md:text-2xl lg:text-3xl md:mb-6 lg:mb-10;
       text-align: center;
     }
   }

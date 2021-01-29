@@ -6,7 +6,7 @@ import {
   setPageIndexRequest,
   setChapterIndexRequest,
 } from "../../store/actions/status.action";
-import Audio from "../Page/components/Audio";
+import Audio from "../Page/components/Audio/Audio";
 import "./DragAndDrop.scss";
 
 const animations_scenario1 = [
@@ -156,7 +156,7 @@ const DragAndDrop = ({ data }) => {
     } else {
       setShowDone(false);
     }
-  }
+  };
 
   const playSequence = () => {
     const titleAnimation = new TweenMax.to(
@@ -227,31 +227,31 @@ const DragAndDrop = ({ data }) => {
     if (cat === source) {
       return;
     }
-    if (cat === 'wip') {
+    if (cat === "wip") {
       const sourceLabel = temp[source][0].label;
-      const targetIndex = findIndex(temp.wip, ['label', id]);
+      const targetIndex = findIndex(temp.wip, ["label", id]);
       temp.wip[targetIndex].label = sourceLabel;
       temp.wip[targetIndex].isEmpty = false;
       temp.wip[targetIndex].isWhite = true;
       temp[source] = [];
     } else {
       if (temp[cat].length < 1) {
-        const sourceIndex = findIndex(temp.wip, ['label', id]);
+        const sourceIndex = findIndex(temp.wip, ["label", id]);
         temp.wip[sourceIndex].isEmpty = true;
         temp[cat].push({
-          label: id
+          label: id,
         });
       } else {
-        const sourceIndex = findIndex(temp.wip, ['label', id]);
+        const sourceIndex = findIndex(temp.wip, ["label", id]);
         temp.wip[sourceIndex].isEmpty = true;
         const targetLabel = temp[cat][0].label;
         temp[cat][0].label = id;
-        const targetIndex = findIndex(temp.wip, ['label', targetLabel]);
+        const targetIndex = findIndex(temp.wip, ["label", targetLabel]);
         temp.wip[targetIndex].isEmpty = false;
       }
     }
 
-    setFinal({...temp});
+    setFinal({ ...temp });
     showDoneButton();
   };
 
@@ -314,6 +314,10 @@ const DragAndDrop = ({ data }) => {
 
     TweenMax.to(document.getElementById("done-button"), 1, {
       opacity: 0,
+    });
+    console.log("2h3h3");
+    TweenMax.to(document.getElementById("done-button"), 1, {
+      display: "none",
     });
 
     const animations =
@@ -383,8 +387,22 @@ const DragAndDrop = ({ data }) => {
                     return (
                       <div
                         key={`choice-first-${index}-${item.label}`}
-                        onDragStart={(e) => onDragStart(e, item.label, `choice-first-${index}`, 'first')}
-                        onDragEnd={(e) => onDragEnd(e, item.label, `choice-first-${index}`, 'first')}
+                        onDragStart={(e) =>
+                          onDragStart(
+                            e,
+                            item.label,
+                            `choice-first-${index}`,
+                            "first"
+                          )
+                        }
+                        onDragEnd={(e) =>
+                          onDragEnd(
+                            e,
+                            item.label,
+                            `choice-first-${index}`,
+                            "first"
+                          )
+                        }
                         draggable
                         id={`choice-first-${index}`}
                         className="draggable"
@@ -405,8 +423,17 @@ const DragAndDrop = ({ data }) => {
                     return (
                       <div
                         key={`choice-second-${index}`}
-                        onDragStart={(e) => onDragStart(e, item.label, `choice-second-${index}`, 'second')}
-                        onDragEnd={(e) => onDragEnd(e, item.label, `choice-second-${index}`)}
+                        onDragStart={(e) =>
+                          onDragStart(
+                            e,
+                            item.label,
+                            `choice-second-${index}`,
+                            "second"
+                          )
+                        }
+                        onDragEnd={(e) =>
+                          onDragEnd(e, item.label, `choice-second-${index}`)
+                        }
                         draggable
                         id={`choice-second-${index}`}
                         className="draggable"
@@ -427,8 +454,17 @@ const DragAndDrop = ({ data }) => {
                     return (
                       <div
                         key={`choice-third-${index}`}
-                        onDragStart={(e) => onDragStart(e, item.label, `choice-third-${index}`, 'third')}
-                        onDragEnd={(e) => onDragEnd(e, item.label, `choice-third-${index}`)}
+                        onDragStart={(e) =>
+                          onDragStart(
+                            e,
+                            item.label,
+                            `choice-third-${index}`,
+                            "third"
+                          )
+                        }
+                        onDragEnd={(e) =>
+                          onDragEnd(e, item.label, `choice-third-${index}`)
+                        }
                         draggable
                         id={`choice-third-${index}`}
                         className="draggable"
@@ -449,8 +485,17 @@ const DragAndDrop = ({ data }) => {
                     return (
                       <div
                         key={`choice-firth-${index}`}
-                        onDragStart={(e) => onDragStart(e, item.label, `choice-firth-${index}`, 'firth')}
-                        onDragEnd={(e) => onDragEnd(e, item.label, `choice-firth-${index}`)}
+                        onDragStart={(e) =>
+                          onDragStart(
+                            e,
+                            item.label,
+                            `choice-firth-${index}`,
+                            "firth"
+                          )
+                        }
+                        onDragEnd={(e) =>
+                          onDragEnd(e, item.label, `choice-firth-${index}`)
+                        }
                         draggable
                         id={`choice-firth-${index}`}
                         className="draggable"
@@ -471,8 +516,17 @@ const DragAndDrop = ({ data }) => {
                     return (
                       <div
                         key={`choice-fifth-${index}`}
-                        onDragStart={(e) => onDragStart(e, item.label, `choice-fifth-${index}`, 'fifth')}
-                        onDragEnd={(e) => onDragEnd(e, item.label, `choice-fifth-${index}`)}
+                        onDragStart={(e) =>
+                          onDragStart(
+                            e,
+                            item.label,
+                            `choice-fifth-${index}`,
+                            "fifth"
+                          )
+                        }
+                        onDragEnd={(e) =>
+                          onDragEnd(e, item.label, `choice-fifth-${index}`)
+                        }
                         draggable
                         id={`choice-fifth-${index}`}
                         className="draggable"
@@ -487,7 +541,7 @@ const DragAndDrop = ({ data }) => {
           {showDone ? (
             <button
               id="done-button"
-              className="opacity-100 done-button"
+              className="block opacity-100 done-button"
               onClick={() => showCommonWords()}
             >
               Done
@@ -496,7 +550,7 @@ const DragAndDrop = ({ data }) => {
         </div>
         <div className="opacity-0 block drag-items" id="drop-items">
           <div
-            className="wip grid grid-cols-2 gap-4"
+            className="wip grid grid-cols-2 md:gap-1 lg:gap-4"
             onDragOver={(e) => onDragOver(e)}
             onDrop={(e) => {
               onDrop(e, "wip");
@@ -507,11 +561,17 @@ const DragAndDrop = ({ data }) => {
                   return (
                     <div
                       key={`choice-wip-${index}-${item.label}`}
-                      onDragStart={(e) => onDragStart(e, item.label, `choice-wip-${index}`, 'wip')}
-                      onDragEnd={(e) => onDragEnd(e, item.label, `choice-wip-${index}`, 'wip')}
+                      onDragStart={(e) =>
+                        onDragStart(e, item.label, `choice-wip-${index}`, "wip")
+                      }
+                      onDragEnd={(e) =>
+                        onDragEnd(e, item.label, `choice-wip-${index}`, "wip")
+                      }
                       draggable
                       id={`choice-wip-${index}`}
-                      className={`draggable ${item.isEmpty ? 'invisible' : 'visible'} ${item.isWhite ? 'text-white' : ''}`}
+                      className={`draggable ${
+                        item.isEmpty ? "invisible" : "visible"
+                      } ${item.isWhite ? "text-white" : ""}`}
                     >
                       {item.label}
                     </div>
