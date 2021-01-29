@@ -315,7 +315,6 @@ const DragAndDrop = ({ data }) => {
     TweenMax.to(document.getElementById("done-button"), 1, {
       opacity: 0,
     });
-    console.log("2h3h3");
     TweenMax.to(document.getElementById("done-button"), 1, {
       display: "none",
     });
