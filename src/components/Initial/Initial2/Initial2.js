@@ -99,8 +99,6 @@ const Initial2 = () => {
         <img
           src={`${process.env.PUBLIC_URL}/assets/images/quote-up.png`}
           alt=""
-          width="150px"
-          height="250px"
         />
       </div>
       <div
@@ -158,8 +156,6 @@ const Initial2 = () => {
         <img
           src={`${process.env.PUBLIC_URL}/assets/images/quote-down.png`}
           alt=""
-          width="150px"
-          height="250px"
         />
       </div>
     </div>

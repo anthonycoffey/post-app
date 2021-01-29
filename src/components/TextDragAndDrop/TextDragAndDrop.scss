@@ -1,0 +1,94 @@
+.text-drag-and-drop {
+  background-image: url("/assets/background/decisions.jpg");
+  background-size: cover;
+  position: relative;
+  background-position: center;
+  transition: background-image ease 2s;
+}
+
+.text-drag-people-normal {
+  position: absolute;
+  left: -10%;
+  top: 18%;
+}
+
+.text-drag-drop-header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+
+  .drag-target {
+    width: 100%;
+    text-align: center;
+    font-size: 40px;
+    font-weight: bold;
+    color: white;
+    text-transform: capitalize;
+  }
+}
+
+.drag-drop-wrapper {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-evenly;
+  width: 100%;
+}
+
+.text-drop-zones {
+  width: 100%;
+
+  .text-drop-zone {
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &.filled {
+      background: #e0dfcb;
+    }
+
+    .text-drop-zone-content {
+      width: 230px;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: black;
+      background: transparent;
+      font-size: 20px;
+      font-weight: bold;
+      padding: 20px;
+      text-align: center;
+    }
+  }
+}
+
+.drag-source-wrapper {
+  width: 450px;
+  height: 250px;
+  background: white;
+  border: 2px dotted black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .draggable {
+    color: white;
+    padding: 20px;
+    margin: 20px;
+    display: flex;
+    font-size: 20px;
+    width: 230px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: #414141;
+  }
+}
+
+.done-button {
+  top: 64%;
+}

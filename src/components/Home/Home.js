@@ -14,7 +14,7 @@ const Home = ({ course }) => {
   };
   return (
     <div className="home-wrapper">
-      <div className="chapters">
+      <div className="chapters md:grid lg:grid">
         {course.menu.map((item, index) => (
           <div
             className={`chapter ${item.id}`}
@@ -30,11 +30,11 @@ const Home = ({ course }) => {
               />
             </div>
             {index > 0 ? (
-              <div>
+              <div className="ml-6 w-auto">
                 {index}. {item.title}
               </div>
             ) : (
-              <div>Introduction</div>
+              <div className="ml-6 w-auto">Introduction</div>
             )}
           </div>
         ))}

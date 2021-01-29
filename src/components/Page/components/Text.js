@@ -11,7 +11,7 @@ const Text = ({ data }) => {
         className={`text ${data.classNames || ""}`}
         style={data.style || {}}
       >
-        {data.content}
+        {renderHTML(data.content)}
       </div>
     </div>
   );

@@ -206,7 +206,6 @@ const DragAndDrop = ({ data }) => {
   const onDragStart = (ev, id, index, source) => {
     ev.dataTransfer.setData("id", id);
     ev.dataTransfer.setData("source", source);
-    ev.dataTransfer.setData("index", index);
     document.getElementById(index).style.opacity = 0.001;
     // if (source === 'wip') {
     //   document.getElementById(index).style.color = "black";
@@ -224,7 +223,6 @@ const DragAndDrop = ({ data }) => {
   const onDrop = (ev, cat) => {
     let id = ev.dataTransfer.getData("id");
     let source = ev.dataTransfer.getData("source");
-    let index = ev.dataTransfer.getData("index");
     const temp = final;
     if (cat === source) {
       return;

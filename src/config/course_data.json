@@ -307,11 +307,13 @@
                     "choices": [
                       {
                         "label": "Commanding",
-                        "category": "wip"
+                        "category": "wip",
+                        "type": "first"
                       },
                       {
                         "label": "Dangerous",
-                        "category": "wip"
+                        "category": "wip",
+                        "type": "second"
                       },
                       {
                         "label": "Dedicated",
@@ -735,8 +737,8 @@
       ]
     },
     {
-      "id": "analyze",
-      "title": "Analyze",
+      "id": "bias",
+      "title": "Our Bias",
       "pages": [
         {
           "classNames": "items-center",
@@ -1042,9 +1044,250 @@
       ]
     },
     {
-      "id": "challenge",
-      "title": "Challenge",
+      "id": "law",
+      "title": "The Law",
       "pages": []
+    },
+    {
+      "id": "decisions",
+      "title": "Your Decisions and Actions",
+      "pages": [
+        {
+          "classNames": "decisions-wrapper justify-center items-center",
+          "type": "default",
+          "elements": [
+            {
+              "id": "text",
+              "type": "text",
+              "classNames": "absolute text-black font-bold",
+              "style": {
+                "left": "10%",
+                "top": "40%",
+                "fontSize": "40px",
+                "width": "max-content",
+                "textAlign": "center"
+              },
+              "content": "4. Your Decisions<br/>and Actions",
+              "animations": [
+                {
+                  "type": "from",
+                  "x": -500,
+                  "delay": 1.4
+                }
+              ]
+            },
+            {
+              "id": "image",
+              "type": "image",
+              "classNames": "absolute w-auto h-auto",
+              "style": {
+                "left": "12%",
+                "top": "10%"
+              },
+              "alt": "decisions",
+              "url": "/assets/images/decisions.png",
+              "animations": [
+                {
+                  "type": "from",
+                  "x": -500,
+                  "delay": 1.4
+                }
+              ]
+            },
+            {
+              "id": "list",
+              "type": "list",
+              "classNames": "list-items-wrapper absolute w-auto h-auto",
+              "style": {
+                "top": "20%",
+                "right": "20%"
+              },
+              "items": [
+                {
+                  "value": "drag-drop-2",
+                  "title": "Drag and Drop 2",
+                  "pageIndex": 1
+                },
+                {
+                  "value": "drag-drop-3",
+                  "title": "Drag and Drop 3",
+                  "pageIndex": 2
+                },
+                {
+                  "value": "slider-question",
+                  "title": "Slider and Question Activity",
+                  "pageIndex": 3
+                }
+              ],
+              "animations": [
+                {
+                  "type": "from",
+                  "x": 1100,
+                  "delay": 1.4
+                }
+              ]
+            },
+            {
+              "id": "buttton",
+              "type": "button",
+              "classNames": "introduction-back-button absolute",
+              "style": {
+                "top": "70%",
+                "right": "30%",
+                "fontSize": "40px"
+              },
+              "title": "Back",
+              "action": "goToMenu"
+            }
+          ]
+        },
+        {
+          "classNames": "decisions-second-page justify-center items-center",
+          "elements": [
+            {
+              "type": "activity",
+              "activity": "TextDragAndDrop",
+              "data": {
+                "scenario": {
+                  "id": "scenario-01",
+                  "initialAudio": "/assets/audio/decisions/initial.mp3",
+                  "audio": {
+                    "id": "drag-drop-1",
+                    "classNames": "hidden"
+                  },
+                  "classNames": "w-full h-full scenario-01 flex flex-col items-center justify-start",
+                  "title": {
+                    "classNames": "opacity-0 absolute text-white m-auto",
+                    "style": {
+                      "fontSize": "30px",
+                      "width": "fit-content",
+                      "top": "53%"
+                    },
+                    "content": "Drag and drop the description below to the matching Tenet."
+                  },
+                  "label": "Scenario label",
+                  "image": {
+                    "url": "/assets/people/rick/people-normal.png",
+                    "classNames": "people-normal"
+                  },
+                  "choiceSet": {
+                    "id": "choice-set-01",
+                    "titles": [
+                      {
+                        "title": "voice"
+                      },
+                      {
+                        "title": "neutrality"
+                      },
+                      {
+                        "title": "respect"
+                      },
+                      {
+                        "title": "trustworthiness"
+                      }
+                    ],
+                    "choices": [
+                      {
+                        "label": "Listen attentively and without judgement.",
+                        "audio": "/assets/audio/decisions/select-1.mp3",
+                        "type": "voice"
+                      },
+                      {
+                        "label": "Be respectful in your words, tone, and demeanor",
+                        "audio": "/assets/audio/decisions/select-2.mp3",
+                        "type": "respect"
+                      },
+                      {
+                        "label": "Treat people equally and without bias",
+                        "audio": "/assets/audio/decisions/select-3.mp3",
+                        "type": "neutrality"
+                      },
+                      {
+                        "label": "Do what is best for people and follow through on your commitments",
+                        "audio": "/assets/audio/decisions/select-4.mp3",
+                        "type": "trustworthiness"
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          ]
+        },
+        {
+          "classNames": "decisions-third-page justify-center items-center",
+          "elements": [
+            {
+              "type": "activity",
+              "activity": "TextDragAndDrop",
+              "data": {
+                "scenario": {
+                  "id": "scenario-01",
+                  "initialAudio": "/assets/audio/decisions/initial.mp3",
+                  "audio": {
+                    "id": "drag-drop-1",
+                    "classNames": "hidden"
+                  },
+                  "classNames": "w-full h-full scenario-01 flex flex-col items-center justify-start",
+                  "title": {
+                    "classNames": "opacity-0 absolute text-white m-auto",
+                    "style": {
+                      "fontSize": "30px",
+                      "width": "fit-content",
+                      "top": "53%"
+                    },
+                    "content": "Drag and drop the description below to the matching Tenet."
+                  },
+                  "label": "Scenario label",
+                  "image": {
+                    "url": "/assets/people/rick/people-normal.png",
+                    "classNames": "text-drag-people-normal"
+                  },
+                  "choiceSet": {
+                    "id": "choice-set-01",
+                    "titles": [
+                      {
+                        "title": "voice"
+                      },
+                      {
+                        "title": "neutrality"
+                      },
+                      {
+                        "title": "respect"
+                      },
+                      {
+                        "title": "trustworthiness"
+                      }
+                    ],
+                    "choices": [
+                      {
+                        "label": "Listen attentively and without judgement.",
+                        "audio": "/assets/audio/decisions/select-1.mp3",
+                        "type": "voice"
+                      },
+                      {
+                        "label": "Be respectful in your words, tone, and demeanor",
+                        "audio": "/assets/audio/decisions/select-2.mp3",
+                        "type": "respect"
+                      },
+                      {
+                        "label": "Treat people equally and without bias",
+                        "audio": "/assets/audio/decisions/select-3.mp3",
+                        "type": "neutrality"
+                      },
+                      {
+                        "label": "Do what is best for people and follow through on your commitments",
+                        "audio": "/assets/audio/decisions/select-4.mp3",
+                        "type": "trustworthiness"
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          ]
+        }
+      ]
     }
   ]
 }

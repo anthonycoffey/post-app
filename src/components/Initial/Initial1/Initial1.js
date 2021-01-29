@@ -79,20 +79,20 @@ const Initial1 = () => {
       >
         <div className="slide-1-top flex justify-center items-center">
           <div
-            className="fade-element opacity-0 text-white racial mr-4 text-title"
+            className="fade-element md:text-5xl lg:text-7xl opacity-0 text-white racial mr-4"
             id="racial"
           >
             Racial
           </div>
           <div
-            className="fade-element opacity-0 text-white identity text-title"
+            className="fade-element md:text-5xl lg:text-7xl opacity-0 text-white identity"
             id="identity"
           >
             and Identity
           </div>
         </div>
         <div
-          className="fade-element opacity-0 text-white slide-1-bottom profiling text-title"
+          className="fade-element md:mt-6 lg:mt-8 md:text-5xl lg:text-7xl opacity-0 text-white slide-1-bottom profiling"
           id="profiling"
         >
           Profiling

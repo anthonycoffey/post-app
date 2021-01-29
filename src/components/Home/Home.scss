@@ -1,5 +1,6 @@
 .home-wrapper {
   position: relative;
+  height: 100%;
 
   .course-title {
     padding-left: 15%;
@@ -15,7 +16,7 @@
   }
 
   .chapters {
-    width: 48%;
+    @apply h-full md:w-full lg:w-9/12 md:grid-cols-2 lg:grid-cols-2;
     margin: auto;
 
     .chapter {
@@ -25,13 +26,22 @@
       font-size: 30px;
       font-weight: bold;
       text-align: left;
-      padding: 10px;
+      padding: 5px;
       color: black;
       cursor: pointer;
 
+      .chapter-image {
+        width: 100px;
+
+        img {
+          width: 100%;
+          height: 100%;
+        }
+      }
+
       &.history {
         background: #b4af81;
-        .chapter-image {
+        img {
           transform: scale(0.8);
         }
       }
@@ -50,17 +60,13 @@
 
       &.responsibility {
         background: #baa2a2;
-        .chapter-image {
+        img {
           transform: scale(0.8);
         }
       }
 
       &.connecting {
         background: #b5d3d3;
-      }
-
-      img {
-        margin-right: 20px;
       }
 
       &:hover {

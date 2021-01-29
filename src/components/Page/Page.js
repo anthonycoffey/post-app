@@ -12,10 +12,10 @@ import Image from "./components/Image";
 import Text from "./components/Text";
 import List from "./components/List";
 import CustomButton from "./components/CustomButton";
-import DragAndDrop from "../../components/DragAndDrop/DragAndDrop";
-import ConversationRater from "../../components/ConversationRater/ConversationRater";
+import DragAndDrop from "../DragAndDrop/DragAndDrop";
+import TextDragAndDrop from "../TextDragAndDrop/TextDragAndDrop";
+import ConversationRater from "../ConversationRater/ConversationRater";
 import IntroductionSlide1 from "./Introduction/IntroductionSlide1/IntroductionSlide1";
-import IntroductionSlide2 from "./Introduction/IntroductionSlide2/IntroductionSlide2";
 import IntroductionSelection from "./Introduction/Selection/Selection";
 
 const Page = ({ elements, style, classNames }) => {
@@ -93,6 +93,13 @@ const Page = ({ elements, style, classNames }) => {
           } else if (element.activity === "selection") {
             return (
               <IntroductionSelection
+                data={element.data}
+                key={`${chapterIndex}-${pageIndex}-${index}`}
+              />
+            );
+          } else if (element.activity === 'TextDragAndDrop') {
+            return (
+              <TextDragAndDrop
                 data={element.data}
                 key={`${chapterIndex}-${pageIndex}-${index}`}
               />
