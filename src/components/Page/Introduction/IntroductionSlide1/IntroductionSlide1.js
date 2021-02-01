@@ -157,19 +157,24 @@ const IntroductionSlide1 = ({ data }) => {
     }).delay(1);
     setTimeout(() => {
       handleContinue();
-    }, 3000)
+    }, 3000);
   };
 
   return (
     <div className={`${data.classNames || ""}`} style={data.style || {}}>
       <Audio data={data.audio} ref={audioRef} onEnded={onEnded} />
-      <div className={`opacity-0 ${items[0].classNames || ""}`} id="left-item">
-        <img
-          src={`${items[0].image.url}`}
-          alt=""
-          style={items[0].image.style || {}}
-        />
-        <div className="item-title">{renderHTML(items[0].title)}</div>
+      <div
+        className={`introduction-item opacity-0 ${items[0].classNames || ""}`}
+        id="left-item"
+      >
+        <div className="item-header">
+          <img
+            src={`${items[0].image.url}`}
+            alt=""
+            style={items[0].image.style || {}}
+          />
+          <div className="item-title">{renderHTML(items[0].title)}</div>
+        </div>
         <div className="item-answers">
           {items[0].answers.map((answer, index) => {
             return (
@@ -184,13 +189,18 @@ const IntroductionSlide1 = ({ data }) => {
           })}
         </div>
       </div>
-      <div className={`opacity-0 ${items[1].classNames || ""}`} id="right-item">
-        <img
-          src={`${items[1].image.url}`}
-          alt=""
-          style={items[1].image.style || {}}
-        />
-        <div className="item-title">{renderHTML(items[1].title)}</div>
+      <div
+        className={`introduction-item opacity-0 ${items[1].classNames || ""}`}
+        id="right-item"
+      >
+        <div className="item-header">
+          <img
+            src={`${items[1].image.url}`}
+            alt=""
+            style={items[1].image.style || {}}
+          />
+          <div className="item-title">{renderHTML(items[1].title)}</div>
+        </div>
         <div className="item-answers">
           {items[1].answers.map((answer, index) => {
             return (

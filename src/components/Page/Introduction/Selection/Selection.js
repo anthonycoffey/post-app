@@ -204,7 +204,7 @@ const IntroductionSelection = ({ data }) => {
               alt=""
             />
           </div>
-          <div className="opacity-0 selection-wrapper p-12 m-12 flex flex-col items-center justify-start bg-white">
+          <div className="opacity-0 selection-wrapper flex flex-col items-center justify-start bg-white">
             <div
               className={`selection-title ${scenario.title.classNames || ""}`}
               style={scenario.title.style || {}}
@@ -223,7 +223,7 @@ const IntroductionSelection = ({ data }) => {
               {scenario.choiceSet.choices.map((choice, index) => {
                 return (
                   <div
-                    className={`opacity-0 choice-item choice-item-${index} text-white p-3 mb-3`}
+                    className={`opacity-0 choice-item choice-item-${index} text-white p-3 md:mb-1 lg:mb-3`}
                     key={index}
                     onClick={() => handleChoiceClick(index)}
                     id={`choice-item-${index}`}

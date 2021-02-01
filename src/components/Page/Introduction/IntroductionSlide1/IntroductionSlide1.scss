@@ -5,11 +5,23 @@
   background-position: center;
 }
 
+.introduction-item {
+  img {
+    @apply md:w-5/12 lg:w-6/12;
+  }
+
+  @apply md:p-5 lg:p-12 h-full flex flex-col justify-around items-center;
+}
+
+.item-header {
+  @apply flex flex-col justify-center items-center;
+}
+
 .item-title {
   color: white;
-  font-size: 40px;
-  padding-bottom: 20px;
-  margin-bottom: 20px;
+  @apply md:text-xl lg:text-3xl;
+  @apply md:my-2 lg:my-4;
+  @apply md:pb-2 lg:pb-4;
   text-align: center;
   border-bottom: 2px solid white;
   text-transform: uppercase;
@@ -18,8 +30,8 @@
 .item-answer {
   text-align: center;
   color: white;
-  font-size: 40px;
-  margin-bottom: 10px;
+  @apply md:text-2xl lg:text-3xl;
+  @apply md:mb-5 lg:mb-6;
 }
 
 .custom-yellow {

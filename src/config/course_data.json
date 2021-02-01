@@ -369,13 +369,9 @@
                 },
                 "items": [
                   {
-                    "classNames": "left-item p-12 h-full flex flex-col justify-around items-center",
+                    "classNames": "left-item",
                     "image": {
-                      "url": "/assets/images/initial-logo.png",
-                      "style": {
-                        "width": "150px",
-                        "height": "150px"
-                      }
+                      "url": "/assets/images/initial-logo.png"
                     },
                     "title": "<div>how we think of <br/>ourselves</div>",
                     "answers": [
@@ -389,10 +385,7 @@
                   {
                     "classNames": "right-item h-full p-12 flex flex-col justify-around items-center",
                     "image": {
-                      "url": "/assets/images/community.png",
-                      "style": {
-                        "width": "150px"
-                      }
+                      "url": "/assets/images/community.png"
                     },
                     "title": "<div>how some in the<br/>community think of us<div>",
                     "answers": [
@@ -424,12 +417,6 @@
                   },
                   "classNames": "w-full h-full introduction-selection-page",
                   "title": {
-                    "classNames": "mb-3 font-bold text-black my-6 px-6 pb-3 m-auto",
-                    "style": {
-                      "fontSize": "40px",
-                      "borderBottom": "2px solid #e0dfcb",
-                      "width": "fit-content"
-                    },
                     "content": "Community View of Law Enforcement"
                   },
                   "instruction": {
@@ -444,9 +431,6 @@
                         "image": {
                           "url": "/assets/images/introduction/cant-breathe.png",
                           "style": {
-                            "width": "500px",
-                            "height": "500px",
-                            "border": "5px solid white",
                             "transform": "rotateZ(-10deg)",
                             "left": "10%",
                             "top": "10%",
@@ -459,9 +443,6 @@
                         "image": {
                           "url": "/assets/images/introduction/had-enough.png",
                           "style": {
-                            "width": "550px",
-                            "height": "450px",
-                            "border": "5px solid white",
                             "left": "35%",
                             "top": "40%",
                             "zIndex": "3"
@@ -473,9 +454,6 @@
                         "image": {
                           "url": "/assets/images/introduction/killing-us.png",
                           "style": {
-                            "width": "500px",
-                            "height": "500px",
-                            "border": "5px solid white",
                             "transform": "rotateZ(12deg)",
                             "right": "10%",
                             "top": "10%",
@@ -519,12 +497,9 @@
                         "image": {
                           "url": "/assets/images/introduction/introduction-initial-1.jpg",
                           "style": {
-                            "width": "350px",
-                            "height": "220px",
-                            "border": "5px solid white",
                             "transform": "rotateZ(-10deg)",
                             "left": "10%",
-                            "top": "8%",
+                            "top": "14%",
                             "zIndex": "1"
                           }
                         }
@@ -534,12 +509,9 @@
                         "image": {
                           "url": "/assets/images/introduction/introduction-initial-2.jpg",
                           "style": {
-                            "width": "350px",
-                            "height": "220px",
-                            "border": "5px solid white",
                             "transform": "rotateZ(1deg)",
                             "left": "12%",
-                            "top": "35%",
+                            "top": "38%",
                             "zIndex": "2"
                           }
                         }
@@ -549,9 +521,6 @@
                         "image": {
                           "url": "/assets/images/introduction/introduction-initial-3.jpg",
                           "style": {
-                            "width": "350px",
-                            "height": "220px",
-                            "border": "5px solid white",
                             "transform": "rotateZ(0deg)",
                             "left": "11%",
                             "top": "62%",
@@ -564,12 +533,9 @@
                         "image": {
                           "url": "/assets/images/introduction/introduction-result-1.jpg",
                           "style": {
-                            "width": "350px",
-                            "height": "220px",
-                            "border": "5px solid white",
                             "transform": "rotateZ(-10deg)",
                             "left": "10%",
-                            "top": "8%",
+                            "top": "14%",
                             "zIndex": "1"
                           }
                         }
@@ -579,12 +545,9 @@
                         "image": {
                           "url": "/assets/images/introduction/introduction-result-2.jpg",
                           "style": {
-                            "width": "350px",
-                            "height": "220px",
-                            "border": "5px solid white",
                             "transform": "rotateZ(1deg)",
                             "left": "12%",
-                            "top": "35%",
+                            "top": "38%",
                             "zIndex": "2"
                           }
                         }
@@ -594,9 +557,6 @@
                         "image": {
                           "url": "/assets/images/introduction/introduction-result-3.jpg",
                           "style": {
-                            "width": "350px",
-                            "height": "220px",
-                            "border": "5px solid white",
                             "transform": "rotateZ(0deg)",
                             "left": "11%",
                             "top": "62%",
@@ -1148,7 +1108,7 @@
                   "label": "Scenario label",
                   "image": {
                     "url": "/assets/people/rick/people-normal.png",
-                    "classNames": "people-normal"
+                    "classNames": "text-drag-people-normal"
                   },
                   "choiceSet": {
                     "id": "choice-set-01",

@@ -10,7 +10,9 @@
   height: 100%;
 }
 
-.image-wrapper {
+.part-1-image-wrapper {
+  @apply w-4/12;
+  border: 5px solid white;
   img {
     width: 100%;
     height: 100%;
@@ -19,27 +21,33 @@
 
 .part-2-right-item-title {
   color: white;
-  font-size: 40px;
-  padding-bottom: 20px;
-  margin-bottom: 20px;
+  @apply md:text-2xl lg:text-4xl md:pb-3 lg:pb-6 md:mb-3 lg:mb-6 md:mt-3 lg:mt-6;
   text-align: center;
-  border-bottom: 2px solid white;
   text-transform: uppercase;
 }
 
 .part-2-right-item-answer {
   text-align: center;
   color: white;
-  font-size: 40px;
-  margin-bottom: 10px;
+  @apply md:text-2xl lg:text-4xl md:mb-5 lg:mb-8;
 }
 
 .part-2-person {
   left: -10%;
-  top: 18%;
+  opacity: 1;
+  @apply md:w-8/12 bottom-0;
 }
 
 .part-2-right-items {
   top: 10%;
   right: 5%;
+}
+
+.initial-image-wrapper, .result-image-wrapper {
+  border: 5px solid white;
+  @apply w-3/12 h-1/4;
+
+  img {
+    @apply w-full h-full;
+  }
 }

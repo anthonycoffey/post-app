@@ -209,7 +209,7 @@ const IntroductionSlide2 = ({ data }) => {
         {part1.map((item, index) => {
           return (
             <div
-              className={`image-wrapper absolute opacity-0 ${
+              className={`part-1-image-wrapper absolute opacity-0 ${
                 item.classNames || ""
               }`}
               id={item.classNames}
@@ -269,7 +269,7 @@ const IntroductionSlide2 = ({ data }) => {
         {initials.map((initial, index) => {
           return (
             <div
-              className={`image-wrapper absolute opacity-0 ${
+              className={`initial-image-wrapper absolute opacity-0 ${
                 initial.classNames || ""
               }`}
               id={initial.classNames}
@@ -283,7 +283,7 @@ const IntroductionSlide2 = ({ data }) => {
         {results.map((result, index) => {
           return (
             <div
-              className={`image-wrapper absolute opacity-0 ${
+              className={`result-image-wrapper absolute opacity-0 ${
                 result.classNames || ""
               }`}
               id={result.classNames}
