@@ -999,13 +999,9 @@
             {
               "id": "text",
               "type": "text",
-              "classNames": "absolute text-black font-bold",
+              "classNames": "absolute text-center",
               "style": {
-                "left": "10%",
-                "top": "40%",
-                "fontSize": "40px",
-                "width": "max-content",
-                "textAlign": "center"
+                "whiteSpace": "noWrap"
               },
               "content": "4. Your Decisions<br/>and Actions",
               "animations": [
@@ -1037,11 +1033,7 @@
             {
               "id": "list",
               "type": "list",
-              "classNames": "list-items-wrapper absolute w-auto h-auto",
-              "style": {
-                "top": "20%",
-                "right": "20%"
-              },
+              "classNames": "list-items-wrapper md:top-20 lg:top-32 md:right-16 lg:right-32 absolute w-auto h-auto",
               "items": [
                 {
                   "value": "drag-drop-2",
@@ -1095,14 +1087,7 @@
                     "id": "drag-drop-1",
                     "classNames": "hidden"
                   },
-                  "classNames": "w-full h-full scenario-01 flex flex-col items-center justify-start",
                   "title": {
-                    "classNames": "opacity-0 absolute text-white m-auto",
-                    "style": {
-                      "fontSize": "30px",
-                      "width": "fit-content",
-                      "top": "53%"
-                    },
                     "content": "Drag and drop the description below to the matching Tenet."
                   },
                   "label": "Scenario label",

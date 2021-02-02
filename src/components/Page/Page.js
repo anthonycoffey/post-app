@@ -101,7 +101,7 @@ const Page = ({ elements, style, classNames }) => {
             return (
               <TextDragAndDrop
                 data={element.data}
-                key={`${chapterIndex}-${pageIndex}-${index}`}
+                key={`${chapterIndex}-${pageIndex}-${index}-${new Date().getMilliseconds()}`}
               />
             );
           }

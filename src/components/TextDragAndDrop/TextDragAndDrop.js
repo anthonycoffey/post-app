@@ -62,14 +62,23 @@ const TextDragAndDrop = ({ data }) => {
     TweenMax.to(".text-drag-drop-header", 0.5, {
       opacity: 1,
     }).delay(1);
+    console.log("window.innerWidth", window.innerWidth);
 
-    TweenMax.to(".text-drop-zones", 1, {
-      height: 200,
-    }).delay(3);
+    if (window.innerWidth > 1024) {
+      TweenMax.to(".text-drop-zones", 1, {
+        height: 200,
+      }).delay(3);
+    } else {
+      TweenMax.to(".text-drop-zones", 1, {
+        height: 120,
+      }).delay(3);
+    }
 
     setTimeout(() => {
-      document.getElementById("text-drag-and-drop").style.backgroundImage =
-        "url(/assets/background/gray-background.jpg)";
+      if (document.getElementById("text-drag-and-drop")) {
+        document.getElementById("text-drag-and-drop").style.backgroundImage =
+          "url(/assets/background/gray-background.jpg)";
+      }
     }, 3000);
 
     TweenMax.to(".drag-source-wrapper", 0.1, {
@@ -82,6 +91,9 @@ const TextDragAndDrop = ({ data }) => {
       y: 1000,
     }).delay(4);
     TweenMax.to(".drag-and-drop-title", 1, {
+      opacity: 1,
+    }).delay(6);
+    TweenMax.to(".drag-and-drop-initial-title", 1, {
       opacity: 1,
     }).delay(6);
 
@@ -160,17 +172,25 @@ const TextDragAndDrop = ({ data }) => {
       TweenMax.to(".drag-source-wrapper", 0.3, {
         opacity: 0,
       });
-      TweenMax.to(".drag-and-drop-title", 0.3, {
+      TweenMax.to(".drag-and-drop-initial-title", 0.3, {
         opacity: 0,
       });
-      TweenMax.to(".done-button", 0.3, {
-        opacity: 1,
-      });
-      TweenMax.to(".done-button", 0.3, {
-        display: 'block',
-      });
+      TweenMax.to(".drag-and-drop-initial-title", 0.3, {
+        display: "none",
+      }).delay(0.3);
+
+      TweenMax.to(".drag-and-drop-finish-title", 0.3, {
+        position: "relative",
+      }).delay(0.6);
       TweenMax.to(".drag-and-drop-finish-title", 0.3, {
         opacity: 1,
+      }).delay(0.9);
+
+      TweenMax.to(".done-button", 0.3, {
+        opacity: 1,
+      });
+      TweenMax.to(".done-button", 0.3, {
+        display: "block",
       });
     }
   };
@@ -184,7 +204,7 @@ const TextDragAndDrop = ({ data }) => {
       <div className={`opacity-100 ${scenario.image.classNames || ""}`}>
         <img src={`${scenario.image.url}`} alt="" />
       </div>
-      <div className="mt-10 grid grid-cols-4 gap-4 text-drag-drop-header opacity-0">
+      <div className="md:mt-4 lg:mt-10 grid grid-cols-4 gap-4 text-drag-drop-header opacity-0">
         {scenario.choiceSet.titles.map((item, index) => {
           return (
             <div className="drag-target" key={`drag-target-${index}`}>
@@ -193,7 +213,7 @@ const TextDragAndDrop = ({ data }) => {
           );
         })}
       </div>
-      <div className="px-4 mt-10 grid grid-cols-4 gap-4 text-drop-zones h-0">
+      <div className="md:px-2 lg:px-4 md:mt-4 lg:mt-10 grid grid-cols-4 gap-4 text-drop-zones h-0">
         {dragItems.map((item, index) => {
           return (
             <div
@@ -211,17 +231,23 @@ const TextDragAndDrop = ({ data }) => {
           );
         })}
       </div>
-      <div
-        className={`drag-and-drop-title ${scenario.title.classNames || ""}`}
-        style={scenario.title.style || {}}
-      >
-        {scenario.title.content}
-      </div>
-      <div
-        className={`drag-and-drop-finish-title ${scenario.title.classNames || ""}`}
-        style={scenario.title.style || {}}
-      >
-        Click DONE to move on.
+      <div className="drag-and-drop-title opacity-0">
+        <div
+          className={`drag-and-drop-initial-title ${
+            scenario.title.classNames || ""
+          }`}
+          style={scenario.title.style || {}}
+        >
+          {scenario.title.content}
+        </div>
+        <div
+          className={`drag-and-drop-finish-title ${
+            scenario.title.classNames || ""
+          }`}
+          style={scenario.title.style || {}}
+        >
+          Click DONE to move on.
+        </div>
       </div>
       <div
         className="opacity-0 hidden drag-source-wrapper absolute bottom-0 m-auto"
