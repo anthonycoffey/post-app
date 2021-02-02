@@ -1085,7 +1085,7 @@
                   "initialAudio": "/assets/audio/decisions/initial.mp3",
                   "audio": {
                     "id": "drag-drop-1",
-                    "classNames": "hidden"
+                    "classNames": "fixed bottom-0 z-10"
                   },
                   "title": {
                     "content": "Drag and drop the description below to the matching Tenet."
@@ -1114,22 +1114,22 @@
                     "choices": [
                       {
                         "label": "Listen attentively and without judgement.",
-                        "audio": "/assets/audio/decisions/select-1.mp3",
+                        "audio": "/assets/audio/decisions/text-drop-1.mp3",
                         "type": "voice"
                       },
                       {
                         "label": "Be respectful in your words, tone, and demeanor",
-                        "audio": "/assets/audio/decisions/select-2.mp3",
+                        "audio": "/assets/audio/decisions/text-drop-2.mp3",
                         "type": "respect"
                       },
                       {
                         "label": "Treat people equally and without bias",
-                        "audio": "/assets/audio/decisions/select-3.mp3",
+                        "audio": "/assets/audio/decisions/text-drop-3.mp3",
                         "type": "neutrality"
                       },
                       {
                         "label": "Do what is best for people and follow through on your commitments",
-                        "audio": "/assets/audio/decisions/select-4.mp3",
+                        "audio": "/assets/audio/decisions/text-drop-4.mp3",
                         "type": "trustworthiness"
                       }
                     ]
