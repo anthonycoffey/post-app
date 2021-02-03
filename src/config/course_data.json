@@ -1082,7 +1082,7 @@
               "data": {
                 "scenario": {
                   "id": "scenario-01",
-                  "initialAudio": "/assets/audio/decisions/initial.mp3",
+                  "initialAudio": "/assets/audio/decisions/text-initial.mp3",
                   "audio": {
                     "id": "drag-drop-1",
                     "classNames": "fixed bottom-0 z-10"
@@ -1144,30 +1144,20 @@
           "elements": [
             {
               "type": "activity",
-              "activity": "TextDragAndDrop",
+              "activity": "ImageDragAndDrop",
               "data": {
                 "scenario": {
                   "id": "scenario-01",
-                  "initialAudio": "/assets/audio/decisions/initial.mp3",
+                  "initialAudio": "/assets/audio/decisions/image-initial.mp3",
+                  "afterAudio": "/assets/audio/decisions/image-drop-end.mp3",
                   "audio": {
-                    "id": "drag-drop-1",
-                    "classNames": "hidden"
+                    "id": "image-drag-drop-audio",
+                    "classNames": "fixed bottom-0 z-10"
                   },
-                  "classNames": "w-full h-full scenario-01 flex flex-col items-center justify-start",
                   "title": {
-                    "classNames": "opacity-0 absolute text-white m-auto",
-                    "style": {
-                      "fontSize": "30px",
-                      "width": "fit-content",
-                      "top": "53%"
-                    },
-                    "content": "Drag and drop the description below to the matching Tenet."
+                    "content": "Drag and drop the scenario image below to the matching Tenet."
                   },
                   "label": "Scenario label",
-                  "image": {
-                    "url": "/assets/people/rick/people-normal.png",
-                    "classNames": "text-drag-people-normal"
-                  },
                   "choiceSet": {
                     "id": "choice-set-01",
                     "titles": [
@@ -1186,24 +1176,32 @@
                     ],
                     "choices": [
                       {
-                        "label": "Listen attentively and without judgement.",
-                        "audio": "/assets/audio/decisions/select-1.mp3",
-                        "type": "voice"
-                      },
-                      {
-                        "label": "Be respectful in your words, tone, and demeanor",
-                        "audio": "/assets/audio/decisions/select-2.mp3",
-                        "type": "respect"
-                      },
-                      {
-                        "label": "Treat people equally and without bias",
-                        "audio": "/assets/audio/decisions/select-3.mp3",
+                        "image": "/assets/images/decisions/image-drop-1.png",
+                        "text": "A Latino officer stops a white male for a minor traffic violation. The man has a \"Build a Wall - Send them Home\" bumper sticker on his car. The man is cooperative but a bit rude. The officer refers to him as \"Sir\" throughtout and lets him proceed with a warning.",
+                        "initialAudio": "/assets/audio/decisions/image-drop-1.mp3",
+                        "afterAudio": "/assets/audio/decisions/image-drop-1-after.mp3",
                         "type": "neutrality"
                       },
                       {
-                        "label": "Do what is best for people and follow through on your commitments",
-                        "audio": "/assets/audio/decisions/select-4.mp3",
-                        "type": "trustworthiness"
+                        "image": "/assets/images/decisions/image-drop-2.jpg",
+                        "initialAudio": "/assets/audio/decisions/image-drop-2.mp3",
+                        "afterAudio": "/assets/audio/decisions/image-drop-2-after.mp3",
+                        "type": "trustworthiness",
+                        "text": "Officers dealing with an agitated man who accidentally trespassed and is terrified of being arrested and doesn't want to come out. Officer reassures him that he just needs to answer the questions and follows through."
+                      },
+                      {
+                        "image": "/assets/images/decisions/image-drop-3.png",
+                        "initialAudio": "/assets/audio/decisions/image-drop-3.mp3",
+                        "afterAudio": "/assets/audio/decisions/image-drop-3-after.mp3",
+                        "type": "respect",
+                        "text": "Officers pulls over a trans-gender person whose DL picture, name and listed gender don't match. He pulls them aside to talk to them privately out of earshot of others in the car."
+                      },
+                      {
+                        "image": "/assets/images/decisions/image-drop-4.png",
+                        "initialAudio": "/assets/audio/decisions/image-drop-4.mp3",
+                        "afterAudio": "/assets/audio/decisions/image-drop-4-after.mp3",
+                        "type": "voice",
+                        "text": "During a field contact, a subject is trying to explain why he ran when the officer asked him to stop. The officer listens carefully."
                       }
                     ]
                   }

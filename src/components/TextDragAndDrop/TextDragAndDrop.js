@@ -62,7 +62,6 @@ const TextDragAndDrop = ({ data }) => {
     TweenMax.to(".text-drag-drop-header", 0.5, {
       opacity: 1,
     }).delay(1);
-    console.log("window.innerWidth", window.innerWidth);
 
     if (window.innerWidth > 1024) {
       TweenMax.to(".text-drop-zones", 1, {

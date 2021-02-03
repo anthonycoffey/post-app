@@ -14,6 +14,7 @@ import List from "./components/List/List";
 import CustomButton from "./components/CustomButton/CustomButton";
 import DragAndDrop from "../DragAndDrop/DragAndDrop";
 import TextDragAndDrop from "../TextDragAndDrop/TextDragAndDrop";
+import ImageDragAndDrop from "../ImageDragAndDrop/ImageDragAndDrop";
 import ConversationRater from "../ConversationRater/ConversationRater";
 import IntroductionSlide1 from "./Introduction/IntroductionSlide1/IntroductionSlide1";
 import IntroductionSelection from "./Introduction/Selection/Selection";
@@ -62,6 +63,8 @@ const Page = ({ elements, style, classNames }) => {
     setElementsState(actionHelper.doActions(initialElements, actions));
   };
 
+  const randomId = new Date().getMilliseconds();
+
   return (
     <div className={`page-wrapper ${classNames || ""}`} style={style || {}}>
       {elementsState.map((element, index) => {
@@ -101,7 +104,14 @@ const Page = ({ elements, style, classNames }) => {
             return (
               <TextDragAndDrop
                 data={element.data}
-                key={`${chapterIndex}-${pageIndex}-${index}-${new Date().getMilliseconds()}`}
+                key={`${chapterIndex}-${pageIndex}-${index}-${randomId}`}
+              />
+            );
+          } else if (element.activity === 'ImageDragAndDrop') {
+            return (
+              <ImageDragAndDrop
+                data={element.data}
+                key={`${chapterIndex}-${pageIndex}-${index}-${randomId}`}
               />
             );
           }

@@ -1,5 +1,5 @@
-.text-drag-and-drop {
-  background-image: url("/assets/background/decisions.jpg");
+.image-drag-and-drop {
+  background-image: url("/assets/background/initial-3-background.jpg");
   background-size: cover;
   position: relative;
   background-position: center;
@@ -49,52 +49,57 @@
  @apply absolute text-center w-full;
 }
 
-.text-drop-zones {
+.image-drop-zones {
   width: 100%;
 
-  .text-drop-zone {
-    width: 100%;
-    height: 100%;
-    background-color: white;
+  .image-drop-zone {
+    @apply md:h-44 lg:h-52;
+    background: transparent;
     display: flex;
     align-items: center;
     justify-content: center;
+    border: 2px dashed #dbd8c1;
 
-    &.filled {
-      background: #e0dfcb;
-    }
-
-    .text-drop-zone-content {
+    .image-drop-zone-content {
       width: 100%;
       height: 100%;
       display: flex;
       align-items: center;
       justify-content: center;
-      color: black;
-      background: transparent;
-      @apply md:text-sm lg:text-2xl md:p-2 lg:p-8;
-      font-weight: bold;
-      text-align: center;
+
+      img {
+        @apply w-full h-full;
+      }
     }
   }
 }
 
-.drag-source-wrapper {
-  @apply w-4/12 h-1/3;
-  background: white;
-  border: 2px dotted black;
+.image-drag-source-wrapper {
+  @apply w-10/12;
+  height: fit-content;
+  background: #e0dfcb;
   display: flex;
   align-items: center;
   justify-content: center;
 
-  .draggable {
-    color: white;
-    @apply w-full md:p-2 lg:p-4 md:py-6 lg:py-12 md:mx-8 lg:mx-20 md:text-xl lg:text-2xl;
+  .image-draggable {
+    @apply w-full md:p-2 lg:p-4;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    background: #414141;
+
+    .choice-image {
+      @apply md:w-32 lg:w-48 md:h-32 lg:h-48 shadow-md md:mr-6 lg:mr-8;
+      border: 2px solid white;
+      img {
+        @apply w-full h-full;
+      }
+    }
+
+    .choice-text {
+      @apply text-center md:text-lg lg:text-2xl;
+    }
   }
 }
 

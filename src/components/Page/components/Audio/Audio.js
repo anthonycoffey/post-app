@@ -1,5 +1,6 @@
 import React from "react";
 import AudioPlayer from "react-h5-audio-player";
+import "./Audio.scss";
 
 const Audio = React.forwardRef(({ data, onEnded }, ref) => {
   return (
