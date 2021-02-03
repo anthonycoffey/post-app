@@ -96,7 +96,9 @@ const ImageDragAndDrop = ({ data }) => {
       setDragItems([...temp]);
       setAudio(scenario.choiceSet.choices[dragIndex].afterAudio);
     } else {
-      document.getElementById(index).style.opacity = 1;
+      if (document.getElementById(index)) {
+        document.getElementById(index).style.opacity = 1;
+      }
     }
 
     showDoneButton();
