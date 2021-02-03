@@ -18,9 +18,7 @@ const ImageDragAndDrop = ({ data }) => {
   const { chapterIndex, pageIndex } = useSelector((state) => state.status);
   const course = useSelector((state) => state.course.course);
   const [dragItems, setDragItems] = useState([]);
-  const [showDone, setShowDone] = useState(false);
   const [dragIndex, setDragIndex] = useState(-1);
-  const [hidden, setHidden] = useState(true);
   const [audio, setAudio] = useState("");
 
   useEffect(() => {
@@ -36,10 +34,6 @@ const ImageDragAndDrop = ({ data }) => {
   useEffect(() => {
     playChoiceAnimation();
   }, [dragIndex]);
-
-  const showDoneButton = () => {
-    setShowDone(false);
-  };
 
   const playChoiceAnimation = () => {
     if (dragIndex > -1) {
@@ -100,8 +94,6 @@ const ImageDragAndDrop = ({ data }) => {
         document.getElementById(index).style.opacity = 1;
       }
     }
-
-    showDoneButton();
   };
 
   const currentChapterIndex = findIndex(course.menu, ["id", chapterIndex]);
@@ -172,11 +164,6 @@ const ImageDragAndDrop = ({ data }) => {
         }
       }
     }
-    // if (dragIndex < dragItems.length) {
-    //   setHidden(false);
-    // } else {
-    //   setHidden(true);
-    // }
   };
   return (
     <div
