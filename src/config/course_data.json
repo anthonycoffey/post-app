@@ -56,7 +56,7 @@
                 {
                   "type": "from",
                   "x": -500,
-                  "delay": 1.4
+                  "duration": 1.4
                 }
               ]
             },
@@ -91,7 +91,7 @@
                 {
                   "type": "from",
                   "x": 1100,
-                  "delay": 1.4
+                  "duration": 1.4
                 }
               ]
             },
@@ -616,7 +616,7 @@
                 {
                   "type": "from",
                   "x": -500,
-                  "delay": 1.4
+                  "duration": 1.4
                 }
               ]
             },
@@ -656,7 +656,7 @@
                 {
                   "type": "from",
                   "x": 1100,
-                  "delay": 1.4
+                  "duration": 1.4
                 }
               ]
             },
@@ -698,7 +698,7 @@
                 {
                   "type": "from",
                   "x": -500,
-                  "delay": 1
+                  "duration": 1
                 }
               ]
             },
@@ -710,7 +710,7 @@
                 {
                   "type": "from",
                   "x": 1100,
-                  "delay": 2
+                  "duration": 2
                 }
               ]
             }
@@ -735,7 +735,7 @@
                 {
                   "type": "from",
                   "x": -500,
-                  "delay": 0.5
+                  "duration": 0.5
                 }
               ]
             },
@@ -758,7 +758,7 @@
                 {
                   "type": "from",
                   "x": -1100,
-                  "delay": 1
+                  "duration": 1
                 }
               ]
             }
@@ -919,7 +919,7 @@
                     {
                       "type": "from",
                       "x": 1100,
-                      "delay": 0.5
+                      "duration": 0.5
                     }
                   ]
                 },
@@ -943,7 +943,7 @@
                     {
                       "type": "from",
                       "x": 1100,
-                      "delay": 0.5
+                      "duration": 0.5
                     }
                   ]
                 },
@@ -967,7 +967,7 @@
                     {
                       "type": "from",
                       "x": 1100,
-                      "delay": 0.5
+                      "duration": 0.5
                     }
                   ]
                 }
@@ -1008,7 +1008,7 @@
                 {
                   "type": "from",
                   "x": -500,
-                  "delay": 1.4
+                  "duration": 1.4
                 }
               ]
             },
@@ -1026,7 +1026,7 @@
                 {
                   "type": "from",
                   "x": -500,
-                  "delay": 1.4
+                  "duration": 1.4
                 }
               ]
             },
@@ -1055,7 +1055,7 @@
                 {
                   "type": "from",
                   "x": 1100,
-                  "delay": 1.4
+                  "duration": 1.4
                 }
               ]
             },
@@ -1207,6 +1207,69 @@
                   }
                 }
               }
+            }
+          ]
+        },
+        {
+          "classNames": "decisions-3-page justify-center items-center",
+          "elements": [
+            {
+              "type": "audio",
+              "url": "/assets/audio/decisions/slide-question-initial.mp3",
+              "style": {
+                "zIndex": "3"
+              },
+              "onEnd": "nextStep"
+            },
+            {
+              "id": "decision-3-image-1",
+              "type": "image",
+              "classNames": "opacity-100 absolute md:left-4 lg:left-20 md:-bottom-32 lg:-bottom-52 md:w-7/12 lg:w-1/2",
+              "alt": "people-normal",
+              "style": {
+                "zIndex": "2"
+              },
+              "url": "/assets/people/rick/people-normal.png",
+              "animations": [
+                {
+                  "type": "from",
+                  "x": -500,
+                  "duration": 1
+                }
+              ]
+            },
+            {
+              "id": "decision-3-image-2",
+              "type": "image",
+              "classNames": "opacity-100 absolute left-1/2 md:top-1/3 lg:top-44 w-5/12 h-1/2",
+              "style": {
+                "zIndex": "1"
+              },
+              "imageStyle": {
+                "border": "4px solid white",
+                "transform": "rotateZ(4deg)"
+              },
+              "alt": "car-following",
+              "url": "/assets/images/decisions/car-following.png",
+              "animations": [
+                {
+                  "type": "from",
+                  "x": 1100,
+                  "duration": 1
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "classNames": "decisions-4-page justify-center items-center",
+          "elements": [
+            {
+              "classNames": "w-full h-full",
+              "type": "video",
+              "url": "http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4",
+              "width": "95%",
+              "height": "95%"
             }
           ]
         }

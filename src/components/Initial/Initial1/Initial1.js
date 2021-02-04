@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from "react";
-import { useSelector } from "react-redux";
+import React, { useEffect } from "react";
 import ReactPlayer from "react-player";
 import { TweenMax } from "gsap";
 

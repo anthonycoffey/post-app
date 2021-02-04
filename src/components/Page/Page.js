@@ -1,12 +1,16 @@
 import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { TweenLite } from "gsap";
+import { TweenLite, TweenMax } from "gsap";
 import actionHelper from "../../helpers/ActionHelper";
 import "react-h5-audio-player/lib/styles.css";
-import { setCompletedRequest } from "../../store/actions/status.action";
+import {
+  setCompletedRequest,
+  setPageIndexRequest,
+} from "../../store/actions/status.action";
 import "./Page.scss";
 import Content from "./components/Content/Content";
 import Audio from "./components/Audio/Audio";
+import Video from "./components/Video/Video";
 import Shape from "./components/Shape/Shape";
 import Image from "./components/Image/Image";
 import Text from "./components/Text/Text";
@@ -37,14 +41,14 @@ const Page = ({ elements, style, classNames }) => {
       const { animations } = element;
       if (animations) {
         animations.forEach((animation) => {
-          let { x, y, delay } = animation;
+          let { x, y, duration } = animation;
           if (animation.type === "to") {
-            TweenLite.to(document.getElementById(element.id), delay, {
+            TweenLite.to(document.getElementById(element.id), duration, {
               x: x,
               y: y,
             });
           } else if (animation.type === "from") {
-            TweenLite.from(document.getElementById(element.id), delay, {
+            TweenLite.from(document.getElementById(element.id), duration, {
               x: x,
               y: y,
             });
@@ -63,6 +67,20 @@ const Page = ({ elements, style, classNames }) => {
     setElementsState(actionHelper.doActions(initialElements, actions));
   };
 
+  const onAudioEnded = () => {
+    elementsState
+      .filter((item) => item.type !== "audio")
+      .map((item) => {
+        TweenMax.to(document.getElementById(item.id), 0.5, {
+          opacity: 0,
+        });
+      });
+
+    setTimeout(() => {
+      dispatch(setPageIndexRequest(pageIndex + 1));
+    }, 1000);
+  };
+
   const randomId = new Date().getMilliseconds();
 
   return (
@@ -70,8 +88,20 @@ const Page = ({ elements, style, classNames }) => {
       {elementsState.map((element, index) => {
         if (element.type === "shape") {
           return <Shape data={element} key={index} />;
+        } else if (element.type === 'video') {
+          return (
+            <Video
+              data={element}
+            />
+          )
         } else if (element.type === "audio") {
-          return <Audio data={element} key={index} />;
+          return (
+            <Audio
+              data={element}
+              key={index}
+              onEnded={element.onEnd ? onAudioEnded : null}
+            />
+          );
         } else if (element.type === "image") {
           return <Image data={element} key={index} />;
         } else if (element.type === "content") {
@@ -100,14 +130,14 @@ const Page = ({ elements, style, classNames }) => {
                 key={`${chapterIndex}-${pageIndex}-${index}`}
               />
             );
-          } else if (element.activity === 'TextDragAndDrop') {
+          } else if (element.activity === "TextDragAndDrop") {
             return (
               <TextDragAndDrop
                 data={element.data}
                 key={`${chapterIndex}-${pageIndex}-${index}-${randomId}`}
               />
             );
-          } else if (element.activity === 'ImageDragAndDrop') {
+          } else if (element.activity === "ImageDragAndDrop") {
             return (
               <ImageDragAndDrop
                 data={element.data}
