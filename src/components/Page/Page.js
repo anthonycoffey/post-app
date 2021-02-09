@@ -23,6 +23,7 @@ import ConversationRater from "../ConversationRater/ConversationRater";
 import IntroductionSlide1 from "./Introduction/IntroductionSlide1/IntroductionSlide1";
 import IntroductionSelection from "./Introduction/Selection/Selection";
 import SliderActivity from "./components/SliderActivity/SliderActivity";
+import SliderAnimation from "./components/SliderAnimation/SliderAnimation";
 
 const Page = ({ elements, style, classNames }) => {
   const pageIndex = useSelector((state) => state.status.pageIndex);
@@ -111,6 +112,8 @@ const Page = ({ elements, style, classNames }) => {
         } else if (element.type === "activity") {
           if (element.activity === "ConversationRater") {
             return <ConversationRater data={element.data} key={index} />;
+          } else if (element.activity === 'sliderAnimation') {
+            return <SliderAnimation data={element} key={index} />
           } else if (element.activity === 'slider') {
             return <SliderActivity data={element} key={index} />
           } else if (element.activity === "DragAndDrop") {

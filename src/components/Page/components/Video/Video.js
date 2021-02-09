@@ -1,8 +1,23 @@
 import React from "react";
+import { useSelector, useDispatch } from "react-redux";
+import {
+  setPageIndexRequest,
+} from "../../../../store/actions/status.action";
 import ReactPlayer from "react-player";
 import "./Video.scss";
 
 const Video = ({ data }) => {
+  const pageIndex = useSelector((state) => state.status.pageIndex);
+  const dispatch = useDispatch();
+
+  const handleEnded = () => {
+    console.log(data);
+    if (data.goNextSection) {
+      console.log('hehe', pageIndex);
+      dispatch(setPageIndexRequest(pageIndex + 1));
+    }
+  }
+
   return (
     <div
       id={data.id}
@@ -13,6 +28,7 @@ const Video = ({ data }) => {
         url={data.url}
         width={data.width}
         height={data.height}
+        onEnded={handleEnded}
         muted
         controls
       />

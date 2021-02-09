@@ -1,0 +1,9 @@
+.slider-animation-wrapper {
+  @apply w-full h-full flex items-center justify-center;
+  background: #cab98b;
+}
+
+.slider-animation-image {
+  transform: rotateZ(10deg);
+  border: 5px solid white;
+}

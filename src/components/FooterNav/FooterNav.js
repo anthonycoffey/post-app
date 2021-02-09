@@ -24,7 +24,7 @@ const FooterNav = () => {
     totalChapterCount = course.menu.length;
   }
 
-  const handleChapterIndex = (index) => {
+  const handleChapterIndex = (index, fromNext = false) => {
     if (isInitial) {
       if (initialIndex > 0) {
         dispatch(setInitialIndexRequest(initialIndex - 1));
@@ -36,7 +36,14 @@ const FooterNav = () => {
         );
         dispatch(setPageIndexRequest(0));
       } else {
-        dispatch(setPageIndexRequest(index));
+        if (!fromNext) {
+          dispatch(setPageIndexRequest(index));
+        } else {
+          const chapterId = course.menu[index].id;
+          if (find(course.content, ["id", chapterId])) {
+            setChapterIndexRequest(course.menu[index].id);
+          }
+        }
       }
 
       // if (index <= totalChapterCount - 1) {
@@ -55,8 +62,9 @@ const FooterNav = () => {
         dispatch(setChapterIndexRequest(-1));
       }
     } else {
+      console.log(index, totalPageCount);
       if (index === totalPageCount || totalPageCount === 0) {
-        handleChapterIndex(currentChapterIndex + 1);
+        handleChapterIndex(currentChapterIndex + 1, true);
       } else {
         dispatch(setPageIndexRequest(index));
       }

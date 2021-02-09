@@ -1287,6 +1287,9 @@
                 },
                 "initialAudio": "/assets/audio/decisions/slider-initial.mp3",
                 "doneClickAudio": "/assets/audio/decisions/image-done-click.mp3",
+                "afterContinueAudio": "/assets/audio/decisions/slider-after-continue.mp3",
+                "selectionAudio": "/assets/audio/decisions/slider-selection.mp3",
+                "selection2Audio": "/assets/audio/decisions/slider-selection-2.mp3",
                 "image": {
                   "id": "slider-left-image",
                   "type": "image",
@@ -1294,8 +1297,65 @@
                   "alt": "slider-left-image",
                   "url": "/assets/images/decisions/muslim_start.png"
                 },
+                "peopleImages": [
+                  "/assets/people/rick/people-hand-up.png",
+                  "/assets/people/rick/people-up-closed.png",
+                  "/assets/people/rick/people-no-idea.png"
+                ],
                 "feedbackMarkImage": "/assets/images/decisions/image-slider-mark.png",
                 "feedbackLogo": "/assets/images/decisions/image-slider-feedback.png",
+                "selection": {
+                  "title": {
+                    "content": "Voice",
+                    "classNames": "text-left text-black"
+                  },
+                  "instruction": {
+                    "content": "What could the officer do to give her more of a voice?"
+                  },
+                  "items": [
+                    {
+                      "isSelectionTrue": false,
+                      "text": "Speak to her in a quiet and calm done of voice.",
+                      "feedback": "While your tone does matter, remember, \"voice\" is about giving the SUBJECT a voice - by respectfully listening to her."
+                    },
+                    {
+                      "isSelectionTrue": true,
+                      "text": "Listen to her explanation about the face covering. Ask her if there is a way she would feel comfortable showing her face.",
+                      "feedback": "Yes. Give the person an opportunity to explain and ask questions, rather than just dismiss her concerns."
+                    },
+                    {
+                      "isSelectionTrue": false,
+                      "text": "Give her more of an opportunity to justify why she was speeding.",
+                      "feedback": "She already explained that she didn't notice the posted signs. There was another, more important way the officer could have given her a voice."
+                    }
+                  ]
+                },
+                "selection2": {
+                  "title": {
+                    "content": "Respect",
+                    "classNames": "text-left text-black"
+                  },
+                  "instruction": {
+                    "content": "What could the officer do to show her more respect?"
+                  },
+                  "items": [
+                    {
+                      "isSelectionTrue": false,
+                      "text": "Advocate for her to be proud of who she is and to reveal her face.",
+                      "feedback": "Definitely not. \"voice\" not about giving someone a compliment, especially when you're asking her to ignore her religious beliefs."
+                    },
+                    {
+                      "isSelectionTrue": true,
+                      "text": "Acknowledge her discomfort and suggest an alternate way she could verify her identity",
+                      "feedback": "Good. Even just acknowledging that this was an uncomfortable request would have shown that the officer was being respectful of her religious customs."
+                    },
+                    {
+                      "isSelectionTrue": false,
+                      "text": "To avoid offending her, don't worry about the ID verification in this case.",
+                      "feedback": "Showing respect is not about ignoring a legal requirement to avoid offending her. What else might you do?"
+                    }
+                  ]
+                },
                 "feedback": [
                   {
                     "title": "Voice",
@@ -1356,6 +1416,42 @@
                     "max": 5
                   }
                 ]
+              }
+            }
+          ]
+        },
+        {
+          "classNames": "decisions-6-page justify-center items-center",
+          "elements": [
+            {
+              "classNames": "w-full h-full",
+              "type": "video",
+              "url": "http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4",
+              "width": "95%",
+              "height": "95%",
+              "goNextSection": true
+            }
+          ]
+        },
+        {
+          "classNames": "decisions-7-page justify-center items-center",
+          "elements": [
+            {
+              "type": "activity",
+              "activity": "sliderAnimation",
+              "data": {
+                "text": {
+                  "classNames": "w-full h-full bg-black flex items-center justify-center",
+                  "content": "And later that evening, over dinner,<br/>the driver tells her husband about<br/>what happened..."
+                },
+                "image": {
+                  "url": "/assets/images/decisions/slider-animation.jpg"
+                },
+                "audio": {
+                  "id": "slider-animation-audio",
+                  "classNames": "fixed bottom-0 z-10 left-1/2 transform -translate-x-1/2"
+                },
+                "initialAudio": "/assets/audio/decisions/slider-initial.mp3"
               }
             }
           ]

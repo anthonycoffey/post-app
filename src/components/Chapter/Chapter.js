@@ -12,7 +12,7 @@ const Chapter = ({ content }) => {
   if (content.pages.length < 1) {
     return null;
   }
-  const { style, elements, classNames, type } = content.pages[pageIndex];
+  const { style, elements, classNames, type, id } = content.pages[pageIndex];
 
   if (!elements) return null;
   if (type === "activity") {
@@ -33,6 +33,7 @@ const Chapter = ({ content }) => {
         elements={elements}
         style={style || {}}
         classNames={classNames || ""}
+        key={id}
       />
     </div>
   );
