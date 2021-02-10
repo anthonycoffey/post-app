@@ -90,13 +90,8 @@ const Page = ({ elements, style, classNames }) => {
       {elementsState.map((element, index) => {
         if (element.type === "shape") {
           return <Shape data={element} key={index} />;
-        } else if (element.type === 'video') {
-          return (
-            <Video
-              data={element}
-              key={index}
-            />
-          )
+        } else if (element.type === "video") {
+          return <Video data={element} key={index} />;
         } else if (element.type === "audio") {
           return (
             <Audio
@@ -109,14 +104,8 @@ const Page = ({ elements, style, classNames }) => {
           return <Image data={element} key={index} />;
         } else if (element.type === "content") {
           return <Content data={element} key={index} />;
-        } else if (element.type === "activity") {
-          if (element.activity === "ConversationRater") {
-            return <ConversationRater data={element.data} key={index} />;
-          } else if (element.activity === 'sliderAnimation') {
-            return <SliderAnimation data={element} key={index} />
-          } else if (element.activity === 'slider') {
-            return <SliderActivity data={element} key={index} />
-          } else if (element.activity === "DragAndDrop") {
+        } else if (element.type === "introduction") {
+          if (element.activity === "DragAndDrop") {
             return (
               <DragAndDrop
                 data={element.data}
@@ -130,13 +119,26 @@ const Page = ({ elements, style, classNames }) => {
                 key={`${chapterIndex}-${pageIndex}-${index}`}
               />
             );
-          } else if (element.activity === "selection") {
+          } else if (element.activity === "introduction-selection") {
             return (
               <IntroductionSelection
                 data={element.data}
                 key={`${chapterIndex}-${pageIndex}-${index}`}
               />
             );
+          }
+        } else if (element.type === "bias") {
+          if (element.activity === "ConversationRater") {
+            return <ConversationRater data={element.data} key={index} />;
+          }
+        } else if (element.type === "history") {
+          if (element.activity === "revealVideo") {
+          }
+        } else if (element.type === "decisions") {
+          if (element.activity === "sliderAnimation") {
+            return <SliderAnimation data={element} key={index} />;
+          } else if (element.activity === "decision-slider") {
+            return <SliderActivity data={element} key={index} />;
           } else if (element.activity === "TextDragAndDrop") {
             return (
               <TextDragAndDrop

@@ -3,42 +3,42 @@
 }
 
 .rc-slider {
-  height: 25px;
+  height: 25px !important;
 }
 
 .rc-slider-rail,
 .rc-slider-track,
 .rc-slider-step {
-  height: 20px;
-  border-radius: 10px;
+  height: 20px !important;
+  border-radius: 10px !important;
 }
 
 .rc-slider-rail,
 .rc-slider-track {
-  background-color: white;
+  background-color: white !important;
 }
 
 .rc-slider-handle {
-  width: 35px;
-  height: 35px;
-  background-color: #e3e2d0;
-  border: 8px solid #e3e2d0;
-  box-shadow: inset 0px 3px 3px -2px rgba(0, 0, 0, 47);
-  margin-top: -7px;
+  width: 35px !important;
+  height: 35px !important;
+  background-color: #e3e2d0 !important;
+  border: 8px solid #e3e2d0 !important;
+  box-shadow: inset 0px 3px 3px -2px rgba(0, 0, 0, 47) !important;
+  margin-top: -7px !important;
 
   &:active {
-    border-color: #e3e2d0;
-    box-shadow: inset 0px 3px 3px -2px rgba(0, 0, 0, 47);
+    border-color: #e3e2d0 !important;
+    box-shadow: inset 0px 3px 3px -2px rgba(0, 0, 0, 47) !important;
   }
 
   &:hover {
-    border-color: #e3e2d0;
+    border-color: #e3e2d0 !important;
   }
 }
 
 .rc-slider-handle-click-focused:focus {
-  border-color: #e3e2d0;
-  box-shadow: inset 0px 3px 3px -2px rgba(0, 0, 0, 47);
+  border-color: #e3e2d0 !important;
+  box-shadow: inset 0px 3px 3px -2px rgba(0, 0, 0, 47) !important;
 }
 
 .slider-done-button {

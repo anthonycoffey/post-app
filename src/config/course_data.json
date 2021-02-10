@@ -50,7 +50,7 @@
             {
               "id": "text",
               "type": "text",
-              "classNames": "absolute",
+              "classNames": "absolute text-black font-bold md:top-6/10 lg:top-1/2 md:left-24 lg:left-32 md:text-4xl lg:text-5xl",
               "content": "Introduction",
               "animations": [
                 {
@@ -113,7 +113,7 @@
           "classNames": "introduction-second-page justify-center items-center",
           "elements": [
             {
-              "type": "activity",
+              "type": "introduction",
               "activity": "DragAndDrop",
               "data": {
                 "scenario": {
@@ -358,7 +358,7 @@
           "classNames": "justify-between items-center",
           "elements": [
             {
-              "type": "activity",
+              "type": "introduction",
               "activity": "introduction-slide1",
               "data": {
                 "classNames": "introduction-slide1-page flex w-full h-full justify-between items-center",
@@ -405,8 +405,8 @@
           "classNames": "justify-center items-center",
           "elements": [
             {
-              "type": "activity",
-              "activity": "selection",
+              "type": "introduction",
+              "activity": "introduction-selection",
               "data": {
                 "scenario": {
                   "id": "introduction-selection",
@@ -604,52 +604,35 @@
             {
               "id": "text",
               "type": "text",
-              "classNames": "absolute text-black font-bold",
-              "style": {
-                "left": "18%",
-                "top": "50%",
-                "fontSize": "40px",
-                "width": "max-content"
-              },
-              "content": "1. History",
+              "classNames": "absolute text-black font-bold md:top-6/10 lg:top-80 md:left-24 lg:left-32 md:text-4xl lg:text-5xl",
+              "content": "1. The History",
               "animations": [
                 {
                   "type": "from",
-                  "x": -500,
-                  "duration": 1.4
+                  "x": -1000,
+                  "duration": 1
                 }
               ]
             },
             {
               "id": "image",
               "type": "image",
-              "classNames": "absolute w-auto h-auto",
+              "classNames": "left-32 absolute md:w-56 lg:w-64 h-auto",
               "style": {
-                "left": "10%",
-                "top": "10%",
-                "transform": "scale(0.7)"
+                "top": "10%"
               },
-              "alt": "history",
+              "alt": "initial-logo",
               "url": "/assets/images/history.png"
             },
             {
               "id": "list",
               "type": "list",
-              "classNames": "list-items-wrapper absolute w-auto h-auto",
-              "style": {
-                "top": "20%",
-                "right": "20%"
-              },
+              "classNames": "list-items-wrapper md:top-20 lg:top-32 md:left-1/2 lg:left-1/2 absolute w-5/12 h-auto",
               "items": [
                 {
-                  "value": "we-got-here",
-                  "title": "How We Got Here",
+                  "value": "reveal",
+                  "title": "How We Got Here - Click Reveal with Video",
                   "pageIndex": 1
-                },
-                {
-                  "value": "better-future",
-                  "title": "Creating A Better Future",
-                  "pageIndex": 2
                 }
               ],
               "animations": [
@@ -663,7 +646,7 @@
             {
               "id": "buttton",
               "type": "button",
-              "classNames": "introduction-back-button absolute",
+              "classNames": "history-back-button absolute",
               "style": {
                 "top": "70%",
                 "right": "30%",
@@ -671,6 +654,43 @@
               },
               "title": "Back",
               "action": "goToMenu"
+            }
+          ]
+        },
+        {
+          "classNames": "history-first-page justify-center items-center",
+          "elements": [
+            {
+              "type": "history",
+              "activity": "revealVideo",
+              "data": {
+                "items": [
+                  {
+                    "value": "video1",
+                    "image": {
+                      "className": "",
+                      "url": "/assets/images/history/picture1.png"
+                    },
+                    "pageIndex": 2
+                  },
+                  {
+                    "value": "video2",
+                    "image": {
+                      "className": "",
+                      "url": "/assets/images/history/picture2.png"
+                    },
+                    "pageIndex": 3
+                  },
+                  {
+                    "value": "video3",
+                    "image": {
+                      "className": "",
+                      "url": "/assets/images/history/picture3.png"
+                    },
+                    "pageIndex": 4
+                  }
+                ]
+              }
             }
           ]
         }
@@ -768,7 +788,7 @@
           "classNames": "items-center justify-center bg-white",
           "elements": [
             {
-              "type": "activity",
+              "type": "bias",
               "activity": "ConversationRater",
               "data": {
                 "scenarios": [
@@ -999,7 +1019,7 @@
             {
               "id": "text",
               "type": "text",
-              "classNames": "absolute text-center",
+              "classNames": "absolute text-center text-black font-bold md:top-6/10 lg:top-1/2 md:left-24 lg:left-32 md:text-4xl lg:text-5xl",
               "style": {
                 "whiteSpace": "noWrap"
               },
@@ -1077,7 +1097,7 @@
           "classNames": "decisions-second-page justify-center items-center",
           "elements": [
             {
-              "type": "activity",
+              "type": "decisions",
               "activity": "TextDragAndDrop",
               "data": {
                 "scenario": {
@@ -1143,7 +1163,7 @@
           "classNames": "decisions-third-page justify-center items-center",
           "elements": [
             {
-              "type": "activity",
+              "type": "decisions",
               "activity": "ImageDragAndDrop",
               "data": {
                 "scenario": {
@@ -1277,8 +1297,8 @@
           "classNames": "decisions-5-page justify-center items-center",
           "elements": [
             {
-              "type": "activity",
-              "activity": "slider",
+              "type": "decisions",
+              "activity": "decision-slider",
               "data": {
                 "title": "Evalutate how the officer did for each tenet by dragging the sliders",
                 "audio": {
@@ -1437,7 +1457,7 @@
           "classNames": "decisions-7-page justify-center items-center",
           "elements": [
             {
-              "type": "activity",
+              "type": "decisions",
               "activity": "sliderAnimation",
               "data": {
                 "text": {

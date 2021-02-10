@@ -10,7 +10,7 @@ const Text = ({ data }) => {
       style={data.style || {}}
     >
       <div
-        className={`text ${data.classNames || ""}`}
+        className={`text`}
         style={data.style || {}}
       >
         {renderHTML(data.content)}
