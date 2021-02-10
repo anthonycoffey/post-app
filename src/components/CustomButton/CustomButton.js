@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux";
 import {
   setChapterIndexRequest,
   setPageIndexRequest,
-} from "../../../../store/actions/status.action";
+} from "../../store/actions/status.action";
 
 const CustomButton = ({ data }) => {
   const dispatch = useDispatch();

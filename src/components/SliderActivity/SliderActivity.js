@@ -3,7 +3,7 @@ import { TweenMax, TweenLite } from "gsap";
 import { useSelector, useDispatch } from "react-redux";
 import Slider from "rc-slider";
 import Audio from "../Audio/Audio";
-import { setPageIndexRequest } from "../../../../store/actions/status.action";
+import { setPageIndexRequest } from "../../store/actions/status.action";
 
 import "./SliderActivity.scss";
 

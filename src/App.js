@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 
-import Player from "./components/Player";
-import FooterNav from "./components/FooterNav/FooterNav";
-import HeaderNav from "./components/HeaderNav/HeaderNav";
+import Player from "./container/Player/Player";
+import FooterNav from "./container/FooterNav/FooterNav";
+import HeaderNav from "./container/HeaderNav/HeaderNav";
 import Loader from "react-loader-spinner";
 import { getCourseRequest } from "./store/actions/course.action";
 

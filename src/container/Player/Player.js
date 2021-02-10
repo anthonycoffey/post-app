@@ -2,9 +2,9 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { find } from "lodash";
 
-import Chapter from "./Chapter/Chapter";
-import Home from "./Home/Home";
-import Initial from "./Initial/Initial";
+import Chapter from "../Chapter/Chapter";
+import Home from "../Home/Home";
+import Initial from "../Initial/Initial";
 
 const Player = () => {
   const course = useSelector((state) => state.course.course);

@@ -8,22 +8,22 @@ import {
   setPageIndexRequest,
 } from "../../store/actions/status.action";
 import "./Page.scss";
-import Content from "./components/Content/Content";
-import Audio from "./components/Audio/Audio";
-import Video from "./components/Video/Video";
-import Shape from "./components/Shape/Shape";
-import Image from "./components/Image/Image";
-import Text from "./components/Text/Text";
-import List from "./components/List/List";
-import CustomButton from "./components/CustomButton/CustomButton";
-import DragAndDrop from "../DragAndDrop/DragAndDrop";
-import TextDragAndDrop from "../TextDragAndDrop/TextDragAndDrop";
-import ImageDragAndDrop from "../ImageDragAndDrop/ImageDragAndDrop";
-import ConversationRater from "../ConversationRater/ConversationRater";
-import IntroductionSlide1 from "./Introduction/IntroductionSlide1/IntroductionSlide1";
-import IntroductionSelection from "./Introduction/Selection/Selection";
-import SliderActivity from "./components/SliderActivity/SliderActivity";
-import SliderAnimation from "./components/SliderAnimation/SliderAnimation";
+import Content from "../../components/Content/Content";
+import Audio from "../../components/Audio/Audio";
+import Video from "../../components/Video/Video";
+import Shape from "../../components/Shape/Shape";
+import Image from "../../components/Image/Image";
+import Text from "../../components/Text/Text";
+import List from "../../components/List/List";
+import CustomButton from "../../components/CustomButton/CustomButton";
+import DragAndDrop from "../../components/DragAndDrop/DragAndDrop";
+import TextDragAndDrop from "../../components/TextDragAndDrop/TextDragAndDrop";
+import ImageDragAndDrop from "../../components/ImageDragAndDrop/ImageDragAndDrop";
+import ConversationRater from "../../components/ConversationRater/ConversationRater";
+import IntroductionSlide1 from "../Introduction/IntroductionSlide1/IntroductionSlide1";
+import IntroductionSelection from "../Introduction/Selection/Selection";
+import SliderActivity from "../../components/SliderActivity/SliderActivity";
+import SliderAnimation from "../../components/SliderAnimation/SliderAnimation";
 
 const Page = ({ elements, style, classNames }) => {
   const pageIndex = useSelector((state) => state.status.pageIndex);

@@ -3,12 +3,12 @@ import { TweenMax, TweenLite } from "gsap";
 import { useSelector, useDispatch } from "react-redux";
 import { find, findIndex } from "lodash";
 import renderHTML from "react-render-html";
-import Audio from "../../components/Audio/Audio";
+import Audio from "../../../components/Audio/Audio";
 
 import {
   setPageIndexRequest,
   setChapterIndexRequest,
-} from "../../../../store/actions/status.action";
+} from "../../../store/actions/status.action";
 
 import "./IntroductionSlide1.scss";
 

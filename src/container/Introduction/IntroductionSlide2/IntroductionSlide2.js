@@ -7,7 +7,7 @@ import renderHTML from "react-render-html";
 import {
   setPageIndexRequest,
   setChapterIndexRequest,
-} from "../../../../store/actions/status.action";
+} from "../../../store/actions/status.action";
 
 import "./IntroductionSlide2.scss";
 

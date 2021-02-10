@@ -1,6 +1,7 @@
 import React, { useRef, useEffect, useState } from "react";
 import Slider from "react-slick";
 import "./ConversationRater.sass";
+
 const ConversationRater = ({ data }) => {
   const { scenarios } = data;
   let slider = useRef(null);

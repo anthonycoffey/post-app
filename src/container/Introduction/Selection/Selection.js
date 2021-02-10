@@ -2,12 +2,12 @@ import React, { useEffect, useState } from "react";
 import { TweenMax, TweenLite } from "gsap";
 import { useSelector, useDispatch } from "react-redux";
 import { find, findIndex } from "lodash";
-import Audio from "../../components/Audio/Audio";
+import Audio from "../../../components/Audio/Audio";
 
 import {
   setPageIndexRequest,
   setChapterIndexRequest,
-} from "../../../../store/actions/status.action";
+} from "../../../store/actions/status.action";
 
 import "./Selection.scss";
 import IntroductionSlide2 from "../IntroductionSlide2/IntroductionSlide2";

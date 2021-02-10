@@ -5,7 +5,7 @@ import renderHTML from "react-render-html";
 import AudioPlayer from "react-h5-audio-player";
 import actionHelper from "../../helpers/ActionHelper";
 import Checkbox from "./components/Checkbox/Checkbox";
-import "react-h5-audio-player/lib/styles.css";
+import "../../container/node_modules/react-h5-audio-player/lib/styles.css";
 import "./Activity.scss";
 import Slider from "react-slick";
 

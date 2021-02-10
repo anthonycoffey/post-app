@@ -2,7 +2,7 @@ import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import {
   setPageIndexRequest,
-} from "../../../../store/actions/status.action";
+} from "../../store/actions/status.action";
 import ReactPlayer from "react-player";
 import "./Video.scss";
 
