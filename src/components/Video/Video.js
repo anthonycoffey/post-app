@@ -6,15 +6,16 @@ import {
 import ReactPlayer from "react-player";
 import "./Video.scss";
 
-const Video = ({ data }) => {
+const Video = ({ data, onEnded, playing }) => {
   const pageIndex = useSelector((state) => state.status.pageIndex);
   const dispatch = useDispatch();
 
   const handleEnded = () => {
-    console.log(data);
     if (data.goNextSection) {
-      console.log('hehe', pageIndex);
       dispatch(setPageIndexRequest(pageIndex + 1));
+    }
+    if (onEnded) {
+      onEnded();
     }
   }
 
@@ -25,6 +26,7 @@ const Video = ({ data }) => {
       style={data.style || {}}
     >
       <ReactPlayer
+        playing={playing}
         url={data.url}
         width={data.width}
         height={data.height}

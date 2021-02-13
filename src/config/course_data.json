@@ -233,7 +233,7 @@
           "classNames": "introduction-third-page justify-center items-center",
           "elements": [
             {
-              "type": "activity",
+              "type": "introduction",
               "activity": "DragAndDrop",
               "data": {
                 "scenario": {
@@ -658,39 +658,150 @@
           ]
         },
         {
-          "classNames": "history-first-page justify-center items-center",
+          "classNames": "justify-center items-center",
           "elements": [
             {
               "type": "history",
               "activity": "revealVideo",
               "data": {
+                "classNames": "w-full h-full flex relative history-first-page justify-center items-center",
+                "initialAudio": "/assets/audio/history/history_intro.mp3",
+                "doneAudio": "/assets/audio/history/history_done.mp3",
+                "audio": {
+                  "id": "history-audio",
+                  "classNames": "fixed bottom-0 z-10"
+                },
+                "watchedImage": "/assets/images/history/watched.png",
                 "items": [
                   {
                     "value": "video1",
+                    "classNames": "h-4/12 w-4/12 absolute lg:top-28 md:left-10 lg:left-20",
+                    "style": {
+                      "transform": "rotateZ(-8deg)",
+                      "border": "5px solid white",
+                      "zIndex": 1
+                    },
                     "image": {
-                      "className": "",
                       "url": "/assets/images/history/picture1.png"
                     },
-                    "pageIndex": 2
+                    "pageIndex": 2,
+                    "videoContent": {
+                      "classNames": "w-full h-full",
+                      "type": "video",
+                      "url": "http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4",
+                      "width": "100%",
+                      "height": "100%",
+                      "goBack": true,
+                      "id": "reveal-0-video"
+                    }
                   },
                   {
                     "value": "video2",
+                    "classNames": "w-4/12 top-1/4 absolute left-4/12 -mt-6",
+                    "style": {
+                      "border": "5px solid white",
+                      "zIndex": 2
+                    },
                     "image": {
-                      "className": "",
-                      "url": "/assets/images/history/picture2.png"
+                      "url": "/assets/images/history/picture2.jpg"
+                    },
+                    "slideContent": {
+                      "classNames": "history-slide relative w-full h-full flex items-center justify-center",
+                      "audio": {
+                        "id": "history-slide-audio",
+                        "classNames": "fixed bottom-0 z-10"
+                      },
+                      "slideAudio": "/assets/audio/history/history_slide.mp3",
+                      "items": [
+                        {
+                          "text": "\"The police... they were like <br/>superheroes, they were like<br/>Superman to us... we looked up<br/>to them.\""
+                        },
+                        {
+                          "style": {
+                            "transform": "rotateZ(8deg)",
+                            "border": "5px solid white",
+                            "zIndex": 1
+                          },
+                          "image": {
+                            "url": "/assets/images/history/picture2.jpg"
+                          },
+                          "text": [
+                            "Craig A. Miller, aka KAM, is a California-based political emcee<br/>who gained popularity with hip hop fans and music critics<br/>during the 1990s and early 2000s.",
+                            "In this interview, he talks about his first experiences with police<br/>as a 10-year-old child in Los Angeles... and the lasting impact<br/>they had on him."
+                          ]
+                        }
+                      ],
+                      "videoContent": {
+                        "classNames": "w-full h-full",
+                        "type": "video",
+                        "url": "/assets/video/history/Kamnew.mp4",
+                        "width": "100%",
+                        "height": "100%",
+                        "goBack": true,
+                        "id": "reveal-1-video"
+                      }
                     },
                     "pageIndex": 3
                   },
                   {
                     "value": "video3",
+                    "classNames": "w-4/12 absolute right-12",
+                    "style": {
+                      "transform": "rotateZ(6deg)",
+                      "border": "5px solid white",
+                      "zIndex": 3
+                    },
                     "image": {
-                      "className": "",
                       "url": "/assets/images/history/picture3.png"
+                    },
+                    "slideContent": {
+                      "classNames": "history-slide relative w-full h-full flex items-center justify-center",
+                      "items": [
+                        {
+                          "style": {
+                            "transform": "rotateZ(8deg)",
+                            "border": "5px solid white",
+                            "zIndex": 1
+                          },
+                          "image": {
+                            "url": "/assets/images/history/picture3.png"
+                          },
+                          "text": [
+                            "Toni McNeil is a Community Organizer in the City of Stockton. She has served as a Community Liaison during police officer trainings.",
+                            "During one of these training sessions, while talking to officers, she shared a story about an encounter her 20-year-old son had with the police.",
+                            "He called her late one night and informed her he had just been pulled over. Officers were giving him instructions, warning him to keep his hands on the wheel.",
+                            "Panicked, Toni, still in her night gown, grabbed her keys, ran out the door, and began driving toward his location.",
+                            "During the training session with officers, she explained to them how she felt when arrived at the scene and he was OK..."
+                          ]
+                        }
+                      ],
+                      "videoContent": {
+                        "classNames": "w-full h-full",
+                        "type": "video",
+                        "url": "/assets/video/history/Toni.mp4",
+                        "width": "100%",
+                        "height": "100%",
+                        "goBack": true,
+                        "id": "reveal-2-video"
+                      }
                     },
                     "pageIndex": 4
                   }
                 ]
               }
+            }
+          ]
+        },
+        {
+          "classNames": "history-2-page justify-center items-center",
+          "elements": [
+            {
+              "classNames": "w-full h-full",
+              "type": "video",
+              "url": "http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4",
+              "width": "95%",
+              "height": "95%",
+              "goBack": true
             }
           ]
         }

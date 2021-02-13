@@ -1,0 +1,43 @@
+.history-first-page {
+  background-image: url("/assets/background/history.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.history-reveal-item {
+  &:hover {
+    transform: translateY(-10px);
+    cursor: pointer;
+
+    img {
+      border-color: #ddd9c3 !important;
+    }
+  }
+
+  img {
+    @apply w-full h-full;
+  }
+
+  .watched-wrapper {
+    position: absolute;
+
+    .watched {
+      @apply w-full h-full;
+    }
+  }
+}
+
+.history-action-wrapper {
+  button {
+    background: #396167;
+    text-transform: capitalize;
+    color: white;
+    width: 150px;
+    height: 50px;
+    border-radius: 5px;
+    font-weight: bold;
+    margin-top: 30px;
+    cursor: pointer;
+    @apply md:text-xl lg:text-2xl;
+  }
+}

@@ -24,6 +24,7 @@ import IntroductionSlide1 from "../Introduction/IntroductionSlide1/IntroductionS
 import IntroductionSelection from "../Introduction/Selection/Selection";
 import SliderActivity from "../../components/SliderActivity/SliderActivity";
 import SliderAnimation from "../../components/SliderAnimation/SliderAnimation";
+import History from "../History/History";
 
 const Page = ({ elements, style, classNames }) => {
   const pageIndex = useSelector((state) => state.status.pageIndex);
@@ -133,6 +134,7 @@ const Page = ({ elements, style, classNames }) => {
           }
         } else if (element.type === "history") {
           if (element.activity === "revealVideo") {
+            return <History data={element.data} key={index} />;
           }
         } else if (element.type === "decisions") {
           if (element.activity === "sliderAnimation") {

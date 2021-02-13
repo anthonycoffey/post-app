@@ -1,0 +1,28 @@
+.history-slide {
+  @apply bg-black;
+}
+
+.quote-1 {
+  @apply md:text-5xl lg:text-6xl;
+
+  .additional {
+    @apply md:text-lg lg:text-xl;
+  }
+}
+
+.quote-up {
+  @apply md:top-8 lg:top-6 md:w-36 lg:w-48;
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.quote-down {
+  @apply md:bottom-8 lg:bottom-6 md:w-36 lg:w-48;
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}
