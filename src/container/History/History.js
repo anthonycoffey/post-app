@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
 import { TweenMax } from "gsap";
+import { filter } from "lodash";
+import { setCompletedRequest } from "../../store/actions/status.action";
 import Audio from "../../components/Audio/Audio";
 import Video from "../../components/Video/Video";
 import Slide from "./components/Slide/Slide";
@@ -11,16 +14,20 @@ import "./History.scss";
 const maxes = [];
 
 const History = ({ data }) => {
+  const pageIndex = useSelector((state) => state.status.pageIndex);
+  const chapterIndex = useSelector((state) => state.status.chapterIndex);
+  const completed = useSelector((state) => state.status.completed);
+  const dispatch = useDispatch();
   const [revealItems, setRevealItem] = useState([]);
   const [revealIndex, setRevealIndex] = useState(-1);
   const audioRef = React.createRef();
   const [audio, setAudio] = useState("");
-  const [finishedItems, setFinished] = useState(0);
+  const [finishedItems, setFinishedItems] = useState(0);
   const [videoPlaying, setVidePlaying] = useState(false);
   useEffect(() => {
-    // playSequence();
     setRevealItem(data.items);
     setAudio(data.initialAudio);
+
     return () => {
       maxes.forEach((max) => {
         max.kill();
@@ -28,11 +35,39 @@ const History = ({ data }) => {
     };
   }, [data]);
 
+  useEffect(() => {
+    if (finishedItems === revealItems.length) {
+      dispatch(setCompletedRequest(chapterIndex, pageIndex, 1));
+      setAudio(data.doneAudio);
+    }
+  }, [finishedItems]);
+
+  useEffect(() => {
+    if (
+      revealIndex === -1 &&
+      completed[chapterIndex][`page_${pageIndex}`] === 1
+    ) {
+      TweenMax.to(".history-action-wrapper", 0.1, {
+        display: "block",
+      });
+    }
+  }, [revealIndex]);
+
+  useEffect(() => {
+    if (
+      finishedItems === revealItems.length &&
+      completed[chapterIndex][`page_${pageIndex}`] === 1
+    ) {
+      setAudio(data.doneAudio);
+      setFinishedItems(0);
+    }
+  }, [revealItems]);
+
   const handleReveal = (revealIndex, currentIndex) => {
     setRevealIndex(currentIndex);
     const temp = revealItems.slice();
     temp[currentIndex].watched = true;
-    setRevealItem(revealItems);
+    setRevealItem(temp);
     if (currentIndex === 0) {
       setVidePlaying(true);
     }
@@ -40,12 +75,14 @@ const History = ({ data }) => {
   };
   const onVideoEnded = () => {
     setRevealIndex(-1);
-    setFinished(finishedItems + 1);
+    if (finishedItems < revealItems.length) {
+      setFinishedItems(finishedItems + 1);
+    }
   };
 
   const renderItem = () => {
     if (revealIndex === -1) {
-      TweenMax.to(".audio-panel", 0.5, {
+      TweenMax.to(".audio-panel", 0.1, {
         display: "block",
       });
       return revealItems.map((item, index) => (
@@ -55,7 +92,7 @@ const History = ({ data }) => {
           onClick={() => handleReveal(item.pageIndex, index)}
         >
           <img src={item.image.url} alt="" style={item.style || {}} />
-          {item.watched ? (
+          {completed[chapterIndex][`page_${pageIndex}`] === 1 ? (
             <div
               className={`watched-wrapper absolute md:w-12 lg:w-20 md:h-12 lg:h-20 ${
                 index === 1
@@ -71,7 +108,10 @@ const History = ({ data }) => {
         </div>
       ));
     } else if (revealIndex === 0) {
-      TweenMax.to(".audio-panel", 0.5, {
+      TweenMax.to(".audio-panel", 0.1, {
+        display: "none",
+      });
+      TweenMax.to(".history-action-wrapper", 0.1, {
         display: "none",
       });
       return (
@@ -83,7 +123,10 @@ const History = ({ data }) => {
         />
       );
     } else if (revealIndex === 1) {
-      TweenMax.to(".audio-panel", 0.5, {
+      TweenMax.to(".audio-panel", 0.1, {
+        display: "none",
+      });
+      TweenMax.to(".history-action-wrapper", 0.1, {
         display: "none",
       });
       return (
@@ -93,7 +136,10 @@ const History = ({ data }) => {
         />
       );
     } else if (revealIndex === 2) {
-      TweenMax.to(".audio-panel", 0.5, {
+      TweenMax.to(".audio-panel", 0.1, {
+        display: "none",
+      });
+      TweenMax.to(".history-action-wrapper", 0.1, {
         display: "none",
       });
       return (
@@ -114,7 +160,7 @@ const History = ({ data }) => {
         ref={audioRef}
       />
       {renderItem()}
-      {finishedItems === 3 ? (
+      {completed[chapterIndex][`page_${pageIndex}`] === 1 ? (
         <div className="absolute bottom-12 history-action-wrapper">
           <CustomButton data={{ title: "Done", action: "goToMenu" }} />
         </div>

@@ -688,7 +688,7 @@
                     "videoContent": {
                       "classNames": "w-full h-full",
                       "type": "video",
-                      "url": "http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4",
+                      "url": "/assets/video/history/Kamnew.mp4",
                       "width": "100%",
                       "height": "100%",
                       "goBack": true,

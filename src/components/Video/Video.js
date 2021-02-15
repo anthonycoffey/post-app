@@ -31,7 +31,6 @@ const Video = ({ data, onEnded, playing }) => {
         width={data.width}
         height={data.height}
         onEnded={handleEnded}
-        muted
         controls
       />
     </div>

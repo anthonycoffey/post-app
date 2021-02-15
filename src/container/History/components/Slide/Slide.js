@@ -71,7 +71,6 @@ const Slide = ({ data, goToNextReveal }) => {
   const onVideoEnded = () => {
     goToNextReveal();
   };
-  console.log(data);
 
   return (
     <div className={`${data.classNames || ""}`} style={data.style || {}}>

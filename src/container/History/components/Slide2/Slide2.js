@@ -65,6 +65,9 @@ const Slide2 = ({ data, goToNextReveal }) => {
       TweenMax.to(".history-slide-text", 0.5, {
         opacity: 0,
       });
+      TweenMax.to(".history-slide-video", 0.1, {
+        display: 'block',
+      });
       TweenMax.to(".history-slide-video", 0.5, {
         opacity: 1,
       });
@@ -104,7 +107,7 @@ const Slide2 = ({ data, goToNextReveal }) => {
           ))}
         </div>
       </div>
-      <div className="absolute history-slide-video opacity-0 w-full h-full flex-col items-center justify-center">
+      <div className="absolute hidden history-slide-video opacity-0 w-full h-full flex-col items-center justify-center">
         <Video
           data={data.videoContent}
           key="reveal-0"
