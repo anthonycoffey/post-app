@@ -1,0 +1,57 @@
+.bias-safe-slider-wrapper {
+  background-image: url("/assets/background/bias-initial.png");
+  background-size: cover;
+  position: relative;
+  background-position: center;
+  transition: background-image ease 2s;
+}
+
+.rc-slider {
+  height: 25px !important;
+}
+
+.rc-slider-rail,
+.rc-slider-track,
+.rc-slider-step {
+  height: 20px !important;
+  border-radius: 10px !important;
+}
+
+.rc-slider-rail,
+.rc-slider-track {
+  background-color: white !important;
+}
+
+.rc-slider-handle {
+  width: 35px !important;
+  height: 35px !important;
+  background-color: #e3e2d0 !important;
+  border: 8px solid #e3e2d0 !important;
+  box-shadow: inset 0px 3px 3px -2px rgba(0, 0, 0, 47) !important;
+  margin-top: -7px !important;
+
+  &:active {
+    border-color: #e3e2d0 !important;
+    box-shadow: inset 0px 3px 3px -2px rgba(0, 0, 0, 47) !important;
+  }
+
+  &:hover {
+    border-color: #e3e2d0 !important;
+  }
+}
+
+.rc-slider-handle-click-focused:focus {
+  border-color: #e3e2d0 !important;
+  box-shadow: inset 0px 3px 3px -2px rgba(0, 0, 0, 47) !important;
+}
+
+.slider-done-button {
+  width: 150px;
+  height: 50px;
+  background: #e0dfcb;
+  border-radius: 5px;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-top: 30px;
+  @apply md:text-xl lg:text-2xl;
+}

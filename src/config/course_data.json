@@ -791,19 +791,6 @@
               }
             }
           ]
-        },
-        {
-          "classNames": "history-2-page justify-center items-center",
-          "elements": [
-            {
-              "classNames": "w-full h-full",
-              "type": "video",
-              "url": "http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4",
-              "width": "95%",
-              "height": "95%",
-              "goBack": true
-            }
-          ]
         }
       ]
     },
@@ -812,303 +799,119 @@
       "title": "Our Bias",
       "pages": [
         {
-          "classNames": "items-center",
-          "style": {
-            "background": "#feb1a4"
-          },
+          "classNames": "bias-wrapper justify-center items-center",
+          "type": "default",
           "elements": [
             {
-              "id": "content",
-              "type": "content",
-              "classNames": "absolute z-10 w-full text-center h-auto",
-              "title": {
-                "content": "ANALYZE",
-                "classNames": "text-center italic font-black bg-transparent flex items-center justify-center text-chapterTitle"
-              },
+              "id": "text",
+              "type": "text",
+              "classNames": "absolute text-black font-bold md:top-6/10 lg:top-80 md:left-24 lg:left-32 md:text-4xl lg:text-5xl",
+              "content": "2. Your Brain",
               "animations": [
                 {
                   "type": "from",
-                  "x": -500,
+                  "x": -1000,
                   "duration": 1
                 }
               ]
             },
             {
-              "id": "shape",
-              "type": "shape",
-              "classNames": "w-full h-1/4 bg-white",
+              "id": "image",
+              "type": "image",
+              "classNames": "left-32 absolute md:w-56 lg:w-64 h-auto",
+              "style": {
+                "top": "10%"
+              },
+              "alt": "initial-logo",
+              "url": "/assets/images/bias.png"
+            },
+            {
+              "id": "list",
+              "type": "list",
+              "classNames": "list-items-wrapper md:top-20 lg:top-32 md:left-1/2 lg:left-1/2 absolute w-5/12 h-auto",
+              "items": [
+                {
+                  "value": "slider",
+                  "title": "Single Slider Submit",
+                  "pageIndex": 1
+                },
+                {
+                  "value": "evaluate",
+                  "title": "Evaluate Scenario - Listen and Choose Best Answer",
+                  "pageIndex": 2
+                },
+                {
+                  "value": "type-in",
+                  "title": "Type In Your Answer Activity",
+                  "pageIndex": 3
+                },
+                {
+                  "value": "question",
+                  "title": "Question - Single Correct",
+                  "pageIndex": 4
+                }
+              ],
               "animations": [
                 {
                   "type": "from",
                   "x": 1100,
-                  "duration": 2
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "classNames": "justify-start bg-cover items-center",
-          "style": {
-            "backgroundImage": "url('/assets/background/street_scene_bg.jpg')"
-          },
-          "elements": [
-            {
-              "id": "shape",
-              "type": "shape",
-              "classNames": "absolute left-0",
-              "style": {
-                "width": "65%",
-                "height": "65%",
-                "background": "#bc3f81"
-              },
-              "animations": [
-                {
-                  "type": "from",
-                  "x": -500,
-                  "duration": 0.5
+                  "duration": 1.4
                 }
               ]
             },
             {
-              "id": "content",
-              "type": "content",
-              "classNames": "bg-transparent pl-16",
+              "id": "buttton",
+              "type": "button",
+              "classNames": "history-back-button absolute",
               "style": {
-                "width": "45%"
+                "top": "70%",
+                "right": "30%",
+                "fontSize": "40px"
               },
-              "title": {
-                "content": "A MUGGING",
-                "classNames": "w-auto text-white text-left italic pb-4 font-bold mb-4 border-b-4 border-white border-solid text-title"
-              },
-              "description": {
-                "content": "Officer Watson is walking his beat on a crowded downtown street when a middle-aged, techy-looking guy approaches him in a highly agitated state.<br/><br/>In this activity, you'll watch how he handles the interaction and rate his performance for each exchange.",
-                "classNames": "text-white text-left w-auto text-description"
-              },
-              "animations": [
-                {
-                  "type": "from",
-                  "x": -1100,
-                  "duration": 1
-                }
-              ]
+              "title": "Back",
+              "action": "goToMenu"
             }
           ]
         },
         {
-          "classNames": "items-center justify-center bg-white",
           "elements": [
             {
               "type": "bias",
-              "activity": "ConversationRater",
+              "activity": "safe-slider",
               "data": {
-                "scenarios": [
+                "id": "safe-slider",
+                "classNames": "w-full h-full flex flex-col relative bias-first-page justify-start items-center",
+                "initialAudio": "/assets/audio/bias/slider_start.mp3",
+                "feedbackAudio1": "/assets/audio/bias/slider_feedback1.mp3",
+                "feedbackAudio2": "/assets/audio/bias/slider_feedback2.mp3",
+                "audio": {
+                  "id": "bias-safe-audio",
+                  "classNames": "fixed bottom-0 z-10"
+                },
+                "dogImage1": "/assets/images/bias/dog_1.jpg",
+                "dogImage2": "/assets/images/bias/dog_2.jpg",
+                "safeSliderImage": {
+                  "url": "/assets/images/bias/dog_2.jpg",
+                  "classNames": "w-4/12",
+                  "style": {
+                    "transform": "rotateZ(4deg)",
+                    "border": "8px solid white"
+                  }
+                },
+                "title": {
+                  "content": "How safe is this type of dog? Use the slider to rate it, from safest (green) to most dangerous (red).",
+                  "classNames": "text-white mt-6 md:text-2xl lg:text-3xl text-center"
+                },
+                "items": [
                   {
-                    "video": "video1.mp4",
-                    "expertRating": "Good",
-                    "choices": {
-                      "ok": [
-                        {
-                          "correct": false,
-                          "label": "Did not effectively defuse the situation",
-                          "feedback": "Actually, the officer maintained a calm demeanor and did not reflect or amplify the subject's emotional intensity. This is the very definition of \"defusing.\""
-                        },
-                        {
-                          "correct": false,
-                          "label": "Did not effectively use interjection",
-                          "feedback": "Actually, the officer did successfully manage to interrupt the subject and redirect him towards a goal."
-                        },
-                        {
-                          "correct": true,
-                          "label": "Did not use deflection effectively",
-                          "feedback": "Although this may be true, deflection is actually a tactic of disengaging with an actively hostile subject. It's not relevant here since the subject is mainly just distressed and impatient."
-                        },
-                        {
-                          "correct": false,
-                          "label": "Tone was detatched and cold",
-                          "feedback": "Possibly. Everyone's style will be a little different. However, when the main goal is to calm an agitated subject, maintaining a level of professional distance can often serve that purpose."
-                        },
-                        {
-                          "correct": false,
-                          "label": "Failed to listen effectively",
-                          "feedback": "At this point, there's not much useful to listen to. First,the officer has to get the subject to calm down before he can get the information he needs."
-                        }
-                      ],
-                      "good": [
-                        {
-                          "correct": true,
-                          "label": "Effectively defused the situation",
-                          "feedback": "The officer maintained a calm demeanor and did not reflect or amplify the subject's emotional intensity. This is the very definition of \"defusing.\""
-                        },
-                        {
-                          "correct": true,
-                          "label": "Effectively used interjection",
-                          "feedback": "Yes. The officer did successfully manage to interrupt the subject and redirect him towards a goal."
-                        },
-                        {
-                          "correct": false,
-                          "label": "Used deflection effectively",
-                          "feedback": "Deflection is actually a tactic of disengaging with an actively hostile subject. It's not relevant her since the subject is mainly just distressed and impatient."
-                        }
-                      ],
-                      "bad": [
-                        {
-                          "correct": false,
-                          "label": "Did not effectively defuse the situation",
-                          "feedback": "Actually, the officer maintained a calm demeanor and did not reflect or amplify the subject's emotional intensity. This is the very definition of \"defusing.\""
-                        },
-                        {
-                          "correct": false,
-                          "label": "Did not effectively use interjection",
-                          "feedback": "Actually, the officer did successfully manage to interrupt the subject and redirect him towards a goal."
-                        },
-                        {
-                          "correct": true,
-                          "label": "Did not use deflection effectively",
-                          "feedback": "Although this may be true, deflection is actually a tactic of disengaging with an actively hostile subject. It's not relevant here since the subject is mainly just distressed and impatient."
-                        },
-                        {
-                          "correct": false,
-                          "label": "Tone was detatched and cold",
-                          "feedback": "Possibly. Everyone's style will be a little different. However, when the main goal is to calm an agitated subject, maintaining a level of professional distance can often serve that purpose."
-                        },
-                        {
-                          "correct": false,
-                          "label": "Failed to listen effectively",
-                          "feedback": "At this point, there's not much useful to listen to. First,the officer has to get the subject to calm down before he can get the information he needs."
-                        }
-                      ]
-                    }
+                    "title": "",
+                    "leftLabel": "Safe",
+                    "rightLabel": "Dangerous",
+                    "min": 0,
+                    "max": 5
                   }
                 ]
               }
-            }
-          ]
-        },
-        {
-          "classNames": "items-start justify-center flex-col bg-white",
-          "type": "activity",
-          "elements": [
-            {
-              "id": "content",
-              "type": "content",
-              "classNames": "bg-transparent pl-16 mb-8",
-              "style": {
-                "width": "50%"
-              },
-              "title": {
-                "content": "RE-CENTERING",
-                "classNames": "w-auto text-black text-left italic pb-4 font-bold mb-4 border-b-4 border-black border-solid text-title"
-              },
-              "description": {
-                "content": "This is a set of techniques designed to re-focus your mental and emotional energy on something calming and positive.<br/><br/><div className=\"italic\">Click on each skill to learn more.</div>",
-                "classNames": "text-black text-left w-auto text-description"
-              }
-            },
-            {
-              "id": "skills",
-              "type": "skills",
-              "classNames": "w-1/2",
-              "skills": [
-                {
-                  "id": "tactical",
-                  "caption": "tactical breathing",
-                  "classNames": "checkbox flex items-center justify-end tactical italic uppercase bg-black w-full text-white py-3 mb-6 pr-12",
-                  "value": false
-                },
-                {
-                  "id": "deliberate",
-                  "caption": "deliberate repetition",
-                  "classNames": "checkbox flex items-center justify-end deliberate italic uppercase bg-black w-full text-white py-3 mb-6 pr-12",
-                  "value": false
-                },
-                {
-                  "id": "mental",
-                  "caption": "mental imaging",
-                  "classNames": "checkbox flex items-center justify-end mental italic uppercase bg-black w-full text-white py-3 mb-6 pr-12",
-                  "value": false
-                }
-              ],
-              "skillPanels": [
-                {
-                  "id": "tactical",
-                  "type": "content",
-                  "classNames": "hidden absolute top-12 right-0 tactical-panel p-6",
-                  "style": {
-                    "width": "45%",
-                    "height": "80%"
-                  },
-                  "title": {
-                    "content": "tactical breathing",
-                    "classNames": "uppercase w-auto text-white text-left italic pb-4 font-bold mb-4 border-b-4 border-white border-solid text-title"
-                  },
-                  "description": {
-                    "content": "Breathe in slowly while counting to four in your mind. Exhale on the same count of four. Focus on your breath and nothing else.",
-                    "classNames": "text-white text-left w-auto text-description"
-                  },
-                  "animations": [
-                    {
-                      "type": "from",
-                      "x": 1100,
-                      "duration": 0.5
-                    }
-                  ]
-                },
-                {
-                  "id": "deliberate",
-                  "type": "content",
-                  "classNames": "hidden absolute top-12 right-0 deliberate-panel p-6",
-                  "style": {
-                    "width": "45%",
-                    "height": "80%"
-                  },
-                  "title": {
-                    "content": "deliberate repetition",
-                    "classNames": "uppercase w-auto text-white text-left italic pb-4 font-bold mb-4 border-b-4 border-white border-solid text-title"
-                  },
-                  "description": {
-                    "content": "Come up with a simple phrase that reminds you of a core strenth or a personal value, like \"I am a hero to my child.\" Repeat this phrase to yourself slowly and deliberately, until it is the only thought in your head.",
-                    "classNames": "text-white text-left w-auto text-description"
-                  },
-                  "animations": [
-                    {
-                      "type": "from",
-                      "x": 1100,
-                      "duration": 0.5
-                    }
-                  ]
-                },
-                {
-                  "id": "mental",
-                  "type": "content",
-                  "classNames": "hidden absolute top-12 right-0 mental-panel p-6",
-                  "style": {
-                    "width": "45%",
-                    "height": "80%"
-                  },
-                  "title": {
-                    "content": "mental imaging",
-                    "classNames": "uppercase w-auto text-white text-left italic pb-4 font-bold mb-4 border-b-4 border-white border-solid text-title"
-                  },
-                  "description": {
-                    "content": "Conjure an image of a key moment in your past, like your swearing-in ceremony or a moment when someone expressed their gratitude to you. Try to recall every detail of this memory, both emotional and physical.",
-                    "classNames": "text-white text-left w-auto text-description"
-                  },
-                  "animations": [
-                    {
-                      "type": "from",
-                      "x": 1100,
-                      "duration": 0.5
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "id": "continue",
-              "type": "button",
-              "caption": "continue",
-              "classNames": "text-title continue-button uppercase py-4 px-8 text-white italic font-bold bg-black absolute right-0 bottom-16"
             }
           ]
         }

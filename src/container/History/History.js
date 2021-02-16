@@ -27,7 +27,7 @@ const History = ({ data }) => {
   useEffect(() => {
     setRevealItem(data.items);
     setAudio(data.initialAudio);
-
+    // dispatch(setCompletedRequest(chapterIndex, pageIndex, 0));
     return () => {
       maxes.forEach((max) => {
         max.kill();
@@ -36,7 +36,7 @@ const History = ({ data }) => {
   }, [data]);
 
   useEffect(() => {
-    if (finishedItems === revealItems.length) {
+    if (finishedItems > 0 && finishedItems === revealItems.length) {
       dispatch(setCompletedRequest(chapterIndex, pageIndex, 1));
       setAudio(data.doneAudio);
     }
@@ -92,7 +92,7 @@ const History = ({ data }) => {
           onClick={() => handleReveal(item.pageIndex, index)}
         >
           <img src={item.image.url} alt="" style={item.style || {}} />
-          {completed[chapterIndex][`page_${pageIndex}`] === 1 ? (
+          {completed[chapterIndex][`page_${pageIndex + 1}`] === 1 || revealItems[index].watched ? (
             <div
               className={`watched-wrapper absolute md:w-12 lg:w-20 md:h-12 lg:h-20 ${
                 index === 1
@@ -160,7 +160,7 @@ const History = ({ data }) => {
         ref={audioRef}
       />
       {renderItem()}
-      {completed[chapterIndex][`page_${pageIndex}`] === 1 ? (
+      {completed[chapterIndex][`page_${pageIndex + 1}`] === 1 ? (
         <div className="absolute bottom-12 history-action-wrapper">
           <CustomButton data={{ title: "Done", action: "goToMenu" }} />
         </div>

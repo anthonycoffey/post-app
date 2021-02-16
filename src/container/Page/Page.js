@@ -25,6 +25,7 @@ import IntroductionSelection from "../Introduction/Selection/Selection";
 import SliderActivity from "../../components/SliderActivity/SliderActivity";
 import SliderAnimation from "../../components/SliderAnimation/SliderAnimation";
 import History from "../History/History";
+import SafeSlider from "../Bias/SafeSlider";
 
 const Page = ({ elements, style, classNames }) => {
   const pageIndex = useSelector((state) => state.status.pageIndex);
@@ -129,8 +130,8 @@ const Page = ({ elements, style, classNames }) => {
             );
           }
         } else if (element.type === "bias") {
-          if (element.activity === "ConversationRater") {
-            return <ConversationRater data={element.data} key={index} />;
+          if (element.activity === "safe-slider") {
+            return <SafeSlider data={element} key={index} />;
           }
         } else if (element.type === "history") {
           if (element.activity === "revealVideo") {
