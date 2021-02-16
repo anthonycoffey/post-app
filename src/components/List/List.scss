@@ -10,14 +10,13 @@
   cursor: pointer;
 
   .bullet {
-    @apply md:w-4 lg:w-8 md:h-4 lg:h-8;
+    @apply absolute md:w-4 lg:w-8 md:h-4 lg:h-8;
     border: 2px solid black;
     border-radius: 50%;
     background: transparent;
-    margin-right: 15px;
     margin-top: 5px;
   }
   .list-item-title {
-    @apply md:text-2xl lg:text-4xl;
+    @apply md:text-2xl lg:text-4xl md:pl-6 lg:pl-12;
   }
 }
