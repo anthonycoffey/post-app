@@ -28,12 +28,12 @@ const HeaderNav = () => {
           height="40px"
           className="mr-4"
         />
-        <div className="font-bold text-white">
+        <div className="font-serif font-bold text-white">
           Racial and Identity Profiling
         </div>
       </div>
       <div
-        className="home font-bold text-white"
+        className="font-serif home font-bold text-white"
         onClick={() => handleNavigation(-1)}
       >
         Menu

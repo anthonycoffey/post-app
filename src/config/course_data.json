@@ -726,8 +726,8 @@
                             "url": "/assets/images/history/picture2.jpg"
                           },
                           "text": [
-                            "Craig A. Miller, aka KAM, is a California-based political emcee<br/>who gained popularity with hip hop fans and music critics<br/>during the 1990s and early 2000s.",
-                            "In this interview, he talks about his first experiences with police<br/>as a 10-year-old child in Los Angeles... and the lasting impact<br/>they had on him."
+                            "Craig A. Miller, aka KAM, is a California-based political emcee who gained popularity with hip hop fans and music critics during the 1990s and early 2000s.",
+                            "In this interview, he talks about his first experiences with police as a 10-year-old child in Los Angeles... and the lasting impact they had on him."
                           ]
                         }
                       ],
@@ -880,24 +880,94 @@
               "activity": "safe-slider",
               "data": {
                 "id": "safe-slider",
-                "classNames": "w-full h-full flex flex-col relative bias-first-page justify-start items-center",
-                "initialAudio": "/assets/audio/bias/slider_start.mp3",
-                "feedbackAudio1": "/assets/audio/bias/slider_feedback1.mp3",
-                "feedbackAudio2": "/assets/audio/bias/slider_feedback2.mp3",
+                "classNames": "w-full h-full flex flex-col relative justify-start items-center",
+                "initialAudio": "/assets/audio/bias/safe-slider/slider_start.mp3",
+                "feedbackAudio1": "/assets/audio/bias/safe-slider/slider_feedback_1.mp3",
+                "feedbackAudio2": "/assets/audio/bias/safe-slider/slider_feedback_2.mp3",
                 "audio": {
                   "id": "bias-safe-audio",
                   "classNames": "fixed bottom-0 z-10"
                 },
-                "dogImage1": "/assets/images/bias/dog_1.jpg",
-                "dogImage2": "/assets/images/bias/dog_2.jpg",
+                "dogImage1": "/assets/images/bias/safe-slider/dog_1.jpg",
+                "dogImage2": "/assets/images/bias/safe-slider/dog_2.jpg",
                 "safeSliderImage": {
-                  "url": "/assets/images/bias/dog_2.jpg",
+                  "url": "/assets/images/bias/safe-slider/dog_2.jpg",
                   "classNames": "w-4/12",
                   "style": {
                     "transform": "rotateZ(4deg)",
                     "border": "8px solid white"
                   }
                 },
+                "title": {
+                  "content": "How safe is this type of dog? Use the slider to rate it, from safest (green) to most dangerous (red).",
+                  "classNames": "text-white mt-6 md:text-2xl lg:text-3xl text-center"
+                },
+                "items": [
+                  {
+                    "title": "",
+                    "leftLabel": "Safe",
+                    "rightLabel": "Dangerous",
+                    "min": 0,
+                    "max": 5
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "elements": [
+            {
+              "type": "bias",
+              "activity": "evaluate-slide",
+              "data": {
+                "id": "evaluate-slide",
+                "classNames": "w-full h-full relative",
+                "initialAudio": "/assets/audio/bias/evaluate/officer_voice_over_story.mp3",
+                "activityAudio": "/assets/audio/bias/evaluate/activity_select_which_officer_instruction.mp3",
+                "feedbackAudio1": "/assets/audio/bias/evaluate/correct_feedback.mp3",
+                "feedbackAudio2": "/assets/audio/bias/evaluate/incorrect_feedback.mp3",
+                "audio": {
+                  "id": "bias-evaluate-audio",
+                  "classNames": "fixed bottom-0 z-10"
+                },
+                "personImage1": "/assets/images/bias/evaluate/tlo3.png",
+                "personImage2": "/assets/images/bias/evaluate/tlo4.png",
+                "personImage3": "/assets/images/bias/evaluate/tlo5.png",
+                "slideImage1": "/assets/images/bias/evaluate/slide-1.jpg",
+                "slideImage2": "/assets/images/bias/evaluate/slide-2.jpg",
+                "slideImage3": "/assets/images/bias/evaluate/slide-3.jpg",
+                "slideImage4": "/assets/images/bias/evaluate/slide-4.png",
+                "feedbackTitle": "Click each person to hear their perspective. Select the ONE who you think is making the most sense.",
+                "feedbacks": [
+                  {
+                    "image": "/assets/images/bias/evaluate/cop1.png",
+                    "text": "If it were someone else, I might feel differently, but I know Andrew and he's a good cop. And his WIFE is African-American! Bottom line is, he had a feeling about this guy and he acted on it, and he was professional the entire time. I don't see a problem here."
+                  },
+                  {
+                    "image": "/assets/images/bias/evaluate/cop2.png",
+                    "text": "Based on what he told his supervisor, I guess you argue that he \"profiled\" the guy. My advice to him next time is to just state the facts - the guy was using his cell phone while driving. Don't mention how the guy looked - that'll just get you into trouble."
+                  },
+                  {
+                    "image": "/assets/images/bias/evaluate/cop3.png",
+                    "text": "Sometimes \"matter out of place\" is a valid reason for making a stop. On my beat, half the time when I stop someone based on a feeling, I find that the subject IS engaged in other illegal behavior - he's carrying drugs, he's in violation of his parole... The streets would be a lot less safe if we stopped acting on our gut."
+                  },
+                  {
+                    "image": "/assets/images/bias/evaluate/cop4.png",
+                    "text": "OK, so the officer can claim he had \"cause\" to make a stop, but be honest, how many times do you stop someone because they glanced at a cell phone at a stop light? Listen to what he said about the subject: \"He didn't seem like someone who'd be driving this kind of car.\" Clearly race was a factor."
+                  }
+                ],
+                "saying": [
+                  "Yes, Sir. I was parked along the side of the road near the intersection of West Beverley and Beach St. and then a car pulled up to the stoplight across the street.",
+                  "And it stood out because it was like a brand new yellow Lamborghini and you don't see that everyday.",
+                  "The driver was looking down and it appeared he was checking his cell phone.",
+                  "As he drove past me, I got a better look at him, and he definitely didn't look like someone who would be driving this kind of car.",
+                  "Since I had cause based on him looking at the cell phone, I started following him. I noticed there was only a temporary dealer plate on the back... so I decided to make the stop to investigate.",
+                  "I approached the car and introduced myself and explained why I stopped him...",
+                  "And this guy was really rude to me, and he complained that I didn't have good cause to stop him, that he had just purchased the car, that he just hadn't gotten the plates yet.",
+                  "So I was like, look, no need to get an attitude. I got his license and temporary registration, and everything checked out...",
+                  "So I just gave him a warning for cell phone use and let him carry on."
+                ],
                 "title": {
                   "content": "How safe is this type of dog? Use the slider to rate it, from safest (green) to most dangerous (red).",
                   "classNames": "text-white mt-6 md:text-2xl lg:text-3xl text-center"

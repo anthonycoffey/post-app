@@ -16,7 +16,7 @@ const CustomButton = ({ data }) => {
   return (
     <button
       id={data.id}
-      className={`shape ${data.classNames || ""}`}
+      className={`font-serif shape ${data.classNames || ""}`}
       style={data.style || {}}
       onClick={() => handleClick()}
     >

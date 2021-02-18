@@ -236,7 +236,7 @@ const IntroductionSelection = ({ data }) => {
             {clicked > -1 ? (
               <button
                 id="done-button"
-                className="opacity-100 done-button"
+                className="font-serif pacity-100 done-button"
                 onClick={() => handleContinue()}
               >
                 Done

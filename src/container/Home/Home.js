@@ -17,7 +17,7 @@ const Home = ({ course }) => {
       <div className="chapters md:grid lg:grid">
         {course.menu.map((item, index) => (
           <div
-            className={`chapter ${item.id}`}
+            className={`font-serif chapter ${item.id}`}
             key={index}
             onClick={() => handleNavigation(item.id, item.title)}
           >

@@ -90,7 +90,7 @@ const Slide = ({ data, goToNextReveal }) => {
           />
         </div>
         <div
-          className="opacity-0 absolute quote-1 flex text-center flex-col"
+          className="font-serif opacity-0 absolute quote-1 flex text-center flex-col"
           id="quote-1"
         >
           <div className="text-white flex text-center justify-center">
@@ -111,7 +111,7 @@ const Slide = ({ data, goToNextReveal }) => {
         >
           <img src={items[1].image.url} alt="" />
         </div>
-        <div className="absolute top-1/2 history-slide-2-text text-white md:text-2xl lg:text-3xl md:w-4/5 lg:w-3/5 md:mt-16 lg:mt-24">
+        <div className="font-serif absolute top-1/2 history-slide-2-text text-white md:text-2xl lg:text-3xl md:w-4/5 lg:w-3/5 md:mt-16 lg:mt-24">
           <div className="opacity-100 block history-slide-2-text-0">
             {renderHTML(items[1].text[0])}
           </div>

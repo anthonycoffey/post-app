@@ -173,9 +173,9 @@ const IntroductionSlide1 = ({ data }) => {
             alt=""
             style={items[0].image.style || {}}
           />
-          <div className="item-title">{renderHTML(items[0].title)}</div>
+          <div className="font-serif item-title">{renderHTML(items[0].title)}</div>
         </div>
-        <div className="item-answers">
+        <div className="font-serif item-answers">
           {items[0].answers.map((answer, index) => {
             return (
               <div
@@ -199,9 +199,9 @@ const IntroductionSlide1 = ({ data }) => {
             alt=""
             style={items[1].image.style || {}}
           />
-          <div className="item-title">{renderHTML(items[1].title)}</div>
+          <div className="font-serif item-title">{renderHTML(items[1].title)}</div>
         </div>
-        <div className="item-answers">
+        <div className="font-serif item-answers">
           {items[1].answers.map((answer, index) => {
             return (
               <div className="item-answer item-answer-right" key={index}>

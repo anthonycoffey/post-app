@@ -6,7 +6,7 @@ const Text = ({ data }) => {
   return (
     <div
       id={data.id}
-      className={`text-wrapper ${data.classNames ? data.classNames : ""}`}
+      className={`font-serif text-wrapper ${data.classNames ? data.classNames : ""}`}
       style={data.style || {}}
     >
       <div

@@ -348,7 +348,7 @@ const DragAndDrop = ({ data }) => {
     >
       <Audio data={scenario.audio} ref={audioRef} />
       <div
-        className={scenario.title.classNames || ""}
+        className={`font-serif ${scenario.title.classNames || ""}`}
         style={scenario.title.style || {}}
         id="title"
       >
@@ -370,7 +370,7 @@ const DragAndDrop = ({ data }) => {
             {scenario.instructions}
           </div>
           <div
-            className="hidden opacity-0 drop-zone-extra-title text-white mb-6"
+            className="font-serif hidden opacity-0 drop-zone-extra-title text-white mb-6"
             id="drop-zone-extra-title"
           >
             YOUR WORDS
@@ -540,7 +540,7 @@ const DragAndDrop = ({ data }) => {
           {showDone ? (
             <button
               id="done-button"
-              className="block opacity-100 done-button"
+              className="font-serif block opacity-100 done-button"
               onClick={() => showCommonWords()}
             >
               Done
@@ -580,7 +580,7 @@ const DragAndDrop = ({ data }) => {
           </div>
         </div>
         <div
-          className="hidden opacity-0 choosen-words flex-col items-center content-center"
+          className="font-serif hidden opacity-0 choosen-words flex-col items-center content-center"
           id="choosen-words"
         >
           <div

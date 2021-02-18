@@ -229,7 +229,7 @@ const IntroductionSlide2 = ({ data }) => {
           />
         </div>
         <div
-          className={`opacity-0 part-2-right-items absolute ${
+          className={`font-serif opacity-0 part-2-right-items absolute ${
             items[1].classNames || ""
           }`}
         >

@@ -45,6 +45,14 @@
   box-shadow: inset 0px 3px 3px -2px rgba(0, 0, 0, 47) !important;
 }
 
+.bias-safe-result-wrapper {
+  img {
+    @apply w-full h-full;
+    border: 5px solid white;
+    transform: rotateZ(4deg);
+  }
+}
+
 .slider-done-button {
   width: 150px;
   height: 50px;

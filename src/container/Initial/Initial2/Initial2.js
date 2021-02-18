@@ -102,7 +102,7 @@ const Initial2 = () => {
         />
       </div>
       <div
-        className="opacity-0 absolute quote-1 flex text-center flex-col"
+        className="font-serif opacity-0 absolute quote-1 flex text-center flex-col"
         id="quote-1"
       >
         <div className="flex text-center justify-center">
@@ -112,12 +112,12 @@ const Initial2 = () => {
         </div>
         <div className="text-white">police stops, searches, and arrests,</div>
         <div className="text-white mb-8">particularly for Black people.</div>
-        <div className="additional text-white italic text-right">
+        <div className="font-sans additional text-white italic text-right">
           -Racial and Identity Profiling Advisory Board, 2019
         </div>
       </div>
       <div
-        className="opacity-0 absolute quote-2 flex text-center flex-col"
+        className="font-serif opacity-0 absolute quote-2 flex text-center flex-col"
         id="quote-2"
       >
         <div className="text-white">...Officers were far move likely to</div>
@@ -126,12 +126,12 @@ const Initial2 = () => {
           <span className="text-red-700">for no discernible reason</span>
           <span className="text-white">...</span>
         </div>
-        <div className="additional text-white italic text-right">
+        <div className="font-sans additional text-white italic text-right">
           -Racial and Identity Profiling Advisory Board, 2019
         </div>
       </div>
       <div
-        className="opacity-0 absolute quote-3 flex text-center flex-col"
+        className="font-serif opacity-0 absolute quote-3 flex text-center flex-col"
         id="quote-3"
       >
         <div className="text-white leading-none">
@@ -148,7 +148,7 @@ const Initial2 = () => {
           <span className="text-red-700 mr-4">force</span>
           <span className="text-white">by the police..."</span>
         </div>
-        <div className="additional text-white italic text-right">
+        <div className="font-sans additional text-white italic text-right">
           -Racial and Identity Profiling Advisory Board, 2019
         </div>
       </div>

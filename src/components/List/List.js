@@ -17,7 +17,7 @@ const List = ({ data }) => {
       {data.items.map((item, index) => {
         return (
           <div
-            className="list-item-wrapper relative"
+            className="font-serif list-item-wrapper relative"
             key={index}
             onClick={() => handleItemClick(item.pageIndex)}
           >

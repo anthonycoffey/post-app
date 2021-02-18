@@ -96,7 +96,7 @@ const Slide2 = ({ data, goToNextReveal }) => {
         >
           <img className="w-full h-full" src={items[0].image.url} alt="" />
         </div>
-        <div className="absolute top-1/2 history-slide-2-text text-white md:text-xl lg:text-3xl md:w-4/5 lg:w-3/5 md:mt-16 lg:mt-28">
+        <div className="font-serif absolute top-1/2 history-slide-2-text text-white md:text-xl lg:text-3xl md:w-4/5 lg:w-3/5 md:mt-16 lg:mt-28">
           {items[0].text.map((item, index) => (
             <div
               className={`opacity-0 absolute history-slide-2-text-${index}`}

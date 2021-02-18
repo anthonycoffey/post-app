@@ -1,0 +1,115 @@
+.bias-evaluate-wrapper {
+  background-image: url("/assets/background/gray-background.jpg");
+  background-size: cover;
+  position: relative;
+  background-position: center;
+}
+
+#bias-evaluate-audio {
+  transform: translateX(50%);
+}
+
+.person-wrapper {
+  img {
+    @apply w-full h-full;
+  }
+}
+
+.slide-image-wrapper {
+  img {
+    @apply w-full h-full;
+    border: 5px solid white;
+  }
+}
+
+.evaluate-feedback-text {
+  background: #e0dfcb;
+  border-radius: 6px;
+  position: relative;
+
+  &:after {
+    content: "";
+    position: absolute;
+    margin-top: 0px;
+    margin-left: 0px;
+    border-left: 25px solid transparent;
+    border-right: 19px solid transparent;
+    border-bottom: 20px solid #e0dfcb;
+    transform: rotate(-49deg);
+    left: 44px;
+    bottom: -18px;
+  }
+
+  &.evaluate-feedback-0 {
+    &:after {
+      left: 4%;
+    }
+  }
+
+  &.evaluate-feedback-1 {
+    &:after {
+      left: 19%;
+    }
+  }
+
+  &.evaluate-feedback-2 {
+    &:after {
+      left: 45%;
+    }
+  }
+
+  &.evaluate-feedback-3 {
+    &:after {
+      left: 76%;
+    }
+  }
+}
+
+.saying-wrapper {
+  background: #4e4e4e;
+  border-radius: 6px;
+
+  &:after {
+    content: "";
+    position: absolute;
+    margin-top: 0px;
+    margin-left: 0px;
+    border-left: 19px solid transparent;
+    border-right: 28px solid transparent;
+    border-bottom: 20px solid #4e4e4e;
+    transform: rotate(135deg);
+    left: -32px;
+    top: 40px;
+  }
+}
+
+.officer-selection {
+  .officers-wrapper {
+    .evaluate-officer {
+      background: white;
+
+      img {
+        @apply w-full h-full;
+        border: 5px solid white;
+      }
+
+      &.active img {
+        border: 5px solid #eeece1;
+      }
+    }
+    .submit-button {
+      width: 150px;
+      height: 50px;
+      @apply md:text-lg lg:text-xl;
+      background: #a6a6a6;
+      // background: #eeece1;
+      border-radius: 5px;
+      font-weight: bold;
+      text-transform: uppercase;
+
+      &.active {
+        background: #e0dfcb;
+      }
+    }
+  }
+}

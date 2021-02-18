@@ -5,7 +5,7 @@ import "./Audio.scss";
 const Audio = React.forwardRef(({ data, onEnded }, ref) => {
   return (
     <div
-      id={'audio-wrapper' || data.id}
+      id={data.id || 'audio-wrapper'}
       className={`audio-panel ${data ? data.classNames : ""}`}
       style={data ? data.style : {}}
       >
