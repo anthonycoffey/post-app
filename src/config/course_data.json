@@ -984,6 +984,103 @@
               }
             }
           ]
+        },
+        {
+          "elements": [
+            {
+              "type": "bias",
+              "activity": "type-in",
+              "data": {
+                "id": "evaluate-type-in",
+                "classNames": "w-full h-full relative",
+                "initialAudio": "/assets/audio/bias/type-in/intro.mp3",
+                "audio": {
+                  "id": "bias-type-in-audio",
+                  "classNames": "fixed bottom-0 z-10"
+                },
+                "title": "The Other Perspectives",
+                "personImages": [
+                  {
+                    "url": "/assets/images/bias/type-in/cop1_large.png",
+                    "classNames": "opacity-0 absolute bottom-0 w-1/4",
+                    "style": {
+                      "zIndex": 4
+                    }
+                  },
+                  {
+                    "url": "/assets/images/bias/type-in/cop2_large.png",
+                    "classNames": "opacity-0 absolute bottom-0 w-1/4 left-12",
+                    "style": {
+                      "zIndex": 3,
+                      "left": "14%"
+                    }
+                  },
+                  {
+                    "url": "/assets/images/bias/type-in/cop3_large.png",
+                    "classNames": "opacity-0 absolute bottom-0 w-1/4 left-24",
+                    "style": {
+                      "zIndex": 2,
+                      "left": "26%",
+                      "transform": "scale(1.2)"
+                    }
+                  },
+                  {
+                    "url": "/assets/people/rick/people-normal.png",
+                    "classNames": "opacity-0 absolute w-1/2 right-36",
+                    "style": {
+                      "zIndex": 3,
+                      "bottom": "-25%"
+                    }
+                  },
+                  {
+                    "url": "/assets/people/rick/rick_palms-up-open.png",
+                    "classNames": "opacity-0 absolute w-1/2 right-36",
+                    "style": {
+                      "zIndex": 3,
+                      "bottom": "-25%"
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "elements": [
+            {
+              "type": "bias",
+              "activity": "type-in-next",
+              "data": {
+                "id": "evaluate-type-in",
+                "classNames": "w-full h-full relative",
+                "tryAgainAudio": "/assets/audio/bias/type-in/try_again_type_in.mp3",
+                "feedbackAudio": "/assets/audio/bias/type-in/feedback.mp3",
+                "audio": {
+                  "id": "bias-type-in-next-audio",
+                  "classNames": "fixed bottom-0 z-10"
+                },
+                "saying": {
+                  "image": "/assets/images/bias/evaluate/cop1.png",
+                  "text": "If it were someone else, I might feel differently, but I know Andrew and he's a good cop. And his WIFE is African-American! Bottom line is, he had a feeling about this guy and he acted on it, and he was professional the entire time. I don't see a problem here."
+                },
+                "respond": {
+                  "classNames": "md:p-4 lg:p-8 bg-white",
+                  "title": {
+                    "content": "How would you respond?",
+                    "classNames": "font-bold font-serif md:text-2xl lg:text-3xl text-center"
+                  }
+                },
+                "feedback": {
+                  "classNames": "md:p-4 lg:p-8 bg-white",
+                  "title": {
+                    "content": "What we would say",
+                    "classNames": "font-bold font-serif md:text-2xl lg:text-3xl text-center"
+                  },
+                  "description": "Being familiar with, or even a member of, a certain group of people does not mean that you cannot have bias towards them in certain situations."
+                }
+              }
+            }
+          ]
         }
       ]
     },

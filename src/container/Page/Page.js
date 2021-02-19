@@ -27,6 +27,8 @@ import SliderAnimation from "../../components/SliderAnimation/SliderAnimation";
 import History from "../History/History";
 import SafeSlider from "../Bias/SafeSlider/SafeSlider";
 import Evaluate from "../Bias/Evaluate/Evaluate";
+import TypeIn from "../Bias/TypeIn/TypeIn";
+import TypeInNext from "../Bias/TypeInNext/TypeInNext";
 
 const Page = ({ elements, style, classNames }) => {
   const pageIndex = useSelector((state) => state.status.pageIndex);
@@ -135,6 +137,10 @@ const Page = ({ elements, style, classNames }) => {
             return <SafeSlider data={element} key={index} />;
           } else if (element.activity === "evaluate-slide") {
             return <Evaluate data={element} key={index} />;
+          } else if (element.activity === "type-in") {
+            return <TypeIn data={element} key={index} />;
+          } else if (element.activity === "type-in-next") {
+            return <TypeInNext data={element} key={index} />;
           }
         } else if (element.type === "history") {
           if (element.activity === "revealVideo") {

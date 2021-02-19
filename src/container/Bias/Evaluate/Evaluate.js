@@ -191,28 +191,28 @@ const Evaluate = ({ data }) => {
       className={`bias-evaluate-wrapper ${initialData.classNames || ""}`}
       style={initialData.style || {}}
     >
-      <div className="opacity-100 person-wrapper person-0 absolute bottom-0 md:left-8 lg:left-10 w-4/12">
+      <div className="opacity-100 person-wrapper person-0 absolute bottom-0 md:left-8 lg:left-10 w-3/12 h-5/6">
         <img src={initialData.personImage1} alt="" />
       </div>
-      <div className="opacity-0 person-wrapper person-1 absolute bottom-0 md:left-8 lg:left-10 w-4/12">
+      <div className="opacity-0 person-wrapper person-1 absolute bottom-0 md:left-8 lg:left-10 w-3/12 h-5/6">
         <img src={initialData.personImage2} alt="" />
       </div>
-      <div className="opacity-0 person-wrapper person-2 absolute bottom-0 md:left-8 lg:left-10 w-4/12">
+      <div className="opacity-0 person-wrapper person-2 absolute bottom-0 md:left-8 lg:left-10 w-3/12 h-5/6">
         <img src={initialData.personImage3} alt="" />
       </div>
-      <div className="opacity-100 saying-wrapper absolute text-white text-center right-12 top-12 italic md:text-xl lg:text-2xl md:p-2 lg:p-4 w-8/12">
+      <div className="opacity-100 saying-wrapper absolute text-white text-center left-1/4 top-12 italic md:text-xl lg:text-2xl md:p-2 lg:p-4 w-8/12">
         {initialData.saying[sayingIndex]}
       </div>
-      <div className="opacity-0 slide-image-wrapper slide-image-0 absolute right-16 top-1/3 w-1/2">
+      <div className="opacity-0 slide-image-wrapper slide-image-0 absolute md:right-16 lg:right-32 top-1/3 w-4/12 h-3/6">
         <img src={initialData.slideImage1} alt="" />
       </div>
-      <div className="opacity-0 slide-image-wrapper slide-image-1 absolute right-16 top-1/3 w-1/2">
+      <div className="opacity-0 slide-image-wrapper slide-image-1 absolute right-16 top-1/3 w-4/12 h-3/6">
         <img src={initialData.slideImage2} alt="" />
       </div>
-      <div className="opacity-0 slide-image-wrapper slide-image-2 absolute right-16 top-1/3 w-1/2">
+      <div className="opacity-0 slide-image-wrapper slide-image-2 absolute right-16 top-1/3 w-4/12 h-3/6">
         <img src={initialData.slideImage3} alt="" />
       </div>
-      <div className="opacity-0 slide-image-wrapper slide-image-3 absolute right-16 top-1/3 w-1/2">
+      <div className="opacity-0 slide-image-wrapper slide-image-3 absolute right-16 top-1/3 w-4/12 h-3/6">
         <img src={initialData.slideImage4} alt="" />
       </div>
       <div className="officer-selection absolute bottom-0 w-full">
