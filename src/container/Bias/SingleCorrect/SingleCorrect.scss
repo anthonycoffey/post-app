@@ -1,0 +1,38 @@
+.bias-single-correct-wrapper {
+  background-image: url("/assets/background/gray-background.jpg");
+  background-size: cover;
+  position: relative;
+  background-position: center;
+}
+
+#bias-single-correct-audio {
+  transform: translateX(50%);
+}
+
+.choices-wrapper {
+  .choices-title {
+    border-bottom: 2px solid #e0dfcb;
+  }
+
+  .choice-wrapper {
+    @apply lg:p-4 md:p-2 text-center lg:mb-4 md:mb-2 cursor-pointer;
+    background: #595959;
+
+    &:hover {
+      background: #808080;
+    }
+
+    &.active {
+      background: #808080;
+    }
+
+    &.active-correct {
+      background: #cecdba;
+    }
+  }
+}
+
+.whole-overlap {
+  z-index: 1;
+  background: rgba(0,0,0,0.2);
+}

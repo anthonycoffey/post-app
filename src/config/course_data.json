@@ -848,7 +848,7 @@
                 {
                   "value": "question",
                   "title": "Question - Single Correct",
-                  "pageIndex": 4
+                  "pageIndex": 5
                 }
               ],
               "animations": [
@@ -1051,7 +1051,7 @@
               "type": "bias",
               "activity": "type-in-next",
               "data": {
-                "id": "evaluate-type-in",
+                "id": "evaluate-type-in-next",
                 "classNames": "w-full h-full relative",
                 "tryAgainAudio": "/assets/audio/bias/type-in/try_again_type_in.mp3",
                 "feedbackAudio": "/assets/audio/bias/type-in/feedback.mp3",
@@ -1081,13 +1081,183 @@
               }
             }
           ]
+        },
+        {
+          "elements": [
+            {
+              "type": "bias",
+              "activity": "single-correct",
+              "data": {
+                "id": "evaluate-single-correct",
+                "classNames": "w-full h-full relative",
+                "initialAudio": "/assets/audio/bias/single-correct/initial.mp3",
+                "audio": {
+                  "id": "bias-single-correct-audio",
+                  "classNames": "fixed bottom-0 z-10"
+                },
+                "title": {
+                  "text": "Considering the data you've just seen, what should we do?",
+                  "classNames": "text-center"
+                },
+                "initialImage": {
+                  "url": "/assets/people/rick/rick_resting.png",
+                  "style": {}
+                },
+                "choices": [
+                  {
+                    "title": "Stop more White drivers",
+                    "audio": "/assets/audio/bias/single-correct/choice1_feedback.mp3",
+                    "isCorrect": false,
+                    "image": "/assets/people/rick/people-calm-down.png"
+                  },
+                  {
+                    "title": "Stop an equal number of Blacks, Hispanics and Whites",
+                    "audio": "/assets/audio/bias/single-correct/choice2_feedback.mp3",
+                    "isCorrect": false,
+                    "image": "/assets/people/rick/people-calm-down.png"
+                  },
+                  {
+                    "title": "Make stops based only on illegal behavior, not race",
+                    "audio": "/assets/audio/bias/single-correct/choice3_feedback.mp3",
+                    "isCorrect": true,
+                    "image": "/assets/people/rick/people-after-closed.png"
+                  }
+                ],
+                "respond": {
+                  "classNames": "md:p-4 lg:p-8 bg-white",
+                  "title": {
+                    "content": "How would you respond?",
+                    "classNames": "font-bold font-serif md:text-2xl lg:text-3xl text-center"
+                  }
+                },
+                "feedback": {
+                  "classNames": "md:p-4 lg:p-8 bg-white",
+                  "title": {
+                    "content": "What we would say",
+                    "classNames": "font-bold font-serif md:text-2xl lg:text-3xl text-center"
+                  },
+                  "description": "Being familiar with, or even a member of, a certain group of people does not mean that you cannot have bias towards them in certain situations."
+                }
+              }
+            }
+          ]
         }
       ]
     },
     {
       "id": "law",
       "title": "The Law",
-      "pages": []
+      "pages": [
+        {
+          "classNames": "law-wrapper justify-center items-center",
+          "type": "default",
+          "elements": [
+            {
+              "id": "text",
+              "type": "text",
+              "classNames": "absolute text-black font-bold md:top-6/10 lg:top-96 md:left-24 lg:left-32 md:text-4xl lg:text-5xl",
+              "content": "3. The Law",
+              "animations": [
+                {
+                  "type": "from",
+                  "x": -1000,
+                  "duration": 1
+                }
+              ]
+            },
+            {
+              "id": "image",
+              "type": "image",
+              "classNames": "left-32 absolute md:w-56 lg:w-64 h-auto",
+              "style": {
+                "top": "10%"
+              },
+              "alt": "initial-logo",
+              "url": "/assets/images/law.png"
+            },
+            {
+              "id": "list",
+              "type": "list",
+              "classNames": "list-items-wrapper md:top-20 lg:top-32 md:left-1/2 lg:left-1/2 absolute w-5/12 h-auto",
+              "items": [
+                {
+                  "value": "drag-and-drop",
+                  "title": "Protected Characteristics - 2 Column Word Drag and Drop",
+                  "pageIndex": 1
+                }
+              ],
+              "animations": [
+                {
+                  "type": "from",
+                  "x": 1100,
+                  "duration": 1.4
+                }
+              ]
+            },
+            {
+              "id": "buttton",
+              "type": "button",
+              "classNames": "law-back-button absolute",
+              "style": {
+                "top": "70%",
+                "right": "30%",
+                "fontSize": "40px"
+              },
+              "title": "Back",
+              "action": "goToMenu"
+            }
+          ]
+        },
+        {
+          "elements": [
+            {
+              "type": "law",
+              "activity": "drag-and-drop",
+              "data": {
+                "id": "law-drag-and-drop",
+                "classNames": "w-full h-full relative",
+                "initialAudio": "/assets/audio/law/initial.mp3",
+                "audio": {
+                  "id": "law-drag-and-drop-audio",
+                  "classNames": "fixed bottom-0 z-10"
+                },
+                "title": {
+                  "text": "Protected Classes",
+                  "classNames": "text-center font-serif lg:text-7xl md:text-2xl"
+                },
+                "person1Image": {
+                  "url": "/assets/people/rick/people-normal.png",
+                  "style": {}
+                },
+                "person2Image": {
+                  "url": "/assets/people/rick/people-one-hand-up.png",
+                  "style": {}
+                },
+                "choices": [
+                  {
+                    "title": "Stop more White drivers",
+                    "audio": "/assets/audio/bias/single-correct/choice1_feedback.mp3",
+                    "isCorrect": false,
+                    "image": "/assets/people/rick/people-calm-down.png"
+                  },
+                  {
+                    "title": "Stop an equal number of Blacks, Hispanics and Whites",
+                    "audio": "/assets/audio/bias/single-correct/choice2_feedback.mp3",
+                    "isCorrect": false,
+                    "image": "/assets/people/rick/people-calm-down.png"
+                  },
+                  {
+                    "title": "Make stops based only on illegal behavior, not race",
+                    "audio": "/assets/audio/bias/single-correct/choice3_feedback.mp3",
+                    "isCorrect": true,
+                    "image": "/assets/people/rick/people-after-closed.png"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "decisions",

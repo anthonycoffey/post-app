@@ -29,6 +29,8 @@ import SafeSlider from "../Bias/SafeSlider/SafeSlider";
 import Evaluate from "../Bias/Evaluate/Evaluate";
 import TypeIn from "../Bias/TypeIn/TypeIn";
 import TypeInNext from "../Bias/TypeInNext/TypeInNext";
+import SingleCorrect from "../Bias/SingleCorrect/SingleCorrect";
+import LawDragAndDrop from "../Law/LawDragAndDrop/LawDragAndDrop";
 
 const Page = ({ elements, style, classNames }) => {
   const pageIndex = useSelector((state) => state.status.pageIndex);
@@ -141,6 +143,12 @@ const Page = ({ elements, style, classNames }) => {
             return <TypeIn data={element} key={index} />;
           } else if (element.activity === "type-in-next") {
             return <TypeInNext data={element} key={index} />;
+          } else if (element.activity === "single-correct") {
+            return <SingleCorrect data={element} key={index} />;
+          }
+        } else if (element.type === "law") {
+          if (element.activity === "drag-and-drop") {
+            return <LawDragAndDrop data={element} key={index} />;
           }
         } else if (element.type === "history") {
           if (element.activity === "revealVideo") {

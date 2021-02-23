@@ -1,13 +1,12 @@
 @tailwind base;
 @tailwind components;
-
-@font-face {
-  font-family: 'museoslab';
-  src: local('museoslab'), url(./font/museoslab.woff) format('woff');
-}
-
 @tailwind utilities;
 
+@font-face {
+  font-family: "museoslab";
+  src: url("/assets/fonts/museoslab.woff") format("woff");
+  font-style: normal;
+}
 
 .player-wrapper {
   padding-top: 56px;
