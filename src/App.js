@@ -15,12 +15,11 @@ const App = () => {
   useEffect(() => {
     dispatch(getCourseRequest());
     setLoadingStatus(false);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
     <div className="App">
-      <div className="flex flex-col justify-center">
+      <div className="app-container" id="app-container">
         <HeaderNav />
 
         {!isLoading ? (

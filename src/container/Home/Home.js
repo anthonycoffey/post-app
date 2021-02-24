@@ -14,7 +14,7 @@ const Home = ({ course }) => {
   };
   return (
     <div className="home-wrapper">
-      <div className="chapters md:grid lg:grid">
+      <div className="chapters grid">
         {course.menu.map((item, index) => (
           <div
             className={`font-serif chapter ${item.id}`}

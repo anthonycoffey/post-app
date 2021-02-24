@@ -1,6 +1,7 @@
 .home-wrapper {
-  position: relative;
-  height: 100%;
+  position: absolute;
+  width: 1000px;
+  height: 700px;
 
   .course-title {
     padding-left: 15%;
@@ -16,8 +17,7 @@
   }
 
   .chapters {
-    @apply h-full md:w-full lg:w-9/12 md:grid-cols-2 lg:grid-cols-2;
-    margin: auto;
+    @apply absolute h-full w-full grid-cols-2;
 
     .chapter {
       display: flex;
