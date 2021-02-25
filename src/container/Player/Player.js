@@ -16,7 +16,7 @@ const Player = () => {
   let pageHeight = null;
   let basePage = {
     width: 1024,
-    height: 768,
+    height: 712,
     scale: 1,
     scaleX: 1,
     scaleY: 1,
@@ -41,7 +41,7 @@ const Player = () => {
   }, []);
 
   const getPageSize = () => {
-    pageHeight = document.getElementById("app-container").clientHeight;
+    pageHeight = document.getElementById("app-container").clientHeight - 112;
     pageWidth = document.getElementById("app-container").clientWidth;
   };
 
@@ -57,9 +57,8 @@ const Player = () => {
     const newLeftPos = Math.abs(
       Math.floor((basePage.width * basePage.scale - maxWidth) / 2)
     );
-    const newTopPos = 56 + Math.abs(
-      Math.floor((basePage.height * basePage.scale - maxHeight) / 2)
-    );
+    const newTopPos =
+      56 + Math.abs(Math.floor((basePage.height * basePage.scale - maxHeight) / 2));
     const playerPage = document.getElementById("player-wrapper");
     if (playerPage) {
       playerPage.setAttribute(
@@ -77,7 +76,11 @@ const Player = () => {
   };
 
   if (isInitial) {
-    return <Initial initialIndex={initialIndex} />;
+    return (
+      <div className="player-wrapper" id="player-wrapper">
+        <Initial initialIndex={initialIndex} />
+      </div>
+    );
   }
 
   return (

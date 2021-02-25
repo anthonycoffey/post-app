@@ -2,9 +2,9 @@
   position: relative;
 
   .background-wrapper {
-    width: calc(100% + 50px);
+    width: 150%;
     height: 100%;
-    left: -50px;
+    left: -30%;
 
     img {
       width: 100%;
@@ -15,7 +15,7 @@
   .string-wrapper {
     top: 20%;
     left: 26%;
-    @apply md:text-4xl lg:text-6xl;
+    @apply text-6xl;
     color: white;
   }
 }

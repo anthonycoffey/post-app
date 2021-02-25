@@ -37,7 +37,7 @@ const Initial4 = () => {
           document.getElementById(animation.id),
           animation.duration,
           {
-            left: 0,
+            left: "-23%",
           }
         ).delay(animation.initialDelay);
         maxes.push(max);
@@ -65,7 +65,7 @@ const Initial4 = () => {
           alt=""
         />
       </div>
-      <div className="opacity-0 string-wrapper absolute " id="string-wrapper">
+      <div className="opacity-0 string-wrapper absolute" id="string-wrapper">
         To stop or not to stop?
       </div>
     </div>

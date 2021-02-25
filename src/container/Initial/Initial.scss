@@ -1,5 +1,6 @@
 .initial-wrapper {
-  padding-top: 56px;
-  padding-bottom: 56px;
-  @apply h-screen w-full bg-white;
+  @apply bg-black;
+  width: 1024px;
+  height: 768px;
+  bottom: 56px;
 }

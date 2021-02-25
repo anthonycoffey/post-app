@@ -10,23 +10,27 @@
 
 .app-container {
   position:absolute;
+  background: black;
   left: 0;
   top: 0;
   right: 0;
   bottom: 0;
+  overflow: hidden;
 }
 
 .player-wrapper {
   width: 1024px;
-  height: 712px;
+  height: 768px;
   top: 56px;
   left: 0px;
   bottom: 56px;
+  right: 0px;
   background: white;
   -ms-transform-origin: top left;
   -webkit-transform-origin: top left;
   transform-origin: top left;
   -webkit-transition: all 500ms ease-in-out !important;
+  overflow: hidden;
   transition: all 500ms ease-in-out !important;
   position: absolute;
 }

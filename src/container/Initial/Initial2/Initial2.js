@@ -94,8 +94,8 @@ const Initial2 = () => {
     }
   }
   return (
-    <div className="initial-1-wrapper w-full h-full bg-black flex flex-col justify-center items-center">
-      <div className="opacity-0 absolute quote-up mb-12" id="quote-up">
+    <div className="initial-2-wrapper w-full h-full bg-black flex flex-col justify-center items-center">
+      <div className="opacity-0 absolute quote-up" id="quote-up">
         <img
           src={`${process.env.PUBLIC_URL}/assets/images/quote-up.png`}
           alt=""
@@ -152,7 +152,7 @@ const Initial2 = () => {
           -Racial and Identity Profiling Advisory Board, 2019
         </div>
       </div>
-      <div className="opacity-0 absolute quote-down mt-12" id="quote-down">
+      <div className="opacity-0 absolute quote-down" id="quote-down">
         <img
           src={`${process.env.PUBLIC_URL}/assets/images/quote-down.png`}
           alt=""
