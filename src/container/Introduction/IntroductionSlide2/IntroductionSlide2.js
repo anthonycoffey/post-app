@@ -56,33 +56,33 @@ const animations_part2 = [
 const animations_part2_result = [
   {
     id: ".initial-1",
-    type: 'hide',
+    type: "hide",
     initialDelay: 38,
   },
   {
     id: ".result-1",
     initialDelay: 38,
-    type: 'show',
+    type: "show",
   },
   {
     id: ".initial-2",
-    type: 'hide',
+    type: "hide",
     initialDelay: 39,
   },
   {
     id: ".result-2",
     initialDelay: 39,
-    type: 'show',
+    type: "show",
   },
   {
     id: ".initial-3",
-    type: 'hide',
+    type: "hide",
     initialDelay: 40,
   },
   {
     id: ".result-3",
     initialDelay: 40,
-    type: 'show',
+    type: "show",
   },
 ];
 
@@ -166,7 +166,7 @@ const IntroductionSlide2 = ({ data }) => {
     }).delay(36);
 
     animations_part2_result.forEach((animation, index) => {
-      if (animation.type === 'hide') {
+      if (animation.type === "hide") {
         const max = new TweenMax.to(animation.id, 0.5, {
           opacity: 0,
         }).delay(animation.initialDelay);

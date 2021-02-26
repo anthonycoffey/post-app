@@ -223,7 +223,7 @@ const IntroductionSelection = ({ data }) => {
               {scenario.choiceSet.choices.map((choice, index) => {
                 return (
                   <div
-                    className={`opacity-0 choice-item choice-item-${index} text-white p-3 md:mb-1 lg:mb-3`}
+                    className={`opacity-0 choice-item choice-item-${index} text-white p-3 mb-2`}
                     key={index}
                     onClick={() => handleChoiceClick(index)}
                     id={`choice-item-${index}`}

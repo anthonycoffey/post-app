@@ -3,35 +3,40 @@
   background-size: cover;
   position: relative;
   background-position: center;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
 }
 
-.introduction-people-wrapper, .introduction-second-wrapper {
+.introduction-people-wrapper,
+.introduction-second-wrapper {
   left: -10%;
-  @apply md:-bottom-24 lg:-bottom-36;
+  @apply -bottom-36;
 
   img {
-    @apply md:w-7/12 lg:w-11/12;
+    @apply w-11/12;
   }
 }
 
-.selection-wrapper {
-  height: 90%;
-  width: 60%;
+#select-1 {
+  transform: translateX(50%);
   z-index: 1;
-  @apply md:p-4 lg:p-9;
+}
+
+.selection-wrapper {
+  @apply absolute p-4;
+  height: 66%;
+  width: 50%;
+  top: 3%;
+  right: 3%;
+  z-index: 1;
 
   .selection-title {
     border-bottom: 2px solid #e0dfcb;
-    @apply w-full text-center md:text-xl lg:text-3xl mb-3 font-bold text-black md:my-2 lg:my-6 lg:px-6 md:pb-1 lg:pb-3 m-auto;
+    @apply w-full text-center text-xl m-auto mb-3 font-bold text-black px-6 pb-3 mt-0;
   }
 }
 
 .choice-item {
   background: #595959;
-  @apply md:text-lg lg:text-2xl;
+  @apply text-xl;
   cursor: pointer;
 
   &.clicked {
@@ -41,13 +46,13 @@
 }
 
 .selection-instruction {
-  @apply md:text-lg lg:text-2xl;
+  @apply text-lg;
 }
 
 .done-button {
   width: 150px;
   height: 50px;
-  @apply md:text-lg lg:text-2xl;
+  @apply text-2xl;
   background: #e0dfcb;
   border-radius: 5px;
   font-weight: bold;
@@ -61,7 +66,8 @@
   background-position: center;
 }
 
-.part-1, .part-2 {
+.part-1,
+.part-2 {
   width: 100%;
   height: 100%;
 }

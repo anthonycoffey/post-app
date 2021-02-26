@@ -6,7 +6,8 @@ $rhap_font-family: inherit !default;
 
 
 .audio-panel {
-  @apply fixed bottom-0 w-1/2;
+  bottom: 47px;
+  @apply absolute w-1/2;
 }
 
 .rhap_repeat-button {

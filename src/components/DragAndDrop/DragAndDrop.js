@@ -549,7 +549,7 @@ const DragAndDrop = ({ data }) => {
         </div>
         <div className="opacity-0 block drag-items" id="drop-items">
           <div
-            className="wip grid grid-cols-2 md:gap-1 lg:gap-4"
+            className="wip grid grid-cols-2 gap-4"
             onDragOver={(e) => onDragOver(e)}
             onDrop={(e) => {
               onDrop(e, "wip");

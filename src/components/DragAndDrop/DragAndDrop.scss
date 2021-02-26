@@ -8,7 +8,7 @@
 }
 
 .drag-drop-title {
- @apply mb-6 opacity-0 text-white my-6 px-6 pb-3 m-auto md:text-2xl lg:text-3xl;
+ @apply mb-6 opacity-0 text-white my-6 px-6 pb-3 m-auto text-3xl;
  border-bottom: 2px solid white;
  width: fit-content;
 }
@@ -31,25 +31,25 @@
 }
 
 .drop-zones {
-  @apply md:w-4/12 lg:w-3/12;
+  @apply w-3/12;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
 
   .drop-zone-title {
-    @apply md:text-lg lg:text-xl;
+    @apply text-lg;
   }
 
   .drop-zone-extra-title {
-    @apply md:text-2xl lg:text-3xl;
+    @apply text-3xl;
   }
 
   .done-button {
     margin-top: 20px;
     width: 150px;
     height: 50px;
-    @apply md:text-lg lg:text-xl;
+    @apply text-xl;
     background: #eeece1;
     border-radius: 5px;
     text-transform: uppercase;
@@ -58,7 +58,7 @@
 
 .continue-button {
   height: 50px;
-  @apply md:w-32 lg:w-64 md:text-xl lg:text-2xl mt-5;
+  @apply w-64 text-2xl mt-5;
   background: #eeece1;
   border-radius: 5px;
   text-transform: uppercase;
@@ -90,23 +90,23 @@
   color: white;
   cursor: pointer;
   font-weight: bold;
-  @apply md:text-lg lg:text-2xl;
+  @apply text-2xl;
   text-align: center;
   background: transparent;
-  @apply md:my-1 lg:my-1 mx-auto;
+  @apply my-1 mx-auto;
 }
 
 .choosen-words {
   .common-choosen-title {
     color: white;
-    @apply md:text-lg lg:text-2xl;
+    @apply text-2xl;
     border-bottom: 2px solid white;
   }
 
   .choosen-words {
     .choosen-word {
       color: white;
-      @apply md:text-2xl lg:text-3xl md:mb-6 lg:mb-10;
+      @apply text-3xl mb-10;
       text-align: center;
     }
   }

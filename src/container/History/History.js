@@ -17,6 +17,7 @@ const History = ({ data }) => {
   const pageIndex = useSelector((state) => state.status.pageIndex);
   const chapterIndex = useSelector((state) => state.status.chapterIndex);
   const completed = useSelector((state) => state.status.completed);
+  console.log('--------', completed);
   const dispatch = useDispatch();
   const [revealItems, setRevealItem] = useState([]);
   const [revealIndex, setRevealIndex] = useState(-1);
@@ -50,6 +51,8 @@ const History = ({ data }) => {
       TweenMax.to(".history-action-wrapper", 0.1, {
         display: "block",
       });
+      setAudio('');
+        setAudio(data.doneAudio);
     }
   }, [revealIndex]);
 
@@ -94,12 +97,12 @@ const History = ({ data }) => {
           <img src={item.image.url} alt="" style={item.style || {}} />
           {completed[chapterIndex][`page_${pageIndex + 1}`] === 1 || revealItems[index].watched ? (
             <div
-              className={`watched-wrapper absolute md:w-12 lg:w-20 md:h-12 lg:h-20 ${
+              className={`watched-wrapper absolute w-20 h-20 ${
                 index === 1
-                  ? "md:right-10 lg:right-12 top-6"
+                  ? "right-12 top-6"
                   : index === 2
                   ? "top-12 right-0"
-                  : "md:top-0 lg:-top-4 right-12"
+                  : "-top-4 right-12"
               }`}
             >
               <img className="watched" src={data.watchedImage} alt="" />
@@ -161,7 +164,7 @@ const History = ({ data }) => {
       />
       {renderItem()}
       {completed[chapterIndex][`page_${pageIndex + 1}`] === 1 ? (
-        <div className="absolute bottom-12 history-action-wrapper">
+        <div className="absolute bottom-36 history-action-wrapper">
           <CustomButton data={{ title: "Done", action: "goToMenu" }} />
         </div>
       ) : null}

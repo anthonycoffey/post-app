@@ -52,7 +52,7 @@
               "type": "text",
               "classNames": "absolute text-black font-bold text-5xl",
               "style": {
-                "top":"45%",
+                "top": "45%",
                 "left": "7%"
               },
               "content": "Introduction",
@@ -124,8 +124,7 @@
                   "id": "scenario-01",
                   "audio": {
                     "id": "drag-drop-1",
-                    "url": "/assets/audio/introduction/drag-drop-1.mp3",
-                    "classNames": "hidden"
+                    "url": "/assets/audio/introduction/drag-drop-1.mp3"
                   },
                   "classNames": "scenario-01",
                   "title": {
@@ -244,8 +243,7 @@
                   "id": "scenario-02",
                   "audio": {
                     "id": "drag-drop-3",
-                    "url": "/assets/audio/introduction/drag-drop-3.mp3",
-                    "classNames": "hidden"
+                    "url": "/assets/audio/introduction/drag-drop-3.mp3"
                   },
                   "classNames": "scenario-01",
                   "title": {
@@ -368,8 +366,7 @@
                 "classNames": "introduction-slide1-page flex w-full h-full justify-between items-center",
                 "audio": {
                   "id": "slide-1",
-                  "url": "/assets/audio/introduction/slide-1.mp3",
-                  "classNames": "hidden"
+                  "url": "/assets/audio/introduction/slide-1.mp3"
                 },
                 "items": [
                   {
@@ -387,7 +384,7 @@
                     ]
                   },
                   {
-                    "classNames": "right-item h-full p-12 flex flex-col justify-around items-center",
+                    "classNames": "right-item h-full p-3 flex flex-col justify-around items-center",
                     "image": {
                       "url": "/assets/images/community.png"
                     },
@@ -416,8 +413,7 @@
                   "id": "introduction-selection",
                   "audio": {
                     "id": "select-1",
-                    "url": "/assets/audio/introduction/select-1.mp3",
-                    "classNames": "hidden"
+                    "url": "/assets/audio/introduction/select-1.mp3"
                   },
                   "classNames": "w-full h-full introduction-selection-page",
                   "title": {
@@ -608,8 +604,12 @@
             {
               "id": "text",
               "type": "text",
-              "classNames": "absolute text-black font-bold md:top-6/10 lg:top-80 md:left-24 lg:left-32 md:text-4xl lg:text-5xl",
+              "classNames": "absolute text-black font-bold text-5xl",
               "content": "1. The History",
+              "style": {
+                "top": "45%",
+                "left": "7%"
+              },
               "animations": [
                 {
                   "type": "from",
@@ -621,8 +621,9 @@
             {
               "id": "image",
               "type": "image",
-              "classNames": "left-32 absolute md:w-56 lg:w-64 h-auto",
+              "classNames": "absolute w-64 h-auto",
               "style": {
+                "left": "10%",
                 "top": "10%"
               },
               "alt": "initial-logo",
@@ -631,7 +632,7 @@
             {
               "id": "list",
               "type": "list",
-              "classNames": "list-items-wrapper md:top-20 lg:top-32 md:left-1/2 lg:left-1/2 absolute w-5/12 h-auto",
+              "classNames": "list-items-wrapper top-32 right-12 absolute w-1/2 h-auto",
               "items": [
                 {
                   "value": "reveal",
@@ -672,14 +673,13 @@
                 "initialAudio": "/assets/audio/history/history_intro.mp3",
                 "doneAudio": "/assets/audio/history/history_done.mp3",
                 "audio": {
-                  "id": "history-audio",
-                  "classNames": "fixed bottom-0 z-10"
+                  "id": "history-audio"
                 },
                 "watchedImage": "/assets/images/history/watched.png",
                 "items": [
                   {
                     "value": "video1",
-                    "classNames": "h-4/12 w-4/12 absolute lg:top-28 md:left-10 lg:left-20",
+                    "classNames": "h-4/12 w-4/12 absolute top-28 left-20",
                     "style": {
                       "transform": "rotateZ(-8deg)",
                       "border": "5px solid white",
@@ -690,11 +690,14 @@
                     },
                     "pageIndex": 2,
                     "videoContent": {
-                      "classNames": "w-full h-full",
+                      "classNames": "absolute top-0 left-0 right-0",
+                      "style": {
+                        "bottom": "56px"
+                      },
                       "type": "video",
                       "url": "/assets/video/history/Kamnew.mp4",
-                      "width": "100%",
-                      "height": "100%",
+                      "width": "1000px",
+                      "height": "690px",
                       "goBack": true,
                       "id": "reveal-0-video"
                     }
@@ -736,11 +739,14 @@
                         }
                       ],
                       "videoContent": {
-                        "classNames": "w-full h-full",
+                        "classNames": "absolute top-0 left-0 right-0",
+                        "style": {
+                          "bottom": "56px"
+                        },
                         "type": "video",
                         "url": "/assets/video/history/Kamnew.mp4",
-                        "width": "100%",
-                        "height": "100%",
+                        "width": "1000px",
+                        "height": "690px",
                         "goBack": true,
                         "id": "reveal-1-video"
                       }
@@ -749,7 +755,7 @@
                   },
                   {
                     "value": "video3",
-                    "classNames": "w-4/12 absolute right-12",
+                    "classNames": "w-4/12 absolute right-12 top-32",
                     "style": {
                       "transform": "rotateZ(6deg)",
                       "border": "5px solid white",
@@ -780,11 +786,14 @@
                         }
                       ],
                       "videoContent": {
-                        "classNames": "w-full h-full",
+                        "classNames": "absolute top-0 left-0 right-0",
+                        "style": {
+                          "bottom": "56px"
+                        },
                         "type": "video",
                         "url": "/assets/video/history/Toni.mp4",
-                        "width": "100%",
-                        "height": "100%",
+                        "width": "1000px",
+                        "height": "690px",
                         "goBack": true,
                         "id": "reveal-2-video"
                       }
@@ -809,8 +818,12 @@
             {
               "id": "text",
               "type": "text",
-              "classNames": "absolute text-black font-bold md:top-6/10 lg:top-80 md:left-24 lg:left-32 md:text-4xl lg:text-5xl",
+              "classNames": "absolute text-black font-bold text-5xl",
               "content": "2. Your Brain",
+              "style": {
+                "top": "45%",
+                "left": "7%"
+              },
               "animations": [
                 {
                   "type": "from",
@@ -822,8 +835,9 @@
             {
               "id": "image",
               "type": "image",
-              "classNames": "left-32 absolute md:w-56 lg:w-64 h-auto",
+              "classNames": "absolute w-64 h-auto",
               "style": {
+                "left": "10%",
                 "top": "10%"
               },
               "alt": "initial-logo",
@@ -832,7 +846,7 @@
             {
               "id": "list",
               "type": "list",
-              "classNames": "list-items-wrapper md:top-20 lg:top-32 md:left-1/2 lg:left-1/2 absolute w-5/12 h-auto",
+              "classNames": "list-items-wrapper top-32 right-12 absolute w-5/12 h-auto",
               "items": [
                 {
                   "value": "slider",

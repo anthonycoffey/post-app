@@ -91,12 +91,12 @@ const Slide2 = ({ data, goToNextReveal }) => {
     <div className={`${data.classNames || ""}`} style={data.style || {}}>
       <div className="absolute opacity-100 history-slide-text flex w-full h-full flex-col items-center justify-center">
         <div
-          className="opacity-0 absolute md:top-20 lg:top-12 history-slide-text-image w-3/12"
+          className="opacity-0 absolute top-12 history-slide-text-image w-3/12"
           style={items[0].style || {}}
         >
           <img className="w-full h-full" src={items[0].image.url} alt="" />
         </div>
-        <div className="font-serif absolute top-1/2 history-slide-2-text text-white md:text-xl lg:text-3xl md:w-4/5 lg:w-3/5 md:mt-16 lg:mt-28">
+        <div className="font-serif absolute top-1/2 history-slide-2-text text-white text-3xl w-3/5 mt-6">
           {items[0].text.map((item, index) => (
             <div
               className={`opacity-0 absolute history-slide-2-text-${index}`}

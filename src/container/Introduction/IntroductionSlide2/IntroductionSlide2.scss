@@ -5,7 +5,8 @@
   background-position: center;
 }
 
-.part-1, .part-2 {
+.part-1,
+.part-2 {
   width: 100%;
   height: 100%;
 }
@@ -20,22 +21,19 @@
 }
 
 .part-2-right-item-title {
-  color: white;
-  @apply md:text-2xl lg:text-4xl md:pb-3 lg:pb-6 md:mb-3 lg:mb-6 md:mt-3 lg:mt-6;
-  text-align: center;
-  text-transform: uppercase;
+  @apply text-4xl pb-6 mb-6 mt-6 text-center uppercase text-white;
 }
 
 .part-2-right-item-answer {
   text-align: center;
   color: white;
-  @apply md:text-2xl lg:text-4xl md:mb-5 lg:mb-8;
+  @apply text-4xl mb-8;
 }
 
 .part-2-person {
   left: -10%;
   opacity: 1;
-  @apply md:w-8/12 bottom-0;
+  @apply w-8/12 bottom-0;
 }
 
 .part-2-right-items {
@@ -43,7 +41,8 @@
   right: 5%;
 }
 
-.initial-image-wrapper, .result-image-wrapper {
+.initial-image-wrapper,
+.result-image-wrapper {
   border: 5px solid white;
   @apply w-3/12 h-1/4;
 

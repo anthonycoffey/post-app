@@ -3,15 +3,16 @@
 }
 
 .quote-1 {
-  @apply md:text-5xl lg:text-6xl;
+  top: 180px;
+  @apply text-6xl;
 
   .additional {
-    @apply md:text-lg lg:text-xl;
+    @apply text-xl;
   }
 }
 
-.quote-up {
-  @apply md:top-8 lg:top-6 md:w-36 lg:w-48;
+.history-quote-up {
+  @apply top-6 w-32;
 
   img {
     width: 100%;
@@ -19,8 +20,9 @@
   }
 }
 
-.quote-down {
-  @apply md:bottom-8 lg:bottom-6 md:w-36 lg:w-48;
+.history-quote-down {
+  @apply w-32;
+  bottom: 190px;
   img {
     width: 100%;
     height: 100%;

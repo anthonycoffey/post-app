@@ -7,10 +7,15 @@
 
 .introduction-item {
   img {
-    @apply md:w-5/12 lg:w-6/12;
+    @apply w-6/12;
   }
 
-  @apply md:p-5 lg:p-12 h-full flex flex-col justify-around items-center;
+  @apply p-12 h-full flex flex-col justify-evenly items-center;
+}
+
+#slide-1 {
+  transform: translateX(50%);
+  z-index: 1;
 }
 
 .item-header {
@@ -18,20 +23,12 @@
 }
 
 .item-title {
-  color: white;
-  @apply md:text-xl lg:text-3xl;
-  @apply md:my-2 lg:my-4;
-  @apply md:pb-2 lg:pb-4;
-  text-align: center;
+  @apply text-xl my-4 pb-4 text-center uppercase text-white;
   border-bottom: 2px solid white;
-  text-transform: uppercase;
 }
 
 .item-answer {
-  text-align: center;
-  color: white;
-  @apply md:text-2xl lg:text-3xl;
-  @apply md:mb-5 lg:mb-6;
+  @apply text-2xl mb-6 text-center text-white;
 }
 
 .custom-yellow {
@@ -42,8 +39,8 @@
 .persons-wrapper {
   width: 45%;
   height: 70%;
-  bottom: -10%;
   left: 20%;
+  bottom: 0;
 
   img {
     margin: auto;
