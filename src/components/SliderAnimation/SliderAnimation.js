@@ -54,7 +54,7 @@ const SliderAnimation = ({ data }) => {
       className={`slider-animation-wrapper ${initialData.classNames || ""}`}
       style={initialData.style || {}}
     >
-      <div className={`slider-animation-text text-center text-white md:text-3xl lg:text-5xl opacity-100 ${initialData.text.classNames}`}>
+      <div className={`slider-animation-text text-center text-white text-5xl opacity-100 ${initialData.text.classNames}`}>
         {renderHTML(initialData.text.content)}
       </div>
       <div className={`hidden slider-animation-image opacity-0 ${initialData.image.classNames}`}>

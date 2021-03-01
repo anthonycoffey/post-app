@@ -74,7 +74,7 @@ const Initial1 = () => {
     <div className="font-serif initial-1-wrapper relative w-full h-full">
       <div
         className="slide-1 opacity-100 bg-black absolute w-full h-full top-0 left-0 right-0 bottom-0 flex flex-col justify-center items-center"
-        id="slide-1"
+        id="slide-1-wrapper"
       >
         <div className="slide-1-top flex justify-center items-center">
           <div

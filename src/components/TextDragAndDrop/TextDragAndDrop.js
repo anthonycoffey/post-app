@@ -53,7 +53,10 @@ const TextDragAndDrop = ({ data }) => {
   };
 
   const playSequence = () => {
-    TweenLite.to(".text-drag-people-normal", 1, {
+    TweenMax.to(".audio-panel", 0.1, {
+      opacity: 0,
+    });
+    TweenLite.to(".text-drag-people-normal-wrapper", 1, {
       x: -1000,
     }).delay(1);
     TweenMax.to(".text-drag-people-normal", 0.1, {
@@ -63,15 +66,9 @@ const TextDragAndDrop = ({ data }) => {
       opacity: 1,
     }).delay(1);
 
-    if (window.innerWidth > 1024) {
-      TweenMax.to(".text-drop-zones", 1, {
-        height: 200,
-      }).delay(3);
-    } else {
-      TweenMax.to(".text-drop-zones", 1, {
-        height: 120,
-      }).delay(3);
-    }
+    TweenMax.to(".text-drop-zones", 1, {
+      height: 200,
+    }).delay(3);
 
     setTimeout(() => {
       if (document.getElementById("text-drag-and-drop")) {
@@ -89,10 +86,10 @@ const TextDragAndDrop = ({ data }) => {
     TweenLite.from(".drag-source-wrapper", 1, {
       y: 1000,
     }).delay(4);
-    TweenMax.to(".drag-and-drop-title", 1, {
+    TweenMax.to(".text-drag-and-drop-title", 1, {
       opacity: 1,
     }).delay(6);
-    TweenMax.to(".drag-and-drop-initial-title", 1, {
+    TweenMax.to(".text-drag-and-drop-initial-title", 1, {
       opacity: 1,
     }).delay(6);
 
@@ -171,17 +168,17 @@ const TextDragAndDrop = ({ data }) => {
       TweenMax.to(".drag-source-wrapper", 0.3, {
         opacity: 0,
       });
-      TweenMax.to(".drag-and-drop-initial-title", 0.3, {
+      TweenMax.to(".text-drag-and-drop-initial-title", 0.3, {
         opacity: 0,
       });
-      TweenMax.to(".drag-and-drop-initial-title", 0.3, {
+      TweenMax.to(".text-drag-and-drop-initial-title", 0.3, {
         display: "none",
       }).delay(0.3);
 
-      TweenMax.to(".drag-and-drop-finish-title", 0.3, {
+      TweenMax.to(".text-drag-and-drop-finish-title", 0.3, {
         position: "relative",
       }).delay(0.6);
-      TweenMax.to(".drag-and-drop-finish-title", 0.3, {
+      TweenMax.to(".text-drag-and-drop-finish-title", 0.3, {
         opacity: 1,
       }).delay(0.9);
 
@@ -203,16 +200,16 @@ const TextDragAndDrop = ({ data }) => {
       <div className={`opacity-100 ${scenario.image.classNames || ""}`}>
         <img src={`${scenario.image.url}`} alt="" />
       </div>
-      <div className="md:mt-4 lg:mt-10 grid grid-cols-4 gap-4 text-drag-drop-header opacity-0">
+      <div className="mt-10 grid grid-cols-4 gap-4 text-drag-drop-header opacity-0">
         {scenario.choiceSet.titles.map((item, index) => {
           return (
-            <div className="drag-target" key={`drag-target-${index}`}>
+            <div className="text-drag-target" key={`drag-target-${index}`}>
               {item.title}
             </div>
           );
         })}
       </div>
-      <div className="md:px-2 lg:px-4 md:mt-4 lg:mt-10 grid grid-cols-4 gap-4 text-drop-zones h-0">
+      <div className="px-4 mt-10 grid grid-cols-4 gap-4 text-drop-zones h-0">
         {dragItems.map((item, index) => {
           return (
             <div
@@ -230,9 +227,9 @@ const TextDragAndDrop = ({ data }) => {
           );
         })}
       </div>
-      <div className="drag-and-drop-title opacity-0">
+      <div className="text-drag-and-drop-title opacity-0">
         <div
-          className={`drag-and-drop-initial-title ${
+          className={`text-drag-and-drop-initial-title text-2xl ${
             scenario.title.classNames || ""
           }`}
           style={scenario.title.style || {}}
@@ -240,7 +237,7 @@ const TextDragAndDrop = ({ data }) => {
           {scenario.title.content}
         </div>
         <div
-          className={`drag-and-drop-finish-title ${
+          className={`text-drag-and-drop-finish-title text-2xl ${
             scenario.title.classNames || ""
           }`}
           style={scenario.title.style || {}}
@@ -249,7 +246,7 @@ const TextDragAndDrop = ({ data }) => {
         </div>
       </div>
       <div
-        className="opacity-0 hidden drag-source-wrapper absolute bottom-0 m-auto"
+        className="opacity-0 hidden drag-source-wrapper absolute bottom-14 m-auto"
         onDragOver={(e) => onDragOver(e)}
         onDrop={(e) => onDrop(e, "wip")}
       >

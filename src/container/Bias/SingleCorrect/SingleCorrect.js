@@ -127,21 +127,21 @@ const TypeInNext = ({ data }) => {
       style={initialData.style || {}}
     >
       <div className="hidden whole-overlap w-full h-full absolute left-0 top-0 bottom-0 right-0"></div>
-      <div className="opacity-0 absolute -left-12 -bottom-1/4 w-1/2 bias-single-correct-initial-person-wrapper">
+      <div className="single-correct-person-wrapper opacity-0 absolute -left-12 -bottom-16 w-1/2 bias-single-correct-initial-person-wrapper">
         <img src={initialData.initialImage.url} alt="" />
       </div>
       {choiceIndex > -1 ? (
-        <div className="opacity-0 absolute -left-12 -bottom-1/4 w-1/2 bias-single-correct-choice-imagge-wrapper">
+        <div className="single-correct-person-wrapper opacity-0 absolute -left-12 -bottom-16 w-1/2 bias-single-correct-choice-imagge-wrapper">
           <img src={choices[choiceIndex].image} alt="" />
         </div>
       ) : null}
-      <div className="absolute right-6 w-1/2 top-20 bg-white opacity-0 choices-wrapper md:p-3 lg:p-6">
-        <div className="font-serif font-bold choices-title text-center md:text-xl lg:text-3xl md:px-4 lg:px-8 pb-4 mb-4">
+      <div className="absolute right-6 w-1/2 top-20 bg-white opacity-0 choices-wrapper p-6">
+        <div className="font-serif font-bold choices-title text-center text-2xl px-8 pb-4 mb-4">
           {initialData.title.text}
         </div>
         {initialData.choices.map((choice, index) => (
           <div
-            className={`opacity-0 choice-wrapper font-serif text-white md:text-xl lg:text-3xl choice-${index} ${
+            className={`opacity-0 choice-wrapper font-serif text-white text-2xl choice-${index} ${
               choices && choiceIndex > -1
                 ? choices[index].isClicked
                   ? choice.isCorrect

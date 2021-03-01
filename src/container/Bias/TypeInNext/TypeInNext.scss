@@ -41,15 +41,15 @@
     .type-in-next-respond-wrapper {
       height: 85%;
       .type-in-next-respond-title {
-        @apply md:mb-4 lg:mb-8 md:pb-4 lg:pb-8;
+        @apply mb-8 pb-8;
         border-bottom: 2px solid #e0dfcb;
       }
 
       textarea {
-        @apply md:text-xl lg:text-2xl w-full;
+        @apply text-2xl w-full;
         height: 65%;
         &::placeholder {
-          @apply md:text-xl lg:text-2xl italic text-black;
+          @apply text-2xl italic text-black;
         }
       }
     }
@@ -59,7 +59,7 @@
     .type-in-next-feedback-wrapper {
       height: 85%;
       .type-in-next-feedback-title {
-        @apply md:mb-4 lg:mb-8 md:pb-4 lg:pb-8;
+        @apply mb-8 pb-8;
         border-bottom: 2px solid #e0dfcb;
       }
     }
@@ -70,7 +70,7 @@
     margin-top: 20px;
     width: 150px;
     height: 50px;
-    @apply md:text-lg lg:text-xl;
+    @apply text-xl;
     background: #eeece1;
     border-radius: 5px;
     text-transform: uppercase;

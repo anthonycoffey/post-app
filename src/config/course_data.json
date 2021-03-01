@@ -918,7 +918,7 @@
                 },
                 "title": {
                   "content": "How safe is this type of dog? Use the slider to rate it, from safest (green) to most dangerous (red).",
-                  "classNames": "text-white mt-6 md:text-2xl lg:text-3xl text-center"
+                  "classNames": "text-white mt-6 text-3xl text-center"
                 },
                 "items": [
                   {
@@ -1020,42 +1020,42 @@
                 "personImages": [
                   {
                     "url": "/assets/images/bias/type-in/cop1_large.png",
-                    "classNames": "opacity-0 absolute bottom-0 w-1/4",
+                    "classNames": "opacity-0 absolute bottom-24 w-1/5",
                     "style": {
                       "zIndex": 4
                     }
                   },
                   {
                     "url": "/assets/images/bias/type-in/cop2_large.png",
-                    "classNames": "opacity-0 absolute bottom-0 w-1/4 left-12",
+                    "classNames": "opacity-0 absolute bottom-24 w-1/5 left-12",
                     "style": {
                       "zIndex": 3,
-                      "left": "14%"
+                      "left": "21%"
                     }
                   },
                   {
                     "url": "/assets/images/bias/type-in/cop3_large.png",
-                    "classNames": "opacity-0 absolute bottom-0 w-1/4 left-24",
+                    "classNames": "opacity-0 absolute bottom-24 w-1/5 left-24",
                     "style": {
                       "zIndex": 2,
-                      "left": "26%",
+                      "left": "39%",
                       "transform": "scale(1.2)"
                     }
                   },
                   {
                     "url": "/assets/people/rick/people-normal.png",
-                    "classNames": "opacity-0 absolute w-1/2 right-36",
+                    "classNames": "opacity-0 absolute w-1/3 bottom-24 right-24",
                     "style": {
                       "zIndex": 3,
-                      "bottom": "-25%"
+                      "bottom": "-2%"
                     }
                   },
                   {
                     "url": "/assets/people/rick/rick_palms-up-open.png",
-                    "classNames": "opacity-0 absolute w-1/2 right-36",
+                    "classNames": "opacity-0 absolute w-1/3 bottom-24 right-24",
                     "style": {
                       "zIndex": 3,
-                      "bottom": "-25%"
+                      "bottom": "-2%"
                     }
                   }
                 ]
@@ -1082,17 +1082,17 @@
                   "text": "If it were someone else, I might feel differently, but I know Andrew and he's a good cop. And his WIFE is African-American! Bottom line is, he had a feeling about this guy and he acted on it, and he was professional the entire time. I don't see a problem here."
                 },
                 "respond": {
-                  "classNames": "md:p-4 lg:p-8 bg-white",
+                  "classNames": "p-8 bg-white",
                   "title": {
                     "content": "How would you respond?",
-                    "classNames": "font-bold font-serif md:text-2xl lg:text-3xl text-center"
+                    "classNames": "font-bold font-serif text-3xl text-center"
                   }
                 },
                 "feedback": {
-                  "classNames": "md:p-4 lg:p-8 bg-white",
+                  "classNames": "p-8 bg-white",
                   "title": {
                     "content": "What we would say",
-                    "classNames": "font-bold font-serif md:text-2xl lg:text-3xl text-center"
+                    "classNames": "font-bold font-serif text-3xl text-center"
                   },
                   "description": "Being familiar with, or even a member of, a certain group of people does not mean that you cannot have bias towards them in certain situations."
                 }
@@ -1142,17 +1142,17 @@
                   }
                 ],
                 "respond": {
-                  "classNames": "md:p-4 lg:p-8 bg-white",
+                  "classNames": "p-8 bg-white",
                   "title": {
                     "content": "How would you respond?",
-                    "classNames": "font-bold font-serif md:text-2xl lg:text-3xl text-center"
+                    "classNames": "font-bold font-serif text-3xl text-center"
                   }
                 },
                 "feedback": {
-                  "classNames": "md:p-4 lg:p-8 bg-white",
+                  "classNames": "p-8 bg-white",
                   "title": {
                     "content": "What we would say",
-                    "classNames": "font-bold font-serif md:text-2xl lg:text-3xl text-center"
+                    "classNames": "font-bold font-serif text-3xl text-center"
                   },
                   "description": "Being familiar with, or even a member of, a certain group of people does not mean that you cannot have bias towards them in certain situations."
                 }
@@ -1288,9 +1288,10 @@
             {
               "id": "text",
               "type": "text",
-              "classNames": "absolute text-center text-black font-bold md:top-6/10 lg:top-1/2 md:left-24 lg:left-32 md:text-4xl lg:text-5xl",
+              "classNames": "absolute text-black font-bold text-5xl",
               "style": {
-                "whiteSpace": "noWrap"
+                "top": "45%",
+                "left": "7%"
               },
               "content": "4. Your Decisions<br/>and Actions",
               "animations": [
@@ -1306,7 +1307,7 @@
               "type": "image",
               "classNames": "absolute w-auto h-auto",
               "style": {
-                "left": "12%",
+                "left": "10%",
                 "top": "10%"
               },
               "alt": "decisions",
@@ -1322,7 +1323,7 @@
             {
               "id": "list",
               "type": "list",
-              "classNames": "list-items-wrapper md:top-20 lg:top-32 md:right-16 lg:right-32 absolute w-auto h-auto",
+              "classNames": "list-items-wrapper top-32 right-12 absolute w-auto h-auto",
               "items": [
                 {
                   "value": "drag-drop-2",
@@ -1382,7 +1383,7 @@
                   "label": "Scenario label",
                   "image": {
                     "url": "/assets/people/rick/people-normal.png",
-                    "classNames": "text-drag-people-normal"
+                    "classNames": "text-drag-people-normal-wrapper"
                   },
                   "choiceSet": {
                     "id": "choice-set-01",

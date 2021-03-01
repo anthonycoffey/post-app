@@ -7,11 +7,10 @@
   @apply w-full h-full flex flex-col items-center justify-start;
 }
 
-.text-drag-people-normal {
+.text-drag-people-normal-wrapper {
   position: absolute;
   left: -10%;
-  bottom: -10%;
-  @apply w-1/2 md:-bottom-12 lg:-bottom-40;
+  @apply w-4/6 -bottom-12;
 }
 
 .text-drag-drop-header {
@@ -20,10 +19,10 @@
   align-items: center;
   justify-content: space-evenly;
 
-  .drag-target {
+  .text-drag-target {
     width: 100%;
     text-align: center;
-    @apply md:text-xl lg:text-4xl;
+    @apply text-3xl;
     font-weight: bold;
     color: white;
     text-transform: capitalize;
@@ -37,15 +36,15 @@
   width: 100%;
 }
 
-.drag-and-drop-title {
-  @apply opacity-0 m-auto md:mt-12 lg:mt-20 relative;
+.text-drag-and-drop-title {
+  @apply opacity-0 mt-20 relative;
 }
 
-.drag-and-drop-initial-title, .drag-and-drop-finish-title{
-  @apply opacity-0 text-white md:text-2xl lg:text-4xl block;
+.text-drag-and-drop-initial-title, .text-drag-and-drop-finish-title{
+  @apply opacity-0 text-white block;
 }
 
-.drag-and-drop-finish-title {
+.text-drag-and-drop-finish-title {
  @apply absolute text-center w-full;
 }
 
@@ -72,7 +71,7 @@
       justify-content: center;
       color: black;
       background: transparent;
-      @apply md:text-sm lg:text-2xl md:p-2 lg:p-8;
+      @apply text-2xl p-8;
       font-weight: bold;
       text-align: center;
     }
@@ -80,7 +79,7 @@
 }
 
 .drag-source-wrapper {
-  @apply w-4/12 h-1/3;
+  @apply w-4/12 h-1/4;
   background: white;
   border: 2px dotted black;
   display: flex;
@@ -89,7 +88,7 @@
 
   .draggable {
     color: white;
-    @apply w-full md:p-2 lg:p-4 md:py-6 lg:py-12 md:mx-8 lg:mx-20 md:text-xl lg:text-2xl;
+    @apply w-full p-4 py-12 mx-6 text-xl;
     display: flex;
     align-items: center;
     justify-content: center;

@@ -25,6 +25,9 @@ const TypeInNext = ({ data }) => {
   }, [data]);
 
   const playSequence = () => {
+    const max4 = TweenMax.to(".audio-panel", 0.1, {
+      opacity: 0,
+    });
     const max0 = TweenMax.to(".saying-logo", 0.5, {
       opacity: 1,
     });
@@ -38,11 +41,14 @@ const TypeInNext = ({ data }) => {
     const max3 = TweenMax.to(".type-in-done-button", 0.5, {
       opacity: 1,
     }).delay(4.5);
-    maxes.push(max0, max1, max2, max3);
+    maxes.push(max0, max1, max2, max3, max4);
   };
 
   const onAudioEnded = () => {};
   const handleDone = () => {
+    const max9 = TweenMax.to(".audio-panel", 0.5, {
+      opacity: 1,
+    });
     if (!respond) {
       setAudio(initialData.tryAgainAudio);
     } else {
@@ -63,7 +69,7 @@ const TypeInNext = ({ data }) => {
       const max8 = TweenMax.to(".type-in-continue-button", 0.5, {
         opacity: 1,
       }).delay(3.5);
-      maxes.push(max4, max5, max6, max7, max8);
+      maxes.push(max4, max5, max6, max7, max8, max9);
 
     }
   };
@@ -78,16 +84,16 @@ const TypeInNext = ({ data }) => {
       className={`bias-type-in-next-wrapper ${initialData.classNames || ""}`}
       style={initialData.style || {}}
     >
-      <div className="type-in-saying-wrapper md:m-6 lg:m-6 flex items-center justify-center">
-        <div className="opacity-0 flex-shrink-0 saying-logo w-2/12 h-full md:mr-12 lg:mr-16">
+      <div className="type-in-saying-wrapper m-6 flex items-center justify-center">
+        <div className="opacity-0 flex-shrink-0 saying-logo w-2/12 h-2/12 mr-12">
           <img src={initialData.saying.image} alt="saying-logo" />
         </div>
-        <div className="opacity-0 flex-grow saying-text flex items-center justify-center md:text-xl lg:text-3xl md:p-4 lg:p-8 h-full">
+        <div className="opacity-0 flex-grow saying-text flex items-center justify-center text-xl p-8 h-full">
           {initialData.saying.text}
         </div>
       </div>
-      <div className="type-in-next-respond-feedback-wrapper flex items-start justify-between md:m-4 lg:m-4">
-        <div className="type-in-next-respond flex-1 md:pr-2 lg:pr-4 h-full">
+      <div className="type-in-next-respond-feedback-wrapper w-full relative">
+        <div className="type-in-next-respond pl-4 pr-2 h-96 absolute w-1/2">
           <div
             className={`opacity-0 type-in-next-respond-wrapper ${
               initialData.respond.classNames || ""
@@ -117,7 +123,7 @@ const TypeInNext = ({ data }) => {
             </button>
           </div>
         </div>
-        <div className="type-in-next-feedback flex-1 h-full md:pl-2 lg:pl-4">
+        <div className="type-in-next-feedback h-96 pl-2 pr-4 absolute right-0 w-1/2">
           <div
             className={`opacity-0 type-in-next-feedback-wrapper ${
               initialData.feedback.classNames || ""
@@ -130,7 +136,7 @@ const TypeInNext = ({ data }) => {
             >
               {initialData.feedback.title.content}
             </div>
-            <div className="type-in-next-feedback-description md:text-xl lg:text-3xl">
+            <div className="type-in-next-feedback-description text-2xl">
               {initialData.feedback.description}
             </div>
           </div>

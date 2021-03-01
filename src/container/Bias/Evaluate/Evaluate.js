@@ -191,46 +191,48 @@ const Evaluate = ({ data }) => {
       className={`bias-evaluate-wrapper ${initialData.classNames || ""}`}
       style={initialData.style || {}}
     >
-      <div className="opacity-100 person-wrapper person-0 absolute bottom-0 md:left-8 lg:left-10 w-3/12 h-5/6">
+      <div className="opacity-100 person-wrapper person-0 absolute bottom-24 left-16">
         <img src={initialData.personImage1} alt="" />
       </div>
-      <div className="opacity-0 person-wrapper person-1 absolute bottom-0 md:left-8 lg:left-10 w-3/12 h-5/6">
+      <div className="opacity-0 person-wrapper person-1 absolute bottom-24 left-16">
         <img src={initialData.personImage2} alt="" />
       </div>
-      <div className="opacity-0 person-wrapper person-2 absolute bottom-0 md:left-8 lg:left-10 w-3/12 h-5/6">
+      <div className="opacity-0 person-wrapper person-2 absolute bottom-24 left-16">
         <img src={initialData.personImage3} alt="" />
       </div>
-      <div className="opacity-100 saying-wrapper absolute text-white text-center left-1/4 top-12 italic md:text-xl lg:text-2xl md:p-2 lg:p-4 w-8/12">
+      <div className="opacity-100 saying-wrapper absolute text-white text-center right-6 top-12 italic text-2xl p-4 w-8/12">
         {initialData.saying[sayingIndex]}
       </div>
-      <div className="opacity-0 slide-image-wrapper slide-image-0 absolute md:right-16 lg:right-32 top-1/3 w-4/12 h-3/6">
+      <div className="opacity-0 slide-image-wrapper slide-image-0 absolute right-12 top-1/3 w-5/12 h-2/6">
         <img src={initialData.slideImage1} alt="" />
       </div>
-      <div className="opacity-0 slide-image-wrapper slide-image-1 absolute right-16 top-1/3 w-4/12 h-3/6">
+      <div className="opacity-0 slide-image-wrapper slide-image-1 absolute right-12 top-1/3 w-5/12 h-2/6">
         <img src={initialData.slideImage2} alt="" />
       </div>
-      <div className="opacity-0 slide-image-wrapper slide-image-2 absolute right-16 top-1/3 w-4/12 h-3/6">
+      <div className="opacity-0 slide-image-wrapper slide-image-2 absolute right-12 top-1/3 w-5/12 h-2/6">
         <img src={initialData.slideImage3} alt="" />
       </div>
-      <div className="opacity-0 slide-image-wrapper slide-image-3 absolute right-16 top-1/3 w-4/12 h-3/6">
+      <div className="opacity-0 slide-image-wrapper slide-image-3 absolute right-12 top-1/3 w-5/12 h-2/6">
         <img src={initialData.slideImage4} alt="" />
       </div>
-      <div className="officer-selection absolute bottom-0 w-full">
+      <div className="officer-selection absolute bottom-28 w-full">
         {feedbackIndex === -1 ? (
-          <div className="opacity-0 officer-selection-header bg-black w-7/12 text-white md:text-2xl lg:text-3xl text-center md:p-4 lg:p-6 md:ml-8 lg:ml-16">
+          <div className="opacity-0 officer-selection-header bg-black w-7/12 text-white text-3xl text-center p-6 ml-16">
             {initialData.feedbackTitle}
           </div>
         ) : (
           <div
-            className={`evaluate-feedback-text evaluate-feedback-${feedbackIndex} w-9/12 md:text-xl lg:text-2xl m-auto md:p-4 lg:p-6 md:mb-6 lg:mb-8`}
+            className={`evaluate-feedback-text evaluate-feedback-${feedbackIndex} w-9/12 text-2xl m-auto p-6 mb-8`}
           >
             {initialData.feedbacks[feedbackIndex].text}
           </div>
         )}
-        <div className="opacity-0 md:ml-4 lg:ml-6 md:py-4 lg:py-6 officers-wrapper grid grid-cols-5 md:gap-2 lg:gap-4">
+        <div className="opacity-0 ml-6 py-6 officers-wrapper grid grid-cols-5 gap-4">
           {initialData.feedbacks.map((feedback, index) => (
             <div
-              className={`evaluate-officer evaluate-officer-${index} ${feedbackIndex === index ? 'active' : ''} w-full cursor-pointer`}
+              className={`evaluate-officer evaluate-officer-${index} ${
+                feedbackIndex === index ? "active" : ""
+              } w-full cursor-pointer`}
               key={index}
               onClick={() => handleFeedbackClick(index)}
             >

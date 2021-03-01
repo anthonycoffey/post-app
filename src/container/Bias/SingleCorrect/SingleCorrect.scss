@@ -15,7 +15,7 @@
   }
 
   .choice-wrapper {
-    @apply lg:p-4 md:p-2 text-center lg:mb-4 md:mb-2 cursor-pointer;
+    @apply p-4 text-center mb-4 cursor-pointer;
     background: #595959;
 
     &:hover {
@@ -35,4 +35,8 @@
 .whole-overlap {
   z-index: 1;
   background: rgba(0,0,0,0.2);
+}
+
+.single-correct-person-wrapper {
+  transform: scale(1.3);
 }

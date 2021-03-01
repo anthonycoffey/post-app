@@ -115,7 +115,7 @@ const SafeSlider = ({ data }) => {
         {initialData.items.map((item, index) => (
           <div className="font-serif slider-item-wrapper mb-4 w-full" key={index}>
             <div className="slider-content flex items-center justify-between">
-              <div className="left-label text-white md:text-xl lg:text-2xl md:mr-8 lg:mr-12">
+              <div className="left-label text-white text-2xl mr-12">
                 {item.leftLabel}
               </div>
               <div className="slider-component-wrapper w-full relative">
@@ -125,7 +125,7 @@ const SafeSlider = ({ data }) => {
                   onChange={onHandleChange}
                 />
               </div>
-              <div className="right-label text-white md:text-xl lg:text-2xl md:ml-8 lg:ml-12">
+              <div className="right-label text-white text-2xl ml-12">
                 {item.rightLabel}
               </div>
             </div>

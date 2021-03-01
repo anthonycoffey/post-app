@@ -71,12 +71,12 @@ const TypeIn = ({ data }) => {
       className={`bias-type-in-wrapper ${initialData.classNames || ""}`}
       style={initialData.style || {}}
     >
-      <div className="opacity-0 font-serif font-medium w-full text-center bias-type-in-title text-black md:text-2xl lg:text-5xl md:mt-6 lg:mt-8">
+      <div className="opacity-0 font-serif font-medium w-full text-center bias-type-in-title text-black text-5xl mt-8">
         {initialData.title}
       </div>
       {initialData.personImages.map((personImage, index) => (
         <div
-          className={`person-${index + 1}-wrapper ${
+          className={`person-wrapper person-${index + 1}-wrapper ${
             personImage.classNames || ""
           }`}
           key={index}
