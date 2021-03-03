@@ -1,0 +1,14 @@
+.report-select-event {
+  background-image: url("/assets/background/gray-background.jpg");
+  background-size: cover;
+  position: relative;
+  background-position: center;
+  height: calc(100% - 56px);
+  @apply w-full overflow-hidden;
+}
+
+#report-select-event-audio {
+  bottom: 0px;
+  left: 50%;
+  transform: translateX(-50%);
+}

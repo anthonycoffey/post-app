@@ -19,7 +19,6 @@ import CustomButton from "../../components/CustomButton/CustomButton";
 import DragAndDrop from "../../components/DragAndDrop/DragAndDrop";
 import TextDragAndDrop from "../../components/TextDragAndDrop/TextDragAndDrop";
 import ImageDragAndDrop from "../../components/ImageDragAndDrop/ImageDragAndDrop";
-import ConversationRater from "../../components/ConversationRater/ConversationRater";
 import IntroductionSlide1 from "../Introduction/IntroductionSlide1/IntroductionSlide1";
 import IntroductionSelection from "../Introduction/Selection/Selection";
 import SliderActivity from "../../components/SliderActivity/SliderActivity";
@@ -31,6 +30,8 @@ import TypeIn from "../Bias/TypeIn/TypeIn";
 import TypeInNext from "../Bias/TypeInNext/TypeInNext";
 import SingleCorrect from "../Bias/SingleCorrect/SingleCorrect";
 import LawDragAndDrop from "../Law/LawDragAndDrop/LawDragAndDrop";
+import ReportInitial from "../Report/ReportInitial/ReportInitial";
+import ReportEvent from "../Report/ReportEvent/ReportEvent";
 
 const Page = ({ elements, style, classNames }) => {
   const pageIndex = useSelector((state) => state.status.pageIndex);
@@ -173,6 +174,12 @@ const Page = ({ elements, style, classNames }) => {
                 key={`${chapterIndex}-${pageIndex}-${index}-${randomId}`}
               />
             );
+          }
+        } else if (element.type === 'report') {
+          if (element.activity === 'initial') {
+            return <ReportInitial data={element.data} key={index} />;
+          } else if (element.activity === 'select-event') {
+            return <ReportEvent data={element.data} key={index} />;
           }
         } else if (element.type === "text") {
           return <Text data={element} key={index} />;

@@ -1791,6 +1791,129 @@
           ]
         }
       ]
+    },
+    {
+      "id": "responsibility",
+      "pages": [
+        {
+          "classNames": "responsibility-wrapper justify-center items-center",
+          "type": "default",
+          "elements": [
+            {
+              "id": "text",
+              "type": "text",
+              "classNames": "absolute text-black font-bold text-4xl w-6/12 text-center",
+              "style": {
+                "top": "38%",
+                "left": "0%"
+              },
+              "content": "5. Your responsibility to Report",
+              "animations": [
+                {
+                  "type": "from",
+                  "x": -500,
+                  "duration": 1.4
+                }
+              ]
+            },
+            {
+              "id": "image",
+              "type": "image",
+              "classNames": "absolute w-auto h-auto",
+              "style": {
+                "left": "15%",
+                "top": "10%"
+              },
+              "alt": "decisions",
+              "url": "/assets/images/responsibility.png",
+              "animations": [
+                {
+                  "type": "from",
+                  "x": -500,
+                  "duration": 1.4
+                }
+              ]
+            },
+            {
+              "id": "list",
+              "type": "list",
+              "classNames": "list-items-wrapper top-32 right-12 absolute w-auto h-auto",
+              "items": [
+                {
+                  "value": "new-department",
+                  "title": "Scenario: A New Department",
+                  "pageIndex": 1
+                }
+              ],
+              "animations": [
+                {
+                  "type": "from",
+                  "x": 1100,
+                  "duration": 1.4
+                }
+              ]
+            },
+            {
+              "id": "buttton",
+              "type": "button",
+              "classNames": "introduction-back-button absolute",
+              "style": {
+                "top": "70%",
+                "right": "30%",
+                "fontSize": "40px"
+              },
+              "title": "Back",
+              "action": "goToMenu"
+            }
+          ]
+        },
+        {
+          "classNames": "report-initial-page",
+          "elements": [
+            {
+              "type": "report",
+              "activity": "initial",
+              "data": {
+                "scenario": {
+                  "id": "scenario-01",
+                  "initialAudio": "/assets/audio/report/intro.mp3",
+                  "audio": {
+                    "id": "report-initial-audio",
+                    "classNames": "fixed bottom-0 z-10"
+                  },
+                  "image0": "/assets/images/report/police_department_background.jpg",
+                  "image1": "/assets/images/report/scene_0.png",
+                  "image2": "/assets/images/report/community.jpg",
+                  "image3": "/assets/images/report/room.jpg",
+                  "person": "/assets/images/report/asiancop_0.png"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "classNames": "report-initial-page",
+          "elements": [
+            {
+              "type": "report",
+              "activity": "select-event",
+              "data": {
+                "scenario": {
+                  "id": "scenario-00",
+                  "initialAudio": "/assets/audio/report/activity_instruction.mp3",
+                  "audio": {
+                    "id": "report-select-event-audio",
+                    "classNames": "fixed bottom-0 z-10"
+                  },
+                  "personImage0": "/assets/people/rick/people-hand-up.png",
+                  "personImage1": "/assets/people/rick/rick_palms-up-open.png",
+                  "title": "Starting with the first event. click the pictures above to decide where and how you want to intervene to reach a better outcome."
+                }
+              }
+            }
+          ]
+        }
+      ]
     }
   ]
 }

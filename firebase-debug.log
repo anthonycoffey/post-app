@@ -1,0 +1,20 @@
+[debug] [2021-03-03T08:42:46.752Z] ----------------------------------------------------------------------
+[debug] [2021-03-03T08:42:46.754Z] Command:       /Users/arwsc/.nvm/versions/node/v12.20.0/bin/node /Users/arwsc/.nvm/versions/node/v12.20.0/bin/firebase deploy
+[debug] [2021-03-03T08:42:46.754Z] CLI Version:   9.2.2
+[debug] [2021-03-03T08:42:46.754Z] Platform:      darwin
+[debug] [2021-03-03T08:42:46.754Z] Node Version:  v12.20.0
+[debug] [2021-03-03T08:42:46.755Z] Time:          Wed Mar 03 2021 16:42:46 GMT+0800 (Philippine Standard Time)
+[debug] [2021-03-03T08:42:46.755Z] ----------------------------------------------------------------------
+[debug] [2021-03-03T08:42:46.755Z] 
+[debug] [2021-03-03T08:42:46.763Z] >>> [apiv2][query] GET https://firebase-public.firebaseio.com/cli.json [none]
+[debug] [2021-03-03T08:42:46.808Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2021-03-03T08:42:46.808Z] > authorizing via signed-in user
+[debug] [2021-03-03T08:42:46.808Z] [iam] checking project racial-app for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2021-03-03T08:42:46.810Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2021-03-03T08:42:46.810Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2021-03-03T08:42:53.109Z] <<< HTTP RESPONSE 200 {"cache-control":"no-cache, no-store, max-age=0, must-revalidate","expires":"Mon, 01 Jan 1990 00:00:00 GMT","date":"Wed, 03 Mar 2021 08:42:50 GMT","pragma":"no-cache","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-03-03T08:42:53.200Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/racial-app:testIamPermissions  
+ {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2021-03-03T08:42:56.253Z] <<< [apiv2][status] GET https://firebase-public.firebaseio.com/cli.json 200
+[debug] [2021-03-03T08:42:56.253Z] <<< [apiv2][body] GET https://firebase-public.firebaseio.com/cli.json {"cloudBuildErrorAfter":1594252800000,"cloudBuildWarnAfter":1590019200000,"defaultNode10After":1594252800000,"minVersion":"3.0.5","node8DeploysDisabledAfter":1613390400000,"node8RuntimeDisabledAfter":1615809600000,"node8WarnAfter":1600128000000}
