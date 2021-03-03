@@ -5,6 +5,56 @@
   background-position: center;
 }
 
+.law-drag-drop {
+  background-image: url("/assets/background/gray-background.jpg");
+  background-size: cover;
+  background-position: center;
+  @apply flex items-start justify-center px-6 bottom-12;
+}
+
+.law-warning-wrapper {
+  @apply shadow-2xl bg-black text-white uppercase p-6 font-serif text-2xl;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.law-correct-wrapper {
+  @apply shadow-2xl text-black uppercase p-6 font-serif text-2xl;
+  left: 50%;
+  top: 50%;
+  background: #ddd9c3;
+  transform: translate(-50%, -50%);
+}
+
 #law-drag-and-drop-audio {
   transform: translateX(50%);
+}
+
+.law-drop-zone.protected {
+  @apply w-1/2 h-4/6 mr-3 mt-12 p-4;
+  border: 2px solid white;
+}
+
+.law-drop-zone.not-protected {
+  @apply w-1/2 h-4/6 ml-3 mt-12 p-4;
+  border: 2px solid white;
+}
+
+.law-drop-zone-title.protected-title {
+  @apply font-serif text-2xl uppercase text-white w-1/2 absolute left-0 top-2 text-center
+}
+
+.law-drop-zone-title.not-protected-title {
+  @apply font-serif text-2xl uppercase text-white w-1/2 absolute left-1/2 top-2 text-center
+}
+
+.law-draggable {
+  @apply p-2 shadow-xl text-black text-xl font-serif px-12 text-center w-5/12 m-auto;
+  background: #ddd9c3;
+}
+
+.law-drop-zone-content {
+  @apply w-auto mb-4 p-2 shadow-xl text-black text-xl font-serif px-12 text-center;
+  background: #ddd9c3;
 }

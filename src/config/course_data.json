@@ -1173,7 +1173,11 @@
             {
               "id": "text",
               "type": "text",
-              "classNames": "absolute text-black font-bold md:top-6/10 lg:top-96 md:left-24 lg:left-32 md:text-4xl lg:text-5xl",
+              "classNames": "absolute text-black font-bold text-5xl",
+              "style": {
+                "top": "45%",
+                "left": "7%"
+              },
               "content": "3. The Law",
               "animations": [
                 {
@@ -1186,17 +1190,25 @@
             {
               "id": "image",
               "type": "image",
-              "classNames": "left-32 absolute md:w-56 lg:w-64 h-auto",
+              "classNames": "absolute w-auto h-auto w-64",
               "style": {
+                "left": "10%",
                 "top": "10%"
               },
               "alt": "initial-logo",
-              "url": "/assets/images/law.png"
+              "url": "/assets/images/law.png",
+              "animations": [
+                {
+                  "type": "from",
+                  "x": -500,
+                  "duration": 1.4
+                }
+              ]
             },
             {
               "id": "list",
               "type": "list",
-              "classNames": "list-items-wrapper md:top-20 lg:top-32 md:left-1/2 lg:left-1/2 absolute w-5/12 h-auto",
+              "classNames": "list-items-wrapper top-32 right-12 absolute w-1/2 h-auto",
               "items": [
                 {
                   "value": "drag-and-drop",
@@ -1235,40 +1247,72 @@
                 "id": "law-drag-and-drop",
                 "classNames": "w-full h-full relative",
                 "initialAudio": "/assets/audio/law/initial.mp3",
+                "summaryAudio": "/assets/audio/law/summary.mp3",
                 "audio": {
                   "id": "law-drag-and-drop-audio",
                   "classNames": "fixed bottom-0 z-10"
                 },
                 "title": {
                   "text": "Protected Classes",
-                  "classNames": "text-center font-serif lg:text-7xl md:text-2xl"
+                  "classNames": "text-center font-serif text-5xl"
                 },
                 "person1Image": {
-                  "url": "/assets/people/rick/people-normal.png",
-                  "style": {}
+                  "url": "/assets/people/rick/people-normal.png"
                 },
                 "person2Image": {
-                  "url": "/assets/people/rick/people-one-hand-up.png",
-                  "style": {}
+                  "url": "/assets/people/rick/people-one-hand-up.png"
+                },
+                "person3Image": {
+                  "url": "/assets/people/rick/people-up-closed.png"
                 },
                 "choices": [
                   {
-                    "title": "Stop more White drivers",
-                    "audio": "/assets/audio/bias/single-correct/choice1_feedback.mp3",
-                    "isCorrect": false,
-                    "image": "/assets/people/rick/people-calm-down.png"
+                    "title": "Race",
+                    "isProtected": true,
+                    "type": "protected",
+                    "label": "Race"
                   },
                   {
-                    "title": "Stop an equal number of Blacks, Hispanics and Whites",
-                    "audio": "/assets/audio/bias/single-correct/choice2_feedback.mp3",
-                    "isCorrect": false,
-                    "image": "/assets/people/rick/people-calm-down.png"
+                    "title": "Educational background",
+                    "isProtected": false,
+                    "type": "not-protected",
+                    "label": "Educational background"
                   },
                   {
-                    "title": "Make stops based only on illegal behavior, not race",
-                    "audio": "/assets/audio/bias/single-correct/choice3_feedback.mp3",
-                    "isCorrect": true,
-                    "image": "/assets/people/rick/people-after-closed.png"
+                    "title": "Age",
+                    "isProtected": true,
+                    "type": "protected",
+                    "label": "Age"
+                  },
+                  {
+                    "title": "Political Affiliation",
+                    "isProtected": false,
+                    "type": "not-protected",
+                    "label": "Political Affiliation"
+                  },
+                  {
+                    "title": "Gender Identity",
+                    "isProtected": true,
+                    "type": "protected",
+                    "label": "Gender Identity"
+                  },
+                  {
+                    "title": "Sex",
+                    "isProtected": true,
+                    "type": "protected",
+                    "label": "Sexual Orientation"
+                  },
+                  {
+                    "title": "Religious belief or background",
+                    "isProtected": true,
+                    "type": "protected",
+                    "label": "Religion"
+                  },
+                  {
+                    "title": "National Origin Or Ancestry",
+                    "isProtected": true,
+                    "type": "protected",
+                    "label": "National Origin Or Ancestry"
                   }
                 ]
               }
