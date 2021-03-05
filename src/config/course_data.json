@@ -1892,14 +1892,14 @@
           ]
         },
         {
-          "classNames": "report-initial-page",
+          "classNames": "report-select-page",
           "elements": [
             {
               "type": "report",
               "activity": "select-event",
               "data": {
                 "scenario": {
-                  "id": "scenario-00",
+                  "id": "scenario-02",
                   "initialAudio": "/assets/audio/report/activity_instruction.mp3",
                   "audio": {
                     "id": "report-select-event-audio",
@@ -1907,7 +1907,121 @@
                   },
                   "personImage0": "/assets/people/rick/people-hand-up.png",
                   "personImage1": "/assets/people/rick/rick_palms-up-open.png",
-                  "title": "Starting with the first event. click the pictures above to decide where and how you want to intervene to reach a better outcome."
+                  "title": "Starting with the first event. click the pictures above to decide where and how you want to intervene to reach a better outcome.",
+                  "events": [
+                    {
+                      "disableImage": "/assets/images/report/event-1/disable.png",
+                      "enableImage": "/assets/images/report/event-1/enable.jpg",
+                      "eventData": {
+                        "title": "Event #1",
+                        "description": "During the first week, your partner posts this meme on his Facebook feed. It gets some likes and approving comments from fellow officers.",
+                        "backgroundImage": {
+                          "url": "/assets/images/report/event-1/choices_background.jpg",
+                          "style": {
+                            "right": "-15%"
+                          }
+                        },
+                        "choices": [
+                          {
+                            "content": "Ignore it. Whether or not you agree, it's his personal Facebook account.",
+                            "action": "go-to-feedback",
+                            "feedback": {
+                              "content": "While it may be his personal page, given the response by some officers, you should have some concern about the culture of the depoartment. Could this viewport be manifesting in how he and other interact with Latinos in the community?",
+                              "action": "go-selection"
+                            }
+                          },
+                          {
+                            "content": "Ask your new partner why he posts this.",
+                            "action": "go-to-saying",
+                            "saying": {
+                              "backgroundImage": "/assets/images/report/police_department_background.jpg",
+                              "personImage": {
+                                "url": "/assets/images/report/asiancop_1.png",
+                                "classNames": "absolute",
+                                "style": {
+                                  "left": "-30%",
+                                  "width": "85%",
+                                  "top": "84px"
+                                }
+                              },
+                              "sayingWrapperStyle": {
+                                "top": "25%",
+                                "left": "30%",
+                                "width": "33%",
+                                "height": "25%"
+                              },
+                              "data": [
+                                {
+                                  "content": "I'm exercising my right to free speech. Just because I work in area with a lot of illegal immigrants doesn't mean I have to like the face that they aren't willing to learn our language."
+                                },
+                                {
+                                  "content": "Look, you may not agree with it, but if we're going to work together, you keep your politics to yourself, and I'll do the same."
+                                }
+                              ]
+                            },
+                            "feedback": {
+                              "content": "It's takes courage to have this kind of conversation with someone on your first day. He's made his opinion clear.<br/><br/> Let's move forward to the next event and see what happens next.",
+                              "action": "go-selection"
+                            }
+                          },
+                          {
+                            "content": "Complain about the offensive post to your new supervisor.",
+                            "action": "go-to-saying",
+                            "saying": {
+                              "backgroundImage": "/assets/images/report/police_department_background.jpg",
+                              "personImage": {
+                                "url": "/assets/images/bias/type-in/cop2_large.png",
+                                "classNames": "absolute",
+                                "style": {
+                                  "left": "-10%",
+                                  "width": "50%",
+                                  "top": "80px"
+                                }
+                              },
+                              "sayingWrapperStyle": {
+                                "top": "25%",
+                                "left": "30%",
+                                "width": "33%",
+                                "height": "25%"
+                              },
+                              "data": [
+                                {
+                                  "content": "From what I've seen, Moseby is a good cop. His politics are pretty much his business, as long as they don't interfere with his or anyone else's work here."
+                                },
+                                {
+                                  "content": "That said, I do want this to be a positive environment for you. I recommend you talk to him about it if it bothers you."
+                                }
+                              ]
+                            },
+                            "feedback": {
+                              "content": "It's takes courage to bring something like this to your supervisor's attention during your first week. Let's be honest, some new cops would focus on trying to fit in and might not be willing to raise this issue.<br/><br/>Let's move forward to the next event.",
+                              "action": "go-selection"
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "disableImage": "/assets/images/report/event-2/disable.png",
+                      "enableImage": "/assets/images/report/event-2/enable.jpg"
+                    },
+                    {
+                      "disableImage": "/assets/images/report/event-3/disable.png",
+                      "enableImage": "/assets/images/report/event-3/enable.jpg"
+                    },
+                    {
+                      "disableImage": "/assets/images/report/event-4/disable.jpg",
+                      "enableImage": "/assets/images/report/event-4/enable.jpg"
+                    },
+                    {
+                      "disableImage": "/assets/images/report/event-5/disable.jpg",
+                      "enableImage": "/assets/images/report/event-5/enable.jpg"
+                    },
+                    {
+                      "disableImage": "/assets/images/report/event-6/disable.jpg",
+                      "enableImage": "/assets/images/report/event-6/enable.jpg"
+                    }
+                  ]
                 }
               }
             }

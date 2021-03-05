@@ -12,3 +12,56 @@
   left: 50%;
   transform: translateX(-50%);
 }
+
+.report-select-event-over {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.event-choices-wrapper {
+  .event-choices-wrapper-overlay {
+    background: rgba(0, 0, 0, 0.2);
+    z-index: 1;
+  }
+  .event-choices-panel {
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
+      rgba(0, 0, 0, 0.22) 0px 10px 10px;
+
+    .event-choices-panel-title {
+      border-bottom: 2px solid #e0dfcb;
+    }
+
+    .event-choices .event-choice {
+      background: #595959;
+    }
+  }
+
+  .feedback-wrapper {
+    z-index: 2;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
+      rgba(0, 0, 0, 0.22) 0px 10px 10px;
+
+    .feedback-title {
+      border-bottom: 2px solid #e0dfcb;
+    }
+  }
+
+  .report-saying-wrapper {
+    .report-saying-text {
+      background: #eeece1;
+      position: relative;
+
+      &:after {
+        content: "";
+        position: absolute;
+        margin-top: 0px;
+        margin-left: 0px;
+        border-left: 14px solid transparent;
+        border-right: 31px solid transparent;
+        border-bottom: 23px solid #eeece1;
+        transform: rotate(144deg);
+        left: -30px;
+        top: 75px;
+      }
+    }
+  }
+}
