@@ -32,7 +32,7 @@ import SingleCorrect from "../Bias/SingleCorrect/SingleCorrect";
 import LawDragAndDrop from "../Law/LawDragAndDrop/LawDragAndDrop";
 import ReportInitial from "../Report/ReportInitial/ReportInitial";
 import ReportEvent from "../Report/ReportEvent/ReportEvent";
-
+import CommunityReveal from "../Community/CommunityReveal/CommunityReveal";
 const Page = ({ elements, style, classNames }) => {
   const pageIndex = useSelector((state) => state.status.pageIndex);
   const chapterIndex = useSelector((state) => state.status.chapterIndex);
@@ -175,11 +175,15 @@ const Page = ({ elements, style, classNames }) => {
               />
             );
           }
-        } else if (element.type === 'report') {
-          if (element.activity === 'initial') {
+        } else if (element.type === "report") {
+          if (element.activity === "initial") {
             return <ReportInitial data={element.data} key={index} />;
-          } else if (element.activity === 'select-event') {
+          } else if (element.activity === "select-event") {
             return <ReportEvent data={element.data} key={index} />;
+          }
+        } else if (element.type === "community") {
+          if (element.activity === "click-reveal") {
+            return <CommunityReveal data={element.data} key={index} />;
           }
         } else if (element.type === "text") {
           return <Text data={element} key={index} />;

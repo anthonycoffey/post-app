@@ -1,0 +1,28 @@
+.community-wrapper {
+  background-image: url("/assets/background/community-background.jpg");
+  background-size: cover;
+  position: relative;
+  background-position: center;
+  height: calc(100% - 56px);
+  @apply w-full overflow-hidden;
+}
+
+#community-initial-audio {
+  bottom: 0px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.slide-image {
+  z-index: 1;
+}
+
+.community-modal {
+  .community-modal-description-wrapper {
+    top: 5%;
+    left: 55%;
+    height: 90%;
+    width: 40%;
+    overflow-y: auto;
+  }
+}

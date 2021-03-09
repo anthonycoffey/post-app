@@ -2028,6 +2028,181 @@
           ]
         }
       ]
+    },
+    {
+      "id": "connecting",
+      "pages": [
+        {
+          "classNames": "community-wrapper justify-center items-center",
+          "type": "default",
+          "elements": [
+            {
+              "id": "text",
+              "type": "text",
+              "classNames": "absolute text-black font-bold text-4xl w-6/12 text-center",
+              "style": {
+                "top": "38%",
+                "left": "0%"
+              },
+              "content": "6. Connecting with the Community",
+              "animations": [
+                {
+                  "type": "from",
+                  "x": -500,
+                  "duration": 1.4
+                }
+              ]
+            },
+            {
+              "id": "image",
+              "type": "image",
+              "classNames": "absolute w-auto h-auto",
+              "style": {
+                "left": "15%",
+                "top": "10%",
+                "filter": "invert(1)"
+              },
+              "alt": "decisions",
+              "url": "/assets/images/community.png",
+              "animations": [
+                {
+                  "type": "from",
+                  "x": -500,
+                  "duration": 1.4
+                }
+              ]
+            },
+            {
+              "id": "list",
+              "type": "list",
+              "classNames": "list-items-wrapper top-32 right-12 absolute w-1/2 h-auto",
+              "items": [
+                {
+                  "value": "reveal",
+                  "title": "We are the Community - Click Reveal Stories",
+                  "pageIndex": 1
+                }
+              ],
+              "animations": [
+                {
+                  "type": "from",
+                  "x": 1100,
+                  "duration": 1.4
+                }
+              ]
+            },
+            {
+              "id": "buttton",
+              "type": "button",
+              "classNames": "introduction-back-button absolute",
+              "style": {
+                "top": "70%",
+                "right": "30%",
+                "fontSize": "40px"
+              },
+              "title": "Back",
+              "action": "goToMenu"
+            }
+          ]
+        },
+        {
+          "classNames": "community-click-reveal",
+          "elements": [
+            {
+              "type": "community",
+              "activity": "click-reveal",
+              "data": {
+                "scenario": {
+                  "id": "scenario-01",
+                  "initialAudio": "/assets/audio/community/intro.mp3",
+                  "audio": {
+                    "id": "community-initial-audio",
+                    "classNames": "fixed bottom-0 z-10"
+                  },
+                  "title": {
+                    "content": "Click at least 3 officers to hear their stories.",
+                    "classNames": "absolute bottom-10 w-full text-center font-serif text-2xl"
+                  },
+                  "slideImages": [
+                    {
+                      "url": "assets/people/rick/people-after-closed.png",
+                      "start": 0,
+                      "end": 14,
+                      "style": {
+                        "left": "15%"
+                      }
+                    },
+                    {
+                      "url": "assets/people/rick/rick_series-3rd.png",
+                      "start": 14,
+                      "end": -1,
+                      "style": {
+                        "left": "15%"
+                      }
+                    }
+                  ],
+                  "officers": [
+                    {
+                      "image": "assets/images/community/0.jpg",
+                      "title": "Name 1<br/>Position<br/>Group",
+                      "description": "Click 1 LGBTQ",
+                      "audio": "assets/audio/community/testing.mp3"
+                    },
+                    {
+                      "image": "assets/images/community/1.jpg",
+                      "title": "Name 2<br/>Position<br/>Group",
+                      "description": "Trans",
+                      "audio": "assets/audio/community/testing.mp3"
+                    },
+                    {
+                      "image": "assets/images/community/2.jpg",
+                      "title": "Name 3<br/>Position<br/>Group",
+                      "description": "In 2018 and 2019 the LGBTQ Community in Sacramento didn't want to allow police officers to march in the pride parade wearing their uniforms, even though these officers themselves identified as LGBTQ. The objection was never to the presence of the police officers per se, but to the uniforms and what they symbolized to the community. Community leaders pointed out that a lot of LGBTQ people, especially people of color and transgender folks, experience anxiety and fear when they encounter the police and that, for them, seeing a whole contingent of uniformed offices in the parade would disrupt the feelings of safety and celebration that the parade is supposed to be all about.",
+                      "audio": "assets/audio/community/testing.mp3"
+                    },
+                    {
+                      "image": "assets/images/community/3.jpg",
+                      "title": "Name 4<br/>Position<br/>Group",
+                      "description": "Click 1 LGBTQ",
+                      "audio": "assets/audio/community/testing.mp3"
+                    },
+                    {
+                      "image": "assets/images/community/4.jpg",
+                      "title": "Name 5<br/>Position<br/>Group",
+                      "description": "Click 1 LGBTQ",
+                      "audio": "assets/audio/community/testing.mp3"
+                    },
+                    {
+                      "image": "assets/images/community/5.jpg",
+                      "title": "Name 6<br/>Position<br/>Group",
+                      "description": "Click 1 LGBTQ",
+                      "audio": "assets/audio/community/testing.mp3"
+                    },
+                    {
+                      "image": "assets/images/community/6.jpg",
+                      "title": "Name 7<br/>Position<br/>Group",
+                      "description": "Click 1 LGBTQ",
+                      "audio": "assets/audio/community/testing.mp3"
+                    },
+                    {
+                      "image": "assets/images/community/7.jpg",
+                      "title": "Name 8<br/>Position<br/>Group",
+                      "description": "Click 1 LGBTQ",
+                      "audio": "assets/audio/community/testing.mp3"
+                    },
+                    {
+                      "image": "assets/images/community/8.jpg",
+                      "title": "Name 9<br/>Position<br/>Group",
+                      "description": "Click 1 LGBTQ",
+                      "audio": "assets/audio/community/testing.mp3"
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      ]
     }
   ]
 }
